@@ -7,7 +7,7 @@ const Login = () => {
     <Modal>
       <View style={styles.loginContainer}>
         <TextInput 
-          placeholdedr='Email'
+          placeholder='Email'
           style={styles.input} />
         <TextInput 
           placeholder='Password'
