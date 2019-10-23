@@ -1,13 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
+import DrawerNavigator from '../../navigation/DrawerNavigator/DrawerNavigator';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Search and Rescue</Text>
+      <DrawerNavigator/>
     </View>
   );
 }
-
-

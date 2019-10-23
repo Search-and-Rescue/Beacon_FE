@@ -1,18 +1,27 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
-const Home = () => {
+import MenuButton from "../../navigation/MenuButton/MenuButton";
+
+const Home = (props) => {
   return (
-    <View style={styles.home}>
-      <View style={styles.addTripBtn}>
-        <Button title='Add Trip' />
-      </View>
-      <View style={styles.editTripBtn}>
-        <Button title='History/Edit Trip' />
+    <View>
+      <MenuButton navigation={props.navigation} />
+      <View style={styles.home}>
+        <View style={styles.homeBtns}>
+          <TouchableOpacity title="Add Trip">
+            <Text style={styles.addTripBtn}>Add Trip</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.homeBtns}>
+          <TouchableOpacity title="History/Edit Trip">
+            <Text style={styles.editTripBtn}>Edit Trip History</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
-  )
+  );
 }
 
 export default Home;
