@@ -3,16 +3,15 @@ import { Platform, Dimensions } from "react-native";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
 
-import HomeScreen from "../screens/HomeScreen";
-import LinksScreen from "../screens/LinksScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import CategoryList from '../components/CategoryList/CategoryList';
+import Home from "../components/Home/Home";
 
 import MenuDrawer from "../navigation/MenuDrawer";
 
-const WIDTH = Dimensions.get("window").width;
+const screenWidth = Dimensions.get("window").width;
 
 const DrawerConfig = {
-  drawerWidth: WIDTH * 0.83,
+  drawerWidth: screenWidth * 0.83,
   contentComponent: ({ navigation }) => {
     return <MenuDrawer navigation={navigation} />;
   }
@@ -21,13 +20,16 @@ const DrawerConfig = {
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: {
-      screen: HomeScreen
+      screen: Home
     },
-    Links: {
-      screen: LinksScreen
+    Contacts: {
+      screen: CategoryList
     },
-    Settings: {
-      screen: SettingsScreen
+    Gear: {
+      screen: CategoryList
+    },
+    Vehicles: {
+      screen: CategoryList
     }
   },
   DrawerConfig

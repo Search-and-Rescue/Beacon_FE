@@ -11,9 +11,6 @@ import {
 } from "react-native";
 import icon from '../assets/icon.png';
 
-const WIDTH = Dimensions.get("window").width;
-const HEIGHT = Dimensions.get("window").height;
-
 export default class MenuDrawer extends React.Component {
   navLink(nav, text) {
     return (
@@ -45,8 +42,9 @@ export default class MenuDrawer extends React.Component {
           </View>
           <View style={styles.bottomLinks}>
             {this.navLink("Home", "Home")}
-            {this.navLink("Links", "Links")}
-            {this.navLink("Settings", "Settings")}
+            {this.navLink("Contacts", "Contacts")}
+            {this.navLink("Gear", "Gear List")}
+            {this.navLink("Vehicles", "Vehicles")}
           </View>
         </ScrollView>
         <View style={styles.footer}>
