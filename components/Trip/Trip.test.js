@@ -1,4 +1,4 @@
-describe('ListItem', () => {
+describe('Trip', () => {
   it.skip('should', () => {
 
   })
