@@ -3,10 +3,10 @@ import { Platform, Dimensions } from "react-native";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
 
-import CategoryList from '../components/CategoryList/CategoryList';
-import Home from "../components/Home/Home";
+import CategoryList from '../../components/CategoryList/CategoryList';
+import Home from "../../components/Home/Home";
 
-import MenuDrawer from "../navigation/MenuDrawer";
+import MenuDrawer from "../MenuDrawer/MenuDrawer";
 
 const screenWidth = Dimensions.get("window").width;
 

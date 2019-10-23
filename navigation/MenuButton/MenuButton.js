@@ -1,8 +1,8 @@
-import React from "react";
-import { StyleSheet } from "react-native";
+import React, { Component } from "react";
 import { Ionicons } from "@expo/vector-icons";
+import styles from './styles';
 
-export default class MenuButton extends React.Component {
+export default class MenuButton extends Component {
   render() {
     return (
       <Ionicons
@@ -15,12 +15,3 @@ export default class MenuButton extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  menuIcon: {
-    zIndex: 9,
-    position: "absolute",
-    top: 40,
-    left: 20
-  }
-});

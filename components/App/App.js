@@ -1,8 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
-import DrawerNavigator from '../../navigation/DrawerNavigator';
-import Home from '../Home/Home';
+import DrawerNavigator from '../../navigation/DrawerNavigator/DrawerNavigator';
 
 export default function App() {
   return (
