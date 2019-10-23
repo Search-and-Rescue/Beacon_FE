@@ -2,16 +2,18 @@ import React from 'react';
 import { View, Button } from 'react-native';
 import styles from './styles';
 
-const CategoryList = () => {
+import MenuButton from "../../navigation/MenuButton/MenuButton";
+
+const CategoryList = (props) => {
   return (
     <View style={styles.categoryContainer}>
-      <View style={styles.categoryList}>
-      </View>
+      <MenuButton navigation={props.navigation} />
+      <View style={styles.categoryList}></View>
       <View style={styles.listItemBtn}>
-        <Button title='Add' />
+        <Button title="Add" />
       </View>
     </View>
-  )
+  );
 }
 
 export default CategoryList;

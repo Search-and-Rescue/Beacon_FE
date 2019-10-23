@@ -36,7 +36,7 @@ export default class MenuDrawer extends React.Component {
                 />
               </View>
               <View style={styles.profileText}>
-                <Text style={styles.name}>Hays Stanford</Text>
+                <Text style={styles.name}>Beacon</Text>
               </View>
             </View>
           </View>
