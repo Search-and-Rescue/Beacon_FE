@@ -5,34 +5,31 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "lightgray"
   },
-  scroller: {
-    flex: 1
-  },
-  profile: {
+  header: {
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
     paddingTop: 25,
-    borderBottomWidth: 1,
-    borderBottomColor: "#777777"
+    borderBottomWidth: 4,
+    borderBottomColor: "red"
   },
-  profileText: {
+  headerText: {
     flex: 3,
     flexDirection: "column",
     justifyContent: "center"
   },
-  name: {
+  headerName: {
     fontSize: 20,
     paddingBottom: 5,
     color: "white",
     textAlign: "left"
   },
-  imgView: {
+  headerImage: {
     flex: 1,
     paddingLeft: 20,
     paddingRight: 20
   },
-  img: {
+  image: {
     height: 70,
     width: 70,
     borderRadius: 50
@@ -63,13 +60,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "lightgray"
   },
-  version: {
-    flex: 1,
-    textAlign: "right",
-    marginRight: 20,
-    color: "gray"
-  },
-  description: {
+  resources : {
     flex: 1,
     marginLeft: 20,
     fontSize: 16

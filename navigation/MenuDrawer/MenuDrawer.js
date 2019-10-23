@@ -3,9 +3,6 @@ import {
   View,
   Text,
   Image,
-  ScrollView,
-  Platform,
-  Dimensions,
   TouchableOpacity
 } from "react-native";
 import icon from '../../assets/icon.png';
@@ -26,30 +23,27 @@ export default class MenuDrawer extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.scroller}>
           <View style={styles.topLinks}>
-            <View style={styles.profile}>
-              <View style={styles.imgView}>
+            <View style={styles.header}>
+              <View style={styles.headerImage}>
                 <Image
-                  style={styles.img}
+                  style={styles.image}
                   source={icon}
                 />
               </View>
-              <View style={styles.profileText}>
-                <Text style={styles.name}>Beacon</Text>
+              <View style={styles.headerText}>
+                <Text style={styles.headerName}>Beacon</Text>
               </View>
             </View>
           </View>
           <View style={styles.bottomLinks}>
-            {this.navLink("Home", "Home")}
+            {this.navLink("Home", "Trips")}
             {this.navLink("Contacts", "Contacts")}
             {this.navLink("Gear", "Gear List")}
             {this.navLink("Vehicles", "Vehicles")}
           </View>
-        </ScrollView>
         <View style={styles.footer}>
-          <Text style={styles.description}>Menu Tutorial</Text>
-          <Text style={styles.version}>v1.0</Text>
+          <Text style={styles.resources}>Resources</Text>
         </View>
       </View>
     );
