@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should create a snapshot of the component with the correct data passed through 1`] = `
+<View
+  style={Object {}}
+>
+  <View
+    style={Object {}}
+  >
+    <Button
+      title="Add Trip"
+    />
+  </View>
+  <View
+    style={Object {}}
+  >
+    <Button
+      title="History/Edit Trip"
+    />
+  </View>
+</View>
+`;
