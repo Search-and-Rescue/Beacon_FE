@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem should create a snapshot of the component with the correct data passed through 1`] = `
+<View
+  style={Object {}}
+>
+  <View
+    style={Object {}}
+  >
+    <Button
+      title="Add"
+    />
+  </View>
+</View>
+`;
