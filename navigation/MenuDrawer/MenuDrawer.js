@@ -11,7 +11,7 @@ import {
 import icon from '../../assets/icon.png';
 import styles from './styles';
 
-export default class MenuDrawer extends React.Component {
+export default class MenuDrawer extends Component {
   navLink(nav, text) {
     return (
       <TouchableOpacity
