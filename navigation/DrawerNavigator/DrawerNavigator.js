@@ -17,13 +17,15 @@ const DrawerConfig = {
   }
 };
 
+let data = [{id: 1}, {id: 2}]
+
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: {
       screen: Home
     },
     Contacts: {
-      screen: CategoryList
+      screen: data => <CategoryList {...data} propName={data} />
     },
     Gear: {
       screen: CategoryList

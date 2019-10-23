@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   homeBtns: {
     borderWidth: 3,
     borderColor: 'red',
-    height: 250,
+    height: 225,
     marginHorizontal: 30,
     marginVertical: 20,
     width: 300
