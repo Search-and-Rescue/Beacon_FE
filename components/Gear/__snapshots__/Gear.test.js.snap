@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gear should match the snapshot with all of the data passed through 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+    }
+  }
+>
+  <Text>
+    Gear Page
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    name="item_name"
+    onChangeText={[Function]}
+    placeholder="item name"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <TextInput
+    allowFontScaling={true}
+    name="comments"
+    onChangeText={[Function]}
+    placeholder="comments"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Object {
+        "borderColor": "black",
+        "borderWidth": 1,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "textAlign": "center",
+        }
+      }
+    >
+      Update
+    </Text>
+  </TouchableOpacity>
+</View>
+`;
