@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contact should match the snapshot with all of the data passed through 1`] = `
+exports[`Vehicle should match the snapshot with all of the data passed through 1`] = `
 <View
   style={
     Object {
@@ -10,13 +10,13 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   }
 >
   <Text>
-    Contact Page
+    Vehicle Page
   </Text>
   <TextInput
     allowFontScaling={true}
-    name="name"
+    name="make"
     onChangeText={[Function]}
-    placeholder="name"
+    placeholder="make"
     rejectResponderTermination={true}
     style={
       Object {
@@ -33,9 +33,9 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   />
   <TextInput
     allowFontScaling={true}
-    name="phone"
+    name="model"
     onChangeText={[Function]}
-    placeholder="phone"
+    placeholder="model"
     rejectResponderTermination={true}
     style={
       Object {
@@ -52,9 +52,47 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   />
   <TextInput
     allowFontScaling={true}
-    name="email"
+    name="year"
     onChangeText={[Function]}
-    placeholder="email"
+    placeholder="year"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <TextInput
+    allowFontScaling={true}
+    name="color"
+    onChangeText={[Function]}
+    placeholder="color"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <TextInput
+    allowFontScaling={true}
+    name="license_plate"
+    onChangeText={[Function]}
+    placeholder="license plate"
     rejectResponderTermination={true}
     style={
       Object {
@@ -71,6 +109,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   />
   <TouchableOpacity
     activeOpacity={0.2}
+    onPress={[Function]}
     style={
       Object {
         "borderColor": "black",
