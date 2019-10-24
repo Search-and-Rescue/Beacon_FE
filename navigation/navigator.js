@@ -12,10 +12,17 @@ import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
 import CategoryList from '../components/CategoryList/CategoryList';
 import ListItem from '../components/ListItem/ListItem';
 
-const DashboardTabNavigator = createBottomTabNavigator(
+import ContactList from '../components/ContactList/ContactList';
+import Contact from '../components/Contact/Contact';
+import GearList from '../components/GearList/GearList';
+import Gear from '../components/Gear/Gear';
+import VehicleList from '../components/VehicleList/VehicleList';
+import Vehicle from '../components/Vehicle/Vehicle';
+
+const ContactDashboardTabNavigator = createBottomTabNavigator(
   {
-    CategoryList,
-    ListItem
+    ContactList,
+    Contact
   },
   {
     navigationOptions: ({ navigation }) => {
@@ -26,9 +33,40 @@ const DashboardTabNavigator = createBottomTabNavigator(
     }
   }
 );
+
+const GearDashboardTabNavigator = createBottomTabNavigator(
+  {
+    GearList,
+    Gear
+  },
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index];
+      return {
+        headerTitle: routeName
+      };
+    }
+  }
+);
+
+const VehicleDashboardTabNavigator = createBottomTabNavigator(
+  {
+    VehicleList,
+    Vehicle
+  },
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index];
+      return {
+        headerTitle: routeName
+      };
+    }
+  }
+);
+
 const GearStackNavigator = createStackNavigator(
   {
-    DashboardTabNavigator: DashboardTabNavigator
+    GearDashboardTabNavigator: GearDashboardTabNavigator
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -48,7 +86,7 @@ const GearStackNavigator = createStackNavigator(
 
 const ContactStackNavigator = createStackNavigator(
   {
-    DashboardTabNavigator: DashboardTabNavigator
+    ContactDashboardTabNavigator: ContactDashboardTabNavigator
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -68,7 +106,7 @@ const ContactStackNavigator = createStackNavigator(
 
 const VehicleStackNavigator = createStackNavigator(
   {
-    DashboardTabNavigator: DashboardTabNavigator
+    VehicleDashboardTabNavigator: VehicleDashboardTabNavigator
   },
   {
     defaultNavigationOptions: ({ navigation }) => {

@@ -2,16 +2,16 @@ import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
-import CategoryList from "../../components/CategoryList/CategoryList";
-import ListItem from "../../components/ListItem/ListItem";
+import VehicleList from "../../components/VehicleList/VehicleList";
+import Vehicle from "../../components/Vehicle/Vehicle";
 
 const VehicleStackNavigator = createStackNavigator(
   {
-    CategoryList: CategoryList,
-    ListItem: ListItem
+    VehicleList: VehicleList,
+    Vehicle: Vehicle
   },
   {
-    initialRouteName: "CategoryList"
+    initialRouteName: "VehicleList"
   }
 );
 

@@ -2,16 +2,16 @@ import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
-import CategoryList from "../../components/CategoryList/CategoryList";
-import ListItem from "../../components/ListItem/ListItem";
+import ContactList from '../../components/ContactList/ContactList';
+import Contact from "../../components/Contact/Contact";
 
 const ContactStackNavigator = createStackNavigator(
   {
-    CategoryList: CategoryList,
-    ListItem: ListItem
+    ContactList: ContactList,
+    Contact: Contact
   },
   {
-    initialRouteName: "CategoryList"
+    initialRouteName: "ContactList"
   }
 );
 

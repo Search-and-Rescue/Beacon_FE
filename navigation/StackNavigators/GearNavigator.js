@@ -2,16 +2,16 @@ import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
-import CategoryList from "../../components/CategoryList/CategoryList";
-import ListItem from "../../components/ListItem/ListItem";
+import GearList from "../../components/GearList/GearList";
+import Gear from "../../components/Gear/Gear";
 
 const GearStackNavigator = createStackNavigator(
   {
-    CategoryList: CategoryList,
-    ListItem: ListItem
+    GearList: GearList,
+    Gear: Gear
   },
   {
-    initialRouteName: "CategoryList"
+    initialRouteName: "GearList"
   }
 );
 
