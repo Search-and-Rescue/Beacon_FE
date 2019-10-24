@@ -14,9 +14,9 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
   </Text>
   <TextInput
     allowFontScaling={true}
-    name="name"
+    name="item_name"
     onChangeText={[Function]}
-    placeholder="name"
+    placeholder="item name"
     rejectResponderTermination={true}
     style={
       Object {
