@@ -11,9 +11,9 @@ export default class Profile extends Component {
   render() {
   return (
     <View>
-      <MenuButton navigation={this.props.navigation} />
       <View style={styles.categoryContainer}>
         <View style={styles.categoryList}></View>
+        <Text>Category List Page</Text>
         <View style={styles.listItemBtn}>
           <Button
             title="Add Item"

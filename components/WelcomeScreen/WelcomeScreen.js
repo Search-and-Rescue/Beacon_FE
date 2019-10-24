@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Button } from "react-native";
+import { View, Text, Button } from "react-native";
+import styles from './styles';
 
 export default class LoginScreen extends Component {
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View style={styles.login}>
+        <Text>Welcome Screen Page</Text>
         <Button
           title="Login"
           onPress={() => this.props.navigation.navigate("Dashboard")}

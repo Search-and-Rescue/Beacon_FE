@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import styles from './styles';
 
 export default class ListItem extends Component {
@@ -14,7 +14,12 @@ export default class ListItem extends Component {
     return (
       <View style={styles.listItemContainer}>
         <View style={styles.listItemBtn}>
-          <Text>List Item</Text>
+          <Text>List Item Page</Text>
+          <Button
+            title="Update"
+            style={styles.addItemBtn}
+            onPress={() => this.props.navigation.navigate("CategoryList")}
+          />
         </View>
       </View>
     );

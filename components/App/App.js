@@ -10,11 +10,10 @@ import { createAppContainer } from "react-navigation";
 import Icon from "@expo/vector-icons/Ionicons";
 import styles from './styles';
 
-import LoginScreen from '../../WelcomeScreen';
-import Feed from '../../Feed';
+import Home from '../../components/Home/Home';
+import LoginScreen from '../WelcomeScreen/WelcomeScreen';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import ListItem from '../../components/ListItem/ListItem';
-import Settings from '../../Settings';
 
 class App extends Component {
   render() {
@@ -59,16 +58,16 @@ const DashboardStackNavigator = createStackNavigator(
 
 const AppDrawerNavigator = createDrawerNavigator({
   Trips: {
-    screen: DashboardStackNavigator
+    screen: Home
   },
   Contacts: {
-    screen: CategoryList
+    screen: DashboardStackNavigator
   },
   Gear: {
-    screen: CategoryList
+    screen: DashboardStackNavigator
   },
   Vehicles: {
-    screen: CategoryList
+    screen: DashboardStackNavigator
   }
 });
 
@@ -78,16 +77,3 @@ const AppSwitchNavigator = createSwitchNavigator({
 });
 
 const AppContainer = createAppContainer(AppSwitchNavigator);
-
-/**
- * - AppSwitchNavigator
- *    - LoginScreen
- *      - Login Button
- *      - Sign Up Button
- *    - AppDrawerNavigator
- *          - Dashboard - DashboardStackNavigator(needed for header and to change the header based on the tab)
- *            - DashboardTabNavigator
- *              - Tab 2 - ProfileStack
- *              - Tab 3 - SettingsStack
- *            - Any files you don't want to be a part of the Tab Navigator can go here.
- */
