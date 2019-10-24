@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
 
-class ListItem extends Component {
-  constructor() {
-    super();
+export default class ListItem extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
 
     }
@@ -14,11 +14,9 @@ class ListItem extends Component {
     return (
       <View style={styles.listItemContainer}>
         <View style={styles.listItemBtn}>
-          <Button title='Add' />
+          <Text>List Item</Text>
         </View>
       </View>
-    )
+    );
   }
 }
-
-export default ListItem;

@@ -1,24 +1,28 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Button } from 'react-native';
 import styles from './styles';
 
 import MenuButton from "../../navigation/MenuButton/MenuButton";
 
-const CategoryList = (props) => {
-  const { routeName } = props.navigation.state;
+export default class Profile extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
   return (
     <View>
-      <MenuButton navigation={props.navigation} />
+      <MenuButton navigation={this.props.navigation} />
       <View style={styles.categoryContainer}>
         <View style={styles.categoryList}></View>
         <View style={styles.listItemBtn}>
-          <TouchableOpacity title="Add Item">
-            <Text style={styles.addItemBtn}>{`Add ${routeName}`}</Text>
-          </TouchableOpacity>
+          <Button
+            title="Add Item"
+            style={styles.addItemBtn}
+            onPress={() => this.props.navigation.navigate("ListItem")}
+          />
         </View>
       </View>
     </View>
   );
 }
-
-export default CategoryList;
+}
