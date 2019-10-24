@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import styles from './styles';
 
-import MenuButton from "../../navigation/MenuButton/MenuButton";
-
 export default class Profile extends Component {
   constructor(props) {
     super(props)

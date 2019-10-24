@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import AppRegistry from "react-native";
-import { View, StyleSheet, Text, Button } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -8,7 +6,6 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
-import styles from './styles';
 
 import Home from '../../components/Home/Home';
 import LoginScreen from '../WelcomeScreen/WelcomeScreen';
