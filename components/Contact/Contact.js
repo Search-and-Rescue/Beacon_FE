@@ -12,6 +12,16 @@ export default class Contact extends Component {
     };
   }
 
+  handleSubmit = () => {
+    const { navigation } = this.props;
+    navigation.navigate("ContactList");
+    this.setState({
+      name: "",
+      phone: "",
+      email: ""
+    });
+  }
+
   render() {
     return (
       <View style={styles.contactContainer}>
@@ -35,7 +45,7 @@ export default class Contact extends Component {
           value={this.state.email}
           name="email" />
         <TouchableOpacity style={styles.updateBtn}
-          onPress={() => this.props.navigation.navigate("ContactList")} >
+          onPress={this.handleSubmit} >
           <Text style={styles.updateBtnText}>Update</Text>
         </TouchableOpacity>
       </View>
