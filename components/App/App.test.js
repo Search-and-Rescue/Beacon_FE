@@ -7,7 +7,8 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
-jest.mock('../../navigation/DrawerNavigator/DrawerNavigator', () => 'DrawerNavigator');
+jest.mock('../../navigation/navigator', () => 'AppContainer');
+
 
 describe('App', () => {
   it('should match the snapshot with all of the data passed through', () => {
