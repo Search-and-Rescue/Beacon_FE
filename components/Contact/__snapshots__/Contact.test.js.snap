@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact should match the snapshot with all of the data passed through 1`] = `
+<View>
+  <View>
+    <Text>
+      Contact Page
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      name="name"
+      onChangeText={[Function]}
+      placeholder="name"
+      rejectResponderTermination={true}
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      name="phone"
+      onChangeText={[Function]}
+      placeholder="phone"
+      rejectResponderTermination={true}
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      name="email"
+      onChangeText={[Function]}
+      placeholder="email"
+      rejectResponderTermination={true}
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Text>
+        Update
+      </Text>
+    </TouchableOpacity>
+  </View>
+</View>
+`;
