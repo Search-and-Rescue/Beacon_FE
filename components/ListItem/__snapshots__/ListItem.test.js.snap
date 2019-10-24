@@ -7,8 +7,12 @@ exports[`ListItem should match the snapshot with all of the data passed through 
   <View
     style={Object {}}
   >
+    <Text>
+      List Item Page
+    </Text>
     <Button
-      title="Add"
+      onPress={[Function]}
+      title="Update"
     />
   </View>
 </View>

@@ -5,7 +5,6 @@ import { createAppContainer } from "react-navigation";
 
 import CategoryList from '../../components/CategoryList/CategoryList';
 import Home from "../../components/Home/Home";
-
 import MenuDrawer from "../MenuDrawer/MenuDrawer";
 
 const screenWidth = Dimensions.get("window").width;
@@ -17,15 +16,13 @@ const DrawerConfig = {
   }
 };
 
-let data = [{id: 1}, {id: 2}]
-
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: {
       screen: Home
     },
     Contacts: {
-      screen: data => <CategoryList {...data} propName={data} />
+      screen: CategoryList
     },
     Gear: {
       screen: CategoryList
