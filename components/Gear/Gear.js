@@ -1,24 +1,46 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 export default class Gear extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      item_name: "",
+      comments: ""
+    };
   }
+
+  handleSubmit = () => {
+    const { navigation } = this.props;
+    navigation.navigate("GearList");
+    this.setState({
+      item_name: "",
+      comments: ""
+    });
+  };
 
   render() {
     return (
-      <View style={styles.listItemContainer}>
-        <View style={styles.listItemBtn}>
-          <Text>Gear Page</Text>
-          <Button
-            title="Update a gear"
-            style={styles.addItemBtn}
-            onPress={() => this.props.navigation.navigate("GearList")}
-          />
-        </View>
+      <View style={styles.gearContainer}>
+        <Text>Gear Page</Text>
+        <TextInput
+          placeholder="item name"
+          style={styles.input}
+          onChangeText={text => this.setState({ item_name: text })}
+          value={this.state.item_name}
+          name="item_name"
+        />
+        <TextInput
+          placeholder="comments"
+          style={styles.input}
+          onChangeText={text => this.setState({ comments: text })}
+          value={this.state.comments}
+          name="comments"
+        />
+        <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
+          <Text style={styles.updateBtnText}>Update</Text>
+        </TouchableOpacity>
       </View>
     );
   }
