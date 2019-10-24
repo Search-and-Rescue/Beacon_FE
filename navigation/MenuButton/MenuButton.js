@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Ionicons } from "@expo/vector-icons";
-import styles from './styles';
+import styles from "./styles";
 
 export default class MenuButton extends Component {
   render() {

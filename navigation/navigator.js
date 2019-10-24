@@ -12,11 +12,17 @@ import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
 import CategoryList from '../components/CategoryList/CategoryList';
 import ListItem from '../components/ListItem/ListItem';
 
+import ContactList from '../components/ContactList/ContactList';
+import Contact from '../components/Contact/Contact';
+import GearList from '../components/GearList/GearList';
+import Gear from '../components/Gear/Gear';
+import VehicleList from '../components/VehicleList/VehicleList';
+import Vehicle from '../components/Vehicle/Vehicle';
 
-const DashboardTabNavigator = createBottomTabNavigator(
+const ContactDashboardTabNavigator = createBottomTabNavigator(
   {
-    CategoryList,
-    ListItem
+    ContactList,
+    Contact
   },
   {
     navigationOptions: ({ navigation }) => {
@@ -27,9 +33,80 @@ const DashboardTabNavigator = createBottomTabNavigator(
     }
   }
 );
-const DashboardStackNavigator = createStackNavigator(
+
+const GearDashboardTabNavigator = createBottomTabNavigator(
   {
-    DashboardTabNavigator: DashboardTabNavigator
+    GearList,
+    Gear
+  },
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index];
+      return {
+        headerTitle: routeName
+      };
+    }
+  }
+);
+
+const VehicleDashboardTabNavigator = createBottomTabNavigator(
+  {
+    VehicleList,
+    Vehicle
+  },
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index];
+      return {
+        headerTitle: routeName
+      };
+    }
+  }
+);
+
+const GearStackNavigator = createStackNavigator(
+  {
+    GearDashboardTabNavigator: GearDashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={40}
+          />
+        )
+      };
+    }
+  }
+);
+
+const ContactStackNavigator = createStackNavigator(
+  {
+    ContactDashboardTabNavigator: ContactDashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={40}
+          />
+        )
+      };
+    }
+  }
+);
+
+const VehicleStackNavigator = createStackNavigator(
+  {
+    VehicleDashboardTabNavigator: VehicleDashboardTabNavigator
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -52,13 +129,13 @@ const AppDrawerNavigator = createDrawerNavigator({
     screen: Home
   },
   Contacts: {
-    screen: DashboardStackNavigator
+    screen: ContactStackNavigator
   },
   Gear: {
-    screen: DashboardStackNavigator
+    screen: GearStackNavigator
   },
   Vehicles: {
-    screen: DashboardStackNavigator
+    screen: VehicleStackNavigator
   }
 });
 

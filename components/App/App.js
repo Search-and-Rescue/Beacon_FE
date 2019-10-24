@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AppContainer } from '../../navigation/navigator';
+import { AppContainer } from '../../navigation/Navigator';
 
 
 class App extends Component {
@@ -8,4 +8,3 @@ class App extends Component {
   }
 }
 export default App;
-
