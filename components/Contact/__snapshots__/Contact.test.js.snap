@@ -71,6 +71,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   />
   <TouchableOpacity
     activeOpacity={0.2}
+    onPress={[Function]}
     style={
       Object {
         "borderColor": "black",
