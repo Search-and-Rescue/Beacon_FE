@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
-
 import MenuButton from "../../navigation/MenuButton/MenuButton";
 
 const CategoryList = (props) => {
