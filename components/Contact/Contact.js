@@ -12,16 +12,6 @@ export default class Contact extends Component {
     };
   }
 
-  handleSubmit = () => {
-    const { navigation } = this.props;
-    navigation.navigate("ContactList");
-    this.setState({
-      name: "",
-      phone: "",
-      email: ""
-    });
-  }
-
   render() {
     return (
       <View style={styles.contactContainer}>
