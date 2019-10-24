@@ -2,10 +2,10 @@ import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
-import CategoryList from '../../components/CategoryList/CategoryList';
-import ListItem from '../../components/ListItem/ListItem';
+import CategoryList from "../../components/CategoryList/CategoryList";
+import ListItem from "../../components/ListItem/ListItem";
 
-const StackNavigator = createStackNavigator(
+const VehicleStackNavigator = createStackNavigator(
   {
     CategoryList: CategoryList,
     ListItem: ListItem
@@ -15,4 +15,4 @@ const StackNavigator = createStackNavigator(
   }
 );
 
-export default createAppContainer(StackNavigator);
+export default createAppContainer(VehicleStackNavigator);

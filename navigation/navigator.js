@@ -12,7 +12,6 @@ import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
 import CategoryList from '../components/CategoryList/CategoryList';
 import ListItem from '../components/ListItem/ListItem';
 
-
 const DashboardTabNavigator = createBottomTabNavigator(
   {
     CategoryList,
@@ -27,7 +26,47 @@ const DashboardTabNavigator = createBottomTabNavigator(
     }
   }
 );
-const DashboardStackNavigator = createStackNavigator(
+const GearStackNavigator = createStackNavigator(
+  {
+    DashboardTabNavigator: DashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={40}
+          />
+        )
+      };
+    }
+  }
+);
+
+const ContactStackNavigator = createStackNavigator(
+  {
+    DashboardTabNavigator: DashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={40}
+          />
+        )
+      };
+    }
+  }
+);
+
+const VehicleStackNavigator = createStackNavigator(
   {
     DashboardTabNavigator: DashboardTabNavigator
   },
@@ -52,13 +91,13 @@ const AppDrawerNavigator = createDrawerNavigator({
     screen: Home
   },
   Contacts: {
-    screen: DashboardStackNavigator
+    screen: ContactStackNavigator
   },
   Gear: {
-    screen: DashboardStackNavigator
+    screen: GearStackNavigator
   },
   Vehicles: {
-    screen: DashboardStackNavigator
+    screen: VehicleStackNavigator
   }
 });
 
