@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contact should match the snapshot with all of the data passed through 1`] = `
+exports[`Gear should match the snapshot with all of the data passed through 1`] = `
 <View
   style={
     Object {
@@ -10,7 +10,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   }
 >
   <Text>
-    Contact Page
+    Gear Page
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -33,28 +33,9 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   />
   <TextInput
     allowFontScaling={true}
-    name="phone"
+    name="comments"
     onChangeText={[Function]}
-    placeholder="phone"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-    value=""
-  />
-  <TextInput
-    allowFontScaling={true}
-    name="email"
-    onChangeText={[Function]}
-    placeholder="email"
+    placeholder="comments"
     rejectResponderTermination={true}
     style={
       Object {
