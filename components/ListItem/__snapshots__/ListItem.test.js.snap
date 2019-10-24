@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem should match the snapshot with all of the data passed through 1`] = `
+<View
+  style={Object {}}
+>
+  <View
+    style={Object {}}
+  >
+    <Text>
+      List Item Page
+    </Text>
+    <Button
+      onPress={[Function]}
+      title="Update"
+    />
+  </View>
+</View>
+`;

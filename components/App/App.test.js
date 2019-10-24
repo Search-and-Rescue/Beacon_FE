@@ -1,9 +1,17 @@
+import 'react-native';
 import React from 'react';
+import { shallow } from 'enzyme';
+import App from './App';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
+jest.mock('../../navigation/navigator', () => 'AppContainer');
+
 
 describe('App', () => {
-
-  it('should pass this test', () => {
-    expect(true).toEqual(true);
+  it('should match the snapshot with all of the data passed through', () => {
+    expect(shallow(<App />)).toMatchSnapshot();
   });
-
 });

@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
-class Trip extends Component (){
-  constructor() {
-    super();
-    this.state = {
-
-    }
-  }
+class Trip extends Component {
 
   render() {
     return (

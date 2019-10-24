@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should match the snapshot with all of the data passed through 1`] = `
+<Component
+  hardwareAccelerated={false}
+  visible={true}
+>
+  <View
+    style={Object {}}
+  >
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Email"
+      rejectResponderTermination={true}
+      style={Object {}}
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Password"
+      rejectResponderTermination={true}
+      style={Object {}}
+      underlineColorAndroid="transparent"
+    />
+    <View
+      style={Object {}}
+    >
+      <Button
+        title="login"
+      />
+    </View>
+  </View>
+</Component>
+`;

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trip should match the snapshot with all of the data passed through 1`] = `
+<View>
+  <Text>
+    Temp Emergency Contact
+  </Text>
+  <Text>
+    Temp Gear
+  </Text>
+  <Text>
+    Temp Vehicle 
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    placeholder="Starting point"
+    rejectResponderTermination={true}
+    style={Object {}}
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    placeholder="Ending point"
+    rejectResponderTermination={true}
+    style={Object {}}
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    placeholder="Start date"
+    rejectResponderTermination={true}
+    style={Object {}}
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    placeholder="Start time"
+    rejectResponderTermination={true}
+    style={Object {}}
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    placeholder="End date"
+    rejectResponderTermination={true}
+    style={Object {}}
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    placeholder="End time"
+    rejectResponderTermination={true}
+    style={Object {}}
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    placeholder="Notification time"
+    rejectResponderTermination={true}
+    style={Object {}}
+    underlineColorAndroid="transparent"
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+  >
+    <View
+      style={Object {}}
+    >
+      <Text>
+        Add Trip
+      </Text>
+    </View>
+  </TouchableOpacity>
+</View>
+`;

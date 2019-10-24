@@ -1,16 +1,6 @@
 import React, { Component } from "react";
-import { createSwitchNavigator } from "react-navigation";
-import { createDrawerNavigator } from "react-navigation-drawer";
-import { createBottomTabNavigator } from "react-navigation-tabs";
-import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
+import { AppContainer } from '../../navigation/navigator';
 
-import Icon from "@expo/vector-icons/Ionicons";
-
-import Home from '../../components/Home/Home';
-import LoginScreen from '../WelcomeScreen/WelcomeScreen';
-import CategoryList from '../../components/CategoryList/CategoryList';
-import ListItem from '../../components/ListItem/ListItem';
 
 class App extends Component {
   render() {
@@ -19,58 +9,3 @@ class App extends Component {
 }
 export default App;
 
-const DashboardTabNavigator = createBottomTabNavigator(
-  {
-    CategoryList,
-    ListItem
-  },
-  {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    }
-  }
-);
-const DashboardStackNavigator = createStackNavigator(
-  {
-    DashboardTabNavigator: DashboardTabNavigator
-  },
-  {
-    defaultNavigationOptions: ({ navigation }) => {
-      return {
-        headerLeft: (
-          <Icon
-            style={{ paddingLeft: 10 }}
-            onPress={() => navigation.openDrawer()}
-            name="md-menu"
-            size={40}
-          />
-        )
-      };
-    }
-  }
-);
-
-const AppDrawerNavigator = createDrawerNavigator({
-  Trips: {
-    screen: Home
-  },
-  Contacts: {
-    screen: DashboardStackNavigator
-  },
-  Gear: {
-    screen: DashboardStackNavigator
-  },
-  Vehicles: {
-    screen: DashboardStackNavigator
-  }
-});
-
-const AppSwitchNavigator = createSwitchNavigator({
-  Login: { screen: LoginScreen },
-  Dashboard: { screen: AppDrawerNavigator }
-});
-
-const AppContainer = createAppContainer(AppSwitchNavigator);

@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import styles from './styles';
+// import MenuButton from "../../navigation/MenuButton/MenuButton";
 
-export default class Profile extends Component {
+// const CategoryList = (props) => {
+//   const { routeName } = props.navigation.state;
+
+export default class CategoryList extends Component {
   constructor(props) {
     super(props)
   }
+
   render() {
   return (
     <View>

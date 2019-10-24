@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should match the snapshot with all of the data passed through 1`] = `
+<View>
+  <MenuButton
+    navigation={
+      Object {
+        "state": Object {
+          "routeName": "Profile",
+        },
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "grey",
+        "marginTop": 80,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderColor": "red",
+          "borderWidth": 3,
+          "height": 225,
+          "marginHorizontal": 30,
+          "marginVertical": 20,
+          "width": 300,
+        }
+      }
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        title="Add Trip"
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 38,
+              "marginTop": 20,
+            }
+          }
+        >
+          Add Trip
+        </Text>
+      </TouchableOpacity>
+    </View>
+    <View
+      style={
+        Object {
+          "borderColor": "red",
+          "borderWidth": 3,
+          "height": 225,
+          "marginHorizontal": 30,
+          "marginVertical": 20,
+          "width": 300,
+        }
+      }
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        title="History/Edit Trip"
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 38,
+              "marginTop": 20,
+            }
+          }
+        >
+          Edit Trip History
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+</View>
+`;
