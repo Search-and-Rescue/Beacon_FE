@@ -13,6 +13,5 @@ exports[`App should match the snapshot with all of the data passed through 1`] =
   }
 >
   <Component />
-  ;
 </Provider>
 `;
