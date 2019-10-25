@@ -3,13 +3,17 @@ const styles = {
     flex: 1,
     alignItems: "center"
   },
+  profileScroll: {
+    borderWidth: 1,
+    borderColor: 'red',
+    width: "80%"
+  },
   input: {
     backgroundColor: "#fff",
     borderColor: "black",
     borderWidth: 1,
     marginBottom: 10,
     padding: 10,
-    width: "80%"
   },
   updateBtn: {
     borderColor: "black",

@@ -11,7 +11,7 @@ import Home from '../components/Home/Home';
 import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
 import CategoryList from '../components/CategoryList/CategoryList';
 import ListItem from '../components/ListItem/ListItem';
-
+import Profile from '../components/Profile/Profile';
 import ContactList from '../components/ContactList/ContactList';
 import Contact from '../components/Contact/Contact';
 import GearList from '../components/GearList/GearList';
@@ -127,6 +127,9 @@ const VehicleStackNavigator = createStackNavigator(
 const AppDrawerNavigator = createDrawerNavigator({
   Trips: {
     screen: Home
+  },
+  Profile: {
+    screen: Profile
   },
   Contacts: {
     screen: ContactStackNavigator
