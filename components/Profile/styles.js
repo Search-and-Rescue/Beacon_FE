@@ -3,7 +3,7 @@ const styles = {
     flex: 1,
     alignItems: "center"
   },
-  profileScroll: {
+  profileFlatList: {
     borderWidth: 1,
     borderColor: 'red',
     width: "80%"
