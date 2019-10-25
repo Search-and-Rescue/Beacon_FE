@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GearList should match the snapshot with all of the data passed through 1`] = `
+<View>
+  <View>
+    <View />
+    <Text>
+      Gear List Page
+    </Text>
+    <View>
+      <Button
+        onPress={[Function]}
+        title="Go to a Gear"
+      />
+    </View>
+  </View>
+</View>
+`;
