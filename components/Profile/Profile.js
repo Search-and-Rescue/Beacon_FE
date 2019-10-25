@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import styles from "./styles";
+import { ScrollView } from "react-native-gesture-handler";
 
 class Profile extends Component {
   constructor() {
@@ -54,6 +55,7 @@ class Profile extends Component {
     return (
       <View style={styles.profileContainer}>
         <Text>Profile Page</Text>
+        <ScrollView style={styles.profileScroll}>
         <TextInput
           placeholder="name"
           style={styles.input}
@@ -79,18 +81,21 @@ class Profile extends Component {
           value={this.state.state}
           name="state" />
         <TextInput
+          keyboardType={'numeric'}
           placeholder="zip code"
           style={styles.input}
           onChangeText={(text) => this.setState({ zip: text })}
-          value={this.state.zip}
+          value={`${this.state.zip}`}
           name="zip" />
         <TextInput
+          keyboardType={'phone-pad'}
           placeholder= "phone"
           style={styles.input}
           onChangeText={(text) => this.setState({ phone: text })}
           value={this.state.phone}
           name= "phone" />
         <TextInput
+          keyboardType={'email-address'}
           placeholder="email"
           style={styles.input}
           onChangeText={(text) => this.setState({ email: text })}
@@ -109,10 +114,11 @@ class Profile extends Component {
           value={this.state.allergies}
           name="allergies" />
         <TextInput
+          keyboardType={'numeric'}
           placeholder="experience_level"
           style={styles.input}
           onChangeText={(text) => this.setState({ experience_level: text })}
-          value={this.state.experience_level}
+          value={`${this.state.experience_level}`}
           name="experience_level" />
           <TextInput
           placeholder="birthdate"
@@ -121,10 +127,11 @@ class Profile extends Component {
           value={this.state.birthdate}
           name="birthdate" />
           <TextInput
+          keyboardType={'numeric'}
           placeholder="weight"
           style={styles.input}
           onChangeText={(text) => this.setState({ weight: text })}
-          value={this.state.weight}
+          value={`${this.state.weight}`}
           name="weight" />
           <TextInput
           placeholder="height"
@@ -154,8 +161,9 @@ class Profile extends Component {
           placeholder="COSAR card"
           style={styles.input}
           onChangeText={(text) => this.setState({ COSAR_card: text })}
-          value={this.state.COSAR_card}
+          value={`${this.state.COSAR_card}`}
           name="COSAR_card" />
+        </ScrollView>
         <TouchableOpacity style={styles.updateBtn}
           onPress={this.handleSubmit} >
           <Text style={styles.updateBtnText}>Update</Text>
