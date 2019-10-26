@@ -10,14 +10,29 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
   }
 >
   <Text>
-    Temp Emergency Contact
+    State is 
+    0
   </Text>
+  <Button
+    onPress={[Function]}
+    title="Choose Experience Level: "
+  />
   <Text>
-    Temp Gear
+    State is 
+    0
   </Text>
+  <Button
+    onPress={[Function]}
+    title="Choose Emergency Contact: "
+  />
   <Text>
-    Temp Vehicle 
+    State is 
+    0
   </Text>
+  <Button
+    onPress={[Function]}
+    title="Choose Vehicle: "
+  />
   <TextInput
     allowFontScaling={true}
     placeholder="Starting point"
@@ -130,6 +145,297 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     }
     underlineColorAndroid="transparent"
   />
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "bottom": 30,
+          "left": 10,
+          "margin": 5,
+          "padding": 20,
+          "position": "absolute",
+          "right": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+            "marginBottom": 5,
+          }
+        }
+      >
+        Select Experience Level:
+      </Text>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="0"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Beginner
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="1"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Intermediate
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="2"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Advanced
+        </Text>
+      </TouchableHighlight>
+    </View>
+  </Component>
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "bottom": 30,
+          "left": 10,
+          "margin": 5,
+          "padding": 20,
+          "position": "absolute",
+          "right": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+            "marginBottom": 5,
+          }
+        }
+      >
+        Select Emergency Contact:
+      </Text>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="0"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Mom
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="1"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Dad
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="2"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          John
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="3"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Jane
+        </Text>
+      </TouchableHighlight>
+    </View>
+  </Component>
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "bottom": 30,
+          "left": 10,
+          "margin": 5,
+          "padding": 20,
+          "position": "absolute",
+          "right": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+            "marginBottom": 5,
+          }
+        }
+      >
+        Select Vehicle:
+      </Text>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="0"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Toyota
+           
+          Tacoma 1
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="1"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Toyota
+           
+          Tacoma 2
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="2"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Toyota
+           
+          Tacoma 3
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="3"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Toyota
+           
+          Tacoma 4
+        </Text>
+      </TouchableHighlight>
+    </View>
+  </Component>
   <TouchableOpacity
     activeOpacity={0.2}
   >
