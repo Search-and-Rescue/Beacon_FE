@@ -21,4 +21,24 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type of SET_CONTACTS', () => {
+    const mockContact = {
+      name: 'Sam Freeman',
+      password: '303-1111',
+      email: 'samF@gmail.com'
+    };
+    const expectedAction = {
+      type: 'SET_CONTACTS',
+      contacts: {
+        name: 'Sam Freeman',
+        password: '303-1111',
+        email: 'samF@gmail.com'
+      }
+    }
+
+    const result = actions.setEmergencyContacts(mockContact);
+
+    expect(result).toEqual(expectedAction);
+  });
+
 });
