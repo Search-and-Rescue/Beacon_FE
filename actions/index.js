@@ -18,5 +18,10 @@ export const setGear = gear => ({
   gear
 })
 
+export const setTrips = trips => ({
+  type: 'SET_TRIPS',
+  trips
+})
+
 
 
