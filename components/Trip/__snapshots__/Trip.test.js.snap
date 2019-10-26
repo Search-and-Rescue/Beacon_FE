@@ -15,7 +15,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
   </Text>
   <Button
     onPress={[Function]}
-    title="Choose Experience Level: "
+    title="Add Emergency Contact"
   />
   <Text>
     State is 
@@ -23,15 +23,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
   </Text>
   <Button
     onPress={[Function]}
-    title="Choose Emergency Contact: "
-  />
-  <Text>
-    State is 
-    0
-  </Text>
-  <Button
-    onPress={[Function]}
-    title="Choose Vehicle: "
+    title="Add Vehicle"
   />
   <TextInput
     allowFontScaling={true}
@@ -145,89 +137,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     }
     underlineColorAndroid="transparent"
   />
-  <Component
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
-        Object {
-          "backgroundColor": "#efefef",
-          "bottom": 30,
-          "left": 10,
-          "margin": 5,
-          "padding": 20,
-          "position": "absolute",
-          "right": 10,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontWeight": "bold",
-            "marginBottom": 5,
-          }
-        }
-      >
-        Select Experience Level:
-      </Text>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="0"
-        onPress={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Beginner
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="1"
-        onPress={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Intermediate
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="2"
-        onPress={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Advanced
-        </Text>
-      </TouchableHighlight>
-    </View>
-  </Component>
   <Component
     animationType="slide"
     hardwareAccelerated={false}
