@@ -10,7 +10,7 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
   }
 >
   <Text>
-    Vehicle Page
+    Make
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -29,8 +29,11 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="Ford"
   />
+  <Text>
+    Model
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="model"
@@ -48,8 +51,11 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="F150"
   />
+  <Text>
+    Year
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="year"
@@ -67,8 +73,11 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="2010"
   />
+  <Text>
+    Color
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="color"
@@ -86,13 +95,38 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="silver"
   />
+  <Text>
+    License Plate
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="license_plate"
     onChangeText={[Function]}
     placeholder="license plate"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <Text>
+    License State
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    name="state"
+    onChangeText={[Function]}
+    placeholder="license state"
     rejectResponderTermination={true}
     style={
       Object {

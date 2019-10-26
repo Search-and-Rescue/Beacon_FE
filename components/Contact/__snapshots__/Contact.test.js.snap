@@ -10,7 +10,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
   }
 >
   <Text>
-    Contact Page
+    Name
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -29,8 +29,11 @@ exports[`Contact should match the snapshot with all of the data passed through 1
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="Mom"
   />
+  <Text>
+    Phone number
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="phone"
@@ -48,8 +51,11 @@ exports[`Contact should match the snapshot with all of the data passed through 1
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="123 456 7890"
   />
+  <Text>
+    Email address
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="email"
@@ -67,7 +73,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="mom@email.com"
   />
   <TouchableOpacity
     activeOpacity={0.2}

@@ -24,6 +24,7 @@ exports[`ContactList should match the snapshot with all of the data passed throu
     >
       <Component
         key="Beans"
+        onPress={[Function]}
         style={
           Object {
             "backgroundColor": "#efefef",

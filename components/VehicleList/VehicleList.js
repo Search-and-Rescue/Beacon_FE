@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import styles from "./styles";
 
 export class VehicleList extends Component {
@@ -9,23 +9,28 @@ export class VehicleList extends Component {
     super(props);
   }
 
+  editVehicle = vehicle => {
+    this.props.navigation.navigate("Vehicle", { vehicle });
+  };
+
   render() {
-    const itemLinks = this.props.vehicles.map(vehicle => {
+    const vehicleLinks = this.props.vehicles.map(vehicle => {
       return (
-        <TouchableOpacity
-          key={vehicle.id}
+        <TouchableOpacity 
+          key={vehicle.id} 
           style={styles.vehiclesLink}
-        >
-          <Text style={styles.vehiclesName}>{vehicle.make}</Text>
+          onPress={() => this.editVehicle(vehicle)}
+          >
+          <Text style={styles.vehiclesName}>{vehicle.year} {vehicle.make} {vehicle.model}</Text>
         </TouchableOpacity>
-      )
+      );
     });
 
     return (
       <View>
         <View style={styles.vehiclesListContainer}>
           <ScrollView style={styles.vehiclesList}>
-            {itemLinks}
+            {vehicleLinks}
           </ScrollView>
           <TouchableOpacity
             style={styles.addItemBtn}
