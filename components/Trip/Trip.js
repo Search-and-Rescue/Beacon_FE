@@ -6,7 +6,7 @@ class Trip extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.tripContainer}>
         <Text>Temp Emergency Contact</Text>
         <Text>Temp Gear</Text>
         <Text>Temp Vehicle </Text>
@@ -32,8 +32,8 @@ class Trip extends Component {
           placeholder='Notification time'
           style={styles.input} />
         <TouchableOpacity>
-          <View style={styles.addBtn}>
-            <Text>Add Trip</Text>
+          <View style={styles.updateBtn}>
+            <Text style={styles.updateBtnText}>Add Trip</Text>
           </View>
         </TouchableOpacity>
       </View>
