@@ -6,22 +6,22 @@ const styles = {
   },
   gearList: {
     borderWidth: 2,
-    borderColor: "red",
+    borderColor: "black",
     flex: 1,
     height: 300,
     width: "90%"
   },
   gearLink: {
-    borderWidth: 2,
+    backgroundColor: '#efefef',
+    borderWidth: 1,
     borderColor: 'black',
     flex: 1,
-    height: 50,
+    height: 40,
     marginVertical: 5
   },
   gearName: {
-    flex: 1,
     fontSize: 28,
-    height: 20
+    paddingLeft: 5,
   },
   addItemBtn: {
     borderColor: "black",
