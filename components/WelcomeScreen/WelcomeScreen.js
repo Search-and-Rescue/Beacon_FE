@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from "react-native";
-import { getEmergencyContacts } from '../../util/apiCalls';
-import { setEmergencyContacts } from '../../actions';
+import { getEmergencyContacts, getVehicles } from '../../util/apiCalls';
+import { setEmergencyContacts, setVehicles } from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styles from './styles';
 
 export class LoginScreen extends Component {
   componentDidMount = async () => {
+    const { setEmergencyContacts, setVehicles } = this.props;
     try {
-      const { setEmergencyContacts } = this.props;
-      const userInfo = await getEmergencyContacts();
-      await setEmergencyContacts(userInfo.user.emergencyContacts);
+      const userInfoContacts = await getEmergencyContacts();
+      const userInfoVehicles = await getVehicles();
+      await setEmergencyContacts(userInfoContacts.user.emergencyContacts);
+      await setVehicles(userInfoVehicles.user.vehicles)
     } catch ({ message }) {
       console.log(message)
     }
@@ -39,6 +41,6 @@ export class LoginScreen extends Component {
   }
 }
 
-export const mapDispatchToProps = dispatch => bindActionCreators({ setEmergencyContacts }, dispatch);
+export const mapDispatchToProps = dispatch => bindActionCreators({ setEmergencyContacts, setVehicles }, dispatch);
 
 export default connect(null, mapDispatchToProps)(LoginScreen);
