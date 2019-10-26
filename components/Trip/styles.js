@@ -5,12 +5,12 @@ const styles = {
   },
   pickerView: {
     backgroundColor: '#efefef',
-    margin: 20,
+    margin: 5,
     padding: 20,
     position: 'absolute',
     bottom: 30,
-    left: 5,
-    right: 5
+    left: 10,
+    right: 10
   },
   modalHeading: {
     fontWeight: 'bold',
