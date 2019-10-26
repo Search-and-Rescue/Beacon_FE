@@ -79,4 +79,26 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type of SET_TRIPS', () => {
+    const mockTrips = [{
+      name: 'My trip',
+      starting_point: 'starting_point',
+      ending_point: 'ending_point',
+      traveling_companions: 'none'
+    }];
+    const expectedAction = {
+      type: 'SET_TRIPS',
+      trips: [{
+        name: 'My trip',
+        starting_point: 'starting_point',
+        ending_point: 'ending_point',
+        traveling_companions: 'none'
+      }]
+    };
+
+    const result = actions.setTrips(mockTrips);
+
+    expect(result).toEqual(expectedAction);
+  });
+
 });
