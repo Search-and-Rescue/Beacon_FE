@@ -10,7 +10,22 @@ configure({ adapter: new Adapter() });
 jest.mock('react-native-gesture-handler', () => 'TouchableOpacity');
 
 describe('GearList', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    const mockGear = [
+      {
+        id: 1,
+        item_name: "Sleeping bag",
+        description: "REI pink 0 degree down"
+      }
+    ]
+    wrapper = shallow(<GearList 
+      gear={mockGear}
+    />)
+  });
+
   it('should match the snapshot with all of the data passed through', () => {
-    expect(shallow(<GearList />)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

@@ -21,7 +21,7 @@ describe('ContactList', () => {
 
     wrapper = shallow(<ContactList
       contacts={mockContacts}
-       />);
+      />);
   });
 
   it('should match the snapshot with all of the data passed through', () => {

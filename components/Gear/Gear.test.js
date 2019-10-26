@@ -11,7 +11,6 @@ jest.mock('react-native-gesture-handler', () => "TouchableOpacity");
 
 describe("Gear", () => {
 
-  let wrapper, mockGear;
   beforeEach(() => {
     mockProps = {
       navigation: {
@@ -26,6 +25,7 @@ describe("Gear", () => {
         }
       }
     }
+
   });
 
   it("should match the snapshot with all of the data passed through", () => {
