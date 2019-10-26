@@ -133,17 +133,40 @@ class Trip extends Component {
           onRequestClose={() => console.log("close requested")}
         >
           <View style={styles.pickerView}>
-            <Text style={styles.experienceHeading}>
+            <Text style={styles.modalHeading}>
               Select Experience Level:
             </Text>
             {experienceLevels.map((level, index) => {
               return (
                 <TouchableHighlight
                   key={index}
-                  style={styles.experienceButton}
+                  style={styles.modalButton}
                   onPress={() => this.setExperience(level.value)}
                 >
                   <Text>{level.title}</Text>
+                </TouchableHighlight>
+              );
+            })}
+          </View>
+        </Modal>
+        <Modal
+          animationType={"slide"}
+          visible={this.state.contact_modal}
+          transparent={true}
+          onRequestClose={() => console.log("close requested")}
+        >
+          <View style={styles.pickerView}>
+            <Text style={styles.modalHeading}>
+              Select Emergency Contact:
+            </Text>
+            {contacts.map((contact, index) => {
+              return (
+                <TouchableHighlight
+                  key={index}
+                  style={styles.modalButton}
+                  onPress={() => this.setContact(contact.id)}
+                >
+                  <Text>{contact.name}</Text>
                 </TouchableHighlight>
               );
             })}

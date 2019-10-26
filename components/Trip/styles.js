@@ -12,11 +12,11 @@ const styles = {
     left: 5,
     right: 5
   },
-  experienceHeading: {
+  modalHeading: {
     fontWeight: 'bold',
     marginBottom: 5
   },
-  experienceButton: {
+  modalButton: {
     paddingVertical: 10,
     alignItems: 'center'
   },
