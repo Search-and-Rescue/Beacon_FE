@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import styles from './styles';
 
 export default class LoginScreen extends Component {
   render() {
     return (
-      <View style={styles.login}>
-        <Text>Welcome Screen Page</Text>
-        <Button
+      <View style={styles.loginContainer}>
+        <TouchableOpacity
+          style={styles.loginButton}
           title="Login"
           onPress={() => this.props.navigation.navigate("Dashboard")}
-        />
-        <Button title="Sign Up" onPress={() => alert("button pressed")} />
+        >
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.loginButton}
+          title="Login"
+          onPress={() => this.props.navigation.navigate("Dashboard")}
+        >
+          <Text style={styles.buttonText}>Sign Up</Text>
+        </TouchableOpacity>
       </View>
     );
   }
