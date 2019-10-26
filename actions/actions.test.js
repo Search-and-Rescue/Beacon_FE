@@ -61,4 +61,22 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type of SET_GEAR', () => {
+    const mockGear = [{
+      item_name: 'Sleeping bag',
+      comments: '1'
+    }];
+    const expectedAction = {
+      type: 'SET_GEAR',
+      gear: [{
+        item_name: 'Sleeping bag',
+        comments: '1'
+      }]
+    };
+
+    const result = actions.setGear(mockGear);
+
+    expect(result).toEqual(expectedAction);
+  });
+
 });
