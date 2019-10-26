@@ -21,6 +21,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
     onPress={[Function]}
     title="Choose Experience Level"
   />
+  <Text>
+    State is 
+    false
+  </Text>
   <Button
     onPress={[Function]}
     title="Add COSAR Card Status"

@@ -114,6 +114,7 @@ class Profile extends Component {
           onPress={() => this.toggleExperienceModal()}
           title={"Choose Experience Level"}
         ></Button>
+        <Text>State is {`${this.state.cosar_card}`}</Text>
         <Button
           onPress={() => this.toggleCosarModal()}
           title={"Add COSAR Card Status"}
@@ -146,7 +147,9 @@ class Profile extends Component {
           onRequestClose={() => console.log("close requested")}
         >
           <View style={styles.pickerView}>
-            <Text style={styles.modalHeading}>Owner of current COSAR Card:</Text>
+            <Text style={styles.modalHeading}>
+              Owner of current COSAR Card:
+            </Text>
             {cosars.map((cosar, index) => {
               return (
                 <TouchableHighlight
