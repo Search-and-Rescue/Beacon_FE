@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import styles from "./styles";
 
-export default class Gear extends Component {
+export class Gear extends Component {
   constructor(props) {
     super(props);
     const { gear } = this.props.navigation.state.params;
@@ -47,3 +48,5 @@ export default class Gear extends Component {
     );
   }
 }
+
+export default Gear;

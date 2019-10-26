@@ -9,8 +9,14 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     }
   }
 >
-  <Text>
-    Gear Page
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+      }
+    }
+  >
+    Item name:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -31,11 +37,20 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     underlineColorAndroid="transparent"
     value=""
   />
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+      }
+    }
+  >
+    Item description:
+  </Text>
   <TextInput
     allowFontScaling={true}
-    name="comments"
+    name="description"
     onChangeText={[Function]}
-    placeholder="comments"
+    placeholder="description"
     rejectResponderTermination={true}
     style={
       Object {
@@ -48,10 +63,9 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="REI red 2 person"
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
+  <Component
     onPress={[Function]}
     style={
       Object {
@@ -71,6 +85,6 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     >
       Update
     </Text>
-  </TouchableOpacity>
+  </Component>
 </View>
 `;
