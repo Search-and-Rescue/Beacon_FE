@@ -101,4 +101,26 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type of SET_CURRENT', () => {
+    const mockCurrentTrip = {
+      name: 'My trip',
+      starting_point: 'starting_point',
+      ending_point: 'ending_point',
+      traveling_companions: 'none'
+    };
+    const expectedAction = {
+      type: 'SET_CURRENT',
+      currentTrip: {
+        name: 'My trip',
+        starting_point: 'starting_point',
+        ending_point: 'ending_point',
+        traveling_companions: 'none'
+      }
+    };
+
+    const result = actions.setCurrentTrip(mockCurrentTrip);
+
+    expect(result).toEqual(expectedAction);
+  });
+
 });
