@@ -8,7 +8,7 @@ export class Gear extends Component {
     super(props);
     const { gear } = this.props.navigation.state.params;
     this.state = {
-      item_name: gear.item_name || "",
+      itemName: gear.itemName || "",
       description: gear.description || ""
     };
   }
@@ -17,7 +17,7 @@ export class Gear extends Component {
     const { navigation } = this.props;
     navigation.navigate("GearList");
     this.setState({
-      item_name: "",
+      itemName: "",
       description: ""
     });
   };
@@ -29,9 +29,9 @@ export class Gear extends Component {
         <TextInput
           placeholder="item name"
           style={styles.input}
-          onChangeText={text => this.setState({ item_name: text })}
-          value={this.state.item_name}
-          name="item_name"
+          onChangeText={text => this.setState({ itemName: text })}
+          value={this.state.itemName}
+          name="itemName"
         />
         <Text style={styles.label}>Item description:</Text>
         <TextInput
