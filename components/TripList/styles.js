@@ -1,5 +1,5 @@
 const styles = {
-  tripContainer: {
+  vehicleContainer: {
     flex: 1,
     alignItems: "center"
   },

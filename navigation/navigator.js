@@ -8,6 +8,8 @@ import { createAppContainer } from "react-navigation";
 import Icon from "@expo/vector-icons/Ionicons";
 
 import Home from '../components/Home/Home';
+import TripList from '../components/TripList/TripList';
+import Trip from '../components/Trip/Trip';
 import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
 import CategoryList from '../components/CategoryList/CategoryList';
 import ListItem from '../components/ListItem/ListItem';
@@ -18,6 +20,21 @@ import GearList from '../components/GearList/GearList';
 import Gear from '../components/Gear/Gear';
 import VehicleList from '../components/VehicleList/VehicleList';
 import Vehicle from '../components/Vehicle/Vehicle';
+
+const TripDashboardTabNavigator = createBottomTabNavigator(
+  {
+    TripList,
+    Trip
+  },
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index];
+      return {
+        headerTitle: routeName
+      };
+    }
+  }
+);
 
 const ContactDashboardTabNavigator = createBottomTabNavigator(
   {
@@ -59,6 +76,26 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
         headerTitle: routeName
+      };
+    }
+  }
+);
+
+const TripStackNavigator = createStackNavigator(
+  {
+    TripDashboardTabNavigator: TripDashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={40}
+          />
+        )
       };
     }
   }
@@ -126,7 +163,10 @@ const VehicleStackNavigator = createStackNavigator(
 
 const AppDrawerNavigator = createDrawerNavigator({
   Trips: {
-    screen: Home
+    screen: TripStackNavigator
+  },
+  Profile: {
+    screen: Profile
   },
   Profile: {
     screen: Profile
