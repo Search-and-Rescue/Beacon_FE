@@ -3,7 +3,7 @@ import { Button, ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import styles from "./styles";
 
-export default class GearList extends Component {
+export class GearList extends Component {
   constructor(props) {
     super(props);
   }
@@ -78,3 +78,5 @@ export default class GearList extends Component {
     );
   }
 }
+
+export default GearList;
