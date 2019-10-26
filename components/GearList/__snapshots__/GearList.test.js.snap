@@ -23,7 +23,7 @@ exports[`GearList should match the snapshot with all of the data passed through 
       }
     >
       <Component
-        key="1"
+        key="89"
         onPress={[Function]}
         style={
           Object {
@@ -44,132 +44,7 @@ exports[`GearList should match the snapshot with all of the data passed through 
             }
           }
         >
-          Sleeping Bag
-        </Text>
-      </Component>
-      <Component
-        key="2"
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "flex": 1,
-            "height": 40,
-            "marginVertical": 5,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 28,
-              "paddingLeft": 5,
-            }
-          }
-        >
-          Hiking boots
-        </Text>
-      </Component>
-      <Component
-        key="3"
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "flex": 1,
-            "height": 40,
-            "marginVertical": 5,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 28,
-              "paddingLeft": 5,
-            }
-          }
-        >
-          Snowshoes
-        </Text>
-      </Component>
-      <Component
-        key="4"
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "flex": 1,
-            "height": 40,
-            "marginVertical": 5,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 28,
-              "paddingLeft": 5,
-            }
-          }
-        >
-          Sleeping Bag
-        </Text>
-      </Component>
-      <Component
-        key="5"
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "flex": 1,
-            "height": 40,
-            "marginVertical": 5,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 28,
-              "paddingLeft": 5,
-            }
-          }
-        >
-          Hiking boots
-        </Text>
-      </Component>
-      <Component
-        key="6"
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "flex": 1,
-            "height": 40,
-            "marginVertical": 5,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 28,
-              "paddingLeft": 5,
-            }
-          }
-        >
-          Snowshoes
+          Rustic Iron Bottle
         </Text>
       </Component>
     </ScrollViewMock>

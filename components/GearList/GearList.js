@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Button, ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { connect } from 'react-redux';
 import styles from "./styles";
 
 export class GearList extends Component {
@@ -9,53 +10,20 @@ export class GearList extends Component {
   }
 
   render() {
-      const gearItems = [
-        {
-          id: 1,
-          item_name: "Sleeping Bag",
-          description: "REI 0 degree down, hot pink"
-        },
-        {
-          id: 2,
-          item_name: "Hiking boots",
-          description: "Salomon size 9 winter boots"
-        },
-        {
-          id: 3,
-          item_name: "Snowshoes",
-          description: "Atlas carbon fiber backcountry"
-        },
-        {
-          id: 4,
-          item_name: "Sleeping Bag",
-          description: "REI 0 degree down, hot pink"
-        },
-        {
-          id: 5,
-          item_name: "Hiking boots",
-          description: "Salomon size 9 winter boots"
-        },
-        {
-          id: 6,
-          item_name: "Snowshoes",
-          description: "Atlas carbon fiber backcountry"
-        }
-      ];
-
     editItem = (gear) => {
       this.props.navigation.navigate("Gear", 
       { gear }
       );
     };
 
-    const itemLinks = gearItems.map(gear => {
+    const itemLinks = this.props.gear.map(gear => {
       return (
         <TouchableOpacity
           key={gear.id}
           style={styles.gearLink}
           onPress={() => editItem(gear)}
         >
-          <Text style={styles.gearName}>{gear.item_name}</Text>
+          <Text style={styles.gearName}>{gear.itemName}</Text>
         </TouchableOpacity>
       );
     });
@@ -79,4 +47,8 @@ export class GearList extends Component {
   }
 }
 
-export default GearList;
+export const mapStateToProps = ({ gear }) => ({
+  gear
+});
+
+export default connect(mapStateToProps)(GearList);

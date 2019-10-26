@@ -11,14 +11,14 @@ describe('gear reducer', () => {
 
   it('should return the new state with the retrieved gear when SET_GEAR action is passed through', () => {
     const expected = [{
-      item_name: 'Sleeping bag',
+      itemName: 'Sleeping bag',
       comments: '1'
     }];
 
     const actionObj = {
       type: 'SET_GEAR',
       gear: [{
-        item_name: 'Sleeping bag',
+        itemName: 'Sleeping bag',
         comments: '1'
       }]
     };

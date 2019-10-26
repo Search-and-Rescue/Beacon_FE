@@ -63,13 +63,13 @@ describe('actions', () => {
 
   it('should have a type of SET_GEAR', () => {
     const mockGear = [{
-      item_name: 'Sleeping bag',
+      itemName: 'Sleeping bag',
       comments: '1'
     }];
     const expectedAction = {
       type: 'SET_GEAR',
       gear: [{
-        item_name: 'Sleeping bag',
+        itemName: 'Sleeping bag',
         comments: '1'
       }]
     };
