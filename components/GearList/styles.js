@@ -1,7 +1,6 @@
 const styles = {
   gearListContainer: {
     alignItems: "center",
-    backgroundColor: "orange",
     height: '96%',
     marginTop: 20
   },
@@ -21,7 +20,7 @@ const styles = {
   },
   gearName: {
     flex: 1,
-    fontSize: 38,
+    fontSize: 28,
     height: 20
   },
   addItemBtn: {

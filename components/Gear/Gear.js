@@ -5,9 +5,11 @@ import styles from "./styles";
 export default class Gear extends Component {
   constructor(props) {
     super(props);
+
+    const { gear } = this.props.navigation.state.params;
     this.state = {
-      item_name: "",
-      comments: ""
+      item_name: gear.item_name,
+      comments: gear.comments
     };
   }
 
@@ -21,7 +23,6 @@ export default class Gear extends Component {
   };
 
   render() {
-
     return (
       <View style={styles.gearContainer}>
         <Text>Gear Page</Text>
