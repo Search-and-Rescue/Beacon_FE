@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Trip should match the snapshot with all of the data passed through 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+    }
+  }
+>
   <Text>
     Temp Emergency Contact
   </Text>
@@ -15,58 +22,134 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     allowFontScaling={true}
     placeholder="Starting point"
     rejectResponderTermination={true}
-    style={Object {}}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
     underlineColorAndroid="transparent"
   />
   <TextInput
     allowFontScaling={true}
     placeholder="Ending point"
     rejectResponderTermination={true}
-    style={Object {}}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
     underlineColorAndroid="transparent"
   />
   <TextInput
     allowFontScaling={true}
     placeholder="Start date"
     rejectResponderTermination={true}
-    style={Object {}}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
     underlineColorAndroid="transparent"
   />
   <TextInput
     allowFontScaling={true}
     placeholder="Start time"
     rejectResponderTermination={true}
-    style={Object {}}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
     underlineColorAndroid="transparent"
   />
   <TextInput
     allowFontScaling={true}
     placeholder="End date"
     rejectResponderTermination={true}
-    style={Object {}}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
     underlineColorAndroid="transparent"
   />
   <TextInput
     allowFontScaling={true}
     placeholder="End time"
     rejectResponderTermination={true}
-    style={Object {}}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
     underlineColorAndroid="transparent"
   />
   <TextInput
     allowFontScaling={true}
     placeholder="Notification time"
     rejectResponderTermination={true}
-    style={Object {}}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginBottom": 10,
+        "padding": 10,
+        "width": "80%",
+      }
+    }
     underlineColorAndroid="transparent"
   />
   <TouchableOpacity
     activeOpacity={0.2}
   >
     <View
-      style={Object {}}
+      style={
+        Object {
+          "borderColor": "black",
+          "borderWidth": 1,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
     >
-      <Text>
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
         Add Trip
       </Text>
     </View>
