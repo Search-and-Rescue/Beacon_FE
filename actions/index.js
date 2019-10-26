@@ -13,3 +13,10 @@ export const setVehicles = vehicles => ({
   vehicles
 })
 
+export const setGear = gear => ({
+  type: 'SET_GEAR',
+  gear
+})
+
+
+
