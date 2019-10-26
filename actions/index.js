@@ -3,7 +3,13 @@ export const setUser = user => ({
   user
 })
 
-export const setEmergencyContact = contact => ({
-  type: 'SET_CONTACT',
-  contact
+export const setEmergencyContacts = contacts => ({
+  type: 'SET_CONTACTS',
+  contacts
 })
+
+export const setVehicles = vehicles => ({
+  type: 'SET_VEHICLES',
+  vehicles
+})
+
