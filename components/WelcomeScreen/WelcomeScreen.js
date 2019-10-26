@@ -41,6 +41,6 @@ export class LoginScreen extends Component {
   }
 }
 
-export const mapDispatchToProps = dispatch => bindActionCreators({ setEmergencyContacts }, dispatch);
+export const mapDispatchToProps = dispatch => bindActionCreators({ setEmergencyContacts, setVehicles }, dispatch);
 
 export default connect(null, mapDispatchToProps)(LoginScreen);
