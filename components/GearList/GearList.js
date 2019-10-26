@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { Button, ScrollView, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import styles from "./styles";
 
 export default class GearList extends Component {
@@ -8,18 +9,64 @@ export default class GearList extends Component {
   }
 
   render() {
+    const gearItems = [
+      {
+        id: 1,
+        item_name: "Sleeping Bag",
+        comments: "REI 0 degree down, hot pink"
+      },
+      {
+        id: 2,
+        item_name: "Hiking boots",
+        comments: "Salomon size 9 winter boots"
+      },
+      {
+        id: 3,
+        item_name: "Snowshoes",
+        comments: "Atlas carbon fiber backcountry"
+      },
+      {
+        id: 4,
+        item_name: "Sleeping Bag",
+        comments: "REI 0 degree down, hot pink"
+      },
+      {
+        id: 5,
+        item_name: "Hiking boots",
+        comments: "Salomon size 9 winter boots"
+      },
+      {
+        id: 6,
+        item_name: "Snowshoes",
+        comments: "Atlas carbon fiber backcountry"
+      }
+    ];
+
+    const itemLinks = gearItems.map(gear => {
+      return (
+        <TouchableOpacity
+          key={gear.id}
+          style={styles.gearLink}
+          onPress={() => this.props.navigation.navigate("Gear")}
+        >
+          <Text style={styles.gearName}>{gear.item_name}</Text>
+        </TouchableOpacity>
+      );
+    });
+
     return (
       <View>
-        <View style={styles.categoryContainer}>
-          <View style={styles.categoryList}></View>
-          <Text>Gear List Page</Text>
-          <View style={styles.listItemBtn}>
-            <Button
-              title="Go to a Gear"
-              style={styles.addItemBtn}
-              onPress={() => this.props.navigation.navigate("Gear")}
-            />
-          </View>
+        <View style={styles.gearListContainer}>
+          <ScrollView style={styles.gearList}>
+            {itemLinks}
+          </ScrollView>
+
+          <TouchableOpacity
+            style={styles.addItemBtn}
+            onPress={() => this.props.navigation.navigate("Gear")}
+          >
+            <Text style={styles.addBtnText}>Add a Gear Item</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
