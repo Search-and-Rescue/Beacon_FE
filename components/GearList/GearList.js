@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import styles from "./styles";
 
 export class GearList extends Component {
@@ -9,13 +9,11 @@ export class GearList extends Component {
     super(props);
   }
 
-  render() {
-    editItem = (gear) => {
-      this.props.navigation.navigate("Gear", 
-      { gear }
-      );
-    };
+  editItem = gear => {
+    this.props.navigation.navigate("Gear", { gear });
+  };
 
+  render() {
     const itemLinks = this.props.gear.map(gear => {
       return (
         <TouchableOpacity
@@ -31,9 +29,7 @@ export class GearList extends Component {
     return (
       <View>
         <View style={styles.gearListContainer}>
-          <ScrollView style={styles.gearList}>
-            {itemLinks}
-          </ScrollView>
+          <ScrollView style={styles.gearList}>{itemLinks}</ScrollView>
 
           <TouchableOpacity
             style={styles.addItemBtn}
