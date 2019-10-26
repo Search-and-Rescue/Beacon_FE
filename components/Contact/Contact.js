@@ -5,10 +5,11 @@ import styles from "./styles";
 export default class Contact extends Component {
   constructor(props) {
     super(props);
+    const { contact } = this.props.navigation.state.params;
     this.state = {
-      name: "",
-      phone: "",
-      email: ""
+      name: contact.name || "",
+      phone: contact.phone || "",
+      email: contact.email || ""
     };
   }
 
@@ -27,7 +28,7 @@ export default class Contact extends Component {
   render() {
     return (
       <View style={styles.contactContainer}>
-        <Text>Contact Page</Text>
+        <Text>Name</Text>
         <TextInput
           placeholder="name"
           style={styles.input}
@@ -35,6 +36,7 @@ export default class Contact extends Component {
           value={this.state.name}
           name="name"
         />
+        <Text>Phone number</Text>
         <TextInput
           placeholder="phone"
           style={styles.input}
@@ -42,6 +44,7 @@ export default class Contact extends Component {
           value={this.state.phone}
           name="phone"
         />
+        <Text>Email address</Text>
         <TextInput
           placeholder="email"
           style={styles.input}

@@ -53,7 +53,7 @@ export class GearList extends Component {
         <TouchableOpacity
           key={gear.id}
           style={styles.gearLink}
-          onPress={() => editItem(gear)}
+          onPress={() => this.editItem(gear)}
         >
           <Text style={styles.gearName}>{gear.item_name}</Text>
         </TouchableOpacity>
