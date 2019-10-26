@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Modal, TextInput, Button } from 'react-native';
-import { getEmergencyContacts } from '../../util/apiCalls';
 import styles from './styles';
 
 class Login extends Component {
