@@ -3,6 +3,23 @@ const styles = {
     flex: 1,
     alignItems: "center"
   },
+  pickerView: {
+    backgroundColor: '#efefef',
+    margin: 20,
+    padding: 20,
+    position: 'absolute',
+    bottom: 30,
+    left: 5,
+    right: 5
+  },
+  experienceHeading: {
+    fontWeight: 'bold',
+    marginBottom: 5
+  },
+  experienceButton: {
+    paddingVertical: 10,
+    alignItems: 'center'
+  },
   input: {
     backgroundColor: "#fff",
     borderColor: "black",
