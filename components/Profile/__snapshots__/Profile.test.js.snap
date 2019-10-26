@@ -6,12 +6,174 @@ exports[`Profile should match the snapshot with all of the data passed through 1
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginTop": 20,
     }
   }
 >
   <Text>
     Profile Page
   </Text>
+  <Text>
+    State is 
+    0
+  </Text>
+  <Button
+    onPress={[Function]}
+    title="Choose Experience Level"
+  />
+  <Button
+    onPress={[Function]}
+    title="Add COSAR Card Status"
+  />
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "bottom": 30,
+          "left": 10,
+          "margin": 5,
+          "padding": 20,
+          "position": "absolute",
+          "right": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+            "marginBottom": 5,
+          }
+        }
+      >
+        Select Experience Level:
+      </Text>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="0"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Beginner
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="1"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Intermediate
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="2"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Advanced
+        </Text>
+      </TouchableHighlight>
+    </View>
+  </Component>
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "bottom": 30,
+          "left": 10,
+          "margin": 5,
+          "padding": 20,
+          "position": "absolute",
+          "right": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+            "marginBottom": 5,
+          }
+        }
+      >
+        Owner of current COSAR Card:
+      </Text>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="0"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          Yes
+        </Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        delayPressOut={100}
+        key="1"
+        onPress={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingVertical": 10,
+          }
+        }
+        underlayColor="black"
+      >
+        <Text>
+          No
+        </Text>
+      </TouchableHighlight>
+    </View>
+  </Component>
   <ScrollViewMock
     style={
       Object {
@@ -240,7 +402,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         }
       }
       underlineColorAndroid="transparent"
-      value="0"
+      value=""
     />
     <TextInput
       allowFontScaling={true}
@@ -330,7 +492,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         }
       }
       underlineColorAndroid="transparent"
-      value="false"
+      value="undefined"
     />
   </ScrollViewMock>
   <TouchableOpacity

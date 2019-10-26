@@ -89,12 +89,12 @@ class Trip extends Component {
         <Text>State is {this.state.contact}</Text>
         <Button
           onPress={() => this.toggleContactModal()}
-          title={"Choose Emergency Contact: "}
+          title={"Add Emergency Contact"}
         ></Button>
         <Text>State is {this.state.vehicle}</Text>
         <Button
           onPress={() => this.toggleVehicleModal()}
-          title={"Choose Vehicle: "}
+          title={"Add Vehicle"}
         ></Button>
         <TextInput placeholder="Starting point" style={styles.input} />
         <TextInput placeholder="Ending point" style={styles.input} />

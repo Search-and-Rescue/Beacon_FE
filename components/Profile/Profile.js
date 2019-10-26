@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { ScrollView, View, Text, TextInput, TouchableOpacity, Modal } from "react-native";
+import { Button, 
+  Modal,
+  ScrollView, 
+  View, 
+  Text, 
+  TextInput, 
+  TouchableHighlight, 
+  TouchableOpacity} from "react-native";
 import styles from "./styles";
 
 class Profile extends Component {
@@ -88,7 +95,7 @@ class Profile extends Component {
       }
     ];
 
-    const cosar = [
+    const cosars = [
       {
         title: "Yes",
         value: true
@@ -105,7 +112,11 @@ class Profile extends Component {
         <Text>State is {this.state.experience_level}</Text>
         <Button
           onPress={() => this.toggleExperienceModal()}
-          title={"Choose Experience Level: "}
+          title={"Choose Experience Level"}
+        ></Button>
+        <Button
+          onPress={() => this.toggleCosarModal()}
+          title={"Add COSAR Card Status"}
         ></Button>
         <Modal
           animationType={"slide"}
@@ -135,7 +146,7 @@ class Profile extends Component {
           onRequestClose={() => console.log("close requested")}
         >
           <View style={styles.pickerView}>
-            <Text style={styles.modalHeading}>Current COSAR Card:</Text>
+            <Text style={styles.modalHeading}>Owner of current COSAR Card:</Text>
             {cosars.map((cosar, index) => {
               return (
                 <TouchableHighlight
