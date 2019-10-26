@@ -3,6 +3,9 @@ const styles = {
     flex: 1,
     alignItems: "center"
   },
+  label: {
+    fontSize: 18
+  },
   input: {
     backgroundColor: "#fff",
     borderColor: "black",

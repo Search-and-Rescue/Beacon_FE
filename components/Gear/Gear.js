@@ -5,11 +5,10 @@ import styles from "./styles";
 export default class Gear extends Component {
   constructor(props) {
     super(props);
-
     const { gear } = this.props.navigation.state.params;
     this.state = {
-      item_name: gear.item_name,
-      comments: gear.comments
+      item_name: gear.item_name || "",
+      description: gear.description || ""
     };
   }
 
@@ -18,14 +17,14 @@ export default class Gear extends Component {
     navigation.navigate("GearList");
     this.setState({
       item_name: "",
-      comments: ""
+      description: ""
     });
   };
 
   render() {
     return (
       <View style={styles.gearContainer}>
-        <Text>Gear Page</Text>
+        <Text style={styles.label}>Item name:</Text>
         <TextInput
           placeholder="item name"
           style={styles.input}
@@ -33,12 +32,13 @@ export default class Gear extends Component {
           value={this.state.item_name}
           name="item_name"
         />
+        <Text style={styles.label}>Item description:</Text>
         <TextInput
-          placeholder="comments"
+          placeholder="description"
           style={styles.input}
-          onChangeText={text => this.setState({ comments: text })}
-          value={this.state.comments}
-          name="comments"
+          onChangeText={text => this.setState({ description: text })}
+          value={this.state.description}
+          name="description"
         />
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
           <Text style={styles.updateBtnText}>Update</Text>
