@@ -21,6 +21,7 @@ export default class Gear extends Component {
   };
 
   render() {
+
     return (
       <View style={styles.gearContainer}>
         <Text>Gear Page</Text>
