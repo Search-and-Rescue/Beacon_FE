@@ -157,3 +157,121 @@ export const getTrips = async () => {
   const data = await response.json();
   return data.data;
 }
+
+export const addTrip = async (newTrip) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation {
+ createTrip(input: ${newTrip}) {
+   trip {
+      id
+      name
+      startingPoint
+      endingPoint
+      startDate
+      startTime
+      endDate
+      endTime
+      notificationDate
+      notificationTime
+      travelingCompanions
+    }
+  }
+} `
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s trip.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
+
+export const addVehicle = async (newVehicle) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation {
+  createVehicle(input: ${newVehicle}) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+    }
+  } 
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s vehicle.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
+
+export const addGearItem = async (newItem) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation {
+  createGear(input: ${newItem}) {
+    gear {
+      id
+      itemName
+    }
+  } 
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s vehicle.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
+
+export const addContact = async (newContact) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+          createContact(input: ${newContact}) {
+            clientMutationId
+          }
+        }`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s emergency contact.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
