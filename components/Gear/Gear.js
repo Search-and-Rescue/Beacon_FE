@@ -4,9 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { addGearItem, getGear } from '../../util/apiCalls';
 import { connect } from "react-redux";
 import styles from "./styles";
-
 import { setGear } from '../../actions';
-
 import { bindActionCreators } from 'redux';
 
 export class Gear extends Component {

@@ -161,7 +161,19 @@ export const getTrips = async () => {
 export const addTrip = async (newTrip) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation = `mutation {
- createTrip(input: ${newTrip}) {
+ createTrip(input: {
+  name: "${newTrip.name}",
+  startingPoint: "${newTrip.startingPoint}",
+  endingPoint: "${newTrip.endingPoint}",
+  startDate: "${newTrip.startDate}",
+  startTime: "${newTrip.startTime}",
+  endDate: "${newTrip.endDate}",
+  endTime: "${newTrip.endTime}",
+  notificationDate: "${newTrip.notificationDate}",
+  notificationTime: "${newTrip.notificationTime}",
+  travelingCompanions: "${newTrip.travelingCompanions}",
+  userId: ${parseInt(newTrip.userId)}
+ }) {
    trip {
       id
       name
@@ -183,7 +195,7 @@ export const addTrip = async (newTrip) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ mutation })
+    body: JSON.stringify({ query:mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -191,13 +203,20 @@ export const addTrip = async (newTrip) => {
   }
 
   const data = await response.json();
-  return data.data;
+  return data;
 }
 
 export const addVehicle = async (newVehicle) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation = `mutation {
-  createVehicle(input: ${newVehicle}) {
+  createVehicle(input: {
+    make: "${newVehicle.make}",
+    model: "${newVehicle.model}",
+    year: ${parseInt(newVehicle.year)},
+    color: "${newVehicle.color}",
+    licensePlate: "${newVehicle.licensePlate}",
+    userId: ${parseInt(newVehicle.userId)}
+  }) {
     vehicle {
       id
       make
@@ -214,7 +233,7 @@ export const addVehicle = async (newVehicle) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ mutation })
+    body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -222,7 +241,8 @@ export const addVehicle = async (newVehicle) => {
   }
 
   const data = await response.json();
-  return data.data;
+  console.log(data);
+  return data;
 }
 
 export const addGearItem = async (newItem) => {
@@ -252,7 +272,6 @@ export const addGearItem = async (newItem) => {
   }
 
   const data = await response.json();
-  console.log(data);
   return data;
 }
 
