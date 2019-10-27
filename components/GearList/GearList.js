@@ -9,34 +9,30 @@ export class GearList extends Component {
     super(props);
   }
 
-  editItem = gear => {
-    this.props.navigation.navigate("Gear", { gear });
+  deleteItem = id => {
+    console.log('in delete gear item', id)
   };
 
   render() {
-    const itemLinks = this.props.gear.map(gear => {
+    const itemLinks = this.props.gear.map(item => {
       return (
-        <TouchableOpacity
-          key={gear.id}
-          style={styles.gearLink}
-          onPress={() => this.editItem(gear)}
-        >
-          <Text style={styles.gearName}>{gear.itemName}</Text>
-        </TouchableOpacity>
+        <View key={item.id} style={styles.gearCard}>
+          <Text
+            style={styles.itemRemoveBtn}
+            onPress={() => this.deleteItem(item.id)}
+          >REMOVE</Text>
+          <Text style={styles.gearName}>{item.itemName}
+          </Text>
+        </View>
       );
     });
 
     return (
       <View>
         <View style={styles.gearListContainer}>
-          <ScrollView style={styles.gearList}>{itemLinks}</ScrollView>
-
-          <TouchableOpacity
-            style={styles.addItemBtn}
-            onPress={() => this.props.navigation.navigate("Gear")}
-          >
-            <Text style={styles.addBtnText}>Add a Gear Item</Text>
-          </TouchableOpacity>
+          <ScrollView style={styles.gearList}>
+          {itemLinks}
+          </ScrollView>
         </View>
       </View>
     );
