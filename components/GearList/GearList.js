@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { ScrollView, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from "react-redux";
 import styles from "./styles";
 
@@ -14,7 +13,7 @@ export class GearList extends Component {
   };
 
   render() {
-    const itemLinks = this.props.gear.map(item => {
+    const itemCards = this.props.gear.map(item => {
       return (
         <View key={item.id} style={styles.gearCard}>
           <Text
@@ -31,7 +30,7 @@ export class GearList extends Component {
       <View>
         <View style={styles.gearListContainer}>
           <ScrollView style={styles.gearList}>
-          {itemLinks}
+          {itemCards}
           </ScrollView>
         </View>
       </View>

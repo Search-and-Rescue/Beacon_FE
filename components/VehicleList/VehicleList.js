@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from "react-redux";
 import styles from "./styles";
 
@@ -10,11 +9,11 @@ export class VehicleList extends Component {
   }
 
   deleteVehicle = (id) => {
-    console.log('in delete', id)
+    console.log('in delete vehicle id: ', id)
   }
 
   render() {
-    const vehicleLinks = this.props.vehicles.map(vehicle => {
+    const vehicleCards = this.props.vehicles.map(vehicle => {
       return (
         <View key={vehicle.id} style={styles.vehicleCard}>
           <Text 
@@ -32,7 +31,7 @@ export class VehicleList extends Component {
       <View>
         <View style={styles.vehiclesListContainer}>
           <ScrollView style={styles.vehiclesList}>
-            {vehicleLinks}
+            {vehicleCards}
           </ScrollView>
         </View>
       </View>
