@@ -83,7 +83,7 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
         }
       }
     >
-      Update
+      Add
     </Text>
   </Component>
 </View>

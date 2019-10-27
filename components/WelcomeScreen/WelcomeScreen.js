@@ -8,7 +8,7 @@ import styles from './styles';
 
 export class LoginScreen extends Component {
   componentDidMount = async () => {
-    const { setEmergencyContacts, setVehicles, setGear } = this.props;
+    const { setEmergencyContacts, setVehicles, setGear, setUser } = this.props;
     try {
       const userInfoContacts = await getEmergencyContacts();
       const userInfoVehicles = await getVehicles();
@@ -47,6 +47,6 @@ export class LoginScreen extends Component {
   }
 }
 
-export const mapDispatchToProps = dispatch => bindActionCreators({ setEmergencyContacts, setVehicles, setGear }, dispatch);
+export const mapDispatchToProps = dispatch => bindActionCreators({ setEmergencyContacts, setVehicles, setGear, setUser }, dispatch);
 
 export default connect(null, mapDispatchToProps)(LoginScreen);

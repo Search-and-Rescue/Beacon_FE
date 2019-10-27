@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { addVehicle, getVehicles } from '../../util/apiCalls';
+import { connect } from "react-redux";
 import styles from "./styles";
+import { setVehicles } from '../../actions';
+import { bindActionCreators } from 'redux';
 
-class Vehicle extends Component {
+export class Vehicle extends Component {
   constructor(props) {
     super(props);
     if (this.props.navigation.state.params === undefined) {
@@ -19,8 +23,15 @@ class Vehicle extends Component {
     };
   }
 
-  handleSubmit = () => {
-    const { navigation } = this.props;
+  handleSubmit = async () => {
+    const { navigation, user } = this.props;
+    const newVehicle = {
+      ...this.state,
+      userId: parseInt(user.id)
+    }
+    await addVehicle(newVehicle);
+    const userInfoVehicles = await getVehicles();
+    await this.props.setVehicles(userInfoVehicles.user.vehicles);
     navigation.navigate("VehicleList");
     this.setState({
       make: "",
@@ -91,4 +102,10 @@ class Vehicle extends Component {
   }
 }
 
-export default Vehicle;
+export const mapStateToProps = ({ user }) => ({
+  user
+});
+
+export const mapDispatchToProps = dispatch => bindActionCreators({ setVehicles }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Vehicle);
