@@ -11,18 +11,27 @@ const styles = {
     height: 300,
     width: "90%"
   },
-  vehiclesLink: {
+  vehicleCard: {
     backgroundColor: '#efefef',
     borderWidth: 1,
     borderColor: 'black',
     flex: 1,
-    height: 30,
+    flexDirection: 'row',
+    height: 50,
     marginVertical: 5
   },
-  vehiclesName: {
+  vehicleRemoveBtn: {
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 35,
+    margin: 4,
+    padding: 5
+  },
+  vehicleName: {
     flex: 1,
     fontSize: 21,
-    height: 20
+    paddingLeft: 5,
+    paddingVertical: 8
   },
   addItemBtn: {
     borderColor: "black",

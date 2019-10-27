@@ -30,7 +30,7 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: routeName
+        headerTitle: "My Trips"
       };
     }
   }
@@ -45,7 +45,7 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: routeName
+        headerTitle: "My Contacts"
       };
     }
   }
@@ -60,7 +60,7 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: routeName
+        headerTitle: "My Gear"
       };
     }
   }
@@ -75,7 +75,7 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: routeName
+        headerTitle: "My Vehicles"
       };
     }
   }
@@ -162,19 +162,19 @@ const VehicleStackNavigator = createStackNavigator(
 );
 
 const AppDrawerNavigator = createDrawerNavigator({
-  Trips: {
+  "My Trips": {
     screen: TripStackNavigator
   },
-  Profile: {
+  "My Profile": {
     screen: Profile
   },
-  Contacts: {
+  "My Emergency Contacts": {
     screen: ContactStackNavigator
   },
-  Gear: {
+  "My Gear": {
     screen: GearStackNavigator
   },
-  Vehicles: {
+  "My Vehicles": {
     screen: VehicleStackNavigator
   }
 });

@@ -9,20 +9,22 @@ export class VehicleList extends Component {
     super(props);
   }
 
-  editVehicle = vehicle => {
-    this.props.navigation.navigate("Vehicle", { vehicle });
-  };
+  deleteVehicle = (id) => {
+    console.log('in delete', id)
+  }
 
   render() {
     const vehicleLinks = this.props.vehicles.map(vehicle => {
       return (
-        <TouchableOpacity 
-          key={vehicle.id} 
-          style={styles.vehiclesLink}
-          onPress={() => this.editVehicle(vehicle)}
-          >
-          <Text style={styles.vehiclesName}>{vehicle.year} {vehicle.make} {vehicle.model}</Text>
-        </TouchableOpacity>
+        <View key={vehicle.id} style={styles.vehicleCard}>
+          <Text 
+          style={styles.vehicleRemoveBtn}
+          onPress={() => this.deleteVehicle(vehicle.id)}
+          >REMOVE</Text>
+          <Text style={styles.vehicleName}>
+            {vehicle.year} {vehicle.make} {vehicle.model}
+          </Text>
+        </View>
       );
     });
 
@@ -32,12 +34,6 @@ export class VehicleList extends Component {
           <ScrollView style={styles.vehiclesList}>
             {vehicleLinks}
           </ScrollView>
-          <TouchableOpacity
-            style={styles.addItemBtn}
-            onPress={() => this.props.navigation.navigate("Vehicle")}
-          >
-            <Text style={styles.addBtnText}>Add a vehicle</Text>
-          </TouchableOpacity>
         </View>
       </View>
     );
