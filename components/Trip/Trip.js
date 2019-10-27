@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Button,
   Modal,
@@ -9,7 +9,7 @@ import {
   View
 } from "react-native";
 
-import styles from './styles';
+import styles from "./styles";
 
 class Trip extends Component {
   constructor(props) {
@@ -18,7 +18,9 @@ class Trip extends Component {
       contact: 0,
       contact_modal: false,
       vehicle: 0,
-      vehicle_modal: false
+      vehicle_modal: false,
+      gear: [],
+      gear_modal: false
     };
   }
 
@@ -40,8 +42,19 @@ class Trip extends Component {
     this.setState({ vehicle_modal: !this.state.vehicle_modal });
   };
 
-  render() {
+  toggleGear = id => {
+    if (gear.find(gear.id === id)) {
+      console.log('in if')
+    } else {
+      console.log('in else')
+    }
+  };
 
+  toggleGearModal = () => {
+    this.setState({ gear_modal: !this.state.gear_modal });
+  };
+
+  render() {
     const contacts = [
       {
         name: "Mom",
@@ -84,6 +97,61 @@ class Trip extends Component {
       }
     ];
 
+    const gear = [
+      {
+        id: 1,
+        itemName: "Rustic Iron Bottle",
+        description: "Chuck Norris can binary search unsorted data."
+      },
+      {
+        id: 2,
+        itemName: "Red Watch",
+        description:
+          "This is a long description of a watch that comes with me on all my adventures."
+      }
+    ];
+
+    let contactsList = contacts.map((contact, index) => {
+      return (
+        <TouchableHighlight
+          key={index}
+          style={styles.modalButton}
+          onPress={() => this.setContact(contact.id)}
+        >
+          <Text>{contact.name}</Text>
+        </TouchableHighlight>
+      );
+    });
+
+    let vehiclesList = vehicles.map((vehicle, index) => {
+        return (
+          <TouchableHighlight
+            key={index}
+            style={styles.modalButton}
+            onPress={() => this.setVehicle(vehicle.id)}
+          >
+            <Text>
+              {vehicle.make} {vehicle.model}
+            </Text>
+          </TouchableHighlight>
+        );
+      });
+
+
+    let gearList = gear.map((gear, index) => {
+      return (
+        <TouchableHighlight
+          key={index}
+          style={styles.modalButton}
+          onPress={() => this.toggleGear(gear.id)}
+        >
+          <Text>
+            {gear.itemName}
+          </Text>
+        </TouchableHighlight>
+      );
+    });
+
     return (
       <View style={styles.tripContainer}>
         <Text>State is {this.state.contact}</Text>
@@ -95,6 +163,11 @@ class Trip extends Component {
         <Button
           onPress={() => this.toggleVehicleModal()}
           title={"Add Vehicle"}
+        ></Button>
+        <Text>State length {`${this.state.gear.length}`}</Text>
+        <Button
+          onPress={() => this.toggleGearModal()}
+          title={"Add Gear"}
         ></Button>
         <TextInput placeholder="Starting point" style={styles.input} />
         <TextInput placeholder="Ending point" style={styles.input} />
@@ -111,17 +184,7 @@ class Trip extends Component {
         >
           <View style={styles.pickerView}>
             <Text style={styles.modalHeading}>Select Emergency Contact:</Text>
-            {contacts.map((contact, index) => {
-              return (
-                <TouchableHighlight
-                  key={index}
-                  style={styles.modalButton}
-                  onPress={() => this.setContact(contact.id)}
-                >
-                  <Text>{contact.name}</Text>
-                </TouchableHighlight>
-              );
-            })}
+            {contactsList}
           </View>
         </Modal>
         <Modal
@@ -132,19 +195,21 @@ class Trip extends Component {
         >
           <View style={styles.pickerView}>
             <Text style={styles.modalHeading}>Select Vehicle:</Text>
-            {vehicles.map((vehicle, index) => {
-              return (
-                <TouchableHighlight
-                  key={index}
-                  style={styles.modalButton}
-                  onPress={() => this.setVehicle(vehicle.id)}
-                >
-                  <Text>
-                    {vehicle.make} {vehicle.model}
-                  </Text>
-                </TouchableHighlight>
-              );
-            })}
+            {vehiclesList}
+          </View>
+        </Modal>
+
+
+
+        <Modal
+          animationType={"slide"}
+          visible={this.state.gear_modal}
+          transparent={true}
+          onRequestClose={() => console.log("close requested")}
+        >
+          <View style={styles.pickerView}>
+            <Text style={styles.modalHeading}>Add Gear Items:</Text>
+            {gearList}
           </View>
         </Modal>
         <TouchableOpacity>
