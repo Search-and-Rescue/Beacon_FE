@@ -227,10 +227,13 @@ export const addVehicle = async (newVehicle) => {
 
 export const addGearItem = async (newItem) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
-  const mutation = `mutation {
-  createGear(input: ${newItem}) {
+  const mutation =  `mutation {
+  createGear(input: {
+    itemName: "${newItem.itemName}",
+    description: "${newItem.description}",
+    userId: ${parseInt(newItem.userId)}
+  }) {
     gear {
-      id
       itemName
     }
   } 
@@ -241,7 +244,7 @@ export const addGearItem = async (newItem) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ mutation })
+    body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -249,7 +252,8 @@ export const addGearItem = async (newItem) => {
   }
 
   const data = await response.json();
-  return data.data;
+  console.log(data);
+  return data;
 }
 
 export const addContact = async (newContact) => {
