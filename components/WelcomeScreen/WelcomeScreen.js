@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from "react-native";
-import { getEmergencyContacts, getVehicles, getGear } from '../../util/apiCalls';
-import { setEmergencyContacts, setVehicles, setGear } from '../../actions';
+import { getEmergencyContacts, getVehicles, getGear, getTrips, getUser } from '../../util/apiCalls';
+import { setEmergencyContacts, setVehicles, setGear, setTrips, setUser } from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styles from './styles';
@@ -13,9 +13,13 @@ export class LoginScreen extends Component {
       const userInfoContacts = await getEmergencyContacts();
       const userInfoVehicles = await getVehicles();
       const userInfoGear = await getGear();
+      const userInfoTrips = await getTrips();
+      const userInfo = await getUser();
       await setEmergencyContacts(userInfoContacts.user.emergencyContacts);
       await setVehicles(userInfoVehicles.user.vehicles);
       await setGear(userInfoGear.user.gear);
+      await setTrips(userInfoTrips.user.trips)
+      await setUser(userInfo.user);
     } catch ({ message }) {
       console.log(message)
     }
