@@ -22,26 +22,41 @@ exports[`VehicleList should match the snapshot with all of the data passed throu
         }
       }
     >
-      <Component
+      <View
         key="1"
-        onPress={[Function]}
         style={
           Object {
             "backgroundColor": "#efefef",
             "borderColor": "black",
             "borderWidth": 1,
             "flex": 1,
-            "height": 30,
+            "flexDirection": "row",
+            "height": 50,
             "marginVertical": 5,
           }
         }
       >
         <Text
+          onPress={[Function]}
+          style={
+            Object {
+              "borderColor": "black",
+              "borderWidth": 1,
+              "height": 35,
+              "margin": 4,
+              "padding": 5,
+            }
+          }
+        >
+          REMOVE
+        </Text>
+        <Text
           style={
             Object {
               "flex": 1,
               "fontSize": 21,
-              "height": 20,
+              "paddingLeft": 5,
+              "paddingVertical": 8,
             }
           }
         >
@@ -51,30 +66,8 @@ exports[`VehicleList should match the snapshot with all of the data passed throu
            
           F150
         </Text>
-      </Component>
+      </View>
     </ScrollViewMock>
-    <Component
-      onPress={[Function]}
-      style={
-        Object {
-          "borderColor": "black",
-          "borderWidth": 1,
-          "padding": 10,
-          "width": "100%",
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 21,
-            "textAlign": "center",
-          }
-        }
-      >
-        Add a vehicle
-      </Text>
-    </Component>
   </View>
 </View>
 `;
