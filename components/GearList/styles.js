@@ -1,7 +1,7 @@
 const styles = {
   gearListContainer: {
     alignItems: "center",
-    height: '96%',
+    height: "96%",
     marginTop: 20
   },
   gearList: {
@@ -11,23 +11,33 @@ const styles = {
     height: 300,
     width: "90%"
   },
-  gearLink: {
-    backgroundColor: '#efefef',
+  gearCard: {
+    backgroundColor: "#efefef",
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     flex: 1,
-    height: 40,
+    flexDirection: "row",
+    height: 50,
     marginVertical: 5
   },
+  itemRemoveBtn: {
+    borderWidth: 1,
+    borderColor: "black",
+    height: 35,
+    margin: 4,
+    padding: 5
+  },
   gearName: {
-    fontSize: 28,
+    flex: 1,
+    fontSize: 21,
     paddingLeft: 5,
+    paddingVertical: 8
   },
   addItemBtn: {
     borderColor: "black",
     borderWidth: 1,
     padding: 10,
-    width: '100%'
+    width: "100%"
   },
   addBtnText: {
     fontSize: 21,
