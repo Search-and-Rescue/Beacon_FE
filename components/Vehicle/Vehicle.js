@@ -5,13 +5,16 @@ import styles from "./styles";
 class Vehicle extends Component {
   constructor(props) {
     super(props);
+    if (this.props.navigation.state.params === undefined) {
+      this.props.navigation.state.params = {vehicle: {}}
+    }
     const { vehicle } = this.props.navigation.state.params;
     this.state = {
       make: vehicle.make || "",
       model: vehicle.model || "",
       year: vehicle.year || "",
       color: vehicle.color || "",
-      license_plate: vehicle.license_plate || "",
+      licensePlate: vehicle.licensePlate || "",
       state: vehicle.state || ""
     };
   }
@@ -24,7 +27,7 @@ class Vehicle extends Component {
       model: "",
       year: "",
       color: "",
-      license_plate: "",
+      licensePlate: "",
       state: ""
     });
   }
@@ -68,8 +71,8 @@ class Vehicle extends Component {
         <TextInput
           placeholder="license plate"
           style={styles.input}
-          onChangeText={text => this.setState({ license_plate: text })}
-          value={this.state.license_plate}
+          onChangeText={text => this.setState({ licensePlate: text })}
+          value={this.state.licensePlate}
           name="license_plate"
         />
         <Text>License State</Text>
