@@ -241,7 +241,6 @@ export const addVehicle = async (newVehicle) => {
   }
 
   const data = await response.json();
-  console.log(data);
   return data;
 }
 
@@ -278,17 +277,24 @@ export const addGearItem = async (newItem) => {
 export const addContact = async (newContact) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation = `mutation{
-          createContact(input: ${newContact}) {
-            clientMutationId
-          }
-        }`
+          createContact(input: {
+            name: "${newContact.name}",
+            phone: "${newContact.phone}",
+            email: "${newContact.email}",
+            userId: ${parseInt(newContact.userId)}
+          }) {
+    emergencyContact {
+      name
+    }
+  }
+}`
 
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ mutation })
+    body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -296,5 +302,6 @@ export const addContact = async (newContact) => {
   }
 
   const data = await response.json();
-  return data.data;
+  console.log(data)
+  return data;
 }

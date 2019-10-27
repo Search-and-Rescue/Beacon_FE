@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { addContact, getEmergencyContacts } from '../../util/apiCalls';
+import { connect } from "react-redux";
 import styles from "./styles";
+import { setEmergencyContacts } from '../../actions';
+import { bindActionCreators } from 'redux';
 
-export default class Contact extends Component {
+export class Contact extends Component {
   constructor(props) {
     super(props);
     if (this.props.navigation.state.params === undefined) {
@@ -16,15 +20,20 @@ export default class Contact extends Component {
     };
   }
 
-  handleSubmit = () => {
-    const { navigation } = this.props;
+  handleSubmit = async () => {
+    const { navigation, user, setEmergencyContacts } = this.props;
+    const newContact = {
+      ...this.state,
+      userId: parseInt(user.id)
+    }
+    await addContact(newContact);
+    const userInfoContacts = await getEmergencyContacts();
+    await setEmergencyContacts(userInfoContacts.user.emergencyContacts);
     navigation.navigate("ContactList");
     this.setState({
-      make: "",
-      model: "",
-      year: "",
-      color: "",
-      license_plate: ""
+      name: "",
+      phone: "",
+      email: ""
     });
   };
 
@@ -62,3 +71,11 @@ export default class Contact extends Component {
     );
   }
 }
+
+export const mapStateToProps = ({ user }) => ({
+  user
+});
+
+export const mapDispatchToProps = dispatch => bindActionCreators({ setEmergencyContacts }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);
