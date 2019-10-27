@@ -140,8 +140,8 @@ export const getTrips = async () => {
       travelingCompanions
       }
     } 
-  }
-}  `
+  }`
+
   const options = {
     method: 'POST',
     headers: {
