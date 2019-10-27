@@ -157,3 +157,39 @@ export const getTrips = async () => {
   const data = await response.json();
   return data.data;
 }
+
+export const addTrip = async (newTrip) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation {
+ createTrip(input: ${newTrip}) {
+   trip {
+      id
+      name
+      startingPoint
+      endingPoint
+      startDate
+      startTime
+      endDate
+      endTime
+      notificationDate
+      notificationTime
+      travelingCompanions
+    }
+  }
+} `
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s trip.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
