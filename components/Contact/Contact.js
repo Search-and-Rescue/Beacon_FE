@@ -5,6 +5,9 @@ import styles from "./styles";
 export default class Contact extends Component {
   constructor(props) {
     super(props);
+    if (this.props.navigation.state.params === undefined) {
+      this.props.navigation.state.params = { contact: {} }
+    }
     const { contact } = this.props.navigation.state.params;
     this.state = {
       name: contact.name || "",
