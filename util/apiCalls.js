@@ -193,3 +193,34 @@ export const addTrip = async (newTrip) => {
   const data = await response.json();
   return data.data;
 }
+
+export const addVehicle = async (newVehicle) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation {
+  createVehicle(input: ${newVehicle}) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+    }
+  } 
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s vehicle.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
