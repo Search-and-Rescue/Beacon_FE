@@ -1,7 +1,7 @@
 import "react-native";
 import React from "react";
 import { shallow } from "enzyme";
-import Gear from "./Gear";
+import { Gear } from "./Gear";
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 

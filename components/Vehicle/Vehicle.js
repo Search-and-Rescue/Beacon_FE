@@ -6,7 +6,7 @@ import styles from "./styles";
 import { setVehicles } from '../../actions';
 import { bindActionCreators } from 'redux';
 
-class Vehicle extends Component {
+export class Vehicle extends Component {
   constructor(props) {
     super(props);
     if (this.props.navigation.state.params === undefined) {
