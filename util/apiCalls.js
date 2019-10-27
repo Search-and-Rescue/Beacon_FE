@@ -43,6 +43,7 @@ export const getEmergencyContacts = async() => {
   const query = `query{
     user(id: 1) {
       emergencyContacts {
+        id
         name
         phone
         email

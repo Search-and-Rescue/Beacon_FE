@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from "react-redux";
 import styles from "./styles";
 
@@ -9,20 +8,22 @@ export class ContactList extends Component {
     super(props);
   }
 
-  editContact = contact => {
-    this.props.navigation.navigate("Contact", { contact });
+  deleteContact = id => {
+    console.log('in delete contact id: ', id)
   };
 
   render() {
-    const contactLinks = this.props.contacts.map(contact => {
+    const contactCards = this.props.contacts.map(contact => {
+      console.log('in contactList render', contact)
       return (
-        <TouchableOpacity 
-          key={contact.name} 
-          style={styles.contactsLink}
-          onPress={() => this.editContact(contact)}
-          >
-          <Text style={styles.contactsName}>{contact.name}</Text>
-        </TouchableOpacity>
+        <View key={contact.id} style={styles.contactCard}>
+          <Text
+            style={styles.contactRemoveBtn}
+            onPress={() => this.deleteContact(contact.id)}
+          >REMOVE</Text>
+          <Text style={styles.contactsName}>{contact.name}
+          </Text>
+        </View>
       );
     });
 
@@ -30,14 +31,8 @@ export class ContactList extends Component {
       <View>
         <View style={styles.contactsListContainer}>
           <ScrollView style={styles.contactsList}>
-          {contactLinks}
+          {contactCards}
           </ScrollView>
-          <TouchableOpacity
-            style={styles.addItemBtn}
-            onPress={() => this.props.navigation.navigate("Contact")}
-          >
-            <Text style={styles.addBtnText}>Add an Emergency Contact</Text>
-          </TouchableOpacity>
         </View>
       </View>
     );

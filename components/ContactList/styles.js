@@ -1,7 +1,7 @@
 const styles = {
   contactsListContainer: {
     alignItems: "center",
-    height: '96%',
+    height: "96%",
     marginTop: 20
   },
   contactsList: {
@@ -11,24 +11,33 @@ const styles = {
     height: 300,
     width: "90%"
   },
-  contactsLink: {
-    backgroundColor: '#efefef',
+  contactCard: {
+    backgroundColor: "#efefef",
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     flex: 1,
-    height: 30,
+    flexDirection: "row",
+    height: 50,
     marginVertical: 5
+  },
+  contactRemoveBtn: {
+    borderWidth: 1,
+    borderColor: "black",
+    height: 35,
+    margin: 4,
+    padding: 5
   },
   contactsName: {
     flex: 1,
     fontSize: 21,
-    height: 20
+    paddingLeft: 5,
+    paddingVertical: 8
   },
   addItemBtn: {
     borderColor: "black",
     borderWidth: 1,
     padding: 10,
-    width: '100%'
+    width: "100%"
   },
   addBtnText: {
     fontSize: 21,
