@@ -10,7 +10,8 @@ const styles = {
     position: 'absolute',
     bottom: 30,
     left: 10,
-    right: 10
+    right: 10, 
+    height: 400
   },
   modalHeading: {
     fontWeight: 'bold',
@@ -18,6 +19,7 @@ const styles = {
   },
   modalButton: {
     paddingVertical: 10,
+    marginVertical: 3
   },
   modalToggleGearContainer: {
     flex: 1, 
@@ -46,8 +48,10 @@ const styles = {
   updateBtn: {
     borderColor: "black",
     borderWidth: 1,
+    marginVertical: 3,
     padding: 10,
-    width: "80%"
+    textAlign: 'center',
+    width: "100%"
   },
   updateBtnText: {
     textAlign: "center"

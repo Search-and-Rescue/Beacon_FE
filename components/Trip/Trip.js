@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import styles from "./styles";
+import { ScrollView } from "react-native-gesture-handler";
 
 class Trip extends Component {
   constructor(props) {
@@ -72,9 +73,53 @@ class Trip extends Component {
           itemName: "Red Watch",
           description:
             "This is a long description of a watch that comes with me on all my adventures."
+        },
+        {
+          id: 3,
+          itemName: "Pink Bottle",
+          description: "Chuck Norris can binary search unsorted data."
+        },
+        {
+          id: 4,
+          itemName: "Pink Watch",
+          description:
+            "This is a long description of a watch that comes with me on all my adventures."
+        },
+        {
+          id: 5,
+          itemName: "Black Iron Bottle",
+          description: "Chuck Norris can binary search unsorted data."
+        },
+        {
+          id: 6,
+          itemName: "Black Watch",
+          description:
+            "This is a long description of a watch that comes with me on all my adventures."
+        },
+        {
+          id: 7,
+          itemName: "Blue Iron Bottle",
+          description: "Chuck Norris can binary search unsorted data."
+        },
+        {
+          id: 8,
+          itemName: "Blue Watch",
+          description:
+            "This is a long description of a watch that comes with me on all my adventures."
+        },
+        {
+          id: 9,
+          itemName: "Green Iron Bottle",
+          description: "Chuck Norris can binary search unsorted data."
+        },
+        {
+          id: 10,
+          itemName: "Green Watch",
+          description:
+            "This is a long description of a watch that comes with me on all my adventures."
         }
       ]
-    }
+    };
   }
 
   setContact = id => {
@@ -109,7 +154,6 @@ class Trip extends Component {
   };
 
   render() {
-    console.log("toggle", this.state.gear);
     const contactsList = this.state.contacts.map(contact => {
       return (
         <TouchableHighlight
@@ -209,19 +253,25 @@ class Trip extends Component {
         visible={this.state.gear_modal}
         transparent={true}
         onRequestClose={() => console.log("close requested")}
-      >
+        >
         <View style={styles.pickerView}>
           <Text style={styles.modalHeading}>Add Gear Items:</Text>
-          {gearList}
+          <ScrollView>{gearList}</ScrollView>
+          <TouchableOpacity
+            onPress={() => this.toggleGearModal()}
+          >
+            <Text style={styles.updateBtn}>Submit Gear List</Text>
+          </TouchableOpacity>
         </View>
       </Modal>
-      <TouchableOpacity>
+      <TouchableOpacity
+      >
         <View style={styles.updateBtn}>
           <Text style={styles.updateBtnText}>Add Trip</Text>
         </View>
       </TouchableOpacity>
     </View>
-    );
+  );
   }
 }
 
