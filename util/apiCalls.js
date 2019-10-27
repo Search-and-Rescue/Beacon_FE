@@ -224,3 +224,54 @@ export const addVehicle = async (newVehicle) => {
   const data = await response.json();
   return data.data;
 }
+
+export const addGearItem = async (newItem) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation {
+  createGear(input: ${newItem}) {
+    gear {
+      id
+      itemName
+    }
+  } 
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s vehicle.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
+
+export const addContact = async (newContact) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+          createContact(input: ${newContact}) {
+            clientMutationId
+          }
+        }`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s emergency contact.')
+  }
+
+  const data = await response.json();
+  return data.data;
+}
