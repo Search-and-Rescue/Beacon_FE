@@ -6,6 +6,9 @@ import styles from "./styles";
 export class Gear extends Component {
   constructor(props) {
     super(props);
+    if (this.props.navigation.state.params === undefined) {
+      this.props.navigation.state.params = { gear: {} }
+    }
     const { gear } = this.props.navigation.state.params;
     this.state = {
       itemName: gear.itemName || "",

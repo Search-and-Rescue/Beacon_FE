@@ -33,7 +33,7 @@ export class GearList extends Component {
 
           <TouchableOpacity
             style={styles.addItemBtn}
-            onPress={() => this.props.navigation.navigate("Gear", {gear:{}})}
+            onPress={() => this.props.navigation.navigate("Gear")}
           >
             <Text style={styles.addBtnText}>Add a Gear Item</Text>
           </TouchableOpacity>
