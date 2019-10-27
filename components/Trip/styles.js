@@ -18,7 +18,22 @@ const styles = {
   },
   modalButton: {
     paddingVertical: 10,
-    alignItems: 'center'
+  },
+  modalToggleGearContainer: {
+    flex: 1, 
+    flexDirection: 'row'
+  },
+  modalToggleGearBtn: {
+    borderWidth: 1,
+    borderColor: 'black',
+    marginRight: 10,
+    marginVertical: 5,
+    paddingVertical: 3,
+    textAlign: 'center',
+    width: 75
+  },
+  modalToggleGearHeading: {
+    paddingVertical: 10
   },
   input: {
     backgroundColor: "#fff",
