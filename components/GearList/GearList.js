@@ -12,9 +12,13 @@ export class GearList extends Component {
   }
 
   deleteItem = async id => {
-    await deleteGearItem(id);
-    const userInfoGear = await getGear();
-    await this.props.setGear(userInfoGear.user.gear);
+    try {
+      await deleteGearItem(id);
+      const userInfoGear = await getGear();
+      await this.props.setGear(userInfoGear.user.gear);
+    } catch ({ message }) {
+      console.log(message)
+    }
   };
 
   render() {
