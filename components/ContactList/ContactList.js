@@ -12,9 +12,13 @@ export class ContactList extends Component {
   }
 
   deleteContact = async id => {
-    await deleteContact(id);
-    const userInfoContacts = await getEmergencyContacts();
-    this.props.setEmergencyContacts(userInfoContacts.user.emergencyContacts)
+    try {
+      await deleteContact(id);
+      const userInfoContacts = await getEmergencyContacts();
+      this.props.setEmergencyContacts(userInfoContacts.user.emergencyContacts);
+    } catch ({ message }) {
+      console.log(message)
+    }
   };
 
   render() {
