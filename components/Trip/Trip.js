@@ -11,7 +11,7 @@ import {
 import { connect } from "react-redux";
 import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
-import { addTrip, getTrips } from '../../util/apiCalls';
+import { addTrip, getTrips, addGearForTrip } from '../../util/apiCalls';
 import { setTrips } from '../../actions';
 import { bindActionCreators } from 'redux';
 
@@ -88,8 +88,21 @@ export class Trip extends Component {
     const tripId = trip.data.createTrip.trip.id;
     const userInfoTrips = await getTrips();
     await this.props.setTrips(userInfoTrips.user.trips);
+    this.saveTripGear(tripId);
     navigation.navigate("TripList");
     this.clearInputs();
+  }
+
+  saveTripGear = (tripId) => {
+    let promises = this.state.gear.map(gearId => {
+      let newGear = {
+        tripId,
+        gearId,
+        comment: ""
+      }
+      addGearForTrip(newGear);
+    })
+    return Promise.all(promises)
   }
 
   clearInputs = () => {
