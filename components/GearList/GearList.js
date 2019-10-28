@@ -14,7 +14,7 @@ export class GearList extends Component {
   deleteItem = async id => {
     await deleteGearItem(id);
     const userInfoGear = await getGear();
-    this.props.setGear(userInfoGear.user.gear);
+    await this.props.setGear(userInfoGear.user.gear);
   };
 
   render() {

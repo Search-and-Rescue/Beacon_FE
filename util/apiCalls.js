@@ -162,7 +162,7 @@ export const getTrips = async () => {
 export const addTrip = async (newTrip) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation = `mutation {
- createTrip(input: {
+  createTrip(input: {
   name: "${newTrip.name}",
   startingPoint: "${newTrip.startingPoint}",
   endingPoint: "${newTrip.endingPoint}",
@@ -174,8 +174,8 @@ export const addTrip = async (newTrip) => {
   notificationTime: "${newTrip.notificationTime}",
   travelingCompanions: "${newTrip.travelingCompanions}",
   userId: ${parseInt(newTrip.userId)}
- }) {
-   trip {
+  }) {
+  trip {
       id
       name
       startingPoint
@@ -226,7 +226,7 @@ export const addVehicle = async (newVehicle) => {
       color
       licensePlate
     }
-  } 
+  }
 }`
 
   const options = {
@@ -303,7 +303,6 @@ export const addContact = async (newContact) => {
   }
 
   const data = await response.json();
-  console.log(data)
   return data;
 }
 
@@ -311,7 +310,7 @@ export const deleteGearItem = async (id) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation =  `mutation {
   removeGear(input: {
-    id ${id} }) {
+    id: ${id} }) {
     gear {
       itemName
       description
@@ -328,10 +327,9 @@ export const deleteGearItem = async (id) => {
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s vehicle.')
+    throw Error('Error deleting a user\'s gear item.')
   }
 
   const data = await response.json();
-  console.log('in apiCalls del gear data', data)
   return data;
 }
