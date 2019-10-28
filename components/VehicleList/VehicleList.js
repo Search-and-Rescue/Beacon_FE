@@ -12,9 +12,13 @@ export class VehicleList extends Component {
   }
 
   deleteVehicle = async (id) => {
-    await deleteVehicle(id);
-    const userInfoVehicles = await getVehicles();
-    this.props.setVehicles(userInfoVehicles.user.vehicles);
+    try {
+      await deleteVehicle(id);
+      const userInfoVehicles = await getVehicles();
+      this.props.setVehicles(userInfoVehicles.user.vehicles);
+    } catch ({message}) {
+      console.log(message)
+    }
   }
 
   render() {
