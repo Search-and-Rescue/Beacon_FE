@@ -9,7 +9,7 @@ export class ContactList extends Component {
   }
 
   deleteContact = id => {
-    console.log('in delete contact id: ', id)
+
   };
 
   render() {

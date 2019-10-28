@@ -9,7 +9,7 @@ export class GearList extends Component {
   }
 
   deleteItem = id => {
-    console.log('in delete gear item', id)
+
   };
 
   render() {

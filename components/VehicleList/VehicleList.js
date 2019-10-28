@@ -9,7 +9,7 @@ export class VehicleList extends Component {
   }
 
   deleteVehicle = (id) => {
-    console.log('in delete vehicle id: ', id)
+    
   }
 
   render() {
