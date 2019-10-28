@@ -303,6 +303,35 @@ export const addContact = async (newContact) => {
   }
 
   const data = await response.json();
-  console.log(data)
+  return data;
+}
+
+export const deleteContact = async (id) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+    removeContact(input: {
+      id: ${id} }) {
+      emergencyContact {
+        name
+        phone
+        email
+    }
+  }
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error removing a user\'s emergency contact.')
+  }
+
+  const data = await response.json();
+  console.log('data in delete contact api', data)
   return data;
 }
