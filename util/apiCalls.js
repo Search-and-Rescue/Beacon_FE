@@ -341,3 +341,31 @@ export const addGearForTrip = async (newGear) => {
   const data = await response.json();
   return data;
 }
+
+export const addContactsForTrip = async (newContact) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+                      addContactToTrip(input: {
+                        tripId: ${parseInt(newContact.tripId)},
+                        emergencyContactId: ${parseInt(newContact.emergencyContactId)}
+                      }) {
+                        clientMutationId
+                      }
+                    }`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s emergency contact to a trip.')
+  }
+
+  const data = await response.json();
+  console.log('data', data)
+  return data;
+}
