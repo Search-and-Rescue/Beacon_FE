@@ -172,7 +172,7 @@ export const addTrip = async (newTrip) => {
   endTime: "${newTrip.endTime}",
   notificationDate: "${newTrip.notificationDate}",
   notificationTime: "${newTrip.notificationTime}",
-  travelingCompanions: "${newTrip.travelingCompanions}",
+  travelingCompanions: ${parseInt(newTrip.travelingCompanions)},
   userId: ${parseInt(newTrip.userId)}
  }) {
    trip {
@@ -196,7 +196,7 @@ export const addTrip = async (newTrip) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ query:mutation })
+    body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {

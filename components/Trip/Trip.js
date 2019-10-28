@@ -11,6 +11,9 @@ import {
 import { connect } from "react-redux";
 import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
+import { addTrip, getTrips } from '../../util/apiCalls';
+import { setTrips } from '../../actions';
+import { bindActionCreators } from 'redux';
 
 export class Trip extends Component {
   constructor(props) {
@@ -31,7 +34,7 @@ export class Trip extends Component {
       endTime: "",
       notificationDate: "",
       notificationTime: "",
-      travelingCompanions: ""
+      travelingCompanions:""
     };
   }
 
@@ -66,10 +69,31 @@ export class Trip extends Component {
     this.setState({ gear_modal: !this.state.gear_modal });
   };
 
-  handleSubmit = () => {
-    const { navigation } = this.props;
+  handleSubmit = async () => {
+    const { navigation, user } = this.props;
+    const newTrip = {
+      name: this.state.name,
+      startingPoint: this.state.startingPoint,
+      endingPoint: this.state.endingPoint,
+      startDate: this.state.startDate,
+      startTime: this.state.startTime,
+      endDate: this.state.endDate,
+      endTime: this.state.endTime,
+      notificationDate: this.state.notificationDate,
+      notificationTime: this.state.notificationTime,
+      travelingCompanions: this.state.travelingCompanions,
+      userId: user.id
+    }
+    const trip = await addTrip(newTrip);
+    const tripId = trip.data.createTrip.trip.id;
+    const userInfoTrips = await getTrips();
+    await this.props.setTrips(userInfoTrips.user.trips);
     navigation.navigate("TripList");
-    this.setState(this.state = {
+    this.clearInputs();
+  }
+
+  clearInputs = () => {
+    this.setState({
       contact: 0,
       contact_modal: false,
       vehicle: 0,
@@ -159,43 +183,53 @@ export class Trip extends Component {
       <TextInput
         placeholder="Name"
         style={styles.input}
-        onChangeText={text => this.setState({ name: text })} />
+        onChangeText={text => this.setState({ name: text })}
+        value={this.state.name} />
       <TextInput 
         placeholder="Starting point" 
         style={styles.input}
-        onChangeText={text => this.setState({ startingPoint: text })} />
+        onChangeText={text => this.setState({ startingPoint: text })}
+        value={this.state.startingPoint} />
       <TextInput 
         placeholder="Ending point" 
         style={styles.input}
-        onChangeText={text => this.setState({ endingPoint: text })} />
+        onChangeText={text => this.setState({ endingPoint: text })}
+        value={this.state.endingPoint} />
       <TextInput 
         placeholder="Start date" 
         style={styles.input}
-        onChangeText={text => this.setState({ startDate: text })} />
+        onChangeText={text => this.setState({ startDate: text })}
+        value={this.state.startDate} />
       <TextInput 
         placeholder="Start time" 
         style={styles.input}
-        onChangeText={text => this.setState({ startTime: text })}/>
+        onChangeText={text => this.setState({ startTime: text })} 
+        value={this.state.startTime} />
       <TextInput 
         placeholder="End date" 
         style={styles.input} 
-        onChangeText={text => this.setState({ endDate: text })}/>
+        onChangeText={text => this.setState({ endDate: text })}
+        value={this.state.endDate} />
       <TextInput 
         placeholder="End time" 
         style={styles.input} 
-        onChangeText={text => this.setState({ endTime: text })}/>
+        onChangeText={text => this.setState({ endTime: text })} 
+        value={this.state.endTime} />
       <TextInput
         placeholder="Notification date"
         style={styles.input} 
-        onChangeText={text => this.setState({ notificationDate: text })}/>
+        onChangeText={text => this.setState({ notificationDate: text })}
+        value={this.state.notificationDate} />
       <TextInput 
         placeholder="Notification time" 
         style={styles.input} 
-        onChangeText={text => this.setState({ notificationTime: text })}/>
+        onChangeText={text => this.setState({ notificationTime: text })}
+        value={this.state.notificationTime} />
       <TextInput
         placeholder="Traveling Companions"
         style={styles.input} 
-        onChangeText={text => this.setState({ travelingCompanions: text })}/>
+        onChangeText={text => this.setState({ travelingCompanions: text })}
+        value={this.state.travelingCompanions} />
       <Modal
         animationType={"slide"}
         visible={this.state.contact_modal}
@@ -244,10 +278,13 @@ export class Trip extends Component {
   }
 }
 
-export const mapStateToProps = ({ contacts, vehicles, gear }) => ({
+export const mapStateToProps = ({ contacts, vehicles, gear, user }) => ({
   contacts,
   vehicles,
-  gear
-})
+  gear,
+  user
+});
 
-export default connect(mapStateToProps)(Trip);
+export const mapDispatchToProps = dispatch => bindActionCreators({ setTrips }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Trip);
