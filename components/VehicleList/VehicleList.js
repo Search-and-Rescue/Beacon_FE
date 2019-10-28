@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
-import { getVehicles, deleteVehicle } from "../../util/apiCalls";
+import { deleteVehicle, getVehicles } from "../../util/apiCalls";
 import { connect } from "react-redux";
-import { setVehicles } from "../../actions";
 import styles from "./styles";
+import { setVehicles } from "../../actions";
 import { bindActionCreators } from "redux";
 
 export class VehicleList extends Component {
