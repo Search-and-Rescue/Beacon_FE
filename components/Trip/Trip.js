@@ -21,7 +21,17 @@ export class Trip extends Component {
       vehicle: 0,
       vehicle_modal: false,
       gear: [],
-      gear_modal: false
+      gear_modal: false,
+      name: "",
+      startingPoint: "",
+      endingPoint: "",
+      startDate: "",
+      startTime: "",
+      endDate: "",
+      endTime: "",
+      notificationDate: "",
+      notificationTime: "",
+      travelingCompanions: ""
     };
   }
 
@@ -59,13 +69,23 @@ export class Trip extends Component {
   handleSubmit = () => {
     const { navigation } = this.props;
     navigation.navigate("TripList");
-    this.setState({
+    this.setState(this.state = {
       contact: 0,
       contact_modal: false,
       vehicle: 0,
       vehicle_modal: false,
       gear: [],
-      gear_modal: false
+      gear_modal: false,
+      name: "",
+      startingPoint: "",
+      endingPoint: "",
+      startDate: "",
+      startTime: "",
+      endDate: "",
+      endTime: "",
+      notificationDate: "",
+      notificationTime: "",
+      travelingCompanions: ""
     });
   }
 
@@ -136,13 +156,46 @@ export class Trip extends Component {
         onPress={() => this.toggleGearModal()}
         title={"Add Gear"}
       ></Button>
-      <TextInput placeholder="Starting point" style={styles.input} />
-      <TextInput placeholder="Ending point" style={styles.input} />
-      <TextInput placeholder="Start date" style={styles.input} />
-      <TextInput placeholder="Start time" style={styles.input} />
-      <TextInput placeholder="End date" style={styles.input} />
-      <TextInput placeholder="End time" style={styles.input} />
-      <TextInput placeholder="Notification time" style={styles.input} />
+      <TextInput
+        placeholder="Name"
+        style={styles.input}
+        onChangeText={text => this.setState({ name: text })} />
+      <TextInput 
+        placeholder="Starting point" 
+        style={styles.input}
+        onChangeText={text => this.setState({ startingPoint: text })} />
+      <TextInput 
+        placeholder="Ending point" 
+        style={styles.input}
+        onChangeText={text => this.setState({ endingPoint: text })} />
+      <TextInput 
+        placeholder="Start date" 
+        style={styles.input}
+        onChangeText={text => this.setState({ startDate: text })} />
+      <TextInput 
+        placeholder="Start time" 
+        style={styles.input}
+        onChangeText={text => this.setState({ startTime: text })}/>
+      <TextInput 
+        placeholder="End date" 
+        style={styles.input} 
+        onChangeText={text => this.setState({ endDate: text })}/>
+      <TextInput 
+        placeholder="End time" 
+        style={styles.input} 
+        onChangeText={text => this.setState({ endTime: text })}/>
+      <TextInput
+        placeholder="Notification date"
+        style={styles.input} 
+        onChangeText={text => this.setState({ notificationDate: text })}/>
+      <TextInput 
+        placeholder="Notification time" 
+        style={styles.input} 
+        onChangeText={text => this.setState({ notificationTime: text })}/>
+      <TextInput
+        placeholder="Traveling Companions"
+        style={styles.input} 
+        onChangeText={text => this.setState({ travelingCompanions: text })}/>
       <Modal
         animationType={"slide"}
         visible={this.state.contact_modal}
