@@ -1,27 +1,43 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, ScrollView } from "react-native";
+import { connect } from "react-redux";
 import styles from "./styles";
 
-export default class TripList extends Component {
+export class TripList extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    console.log(this.props.trips)
+    const tripCards = this.props.trips.map(trip => {
+      console.log('in tripList render', trip)
+      return (
+        <View key={trip.id} style={styles.tripCard}>
+          <Text
+            style={styles.tripRemoveBtn}
+          >REMOVE</Text>
+          <Text style={styles.tripsName}>{trip.name}
+          </Text>
+          <Text style={styles.tripsName}>{trip.startDate}</Text>
+        </View>
+      );
+    });
+
     return (
       <View>
-        <View style={styles.tripContainer}>
-          <View style={styles.categoryList}></View>
-          <Text>Trip List Page</Text>
-          <View style={styles.listItemBtn}>
-            <Button
-              title="Go to a Trip"
-              style={styles.addItemBtn}
-              onPress={() => this.props.navigation.navigate("Trip")}
-            />
-          </View>
+        <View style={styles.tripsListContainer}>
+          <ScrollView style={styles.tripsList}>
+            {tripCards}
+          </ScrollView>
         </View>
       </View>
     );
   }
 }
+
+export const mapStateToProps = ({ trips }) => ({
+  trips
+});
+
+export default connect(mapStateToProps)(TripList);

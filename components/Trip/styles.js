@@ -3,6 +3,13 @@ const styles = {
     flex: 1,
     alignItems: "center"
   },
+  tripsList: {
+    borderWidth: 2,
+    borderColor: "black",
+    flex: 1,
+    height: 300,
+    width: "90%"
+  },
   pickerView: {
     backgroundColor: '#efefef',
     margin: 5,
