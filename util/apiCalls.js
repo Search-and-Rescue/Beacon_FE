@@ -306,3 +306,32 @@ export const addContact = async (newContact) => {
   console.log(data)
   return data;
 }
+
+export const endActiveTrip = async (id) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+    endTrip(input: {
+      id: ${id} 
+      }) {
+        trip {
+        name
+    }
+  }
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error deactivating the user\'s trip status.')
+  }
+
+  const data = await response.json();
+  console.log(data)
+  return data;
+}
