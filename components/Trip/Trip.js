@@ -56,6 +56,19 @@ export class Trip extends Component {
     this.setState({ gear_modal: !this.state.gear_modal });
   };
 
+  handleSubmit = () => {
+    const { navigation } = this.props;
+    navigation.navigate("TripList");
+    this.setState({
+      contact: 0,
+      contact_modal: false,
+      vehicle: 0,
+      vehicle_modal: false,
+      gear: [],
+      gear_modal: false
+    });
+  }
+
   render() {
     const contactsList = this.props.contacts.map(contact => {
       return (
@@ -107,6 +120,7 @@ export class Trip extends Component {
 
   return (
     <View style={styles.tripContainer}>
+      <ScrollView style={styles.tripsList}>
       <Text>State is {this.state.contact}</Text>
       <Button
         onPress={() => this.toggleContactModal()}
@@ -167,12 +181,11 @@ export class Trip extends Component {
           </TouchableOpacity>
         </View>
       </Modal>
-      <TouchableOpacity
+        <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}
       >
-        <View style={styles.updateBtn}>
-          <Text style={styles.updateBtnText}>Add Trip</Text>
-        </View>
+        <Text style={styles.updateBtnText}>Add Trip</Text>
       </TouchableOpacity>
+      </ScrollView>
     </View>
   );
   }
