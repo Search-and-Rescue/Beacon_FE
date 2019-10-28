@@ -8,11 +8,11 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-
+import { connect } from "react-redux";
 import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 
-class Trip extends Component {
+export class Trip extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,104 +21,7 @@ class Trip extends Component {
       vehicle: 0,
       vehicle_modal: false,
       gear: [],
-      gear_modal: false,
-      contacts: [
-        {
-          name: "Mom",
-          id: 1
-        },
-        {
-          name: "Dad",
-          id: 2
-        },
-        {
-          name: "John",
-          id: 3
-        },
-        {
-          name: "Jane",
-          id: 4
-        }
-      ],
-      vehicles: [
-        {
-          make: "Toyota",
-          model: "Tacoma 1",
-          id: 1
-        },
-        {
-          make: "Toyota",
-          model: "Tacoma 2",
-          id: 2
-        },
-        {
-          make: "Toyota",
-          model: "Tacoma 3",
-          id: 3
-        },
-        {
-          make: "Toyota",
-          model: "Tacoma 4",
-          id: 4
-        }
-      ],
-      gearArray: [
-        {
-          id: 1,
-          itemName: "Rustic Iron Bottle",
-          description: "Chuck Norris can binary search unsorted data."
-        },
-        {
-          id: 2,
-          itemName: "Red Watch",
-          description:
-            "This is a long description of a watch that comes with me on all my adventures."
-        },
-        {
-          id: 3,
-          itemName: "Pink Bottle",
-          description: "Chuck Norris can binary search unsorted data."
-        },
-        {
-          id: 4,
-          itemName: "Pink Watch",
-          description:
-            "This is a long description of a watch that comes with me on all my adventures."
-        },
-        {
-          id: 5,
-          itemName: "Black Iron Bottle",
-          description: "Chuck Norris can binary search unsorted data."
-        },
-        {
-          id: 6,
-          itemName: "Black Watch",
-          description:
-            "This is a long description of a watch that comes with me on all my adventures."
-        },
-        {
-          id: 7,
-          itemName: "Blue Iron Bottle",
-          description: "Chuck Norris can binary search unsorted data."
-        },
-        {
-          id: 8,
-          itemName: "Blue Watch",
-          description:
-            "This is a long description of a watch that comes with me on all my adventures."
-        },
-        {
-          id: 9,
-          itemName: "Green Iron Bottle",
-          description: "Chuck Norris can binary search unsorted data."
-        },
-        {
-          id: 10,
-          itemName: "Green Watch",
-          description:
-            "This is a long description of a watch that comes with me on all my adventures."
-        }
-      ]
+      gear_modal: false
     };
   }
 
@@ -154,7 +57,7 @@ class Trip extends Component {
   };
 
   render() {
-    const contactsList = this.state.contacts.map(contact => {
+    const contactsList = this.props.contacts.map(contact => {
       return (
         <TouchableHighlight
           key={contact.id}
@@ -166,7 +69,7 @@ class Trip extends Component {
       );
     });
 
-    const vehiclesList = this.state.vehicles.map(vehicle => {
+    const vehiclesList = this.props.vehicles.map(vehicle => {
         return (
           <TouchableHighlight
             key={vehicle.id}
@@ -180,23 +83,23 @@ class Trip extends Component {
         );
       });
 
-    const gearList = this.state.gearArray.map(gear => {
+    const gearList = this.props.gear.map(gearItem => {
       return (
         <TouchableHighlight
-          key={gear.id}
+          key={gearItem.id}
           style={styles.modalButton}
-          onPress={() => this.toggleGear(gear.id)}
+          onPress={() => this.toggleGear(gearItem.id)}
         >
           <View
             style={styles.modalToggleGearContainer}
             >
             <Text 
               style={styles.modalToggleGearBtn}>
-              {!this.state.gear.includes(gear.id) ? "ADD" : "REMOVE"}
+              {!this.state.gear.includes(gearItem.id) ? "ADD" : "REMOVE"}
             </Text>
             <Text
               style={styles.modalToggleGearHeading}
-              >{gear.itemName}</Text>
+              >{gearItem.itemName}</Text>
           </View>
         </TouchableHighlight>
       );
@@ -275,4 +178,10 @@ class Trip extends Component {
   }
 }
 
-export default Trip;
+export const mapStateToProps = ({ contacts, vehicles, gear }) => ({
+  contacts,
+  vehicles,
+  gear
+})
+
+export default connect(mapStateToProps)(Trip);
