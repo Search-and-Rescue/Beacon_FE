@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
+import { getVehicles, deleteVehicle } from "../../util/apiCalls";
 import { connect } from "react-redux";
 import styles from "./styles";
 
@@ -8,8 +9,10 @@ export class VehicleList extends Component {
     super(props);
   }
 
-  deleteVehicle = (id) => {
-    
+  deleteVehicle = async (id) => {
+    await deleteVehicle(id);
+    const userInfoVehicles = await getVehicles();
+    console.log(userInfoVehicles);
   }
 
   render() {
