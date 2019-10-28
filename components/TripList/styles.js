@@ -1,23 +1,47 @@
 const styles = {
-  vehicleContainer: {
+  tripsListContainer: {
+    alignItems: "center",
+    height: '96%',
+    marginTop: 20
+  },
+  tripsList: {
+    borderWidth: 2,
+    borderColor: "black",
     flex: 1,
-    alignItems: "center"
+    height: 300,
+    width: "90%"
   },
-  input: {
-    backgroundColor: "#fff",
+  tripCard: {
+    backgroundColor: '#efefef',
+    borderWidth: 1,
+    borderColor: 'black',
+    flex: 1,
+    flexDirection: 'row',
+    height: 50,
+    marginVertical: 5,
+    justifyContent: 'space-between'
+  },
+  tripRemoveBtn: {
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 35,
+    margin: 4,
+    padding: 5
+  },
+  tripName: {
+    flex: 1,
+    fontSize: 21,
+    paddingLeft: 5,
+    paddingVertical: 8
+  },
+  addItemBtn: {
     borderColor: "black",
     borderWidth: 1,
-    marginBottom: 10,
     padding: 10,
-    width: "80%"
+    width: '100%'
   },
-  updateBtn: {
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 10,
-    width: "80%"
-  },
-  updateBtnText: {
+  addBtnText: {
+    fontSize: 21,
     textAlign: "center"
   }
 };

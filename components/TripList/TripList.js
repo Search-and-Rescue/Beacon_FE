@@ -18,6 +18,7 @@ export class TripList extends Component {
           >REMOVE</Text>
           <Text style={styles.tripsName}>{trip.name}
           </Text>
+          <Text style={styles.tripsName}>{trip.startDate}</Text>
         </View>
       );
     });
