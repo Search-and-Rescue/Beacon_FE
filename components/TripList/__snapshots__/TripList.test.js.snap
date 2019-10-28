@@ -2,17 +2,61 @@
 
 exports[`TripList should match the snapshot with all of the data passed through 1`] = `
 <View>
-  <View>
-    <View />
-    <Text>
-      Trip List Page
-    </Text>
-    <View>
-      <Button
-        onPress={[Function]}
-        title="Go to a Trip"
-      />
-    </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "96%",
+        "marginTop": 20,
+      }
+    }
+  >
+    <ScrollViewMock
+      style={
+        Object {
+          "borderColor": "black",
+          "borderWidth": 2,
+          "flex": 1,
+          "height": 300,
+          "width": "90%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#efefef",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 50,
+            "justifyContent": "space-between",
+            "marginVertical": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "borderColor": "black",
+              "borderWidth": 1,
+              "height": 35,
+              "margin": 4,
+              "padding": 5,
+            }
+          }
+        >
+          REMOVE
+        </Text>
+        <Text>
+          Spanish Peaks Backpacking Trip
+        </Text>
+        <Text>
+          2020-05-01
+        </Text>
+      </View>
+    </ScrollViewMock>
   </View>
 </View>
 `;

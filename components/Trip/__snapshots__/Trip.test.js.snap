@@ -9,384 +9,233 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     }
   }
 >
-  <Text>
-    State is 
-    0
-  </Text>
-  <Button
-    onPress={[Function]}
-    title="Add Emergency Contact"
-  />
-  <Text>
-    State is 
-    0
-  </Text>
-  <Button
-    onPress={[Function]}
-    title="Add Vehicle"
-  />
-  <Text>
-    State length 
-    0
-  </Text>
-  <Button
-    onPress={[Function]}
-    title="Add Gear"
-  />
-  <TextInput
-    allowFontScaling={true}
-    placeholder="Starting point"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-  />
-  <TextInput
-    allowFontScaling={true}
-    placeholder="Ending point"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-  />
-  <TextInput
-    allowFontScaling={true}
-    placeholder="Start date"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-  />
-  <TextInput
-    allowFontScaling={true}
-    placeholder="Start time"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-  />
-  <TextInput
-    allowFontScaling={true}
-    placeholder="End date"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-  />
-  <TextInput
-    allowFontScaling={true}
-    placeholder="End time"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-  />
-  <TextInput
-    allowFontScaling={true}
-    placeholder="Notification time"
-    rejectResponderTermination={true}
-    style={
-      Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-    underlineColorAndroid="transparent"
-  />
   <Component
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
+    style={
+      Object {
+        "borderColor": "black",
+        "borderWidth": 2,
+        "flex": 1,
+        "height": 300,
+        "width": "90%",
+      }
+    }
   >
-    <View
+    <Text>
+      State is 
+      0
+    </Text>
+    <Button
+      onPress={[Function]}
+      title="Add Emergency Contact"
+    />
+    <Text>
+      State is 
+      0
+    </Text>
+    <Button
+      onPress={[Function]}
+      title="Add Vehicle"
+    />
+    <Text>
+      State length 
+      0
+    </Text>
+    <Button
+      onPress={[Function]}
+      title="Add Gear"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Starting point"
+      rejectResponderTermination={true}
       style={
         Object {
-          "backgroundColor": "#efefef",
-          "bottom": 30,
-          "height": 400,
-          "left": 10,
-          "margin": 5,
-          "padding": 20,
-          "position": "absolute",
-          "right": 10,
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
         }
       }
-    >
-      <Text
-        style={
-          Object {
-            "fontWeight": "bold",
-            "marginBottom": 5,
-          }
-        }
-      >
-        Select Emergency Contact:
-      </Text>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="1"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Mom
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="2"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Dad
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="3"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          John
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="4"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Jane
-        </Text>
-      </TouchableHighlight>
-    </View>
-  </Component>
-  <Component
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Ending point"
+      rejectResponderTermination={true}
       style={
         Object {
-          "backgroundColor": "#efefef",
-          "bottom": 30,
-          "height": 400,
-          "left": 10,
-          "margin": 5,
-          "padding": 20,
-          "position": "absolute",
-          "right": 10,
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
         }
       }
-    >
-      <Text
-        style={
-          Object {
-            "fontWeight": "bold",
-            "marginBottom": 5,
-          }
-        }
-      >
-        Select Vehicle:
-      </Text>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="1"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Toyota
-           
-          Tacoma 1
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="2"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Toyota
-           
-          Tacoma 2
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="3"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Toyota
-           
-          Tacoma 3
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="4"
-        onPress={[Function]}
-        style={
-          Object {
-            "marginVertical": 3,
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Toyota
-           
-          Tacoma 4
-        </Text>
-      </TouchableHighlight>
-    </View>
-  </Component>
-  <Component
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Start date"
+      rejectResponderTermination={true}
       style={
         Object {
-          "backgroundColor": "#efefef",
-          "bottom": 30,
-          "height": 400,
-          "left": 10,
-          "margin": 5,
-          "padding": 20,
-          "position": "absolute",
-          "right": 10,
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
         }
       }
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Start time"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="End date"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="End time"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Notification time"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <Component
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
     >
-      <Text
+      <View
         style={
           Object {
-            "fontWeight": "bold",
-            "marginBottom": 5,
+            "backgroundColor": "#efefef",
+            "bottom": 30,
+            "height": 400,
+            "left": 10,
+            "margin": 5,
+            "padding": 20,
+            "position": "absolute",
+            "right": 10,
           }
         }
       >
-        Add Gear Items:
-      </Text>
-      <Component>
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+              "marginBottom": 5,
+            }
+          }
+        >
+          Select Emergency Contact:
+        </Text>
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          onPress={[Function]}
+          style={
+            Object {
+              "marginVertical": 3,
+              "paddingVertical": 10,
+            }
+          }
+          underlayColor="black"
+        >
+          <Text>
+            Beans
+          </Text>
+        </TouchableHighlight>
+      </View>
+    </Component>
+    <Component
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#efefef",
+            "bottom": 30,
+            "height": 400,
+            "left": 10,
+            "margin": 5,
+            "padding": 20,
+            "position": "absolute",
+            "right": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+              "marginBottom": 5,
+            }
+          }
+        >
+          Select Vehicle:
+        </Text>
         <TouchableHighlight
           activeOpacity={0.85}
           delayPressOut={100}
@@ -400,489 +249,118 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           }
           underlayColor="black"
         >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Rustic Iron Bottle
-            </Text>
-          </View>
+          <Text>
+            Ford
+             
+            F150
+          </Text>
         </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="2"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
+      </View>
+    </Component>
+    <Component
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#efefef",
+            "bottom": 30,
+            "height": 400,
+            "left": 10,
+            "margin": 5,
+            "padding": 20,
+            "position": "absolute",
+            "right": 10,
           }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Red Watch
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="3"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Pink Bottle
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="4"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Pink Watch
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="5"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Black Iron Bottle
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="6"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Black Watch
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="7"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Blue Iron Bottle
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="8"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Blue Watch
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="9"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Green Iron Bottle
-            </Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="10"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginRight": 10,
-                  "marginVertical": 5,
-                  "paddingVertical": 3,
-                  "textAlign": "center",
-                  "width": 75,
-                }
-              }
-            >
-              ADD
-            </Text>
-            <Text
-              style={
-                Object {
-                  "paddingVertical": 10,
-                }
-              }
-            >
-              Green Watch
-            </Text>
-          </View>
-        </TouchableHighlight>
-      </Component>
-      <TouchableOpacity
-        activeOpacity={0.2}
-        onPress={[Function]}
+        }
       >
         <Text
           style={
             Object {
-              "borderColor": "black",
-              "borderWidth": 1,
-              "marginVertical": 3,
-              "padding": 10,
-              "textAlign": "center",
-              "width": "100%",
+              "fontWeight": "bold",
+              "marginBottom": 5,
             }
           }
         >
-          Submit Gear List
+          Add Gear Items:
         </Text>
-      </TouchableOpacity>
-    </View>
-  </Component>
-  <TouchableOpacity
-    activeOpacity={0.2}
-  >
-    <View
+        <Component>
+          <TouchableHighlight
+            activeOpacity={0.85}
+            delayPressOut={100}
+            key="89"
+            onPress={[Function]}
+            style={
+              Object {
+                "marginVertical": 3,
+                "paddingVertical": 10,
+              }
+            }
+            underlayColor="black"
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "borderColor": "black",
+                    "borderWidth": 1,
+                    "marginRight": 10,
+                    "marginVertical": 5,
+                    "paddingVertical": 3,
+                    "textAlign": "center",
+                    "width": 75,
+                  }
+                }
+              >
+                ADD
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "paddingVertical": 10,
+                  }
+                }
+              >
+                Rustic Iron Bottle
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </Component>
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+        >
+          <Text
+            style={
+              Object {
+                "borderColor": "black",
+                "borderWidth": 1,
+                "marginVertical": 3,
+                "padding": 10,
+                "textAlign": "center",
+                "width": "100%",
+              }
+            }
+          >
+            Submit Gear List
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </Component>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
       style={
         Object {
           "borderColor": "black",
@@ -903,7 +381,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       >
         Add Trip
       </Text>
-    </View>
-  </TouchableOpacity>
+    </TouchableOpacity>
+  </Component>
 </View>
 `;
