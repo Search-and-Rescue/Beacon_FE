@@ -306,3 +306,32 @@ export const addContact = async (newContact) => {
   console.log(data)
   return data;
 }
+
+export const deleteGearItem = async (id) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation =  `mutation {
+  removeGear(input: {
+    id ${id} }) {
+    gear {
+      itemName
+      description
+    }
+  } 
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s vehicle.')
+  }
+
+  const data = await response.json();
+  console.log('in apiCalls del gear data', data)
+  return data;
+}
