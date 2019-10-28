@@ -14,7 +14,8 @@ export class ContactList extends Component {
   deleteContact = async id => {
     await deleteContact(id);
     const userInfoContacts = await getEmergencyContacts();
-    console.log('in delete contact', userInfoContacts)
+    console.log('in del contact reply', userInfoContacts)
+    this.props.setEmergencyContacts(userInfoContacts.user.emergencyContacts)
   };
 
   render() {

@@ -162,7 +162,7 @@ export const getTrips = async () => {
 export const addTrip = async (newTrip) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation = `mutation {
- createTrip(input: {
+  createTrip(input: {
   name: "${newTrip.name}",
   startingPoint: "${newTrip.startingPoint}",
   endingPoint: "${newTrip.endingPoint}",
@@ -174,8 +174,8 @@ export const addTrip = async (newTrip) => {
   notificationTime: "${newTrip.notificationTime}",
   travelingCompanions: "${newTrip.travelingCompanions}",
   userId: ${parseInt(newTrip.userId)}
- }) {
-   trip {
+  }) {
+    trip {
       id
       name
       startingPoint
@@ -332,6 +332,5 @@ export const deleteContact = async (id) => {
   }
 
   const data = await response.json();
-  console.log('data in delete contact api', data)
   return data;
 }
