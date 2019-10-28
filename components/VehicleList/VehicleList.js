@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { getVehicles, deleteVehicle } from "../../util/apiCalls";
 import { connect } from "react-redux";
+import { setVehicles } from "../../actions";
 import styles from "./styles";
+import { bindActionCreators } from "redux";
 
 export class VehicleList extends Component {
   constructor(props) {
@@ -12,7 +14,7 @@ export class VehicleList extends Component {
   deleteVehicle = async (id) => {
     await deleteVehicle(id);
     const userInfoVehicles = await getVehicles();
-    console.log(userInfoVehicles);
+    this.props.setVehicles(userInfoVehicles.user.vehicles);
   }
 
   render() {
@@ -46,4 +48,7 @@ export const mapStateToProps = ({ vehicles }) => ({
   vehicles
 });
 
-export default connect(mapStateToProps)(VehicleList);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({ setVehicles }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(VehicleList);
