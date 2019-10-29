@@ -153,6 +153,8 @@ export class Trip extends Component {
   }
 
   render() {
+    const disableBtn = this.props.currentTrip;
+    const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
       return (
         <TouchableHighlight
@@ -322,7 +324,8 @@ export class Trip extends Component {
           </TouchableOpacity>
         </View>
       </Modal>
-        <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}
+        <TouchableOpacity style={disableBtnColor} onPress={this.handleSubmit}
+        disabled={disableBtn}
       >
         <Text style={styles.updateBtnText}>Add Trip</Text>
       </TouchableOpacity>
