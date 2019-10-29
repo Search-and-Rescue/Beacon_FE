@@ -21,6 +21,8 @@ export class TripList extends Component {
     try {
       await deactivateTrip(id);
       const userInfoTrips = getTrips();
+      setTrips(userInfoTrips);
+      this.toggleButtonModal();
     } catch ({ message }) {
       console.log(message)
     }
@@ -40,7 +42,6 @@ export class TripList extends Component {
         </View>
       );
     });
-
     return (
       <View>
         {this.state.active && (
