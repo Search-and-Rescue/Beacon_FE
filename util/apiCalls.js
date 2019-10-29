@@ -363,6 +363,38 @@ export const deleteGearItem = async (id) => {
   }
 
   const data = await response.json();
-  console.log('in apicall del', data)
+  return data;
+}
+
+export const deleteVehicle = async (id) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation {
+  removeVehicle(input: {
+    id: ${id} }) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+      state
+    }
+  } 
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error deleting a user\'s vehicle.')
+  }
+
+  const data = await response.json();
   return data;
 }
