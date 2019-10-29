@@ -26,6 +26,9 @@ const styles = {
     paddingVertical: 10,
     alignItems: "center"
   },
+  label: {
+    fontSize: 12
+  },
   input: {
     backgroundColor: "#fff",
     borderColor: "black",

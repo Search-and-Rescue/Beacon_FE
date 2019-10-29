@@ -41,7 +41,7 @@ export class Gear extends Component {
       <View style={styles.gearContainer}>
         <Text style={styles.label}>Item name:</Text>
         <TextInput
-          placeholder="item name"
+          placeholder="Red down sleeping bag"
           style={styles.input}
           onChangeText={text => this.setState({ itemName: text })}
           value={this.state.itemName}
@@ -49,14 +49,14 @@ export class Gear extends Component {
         />
         <Text style={styles.label}>Item description:</Text>
         <TextInput
-          placeholder="description"
+          placeholder="Mummy bag, 0 degree"
           style={styles.input}
           onChangeText={text => this.setState({ description: text })}
           value={this.state.description}
           name="description"
         />
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-          <Text style={styles.updateBtnText}>Add</Text>
+          <Text style={styles.updateBtnText}>ADD</Text>
         </TouchableOpacity>
       </View>
     );

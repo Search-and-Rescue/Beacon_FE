@@ -11,17 +11,17 @@ const styles = {
     width: "90%"
   },
   pickerView: {
-    backgroundColor: '#efefef',
+    backgroundColor: "#efefef",
     margin: 5,
     padding: 20,
-    position: 'absolute',
+    position: "absolute",
     bottom: 30,
     left: 10,
-    right: 10, 
+    right: 10,
     height: 400
   },
   modalHeading: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 5
   },
   modalButton: {
@@ -29,16 +29,16 @@ const styles = {
     marginVertical: 3
   },
   modalToggleGearContainer: {
-    flex: 1, 
-    flexDirection: 'row'
+    flex: 1,
+    flexDirection: "row"
   },
   modalToggleGearBtn: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     marginRight: 10,
     marginVertical: 5,
     paddingVertical: 3,
-    textAlign: 'center',
+    textAlign: "center",
     width: 75
   },
   modalToggleGearHeading: {
@@ -46,19 +46,22 @@ const styles = {
   },
   modalToggleContactsContainer: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: "row"
   },
   modalToggleContactsBtn: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     marginRight: 10,
     marginVertical: 5,
     paddingVertical: 3,
-    textAlign: 'center',
+    textAlign: "center",
     width: 75
   },
   modalToggleContactsHeading: {
     paddingVertical: 10
+  },
+  label: {
+    fontSize: 12
   },
   input: {
     backgroundColor: "#fff",
@@ -73,7 +76,7 @@ const styles = {
     borderWidth: 1,
     marginVertical: 3,
     padding: 10,
-    textAlign: 'center',
+    textAlign: "center",
     width: "100%"
   },
   updateBtnText: {

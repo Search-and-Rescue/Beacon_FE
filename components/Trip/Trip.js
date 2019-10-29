@@ -213,118 +213,130 @@ export class Trip extends Component {
   return (
     <View style={styles.tripContainer}>
       <ScrollView style={styles.tripsList}>
-        <Text>State length {`${this.state.contacts.length}`}</Text>
-      <Button
-        onPress={() => this.toggleContactsModal()}
-        title={"Add Emergency Contact"}
-      ></Button>
-      <Text>State is {this.state.vehicle}</Text>
-      <Button
-        onPress={() => this.toggleVehicleModal()}
-        title={"Add Vehicle"}
-      ></Button>
-      <Text>State length {`${this.state.gear.length}`}</Text>
-      <Button
-        onPress={() => this.toggleGearModal()}
-        title={"Add Gear"}
-      ></Button>
-      <TextInput
-        placeholder="Name"
-        style={styles.input}
-        onChangeText={text => this.setState({ name: text })}
-        value={this.state.name} />
-      <TextInput 
-        placeholder="Starting point" 
-        style={styles.input}
-        onChangeText={text => this.setState({ startingPoint: text })}
-        value={this.state.startingPoint} />
-      <TextInput 
-        placeholder="Ending point" 
-        style={styles.input}
-        onChangeText={text => this.setState({ endingPoint: text })}
-        value={this.state.endingPoint} />
-      <TextInput 
-        placeholder="Start date" 
-        style={styles.input}
-        onChangeText={text => this.setState({ startDate: text })}
-        value={this.state.startDate} />
-      <TextInput 
-        placeholder="Start time" 
-        style={styles.input}
-        onChangeText={text => this.setState({ startTime: text })} 
-        value={this.state.startTime} />
-      <TextInput 
-        placeholder="End date" 
-        style={styles.input} 
-        onChangeText={text => this.setState({ endDate: text })}
-        value={this.state.endDate} />
-      <TextInput 
-        placeholder="End time" 
-        style={styles.input} 
-        onChangeText={text => this.setState({ endTime: text })} 
-        value={this.state.endTime} />
-      <TextInput
-        placeholder="Notification date"
-        style={styles.input} 
-        onChangeText={text => this.setState({ notificationDate: text })}
-        value={this.state.notificationDate} />
-      <TextInput 
-        placeholder="Notification time" 
-        style={styles.input} 
-        onChangeText={text => this.setState({ notificationTime: text })}
-        value={this.state.notificationTime} />
-      <TextInput
-        placeholder="Traveling Companions"
-        style={styles.input} 
-        onChangeText={text => this.setState({ travelingCompanions: text })}
-        value={this.state.travelingCompanions} />
-      <Modal
-        animationType={"slide"}
-        visible={this.state.contacts_modal}
-        transparent={true}
-        onRequestClose={() => console.log("close requested")}
+        <Button
+          onPress={() => this.toggleContactsModal()}
+          title={"Add Emergency Contact"}
+        ></Button>
+        <Button
+          onPress={() => this.toggleVehicleModal()}
+          title={"Add Vehicle"}
+        ></Button>
+        <Button
+          onPress={() => this.toggleGearModal()}
+          title={"Add Gear"}
+        ></Button>
+        <Text style={styles.label}>Trip Name: </Text>
+        <TextInput
+          placeholder="Mt Massive w/soccer club"
+          style={styles.input}
+          onChangeText={text => this.setState({ name: text })}
+          value={this.state.name}
+        />
+        <Text style={styles.label}>Starting Point:</Text>
+        <TextInput
+          placeholder="Leadville Fish Hatchery"
+          style={styles.input}
+          onChangeText={text => this.setState({ startingPoint: text })}
+          value={this.state.startingPoint}
+        />
+        <Text style={styles.label}>Ending Point:</Text>
+        <TextInput
+          placeholder="Leadville Fish Hatchery"
+          style={styles.input}
+          onChangeText={text => this.setState({ endingPoint: text })}
+          value={this.state.endingPoint}
+        />
+        <Text style={styles.label}>Starting date:</Text>
+        <TextInput
+          placeholder="November 20, 2019"
+          style={styles.input}
+          onChangeText={text => this.setState({ startDate: text })}
+          value={this.state.startDate}
+        />
+        <Text style={styles.label}>Start time:</Text>
+        <TextInput
+          placeholder="07:00"
+          style={styles.input}
+          onChangeText={text => this.setState({ startTime: text })}
+          value={this.state.startTime}
+        />
+        <Text style={styles.label}>End date:</Text>
+        <TextInput
+          placeholder="November 20, 2019"
+          style={styles.input}
+          onChangeText={text => this.setState({ endDate: text })}
+          value={this.state.endDate}
+        />
+        <Text style={styles.label}>End time:</Text>
+        <TextInput
+          placeholder="11:30"
+          style={styles.input}
+          onChangeText={text => this.setState({ endTime: text })}
+          value={this.state.endTime}
+        />
+        <Text style={styles.label}>Notification date:</Text>
+        <TextInput
+          placeholder="November 20, 2019"
+          style={styles.input}
+          onChangeText={text => this.setState({ notificationDate: text })}
+          value={this.state.notificationDate}
+        />
+        <Text style={styles.label}>Notification time:</Text>
+        <TextInput
+          placeholder="14:00"
+          style={styles.input}
+          onChangeText={text => this.setState({ notificationTime: text })}
+          value={this.state.notificationTime}
+        />
+        <Text style={styles.label}>Number of Companions:</Text>
+        <TextInput
+          placeholder="3"
+          style={styles.input}
+          onChangeText={text => this.setState({ travelingCompanions: text })}
+          value={this.state.travelingCompanions}
+        />
+        <Modal
+          animationType={"slide"}
+          visible={this.state.contacts_modal}
+          transparent={true}
+          onRequestClose={() => console.log("close requested")}
         >
-        <View style={styles.pickerView}>
-          <Text style={styles.modalHeading}>Add Contacts Items:</Text>
-          <ScrollView>{contactsList}</ScrollView>
-          <TouchableOpacity
-            onPress={() => this.toggleContactsModal()}
-          >
-            <Text style={styles.updateBtn}>Submit Contacts List</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal>
-      <Modal
-        animationType={"slide"}
-        visible={this.state.vehicle_modal}
-        transparent={true}
-        onRequestClose={() => console.log("close requested")}
-      >
-        <View style={styles.pickerView}>
-          <Text style={styles.modalHeading}>Select Vehicle:</Text>
-          {vehiclesList}
-        </View>
-      </Modal>
-      <Modal
-        animationType={"slide"}
-        visible={this.state.gear_modal}
-        transparent={true}
-        onRequestClose={() => console.log("close requested")}
+          <View style={styles.pickerView}>
+            <Text style={styles.modalHeading}>Add Contacts Items:</Text>
+            <ScrollView>{contactsList}</ScrollView>
+            <TouchableOpacity onPress={() => this.toggleContactsModal()}>
+              <Text style={styles.updateBtn}>Submit Contacts List</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
+        <Modal
+          animationType={"slide"}
+          visible={this.state.vehicle_modal}
+          transparent={true}
+          onRequestClose={() => console.log("close requested")}
         >
-        <View style={styles.pickerView}>
-          <Text style={styles.modalHeading}>Add Gear Items:</Text>
-          <ScrollView>{gearList}</ScrollView>
-          <TouchableOpacity
-            onPress={() => this.toggleGearModal()}
-          >
-            <Text style={styles.updateBtn}>Submit Gear List</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal>
-        <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}
-      >
-        <Text style={styles.updateBtnText}>Add Trip</Text>
-      </TouchableOpacity>
+          <View style={styles.pickerView}>
+            <Text style={styles.modalHeading}>Select Vehicle:</Text>
+            {vehiclesList}
+          </View>
+        </Modal>
+        <Modal
+          animationType={"slide"}
+          visible={this.state.gear_modal}
+          transparent={true}
+          onRequestClose={() => console.log("close requested")}
+        >
+          <View style={styles.pickerView}>
+            <Text style={styles.modalHeading}>Add Gear Items:</Text>
+            <ScrollView>{gearList}</ScrollView>
+            <TouchableOpacity onPress={() => this.toggleGearModal()}>
+              <Text style={styles.updateBtn}>Submit Gear List</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
+        <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
+          <Text style={styles.updateBtnText}>Add Trip</Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

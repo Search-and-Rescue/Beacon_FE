@@ -40,32 +40,32 @@ export class Contact extends Component {
   render() {
     return (
       <View style={styles.contactContainer}>
-        <Text>Name</Text>
+        <Text style={styles.label}>Name</Text>
         <TextInput
-          placeholder="name"
+          placeholder="Jane D. Hiker"
           style={styles.input}
           onChangeText={text => this.setState({ name: text })}
           value={this.state.name}
           name="name"
         />
-        <Text>Phone number</Text>
+        <Text style={styles.label}>Phone number</Text>
         <TextInput
-          placeholder="phone"
+          placeholder="(970)123-4567"
           style={styles.input}
           onChangeText={text => this.setState({ phone: text })}
           value={this.state.phone}
           name="phone"
         />
-        <Text>Email address</Text>
+        <Text style={styles.label}>Email address</Text>
         <TextInput
-          placeholder="email"
+          placeholder="jane@email.com"
           style={styles.input}
           onChangeText={text => this.setState({ email: text })}
           value={this.state.email}
           name="email"
         />
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-          <Text style={styles.updateBtnText}>Update</Text>
+          <Text style={styles.updateBtnText}>ADD</Text>
         </TouchableOpacity>
       </View>
     );

@@ -4,7 +4,7 @@ const styles = {
     alignItems: "center"
   },
   label: {
-    fontSize: 18
+    fontSize: 12
   },
   input: {
     backgroundColor: "#fff",

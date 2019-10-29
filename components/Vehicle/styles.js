@@ -3,6 +3,9 @@ const styles = {
     flex: 1,
     alignItems: "center"
   },
+  label: {
+    fontSize: 12
+  },
   input: {
     backgroundColor: "#fff",
     borderColor: "black",
@@ -18,8 +21,8 @@ const styles = {
     width: "80%"
   },
   updateBtnText: {
-    textAlign: "center",
+    textAlign: "center"
   }
-}
+};
 
 export default styles;
