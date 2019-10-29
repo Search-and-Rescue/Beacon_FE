@@ -153,7 +153,7 @@ export class Trip extends Component {
   }
 
   render() {
-    const disableBtn = this.props.currentTrip;
+    const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
       return (
