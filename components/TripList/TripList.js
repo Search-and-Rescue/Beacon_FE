@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal, ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { getTrips, deactivateTrip } from "../../util/apiCalls";
-import { setTrips } from "../../actions";
+import { setTrips, removeCurrentTrip } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import styles from "./styles";
@@ -11,7 +11,6 @@ export class TripList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: true,
       button_modal: false
     }
   }
@@ -19,8 +18,7 @@ export class TripList extends Component {
   deactivateTripStatus = async id => {
     try {
       await deactivateTrip(id);
-      const userInfoTrips = getTrips();
-      setTrips(userInfoTrips);
+      this.props.removeCurrentTrip();
       this.toggleButtonModal();
     } catch ({ message }) {
       console.log(message)
@@ -43,13 +41,13 @@ export class TripList extends Component {
     });
     return (
       <View>
-        {this.state.active && (
+        {this.props.currentTrip && (
           <Button
             onPress={() => this.toggleButtonModal()}
             title={"Update trip status"}
           ></Button>
         )}
-        {this.state.active && (
+        {this.props.currentTrip && (
           <Modal
             animationType={"slide"}
             visible={this.state.button_modal}
@@ -59,7 +57,7 @@ export class TripList extends Component {
             <View style={styles.pickerView}>
               <Text style={styles.modalHeading}>Update trip status:</Text>
               <TouchableOpacity
-                onPress ={()=> this.deactivateTripStatus(this.props.currentTrip)}
+                onPress={() => this.deactivateTripStatus(this.props.currentTrip)}
               >
                 <View style={styles.theButton}>
                   <Text style={styles.theButtonText}>I'M BACK</Text>
@@ -90,6 +88,6 @@ export const mapStateToProps = ({ trips, currentTrip }) => ({
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({ getTrips, setTrips }, dispatch);
+  bindActionCreators({ setTrips, removeCurrentTrip }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripList);
