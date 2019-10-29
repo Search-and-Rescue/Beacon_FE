@@ -2,8 +2,8 @@ const styles = {
   tripContainer: {
     alignItems: "center",
     flex: 1,
-    marginHorizontal: '5%',
-    width: "90%"
+    marginHorizontal: '10%',
+    width: "80%"
   },
   tripsList: {
     flex: 1,
