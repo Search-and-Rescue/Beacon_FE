@@ -139,6 +139,7 @@ export const getTrips = async () => {
       notificationDate
       notificationTime
       travelingCompanions
+      active
       }
     } 
   }`

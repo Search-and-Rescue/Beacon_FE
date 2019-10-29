@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Modal, ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { endActiveTrip } from '../../util/apiCalls';
+import { getTrips, deactivateTrip } from "../../util/apiCalls";
 import { setTrips } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -19,8 +19,9 @@ export class TripList extends Component {
   
   deactivateTripStatus = async id => {
     try {
-      await endActiveTrip();
+      await deactivateTrip(id);
       const userInfoTrips = getTrips();
+      console.log('in deactive', userInfoTrips)
     } catch ({ message }) {
       console.log(message)
     }
@@ -31,6 +32,7 @@ export class TripList extends Component {
   };
 
   render() {
+    console.log('alltrips', this.props.trips)
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
@@ -89,6 +91,6 @@ export const mapStateToProps = ({ trips }) => ({
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({ setTrips }, dispatch);
+  bindActionCreators({ getTrips, setTrips }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripList);
