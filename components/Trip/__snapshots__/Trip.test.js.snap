@@ -21,7 +21,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     }
   >
     <Text>
-      State is 
+      State length 
       0
     </Text>
     <Button
@@ -46,6 +46,25 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     />
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Name"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="Starting point"
       rejectResponderTermination={true}
       style={
@@ -59,9 +78,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
       underlineColorAndroid="transparent"
+      value=""
     />
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="Ending point"
       rejectResponderTermination={true}
       style={
@@ -75,9 +96,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
       underlineColorAndroid="transparent"
+      value=""
     />
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="Start date"
       rejectResponderTermination={true}
       style={
@@ -91,9 +114,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
       underlineColorAndroid="transparent"
+      value=""
     />
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="Start time"
       rejectResponderTermination={true}
       style={
@@ -107,9 +132,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
       underlineColorAndroid="transparent"
+      value=""
     />
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="End date"
       rejectResponderTermination={true}
       style={
@@ -123,9 +150,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
       underlineColorAndroid="transparent"
+      value=""
     />
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="End time"
       rejectResponderTermination={true}
       style={
@@ -139,9 +168,29 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
       underlineColorAndroid="transparent"
+      value=""
     />
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Notification date"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="Notification time"
       rejectResponderTermination={true}
       style={
@@ -155,6 +204,25 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
       underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Traveling Companions"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+          "width": "80%",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
     />
     <Component
       animationType="slide"
@@ -185,24 +253,75 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             }
           }
         >
-          Select Emergency Contact:
+          Add Contacts Items:
         </Text>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
+        <Component>
+          <TouchableHighlight
+            activeOpacity={0.85}
+            delayPressOut={100}
+            onPress={[Function]}
+            style={
+              Object {
+                "marginVertical": 3,
+                "paddingVertical": 10,
+              }
             }
-          }
-          underlayColor="black"
+            underlayColor="black"
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "borderColor": "black",
+                    "borderWidth": 1,
+                    "marginRight": 10,
+                    "marginVertical": 5,
+                    "paddingVertical": 3,
+                    "textAlign": "center",
+                    "width": 75,
+                  }
+                }
+              >
+                ADD
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "paddingVertical": 10,
+                  }
+                }
+              >
+                Beans
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </Component>
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
         >
-          <Text>
-            Beans
+          <Text
+            style={
+              Object {
+                "borderColor": "black",
+                "borderWidth": 1,
+                "marginVertical": 3,
+                "padding": 10,
+                "textAlign": "center",
+                "width": "100%",
+              }
+            }
+          >
+            Submit Contacts List
           </Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     </Component>
     <Component
