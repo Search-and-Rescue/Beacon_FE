@@ -1,14 +1,14 @@
 const styles = {
   tripContainer: {
+    alignItems: "center",
     flex: 1,
-    alignItems: "center"
+    marginHorizontal: '5%',
+    width: "90%"
   },
   tripsList: {
-    borderWidth: 2,
-    borderColor: "black",
     flex: 1,
-    height: 300,
-    width: "90%"
+    height: 300, 
+    width: '100%'
   },
   pickerView: {
     backgroundColor: "#efefef",
@@ -60,6 +60,15 @@ const styles = {
   modalToggleContactsHeading: {
     paddingVertical: 10
   },
+  modalToggleButton: {
+    backgroundColor: "#efefef",
+    marginVertical: 4,
+  },
+  modalToggleText: {
+    fontSize: 21,
+    paddingVertical: 5,
+    textAlign: "center"
+  },
   label: {
     fontSize: 12
   },
@@ -69,7 +78,6 @@ const styles = {
     borderWidth: 1,
     marginBottom: 10,
     padding: 10,
-    width: "80%"
   },
   updateBtn: {
     borderColor: "black",
@@ -77,7 +85,6 @@ const styles = {
     marginVertical: 3,
     padding: 10,
     textAlign: "center",
-    width: "100%"
   },
   updateBtnText: {
     textAlign: "center"

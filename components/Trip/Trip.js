@@ -213,18 +213,24 @@ export class Trip extends Component {
   return (
     <View style={styles.tripContainer}>
       <ScrollView style={styles.tripsList}>
-        <Button
+        <TouchableOpacity
+        style={styles.modalToggleButton}
           onPress={() => this.toggleContactsModal()}
-          title={"Add Emergency Contact"}
-        ></Button>
-        <Button
+          >
+          <Text style={styles.modalToggleText}>Select Emergency Contacts</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        style={styles.modalToggleButton}
           onPress={() => this.toggleVehicleModal()}
-          title={"Add Vehicle"}
-        ></Button>
-        <Button
+        >
+          <Text style={styles.modalToggleText}>Select Vehicle</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+        style={styles.modalToggleButton}
           onPress={() => this.toggleGearModal()}
-          title={"Add Gear"}
-        ></Button>
+        >
+          <Text style={styles.modalToggleText}>Select Gear Items</Text>
+        </TouchableOpacity>
         <Text style={styles.label}>Trip Name: </Text>
         <TextInput
           placeholder="Mt Massive w/soccer club"
