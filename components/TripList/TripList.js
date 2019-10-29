@@ -30,7 +30,6 @@ export class TripList extends Component {
   };
 
   render() {
-    console.log('trips', this.props.trips)
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
@@ -58,7 +57,7 @@ export class TripList extends Component {
             <View style={styles.pickerView}>
               <Text style={styles.modalHeading}>Update trip status:</Text>
               <TouchableOpacity
-                onPress={()=> this.deactivateTripStatus(this.props.currentTrip)}
+                onPress={() => this.deactivateTripStatus(this.props.currentTrip)}
               >
                 <View style={styles.theButton}>
                   <Text style={styles.theButtonText}>I'M BACK</Text>
