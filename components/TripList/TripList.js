@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Modal, ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { getTrips, deactivateTrip } from "../../util/apiCalls";
-import { setTrips } from "../../actions";
+import { setTrips, removeCurrentTrip } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import styles from "./styles";
@@ -19,8 +19,9 @@ export class TripList extends Component {
   deactivateTripStatus = async id => {
     try {
       await deactivateTrip(id);
-      const userInfoTrips = getTrips();
-      setTrips(userInfoTrips);
+      // const userInfoTrips = getTrips();
+      // setTrips(userInfoTrips);
+      this.props.removeCurrentTrip();
       this.toggleButtonModal();
     } catch ({ message }) {
       console.log(message)
@@ -32,6 +33,7 @@ export class TripList extends Component {
   };
 
   render() {
+    console.log('trips', this.props.trips)
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
@@ -59,7 +61,7 @@ export class TripList extends Component {
             <View style={styles.pickerView}>
               <Text style={styles.modalHeading}>Update trip status:</Text>
               <TouchableOpacity
-                onPress ={()=> this.deactivateTripStatus(this.props.currentTrip)}
+                onPress={()=> this.deactivateTripStatus(this.props.currentTrip)}
               >
                 <View style={styles.theButton}>
                   <Text style={styles.theButtonText}>I'M BACK</Text>
@@ -90,6 +92,6 @@ export const mapStateToProps = ({ trips, currentTrip }) => ({
 });
 
 export const mapDispatchToProps = dispatch =>
-  bindActionCreators({ getTrips, setTrips }, dispatch);
+  bindActionCreators({ setTrips, removeCurrentTrip }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripList);
