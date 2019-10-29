@@ -11,27 +11,44 @@ import {
 import { connect } from "react-redux";
 import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
+import { addTrip, getTrips, addGearForTrip, addContactsForTrip, addVehiclesForTrip } from '../../util/apiCalls';
+import { setTrips } from '../../actions';
+import { bindActionCreators } from 'redux';
 
 export class Trip extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contact: 0,
-      contact_modal: false,
+      contacts: [],
+      contacts_modal: false,
       vehicle: 0,
       vehicle_modal: false,
       gear: [],
-      gear_modal: false
+      gear_modal: false,
+      name: "",
+      startingPoint: "",
+      endingPoint: "",
+      startDate: "",
+      startTime: "",
+      endDate: "",
+      endTime: "",
+      notificationDate: "",
+      notificationTime: "",
+      travelingCompanions:""
     };
   }
 
-  setContact = id => {
-    this.setState({ contact: id });
-    this.toggleContactModal();
+  toggleContacts = id => {
+    if(this.state.contacts.includes(id)) {
+      let remainingContacts = this.state.contacts.filter(item => item !== id)
+      this.setState({ contacts: remainingContacts })
+    } else {
+      this.setState({ contacts: [...this.state.contacts, id] })
+    }
   };
 
-  toggleContactModal = () => {
-    this.setState({ contact_modal: !this.state.contact_modal });
+  toggleContactsModal = () => {
+    this.setState({ contacts_modal: !this.state.contacts_modal });
   };
 
   setVehicle = id => {
@@ -56,16 +73,81 @@ export class Trip extends Component {
     this.setState({ gear_modal: !this.state.gear_modal });
   };
 
-  handleSubmit = () => {
-    const { navigation } = this.props;
+  handleSubmit = async () => {
+    const { navigation, user } = this.props;
+    const newTrip = {
+      name: this.state.name,
+      startingPoint: this.state.startingPoint,
+      endingPoint: this.state.endingPoint,
+      startDate: this.state.startDate,
+      startTime: this.state.startTime,
+      endDate: this.state.endDate,
+      endTime: this.state.endTime,
+      notificationDate: this.state.notificationDate,
+      notificationTime: this.state.notificationTime,
+      travelingCompanions: this.state.travelingCompanions,
+      userId: user.id
+    }
+    const trip = await addTrip(newTrip);
+    const tripId = trip.data.createTrip.trip.id;
+    const userInfoTrips = await getTrips();
+    await this.props.setTrips(userInfoTrips.user.trips);
+    this.saveTripGear(tripId);
+    this.saveTripContact(tripId);
+    this.saveTripVehicle(tripId);
     navigation.navigate("TripList");
+    this.clearInputs();
+  }
+
+  saveTripGear = (tripId) => {
+    let promises = this.state.gear.map(gearId => {
+      let newGear = {
+        tripId,
+        gearId,
+        comment: ""
+      };
+      addGearForTrip(newGear);
+    })
+    return Promise.all(promises);
+  }
+
+  saveTripContact = (tripId) => {
+    let promises = this.state.contacts.map(emergencyContactId => {
+      let newContact = {
+        tripId,
+        emergencyContactId
+      };
+      addContactsForTrip(newContact);
+    })
+    return Promise.all(promises);
+  }
+
+  saveTripVehicle = async (tripId) => {
+    let newVehicle = {
+      tripId,
+      vehicleId: this.state.vehicle
+    };
+    await addVehiclesForTrip(newVehicle);
+  }
+
+  clearInputs = () => {
     this.setState({
       contact: 0,
       contact_modal: false,
       vehicle: 0,
       vehicle_modal: false,
       gear: [],
-      gear_modal: false
+      gear_modal: false,
+      name: "",
+      startingPoint: "",
+      endingPoint: "",
+      startDate: "",
+      startTime: "",
+      endDate: "",
+      endTime: "",
+      notificationDate: "",
+      notificationTime: "",
+      travelingCompanions: ""
     });
   }
 
@@ -75,9 +157,19 @@ export class Trip extends Component {
         <TouchableHighlight
           key={contact.id}
           style={styles.modalButton}
-          onPress={() => this.setContact(contact.id)}
+          onPress={() => this.toggleContacts(contact.id)}
         >
-          <Text>{contact.name}</Text>
+          <View
+            style={styles.modalToggleContactsContainer}
+          >
+            <Text
+              style={styles.modalToggleContactsBtn}>
+              {!this.state.contacts.includes(contact.id) ? "ADD" : "REMOVE"}
+            </Text>
+            <Text
+              style={styles.modalToggleContactsHeading}
+            >{contact.name}</Text>
+          </View>
         </TouchableHighlight>
       );
     });
@@ -121,9 +213,9 @@ export class Trip extends Component {
   return (
     <View style={styles.tripContainer}>
       <ScrollView style={styles.tripsList}>
-      <Text>State is {this.state.contact}</Text>
+        <Text>State length {`${this.state.contacts.length}`}</Text>
       <Button
-        onPress={() => this.toggleContactModal()}
+        onPress={() => this.toggleContactsModal()}
         title={"Add Emergency Contact"}
       ></Button>
       <Text>State is {this.state.vehicle}</Text>
@@ -136,22 +228,70 @@ export class Trip extends Component {
         onPress={() => this.toggleGearModal()}
         title={"Add Gear"}
       ></Button>
-      <TextInput placeholder="Starting point" style={styles.input} />
-      <TextInput placeholder="Ending point" style={styles.input} />
-      <TextInput placeholder="Start date" style={styles.input} />
-      <TextInput placeholder="Start time" style={styles.input} />
-      <TextInput placeholder="End date" style={styles.input} />
-      <TextInput placeholder="End time" style={styles.input} />
-      <TextInput placeholder="Notification time" style={styles.input} />
+      <TextInput
+        placeholder="Name"
+        style={styles.input}
+        onChangeText={text => this.setState({ name: text })}
+        value={this.state.name} />
+      <TextInput 
+        placeholder="Starting point" 
+        style={styles.input}
+        onChangeText={text => this.setState({ startingPoint: text })}
+        value={this.state.startingPoint} />
+      <TextInput 
+        placeholder="Ending point" 
+        style={styles.input}
+        onChangeText={text => this.setState({ endingPoint: text })}
+        value={this.state.endingPoint} />
+      <TextInput 
+        placeholder="Start date" 
+        style={styles.input}
+        onChangeText={text => this.setState({ startDate: text })}
+        value={this.state.startDate} />
+      <TextInput 
+        placeholder="Start time" 
+        style={styles.input}
+        onChangeText={text => this.setState({ startTime: text })} 
+        value={this.state.startTime} />
+      <TextInput 
+        placeholder="End date" 
+        style={styles.input} 
+        onChangeText={text => this.setState({ endDate: text })}
+        value={this.state.endDate} />
+      <TextInput 
+        placeholder="End time" 
+        style={styles.input} 
+        onChangeText={text => this.setState({ endTime: text })} 
+        value={this.state.endTime} />
+      <TextInput
+        placeholder="Notification date"
+        style={styles.input} 
+        onChangeText={text => this.setState({ notificationDate: text })}
+        value={this.state.notificationDate} />
+      <TextInput 
+        placeholder="Notification time" 
+        style={styles.input} 
+        onChangeText={text => this.setState({ notificationTime: text })}
+        value={this.state.notificationTime} />
+      <TextInput
+        placeholder="Traveling Companions"
+        style={styles.input} 
+        onChangeText={text => this.setState({ travelingCompanions: text })}
+        value={this.state.travelingCompanions} />
       <Modal
         animationType={"slide"}
-        visible={this.state.contact_modal}
+        visible={this.state.contacts_modal}
         transparent={true}
         onRequestClose={() => console.log("close requested")}
-      >
+        >
         <View style={styles.pickerView}>
-          <Text style={styles.modalHeading}>Select Emergency Contact:</Text>
-          {contactsList}
+          <Text style={styles.modalHeading}>Add Contacts Items:</Text>
+          <ScrollView>{contactsList}</ScrollView>
+          <TouchableOpacity
+            onPress={() => this.toggleContactsModal()}
+          >
+            <Text style={styles.updateBtn}>Submit Contacts List</Text>
+          </TouchableOpacity>
         </View>
       </Modal>
       <Modal
@@ -191,10 +331,13 @@ export class Trip extends Component {
   }
 }
 
-export const mapStateToProps = ({ contacts, vehicles, gear }) => ({
+export const mapStateToProps = ({ contacts, vehicles, gear, user }) => ({
   contacts,
   vehicles,
-  gear
-})
+  gear,
+  user
+});
 
-export default connect(mapStateToProps)(Trip);
+export const mapDispatchToProps = dispatch => bindActionCreators({ setTrips }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Trip);
