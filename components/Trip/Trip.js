@@ -11,7 +11,7 @@ import {
 import { connect } from "react-redux";
 import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
-import { addTrip, getTrips, addGearForTrip, addContactsForTrip } from '../../util/apiCalls';
+import { addTrip, getTrips, addGearForTrip, addContactsForTrip, addVehiclesForTrip } from '../../util/apiCalls';
 import { setTrips } from '../../actions';
 import { bindActionCreators } from 'redux';
 
@@ -90,6 +90,7 @@ export class Trip extends Component {
     await this.props.setTrips(userInfoTrips.user.trips);
     this.saveTripGear(tripId);
     this.saveTripContact(tripId);
+    this.saveTripVehicle(tripId);
     navigation.navigate("TripList");
     this.clearInputs();
   }
@@ -112,6 +113,14 @@ export class Trip extends Component {
       emergencyContactId: this.state.contact
     };
     await addContactsForTrip(newContact);
+  }
+
+  saveTripVehicle = async (tripId) => {
+    let newVehicle = {
+      tripId,
+      vehicleId: this.state.vehicle
+    };
+    await addVehiclesForTrip(newVehicle);
   }
 
   clearInputs = () => {

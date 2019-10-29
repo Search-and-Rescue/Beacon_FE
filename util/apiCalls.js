@@ -366,7 +366,6 @@ export const addContactsForTrip = async (newContact) => {
   }
 
   const data = await response.json();
-  console.log('data', data)
   return data;
 }
 
@@ -399,6 +398,5 @@ export const addVehiclesForTrip = async (newVehicle) => {
   }
 
   const data = await response.json();
-  console.log('data', data)
   return data;
 }
