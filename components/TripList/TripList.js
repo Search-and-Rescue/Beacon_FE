@@ -11,7 +11,6 @@ export class TripList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: true,
       button_modal: false
     }
   }
@@ -19,8 +18,6 @@ export class TripList extends Component {
   deactivateTripStatus = async id => {
     try {
       await deactivateTrip(id);
-      // const userInfoTrips = getTrips();
-      // setTrips(userInfoTrips);
       this.props.removeCurrentTrip();
       this.toggleButtonModal();
     } catch ({ message }) {
@@ -45,13 +42,13 @@ export class TripList extends Component {
     });
     return (
       <View>
-        {this.state.active && (
+        {this.props.currentTrip && (
           <Button
             onPress={() => this.toggleButtonModal()}
             title={"Update trip status"}
           ></Button>
         )}
-        {this.state.active && (
+        {this.props.currentTrip && (
           <Modal
             animationType={"slide"}
             visible={this.state.button_modal}
