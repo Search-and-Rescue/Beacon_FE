@@ -1,7 +1,7 @@
 const styles = {
   tripsListContainer: {
     alignItems: "center",
-    height: '96%',
+    height: "96%",
     marginTop: 20
   },
   tripsList: {
@@ -12,31 +12,41 @@ const styles = {
     width: "90%"
   },
   tripCard: {
-    backgroundColor: '#efefef',
+    backgroundColor: "#efefef",
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 50,
     marginVertical: 5,
-    justifyContent: 'space-between'
+    justifyContent: "space-between"
   },
   tripRemoveBtn: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     height: 35,
     margin: 4,
     padding: 5
   },
-  tripName: {
+  tripTextContainer: {
     flex: 1,
-    fontSize: 21,
-    paddingLeft: 5,
-    paddingVertical: 8
+    flexDirection: "column"
+  },
+  tripsName: {
+    flex: 1,
+    fontSize: 18,
+    justifyContent: "flexStart",
+    paddingLeft: 5
+  },
+  tripsDate: {
+    flex: 1,
+    fontSize: 12,
+    justifyContent: "flexStart",
+    paddingLeft: 5
   },
   addItemBtn: {
     borderColor: "black",
     borderWidth: 1,
     padding: 10,
-    width: '100%'
+    width: "100%"
   },
   addBtnText: {
     fontSize: 21,
