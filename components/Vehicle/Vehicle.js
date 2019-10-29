@@ -48,7 +48,7 @@ export class Vehicle extends Component {
       <View style={styles.vehicleContainer}>
         <Text style={styles.label}>Make</Text>
         <TextInput
-          placeholder="make"
+          placeholder="Toyota"
           style={styles.input}
           onChangeText={text => this.setState({ make: text })}
           value={this.state.make}
@@ -56,7 +56,7 @@ export class Vehicle extends Component {
         />
         <Text style={styles.label}>Model</Text>
         <TextInput
-          placeholder="model"
+          placeholder="Tacoma"
           style={styles.input}
           onChangeText={text => this.setState({ model: text })}
           value={this.state.model}
@@ -64,7 +64,7 @@ export class Vehicle extends Component {
         />
         <Text style={styles.label}>Year</Text>
         <TextInput
-          placeholder="year"
+          placeholder="2010"
           style={styles.input}
           onChangeText={text => this.setState({ year: text })}
           value={String(this.state.year)}
@@ -72,7 +72,7 @@ export class Vehicle extends Component {
         />
         <Text style={styles.label}>Color</Text>
         <TextInput
-          placeholder="color"
+          placeholder="Silver"
           style={styles.input}
           onChangeText={text => this.setState({ color: text })}
           value={this.state.color}
@@ -80,7 +80,7 @@ export class Vehicle extends Component {
         />
         <Text style={styles.label}>License Plate</Text>
         <TextInput
-          placeholder="license plate"
+          placeholder="123ABC"
           style={styles.input}
           onChangeText={text => this.setState({ licensePlate: text })}
           value={this.state.licensePlate}
@@ -88,7 +88,7 @@ export class Vehicle extends Component {
         />
         <Text style={styles.label}>License State</Text>
         <TextInput
-          placeholder="license state"
+          placeholder="CO"
           style={styles.input}
           onChangeText={text => this.setState({ state: text })}
           value={this.state.state}
