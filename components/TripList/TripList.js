@@ -11,7 +11,6 @@ export class TripList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTripId: 0,
       active: true,
       button_modal: false
     }
