@@ -507,7 +507,7 @@ export const deactivateTrip = async (id) => {
     endTrip(input: {
       id: ${id} 
       }) {
-        trip {
+        trip{
         name
     }
   }
@@ -526,6 +526,6 @@ export const deactivateTrip = async (id) => {
   }
 
   const data = await response.json();
-  console.log(data)
+  console.log('data in deactive apicall', data)
   return data;
 }

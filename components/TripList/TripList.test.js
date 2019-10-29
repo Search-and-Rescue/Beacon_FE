@@ -7,6 +7,8 @@ import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
 
+jest.mock("react-native-gesture-handler", () => "TouchableOpacity");npm 
+
 describe("TripList", () => {
   let wrapper;
   const tripsMock = [{

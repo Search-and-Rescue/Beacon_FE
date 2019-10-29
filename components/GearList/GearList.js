@@ -15,7 +15,6 @@ export class GearList extends Component {
     try {
       await deleteGearItem(id);
       const userInfoGear = await getGear();
-      console.log('in delete item GL', userInfoGear)
       await this.props.setGear(userInfoGear.user.gear);
     } catch ({ message }) {
       console.log(message)

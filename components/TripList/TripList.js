@@ -11,7 +11,7 @@ export class TripList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTripId: 7,
+      activeTripId: 0,
       active: true,
       button_modal: false
     }
@@ -21,7 +21,6 @@ export class TripList extends Component {
     try {
       await deactivateTrip(id);
       const userInfoTrips = getTrips();
-      console.log('in deactive', userInfoTrips)
     } catch ({ message }) {
       console.log(message)
     }
@@ -32,7 +31,6 @@ export class TripList extends Component {
   };
 
   render() {
-    console.log('alltrips', this.props.trips)
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
@@ -61,7 +59,7 @@ export class TripList extends Component {
             <View style={styles.pickerView}>
               <Text style={styles.modalHeading}>Update trip status:</Text>
               <TouchableOpacity
-                onPress ={()=> this.deactivateTripStatus(this.state.active)}
+                onPress ={()=> this.deactivateTripStatus(this.props.currentTrip)}
               >
                 <View style={styles.theButton}>
                   <Text style={styles.theButtonText}>I'M BACK</Text>
@@ -86,8 +84,9 @@ export class TripList extends Component {
   }
 }
 
-export const mapStateToProps = ({ trips }) => ({
-  trips
+export const mapStateToProps = ({ trips, currentTrip }) => ({
+  trips, 
+  currentTrip
 });
 
 export const mapDispatchToProps = dispatch =>
