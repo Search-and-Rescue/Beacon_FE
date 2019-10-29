@@ -1,20 +1,28 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
+import { deleteContact, getEmergencyContacts } from "../../util/apiCalls";
 import { connect } from "react-redux";
 import styles from "./styles";
+import { setEmergencyContacts } from "../../actions";
+import { bindActionCreators } from "redux";
 
 export class ContactList extends Component {
   constructor(props) {
     super(props);
   }
 
-  deleteContact = id => {
-    console.log('in delete contact id: ', id)
+  deleteContact = async id => {
+    try {
+      await deleteContact(id);
+      const userInfoContacts = await getEmergencyContacts();
+      this.props.setEmergencyContacts(userInfoContacts.user.emergencyContacts);
+    } catch ({ message }) {
+      console.log(message)
+    }
   };
 
   render() {
     const contactCards = this.props.contacts.map(contact => {
-      console.log('in contactList render', contact)
       return (
         <View key={contact.id} style={styles.contactCard}>
           <Text
@@ -43,4 +51,7 @@ export const mapStateToProps = ({ contacts }) => ({
   contacts
 });
 
-export default connect(mapStateToProps)(ContactList);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({ setEmergencyContacts }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactList);

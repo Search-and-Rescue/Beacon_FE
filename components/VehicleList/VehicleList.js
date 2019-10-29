@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
+import { deleteVehicle, getVehicles } from "../../util/apiCalls";
 import { connect } from "react-redux";
 import styles from "./styles";
+import { setVehicles } from "../../actions";
+import { bindActionCreators } from "redux";
 
 export class VehicleList extends Component {
   constructor(props) {
     super(props);
   }
 
-  deleteVehicle = (id) => {
-    console.log('in delete vehicle id: ', id)
+  deleteVehicle = async (id) => {
+    try {
+      await deleteVehicle(id);
+      const userInfoVehicles = await getVehicles();
+      this.props.setVehicles(userInfoVehicles.user.vehicles);
+    } catch ({message}) {
+      console.log(message)
+    }
   }
 
   render() {
@@ -43,4 +52,7 @@ export const mapStateToProps = ({ vehicles }) => ({
   vehicles
 });
 
-export default connect(mapStateToProps)(VehicleList);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({ setVehicles }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(VehicleList);
