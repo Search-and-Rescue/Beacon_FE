@@ -123,4 +123,14 @@ describe('actions', () => {
     expect(result).toEqual(expectedAction);
   });
 
+  it('should have a type of REMOVE_CURRENT', () => {
+    const expectedAction = {
+      type: 'REMOVE_CURRENT'
+    };
+
+    const result = actions.removeCurrentTrip();
+
+    expect(result).toEqual(expectedAction);
+  });
+
 });

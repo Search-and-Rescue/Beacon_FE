@@ -28,3 +28,6 @@ export const setCurrentTrip = currentTrip => ({
   currentTrip
 })
 
+export const removeCurrentTrip = () => ({
+  type: 'REMOVE_CURRENT'
+})
