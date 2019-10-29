@@ -175,7 +175,7 @@ export const addTrip = async (newTrip) => {
   travelingCompanions: "${newTrip.travelingCompanions}",
   userId: ${parseInt(newTrip.userId)}
   }) {
-    trip {
+  trip {
       id
       name
       startingPoint
@@ -226,7 +226,7 @@ export const addVehicle = async (newVehicle) => {
       color
       licensePlate
     }
-  } 
+  }
 }`
 
   const options = {
@@ -297,6 +297,7 @@ export const addContact = async (newContact) => {
     },
     body: JSON.stringify({ query: mutation })
   };
+  
   const response = await fetch(url, options);
   if (!response.ok) {
     throw Error('Error adding a user\'s emergency contact.')
@@ -326,11 +327,42 @@ export const deleteContact = async (id) => {
     },
     body: JSON.stringify({ query: mutation })
   };
+
   const response = await fetch(url, options);
   if (!response.ok) {
     throw Error('Error removing a user\'s emergency contact.')
   }
 
   const data = await response.json();
+  return data;
+}
+
+export const deleteGearItem = async (id) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation =  `mutation{
+    removeGear(input: {
+    id: ${id} }) {
+    gear {
+      itemName
+      description
+    }
+  }  
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error deleting a user\'s gear item.')
+  }
+
+  const data = await response.json();
+  console.log('in apicall del', data)
   return data;
 }
