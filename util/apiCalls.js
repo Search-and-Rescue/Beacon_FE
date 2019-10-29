@@ -139,6 +139,7 @@ export const getTrips = async () => {
       notificationDate
       notificationTime
       travelingCompanions
+      active
       }
     } 
   }`
@@ -405,19 +406,19 @@ export const addGearForTrip = async (newGear) => {
 export const addContactsForTrip = async (newContact) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation = `mutation{
-                      addContactToTrip(input: {
-                        tripId: ${parseInt(newContact.tripId)},
-                        emergencyContactId: ${parseInt(newContact.emergencyContactId)}
-                      }) {
-                        trip{
-                          name
-                        }
-                        emergencyContact{
-                          name
-                          phone
-                        }
-                      }
-                    }`
+    addContactToTrip(input: {
+      tripId: ${parseInt(newContact.tripId)},
+      emergencyContactId: ${parseInt(newContact.emergencyContactId)}
+    }) {
+      trip{
+        name
+      }
+      emergencyContact{
+        name
+        phone
+      }
+    }
+  }`
 
   const options = {
     method: 'POST',
@@ -438,18 +439,18 @@ export const addContactsForTrip = async (newContact) => {
 export const addVehiclesForTrip = async (newVehicle) => {
   const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
   const mutation = `mutation{
-                      addVehicleToTrip(input: {
-                        tripId: ${parseInt(newVehicle.tripId)},
-                        vehicleId: ${parseInt(newVehicle.vehicleId)}
-                      }) {
-                        trip{
-                          name
-                        }
-                        vehicle{
-                          make
-                        }
-                      }
-                    }`
+    addVehicleToTrip(input: {
+      tripId: ${parseInt(newVehicle.tripId)},
+      vehicleId: ${parseInt(newVehicle.vehicleId)}
+    }) {
+      trip{
+        name
+      }
+      vehicle{
+        make
+      }
+    }
+  }`
 
   const options = {
     method: 'POST',
@@ -497,5 +498,34 @@ export const deleteVehicle = async (id) => {
   }
 
   const data = await response.json();
+  return data;
+}
+
+export const deactivateTrip = async (id) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+    endTrip(input: {
+      id: ${id} 
+      }) {
+        trip{
+        name
+    }
+  }
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error deactivating the user\'s trip status.')
+  }
+
+  const data = await response.json();
+  console.log('data in deactive apicall', data)
   return data;
 }

@@ -2,6 +2,86 @@
 
 exports[`TripList should match the snapshot with all of the data passed through 1`] = `
 <View>
+  <Button
+    onPress={[Function]}
+    title="Update trip status"
+  />
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "bottom": 30,
+          "left": 10,
+          "margin": 5,
+          "padding": 20,
+          "position": "absolute",
+          "right": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "bold",
+            "marginBottom": 5,
+          }
+        }
+      >
+        Update trip status:
+      </Text>
+      <Component
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "red",
+              "paddingVertical": 100,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 68,
+              }
+            }
+          >
+            I'M BACK
+          </Text>
+          <Text>
+            Stop all emergency notifications
+          </Text>
+        </View>
+      </Component>
+      <Component
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "darkgrey",
+              "marginVertical": 10,
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <Text>
+            Remain Active
+          </Text>
+        </View>
+      </Component>
+    </View>
+  </Component>
   <View
     style={
       Object {
