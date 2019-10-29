@@ -19,8 +19,8 @@ export class Trip extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contact: 0,
-      contact_modal: false,
+      contacts: [],
+      contacts_modal: false,
       vehicle: 0,
       vehicle_modal: false,
       gear: [],
@@ -38,13 +38,17 @@ export class Trip extends Component {
     };
   }
 
-  setContact = id => {
-    this.setState({ contact: id });
-    this.toggleContactModal();
+  toggleContacts = id => {
+    if(this.state.contacts.includes(id)) {
+      let remainingContacts = this.state.contacts.filter(item => item !== id)
+      this.setState({ contacts: remainingContacts })
+    } else {
+      this.setState({ contacts: [...this.state.contacts, id] })
+    }
   };
 
-  toggleContactModal = () => {
-    this.setState({ contact_modal: !this.state.contact_modal });
+  toggleContactsModal = () => {
+    this.setState({ contacts_modal: !this.state.contacts_modal });
   };
 
   setVehicle = id => {
@@ -107,12 +111,15 @@ export class Trip extends Component {
     return Promise.all(promises);
   }
 
-  saveTripContact = async (tripId) => {
-    let newContact = {
-      tripId,
-      emergencyContactId: this.state.contact
-    };
-    await addContactsForTrip(newContact);
+  saveTripContact = (tripId) => {
+    let promises = this.state.contacts.map(emergencyContactId => {
+      let newContact = {
+        tripId,
+        emergencyContactId
+      };
+      addContactsForTrip(newContact);
+    })
+    return Promise.all(promises);
   }
 
   saveTripVehicle = async (tripId) => {
@@ -150,9 +157,19 @@ export class Trip extends Component {
         <TouchableHighlight
           key={contact.id}
           style={styles.modalButton}
-          onPress={() => this.setContact(contact.id)}
+          onPress={() => this.toggleContacts(contact.id)}
         >
-          <Text>{contact.name}</Text>
+          <View
+            style={styles.modalToggleContactsContainer}
+          >
+            <Text
+              style={styles.modalToggleContactsBtn}>
+              {!this.state.contacts.includes(contact.id) ? "ADD" : "REMOVE"}
+            </Text>
+            <Text
+              style={styles.modalToggleContactsHeading}
+            >{contact.name}</Text>
+          </View>
         </TouchableHighlight>
       );
     });
@@ -196,9 +213,9 @@ export class Trip extends Component {
   return (
     <View style={styles.tripContainer}>
       <ScrollView style={styles.tripsList}>
-      <Text>State is {this.state.contact}</Text>
+        <Text>State length {`${this.state.contacts.length}`}</Text>
       <Button
-        onPress={() => this.toggleContactModal()}
+        onPress={() => this.toggleContactsModal()}
         title={"Add Emergency Contact"}
       ></Button>
       <Text>State is {this.state.vehicle}</Text>
@@ -263,13 +280,18 @@ export class Trip extends Component {
         value={this.state.travelingCompanions} />
       <Modal
         animationType={"slide"}
-        visible={this.state.contact_modal}
+        visible={this.state.contacts_modal}
         transparent={true}
         onRequestClose={() => console.log("close requested")}
-      >
+        >
         <View style={styles.pickerView}>
-          <Text style={styles.modalHeading}>Select Emergency Contact:</Text>
-          {contactsList}
+          <Text style={styles.modalHeading}>Add Contacts Items:</Text>
+          <ScrollView>{contactsList}</ScrollView>
+          <TouchableOpacity
+            onPress={() => this.toggleContactsModal()}
+          >
+            <Text style={styles.updateBtn}>Submit Contacts List</Text>
+          </TouchableOpacity>
         </View>
       </Modal>
       <Modal

@@ -366,6 +366,7 @@ export const addContactsForTrip = async (newContact) => {
   }
 
   const data = await response.json();
+  console.log('contacts', data)
   return data;
 }
 
