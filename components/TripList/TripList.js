@@ -1,22 +1,29 @@
 import React, { Component } from "react";
 import { Button, Modal, ScrollView, Text, View } from "react-native";
-import { endActiveTrip } from '../../util/apiCalls';
-import { connect } from "react-redux";
-import styles from "./styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { endActiveTrip } from '../../util/apiCalls';
+import { setTrips } from "../../actions";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import styles from "./styles";
 
 export class TripList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTripId: 1,
+      activeTripId: 7,
       active: true,
       button_modal: false
     }
   }
   
-  deactivateTripStatus = (id) => {
-    
+  deactivateTripStatus = async id => {
+    try {
+      await endActiveTrip();
+      const userInfoTrips = getTrips();
+    } catch ({ message }) {
+      console.log(message)
+    }
   } 
 
   toggleButtonModal = () => {
@@ -24,6 +31,7 @@ export class TripList extends Component {
   };
 
   render() {
+    console.log(this.props.trips)
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
@@ -81,4 +89,7 @@ export const mapStateToProps = ({ trips }) => ({
   trips
 });
 
-export default connect(mapStateToProps)(TripList);
+export const mapDispatchToProps = dispatch =>
+  bindActionCreators({ setTrips }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TripList);
