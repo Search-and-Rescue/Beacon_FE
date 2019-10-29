@@ -349,7 +349,13 @@ export const addContactsForTrip = async (newContact) => {
                         tripId: ${parseInt(newContact.tripId)},
                         emergencyContactId: ${parseInt(newContact.emergencyContactId)}
                       }) {
-                        clientMutationId
+                        trip{
+                          name
+                        }
+                        emergencyContact{
+                          name
+                          phone
+                        }
                       }
                     }`
 
