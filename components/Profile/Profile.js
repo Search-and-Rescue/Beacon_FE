@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, 
+import {   
   Modal,
   ScrollView, 
   View, 
@@ -108,14 +108,17 @@ class Profile extends Component {
 
     return (
       <View style={styles.profileContainer}>
-        <Button
-          onPress={() => this.toggleExperienceModal()}
-          title={"Choose Experience Level"}
-        ></Button>
-        <Button
+        <TouchableOpacity 
+          style={styles.modalToggleButton}
+          onPress={() => this.toggleExperienceModal()}>
+          <Text style={styles.modalToggleText}>Select Experience Level</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.modalToggleButton}
           onPress={() => this.toggleCosarModal()}
-          title={"Add COSAR Card Status"}
-        ></Button>
+        >
+          <Text style={styles.modalToggleText}>Select COSAR Card Status</Text>
+        </TouchableOpacity>
         <Modal
           animationType={"slide"}
           visible={this.state.experience_modal}
@@ -214,11 +217,19 @@ class Profile extends Component {
           <Text style={styles.label}>Email address:</Text>
           <TextInput
             keyboardType={"email-address"}
-            placeholder="me@email.com"
+            placeholder="jill@email.com"
             style={styles.input}
             onChangeText={text => this.setState({ email: text })}
             value={this.state.email}
             name="email"
+          />
+          <Text style={styles.label}>Birthday:</Text>
+          <TextInput
+            placeholder="October 1, 1985"
+            style={styles.input}
+            onChangeText={text => this.setState({ birthdate: text })}
+            value={this.state.birthdate}
+            name="birthdate"
           />
           <Text style={styles.label}>Password:</Text>
           <TextInput
@@ -228,7 +239,7 @@ class Profile extends Component {
             value={this.state.password_digest}
             name="password_digest"
           />
-          <Text style={styles.label}>My allergies:</Text>
+          <Text style={styles.label}>Allergies:</Text>
           <TextInput
             placeholder="Penicillin, peanuts, latex"
             style={styles.input}
@@ -236,75 +247,47 @@ class Profile extends Component {
             value={this.state.allergies}
             name="allergies"
           />
-          <Text style={styles.label}>My outdoor experience:</Text>
+          <Text style={styles.label}>Height:</Text>
           <TextInput
-            keyboardType={"numeric"}
-            placeholder="Beginner, Intermediate, Advanced"
-            style={styles.input}
-            onChangeText={text =>
-              this.setState({ experience_level: Number(text) })
-            }
-            value={`${this.state.experience_level}`}
-            name="experience_level"
-          />
-          <Text style={styles.label}>:</Text>
-          <TextInput
-            placeholder="Birthdate"
-            style={styles.input}
-            onChangeText={text => this.setState({ birthdate: text })}
-            value={this.state.birthdate}
-            name="birthdate"
-          />
-          <Text style={styles.label}>:</Text>
-          <TextInput
-            keyboardType={"numeric"}
-            placeholder="Weight"
-            style={styles.input}
-            onChangeText={text => this.setState({ weight: Number(text) })}
-            value={`${this.state.weight}`}
-            name="weight"
-          />
-          <Text style={styles.label}>:</Text>
-          <TextInput
-            placeholder="Height"
+            placeholder="5 08"
             style={styles.input}
             onChangeText={text => this.setState({ height: text })}
             value={this.state.height}
             name="height"
           />
-          <Text style={styles.label}>:</Text>
+          <Text style={styles.label}>Weight:</Text>
           <TextInput
-            placeholder="Hair color"
+            keyboardType={"numeric"}
+            placeholder="160"
+            style={styles.input}
+            onChangeText={text => this.setState({ weight: Number(text) })}
+            value={`${this.state.weight}`}
+            name="weight"
+          />
+          <Text style={styles.label}>Hair Color:</Text>
+          <TextInput
+            placeholder="Blonde"
             style={styles.input}
             onChangeText={text => this.setState({ hair_color: text })}
             value={this.state.hair_color}
             name="hair_color"
           />
-          <Text style={styles.label}>:</Text>
+          <Text style={styles.label}>Skin Color:</Text>
           <TextInput
-            placeholder="Skin color"
+            placeholder="Medium"
             style={styles.input}
             onChangeText={text => this.setState({ skin_color: text })}
             value={this.state.skin_color}
             name="skin_color"
           />
-          <Text style={styles.label}>:</Text>
+          <Text style={styles.label}>Gender:</Text>
           <TextInput
-            placeholder="Gender"
+            placeholder="F"
             style={styles.input}
             onChangeText={text => this.setState({ gender: text })}
             value={this.state.gender}
             name="gender"
           />
-          <Text style={styles.label}>:</Text>
-          <TextInput
-            placeholder="COSAR card"
-            style={styles.input}
-            onChangeText={text => this.setState({ COSAR_card: Boolean(text) })}
-            value={`${this.state.COSAR_card}`}
-            name="COSAR_card"
-          />
-          <Text style={styles.label}>:</Text>
         </ScrollView>
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
           <Text style={styles.updateBtnText}>Update</Text>

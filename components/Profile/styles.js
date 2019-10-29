@@ -1,12 +1,20 @@
 const styles = {
   profileContainer: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 40,
     alignItems: "center"
   },
+  modalToggleButton: {
+    backgroundColor: '#efefef',
+    marginVertical: 4,
+    width: "80%"
+  },
+  modalToggleText: {
+    fontSize: 21, 
+    paddingVertical: 5,
+    textAlign: "center"
+  },
   profileFlatList: {
-    borderWidth: 1,
-    borderColor: "red",
     width: "80%"
   },
   pickerView: {
@@ -14,7 +22,7 @@ const styles = {
     margin: 5,
     padding: 20,
     position: "absolute",
-    bottom: 30,
+    bottom: 0,
     left: 10,
     right: 10
   },
