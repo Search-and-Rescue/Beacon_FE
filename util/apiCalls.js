@@ -172,7 +172,7 @@ export const addTrip = async (newTrip) => {
   endTime: "${newTrip.endTime}",
   notificationDate: "${newTrip.notificationDate}",
   notificationTime: "${newTrip.notificationTime}",
-  travelingCompanions: "${newTrip.travelingCompanions}",
+  travelingCompanions: ${parseInt(newTrip.travelingCompanions)},
   userId: ${parseInt(newTrip.userId)}
   }) {
   trip {
@@ -196,7 +196,7 @@ export const addTrip = async (newTrip) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ query:mutation })
+    body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
@@ -360,6 +360,107 @@ export const deleteGearItem = async (id) => {
   const response = await fetch(url, options);
   if (!response.ok) {
     throw Error('Error deleting a user\'s gear item.')
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+export const addGearForTrip = async (newGear) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+          addGearToTrip(input: {
+            tripId: ${parseInt(newGear.tripId)},
+            gearId: ${parseInt(newGear.gearId)},
+            comments: "${newGear.comment}"
+          }) {
+            tripGear{
+              comments
+              gear{
+                itemName
+              }
+              trip{
+                name
+              }
+            }
+          }
+        }`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s gear to a trip.')
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+export const addContactsForTrip = async (newContact) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+    addContactToTrip(input: {
+      tripId: ${parseInt(newContact.tripId)},
+      emergencyContactId: ${parseInt(newContact.emergencyContactId)}
+    }) {
+      trip{
+        name
+      }
+      emergencyContact{
+        name
+        phone
+      }
+    }
+  }`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s emergency contact to a trip.')
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+export const addVehiclesForTrip = async (newVehicle) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+    addVehicleToTrip(input: {
+      tripId: ${parseInt(newVehicle.tripId)},
+      vehicleId: ${parseInt(newVehicle.vehicleId)}
+    }) {
+      trip{
+        name
+      }
+      vehicle{
+        make
+      }
+    }
+  }`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error adding a user\'s vehicle to a trip.')
   }
 
   const data = await response.json();

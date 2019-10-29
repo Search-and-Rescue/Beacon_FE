@@ -44,6 +44,22 @@ const styles = {
   modalToggleGearHeading: {
     paddingVertical: 10
   },
+  modalToggleContactsContainer: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  modalToggleContactsBtn: {
+    borderWidth: 1,
+    borderColor: 'black',
+    marginRight: 10,
+    marginVertical: 5,
+    paddingVertical: 3,
+    textAlign: 'center',
+    width: 75
+  },
+  modalToggleContactsHeading: {
+    paddingVertical: 10
+  },
   input: {
     backgroundColor: "#fff",
     borderColor: "black",

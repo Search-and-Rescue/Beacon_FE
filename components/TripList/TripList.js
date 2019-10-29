@@ -31,7 +31,6 @@ export class TripList extends Component {
   };
 
   render() {
-    console.log(this.props.trips)
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
