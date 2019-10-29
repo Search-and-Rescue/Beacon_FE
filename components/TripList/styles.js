@@ -5,7 +5,7 @@ const styles = {
     marginTop: 20
   },
   tripsList: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: "black",
     flex: 1,
     height: 300,
@@ -13,8 +13,6 @@ const styles = {
   },
   tripCard: {
     backgroundColor: '#efefef',
-    borderWidth: 1,
-    borderColor: 'black',
     flex: 1,
     flexDirection: 'row',
     height: 50,
