@@ -6,48 +6,99 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginHorizontal": "10%",
+      "width": "80%",
     }
   }
 >
   <Component
     style={
       Object {
-        "borderColor": "black",
-        "borderWidth": 2,
         "flex": 1,
         "height": 300,
-        "width": "90%",
+        "width": "100%",
       }
     }
   >
-    <Text>
-      State length 
-      0
-    </Text>
-    <Button
+    <TouchableOpacity
+      activeOpacity={0.2}
       onPress={[Function]}
-      title="Add Emergency Contact"
-    />
-    <Text>
-      State is 
-      0
-    </Text>
-    <Button
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "marginVertical": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 21,
+            "paddingVertical": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        Select Emergency Contacts
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
       onPress={[Function]}
-      title="Add Vehicle"
-    />
-    <Text>
-      State length 
-      0
-    </Text>
-    <Button
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "marginVertical": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 21,
+            "paddingVertical": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        Select Vehicle
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
       onPress={[Function]}
-      title="Add Gear"
-    />
+      style={
+        Object {
+          "backgroundColor": "#efefef",
+          "marginVertical": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 21,
+            "paddingVertical": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        Select Gear Items
+      </Text>
+    </TouchableOpacity>
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Trip Name: 
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Name"
+      placeholder="Mt Massive w/soccer club"
       rejectResponderTermination={true}
       style={
         Object {
@@ -56,16 +107,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Starting Point:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Starting point"
+      placeholder="Leadville Fish Hatchery"
       rejectResponderTermination={true}
       style={
         Object {
@@ -74,16 +133,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Ending Point:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Ending point"
+      placeholder="Leadville Fish Hatchery"
       rejectResponderTermination={true}
       style={
         Object {
@@ -92,16 +159,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Starting date:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Start date"
+      placeholder="November 20, 2019"
       rejectResponderTermination={true}
       style={
         Object {
@@ -110,16 +185,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Start time:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Start time"
+      placeholder="07:00"
       rejectResponderTermination={true}
       style={
         Object {
@@ -128,16 +211,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      End date:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="End date"
+      placeholder="November 20, 2019"
       rejectResponderTermination={true}
       style={
         Object {
@@ -146,16 +237,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      End time:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="End time"
+      placeholder="11:30"
       rejectResponderTermination={true}
       style={
         Object {
@@ -164,16 +263,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Notification date:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Notification date"
+      placeholder="November 20, 2019"
       rejectResponderTermination={true}
       style={
         Object {
@@ -182,16 +289,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Notification time:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Notification time"
+      placeholder="14:00"
       rejectResponderTermination={true}
       style={
         Object {
@@ -200,16 +315,24 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Number of Companions:
+    </Text>
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
-      placeholder="Traveling Companions"
+      placeholder="3"
       rejectResponderTermination={true}
       style={
         Object {
@@ -218,7 +341,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "borderWidth": 1,
           "marginBottom": 10,
           "padding": 10,
-          "width": "80%",
         }
       }
       underlineColorAndroid="transparent"
@@ -315,7 +437,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
                 "marginVertical": 3,
                 "padding": 10,
                 "textAlign": "center",
-                "width": "100%",
               }
             }
           >
@@ -468,7 +589,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
                 "marginVertical": 3,
                 "padding": 10,
                 "textAlign": "center",
-                "width": "100%",
               }
             }
           >
@@ -487,7 +607,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           "marginVertical": 3,
           "padding": 10,
           "textAlign": "center",
-          "width": "100%",
         }
       }
     >

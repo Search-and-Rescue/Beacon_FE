@@ -15,7 +15,7 @@ exports[`TripList should match the snapshot with all of the data passed through 
       style={
         Object {
           "borderColor": "black",
-          "borderWidth": 2,
+          "borderWidth": 1,
           "flex": 1,
           "height": 300,
           "width": "90%",
@@ -26,8 +26,6 @@ exports[`TripList should match the snapshot with all of the data passed through 
         style={
           Object {
             "backgroundColor": "#efefef",
-            "borderColor": "black",
-            "borderWidth": 1,
             "flex": 1,
             "flexDirection": "row",
             "height": 50,
@@ -49,12 +47,41 @@ exports[`TripList should match the snapshot with all of the data passed through 
         >
           REMOVE
         </Text>
-        <Text>
-          Spanish Peaks Backpacking Trip
-        </Text>
-        <Text>
-          2020-05-01
-        </Text>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "column",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "flex": 1,
+                "fontSize": 18,
+                "justifyContent": "flexStart",
+                "paddingLeft": 5,
+              }
+            }
+          >
+            Spanish Peaks Backpacking Trip
+          </Text>
+          <Text
+            style={
+              Object {
+                "flex": 1,
+                "fontSize": 12,
+                "justifyContent": "flexStart",
+                "paddingLeft": 5,
+              }
+            }
+          >
+            2020-05-01
+             to 
+            2020-05-03
+          </Text>
+        </View>
       </View>
     </ScrollViewMock>
   </View>

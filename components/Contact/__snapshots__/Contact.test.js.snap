@@ -9,7 +9,14 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     }
   }
 >
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+        "textAlign": "left",
+      }
+    }
+  >
     Name
   </Text>
   <TextInput
@@ -31,7 +38,14 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="Mom"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+        "textAlign": "left",
+      }
+    }
+  >
     Phone number
   </Text>
   <TextInput
@@ -53,7 +67,14 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="123 456 7890"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+        "textAlign": "left",
+      }
+    }
+  >
     Email address
   </Text>
   <TextInput

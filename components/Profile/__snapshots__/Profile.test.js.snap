@@ -6,29 +6,56 @@ exports[`Profile should match the snapshot with all of the data passed through 1
     Object {
       "alignItems": "center",
       "flex": 1,
-      "marginTop": 20,
+      "marginTop": 40,
     }
   }
 >
-  <Text>
-    Profile Page
-  </Text>
-  <Text>
-    State is 
-    0
-  </Text>
-  <Button
+  <TouchableOpacity
+    activeOpacity={0.2}
     onPress={[Function]}
-    title="Choose Experience Level"
-  />
-  <Text>
-    State is 
-    false
-  </Text>
-  <Button
+    style={
+      Object {
+        "backgroundColor": "#efefef",
+        "marginVertical": 4,
+        "width": "80%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 21,
+          "paddingVertical": 5,
+          "textAlign": "center",
+        }
+      }
+    >
+      Select Experience Level
+    </Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    activeOpacity={0.2}
     onPress={[Function]}
-    title="Add COSAR Card Status"
-  />
+    style={
+      Object {
+        "backgroundColor": "#efefef",
+        "marginVertical": 4,
+        "width": "80%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 21,
+          "paddingVertical": 5,
+          "textAlign": "center",
+        }
+      }
+    >
+      Select COSAR Card Status
+    </Text>
+  </TouchableOpacity>
   <Component
     animationType="slide"
     hardwareAccelerated={false}
@@ -40,7 +67,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       style={
         Object {
           "backgroundColor": "#efefef",
-          "bottom": 30,
+          "bottom": 0,
           "left": 10,
           "margin": 5,
           "padding": 20,
@@ -123,7 +150,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       style={
         Object {
           "backgroundColor": "#efefef",
-          "bottom": 30,
+          "bottom": 0,
           "left": 10,
           "margin": 5,
           "padding": 20,
@@ -181,17 +208,24 @@ exports[`Profile should match the snapshot with all of the data passed through 1
   <ScrollViewMock
     style={
       Object {
-        "borderColor": "red",
-        "borderWidth": 1,
         "width": "80%",
       }
     }
   >
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Name:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="name"
       onChangeText={[Function]}
-      placeholder="Name"
+      placeholder="Jill A. Hiker"
       rejectResponderTermination={true}
       style={
         Object {
@@ -205,11 +239,20 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Home address:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="address"
       onChangeText={[Function]}
-      placeholder="Home address"
+      placeholder="123 Main St, Apt. 3"
       rejectResponderTermination={true}
       style={
         Object {
@@ -223,11 +266,20 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      City:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="city"
       onChangeText={[Function]}
-      placeholder="City"
+      placeholder="Denver"
       rejectResponderTermination={true}
       style={
         Object {
@@ -241,11 +293,20 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      State:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="state"
       onChangeText={[Function]}
-      placeholder="State"
+      placeholder="Colorado"
       rejectResponderTermination={true}
       style={
         Object {
@@ -259,12 +320,21 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Zip code:
+    </Text>
     <TextInput
       allowFontScaling={true}
       keyboardType="numeric"
       name="zip"
       onChangeText={[Function]}
-      placeholder="Zip code"
+      placeholder="80202"
       rejectResponderTermination={true}
       style={
         Object {
@@ -278,12 +348,21 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Phone number:
+    </Text>
     <TextInput
       allowFontScaling={true}
       keyboardType="phone-pad"
       name="phone"
       onChangeText={[Function]}
-      placeholder="Phone number"
+      placeholder="(970) 123-4567"
       rejectResponderTermination={true}
       style={
         Object {
@@ -297,12 +376,21 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Email address:
+    </Text>
     <TextInput
       allowFontScaling={true}
       keyboardType="email-address"
       name="email"
       onChangeText={[Function]}
-      placeholder="Email address"
+      placeholder="jill@email.com"
       rejectResponderTermination={true}
       style={
         Object {
@@ -316,66 +404,20 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
-    <TextInput
-      allowFontScaling={true}
-      name="password_digest"
-      onChangeText={[Function]}
-      placeholder="Password"
-      rejectResponderTermination={true}
+    <Text
       style={
         Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
+          "fontSize": 12,
         }
       }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <TextInput
-      allowFontScaling={true}
-      name="allergies"
-      onChangeText={[Function]}
-      placeholder="Allergies"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <TextInput
-      allowFontScaling={true}
-      keyboardType="numeric"
-      name="experience_level"
-      onChangeText={[Function]}
-      placeholder="Experience level: 1, 2, or 3"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value="0"
-    />
+    >
+      Birthday:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="birthdate"
       onChangeText={[Function]}
-      placeholder="Birthdate"
+      placeholder="October 1, 1985"
       rejectResponderTermination={true}
       style={
         Object {
@@ -389,12 +431,102 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Password:
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      name="password_digest"
+      onChangeText={[Function]}
+      placeholder="********"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Allergies:
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      name="allergies"
+      onChangeText={[Function]}
+      placeholder="Penicillin, peanuts, latex"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Height:
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      name="height"
+      onChangeText={[Function]}
+      placeholder="5 08"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderColor": "black",
+          "borderWidth": 1,
+          "marginBottom": 10,
+          "padding": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Weight:
+    </Text>
     <TextInput
       allowFontScaling={true}
       keyboardType="numeric"
       name="weight"
       onChangeText={[Function]}
-      placeholder="Weight"
+      placeholder="160"
       rejectResponderTermination={true}
       style={
         Object {
@@ -408,29 +540,20 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
-    <TextInput
-      allowFontScaling={true}
-      name="height"
-      onChangeText={[Function]}
-      placeholder="Height"
-      rejectResponderTermination={true}
+    <Text
       style={
         Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
+          "fontSize": 12,
         }
       }
-      underlineColorAndroid="transparent"
-      value=""
-    />
+    >
+      Hair Color:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="hair_color"
       onChangeText={[Function]}
-      placeholder="Hair color"
+      placeholder="Blonde"
       rejectResponderTermination={true}
       style={
         Object {
@@ -444,11 +567,20 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Skin Color:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="skin_color"
       onChangeText={[Function]}
-      placeholder="Skin color"
+      placeholder="Medium"
       rejectResponderTermination={true}
       style={
         Object {
@@ -462,11 +594,20 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       underlineColorAndroid="transparent"
       value=""
     />
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+        }
+      }
+    >
+      Gender:
+    </Text>
     <TextInput
       allowFontScaling={true}
       name="gender"
       onChangeText={[Function]}
-      placeholder="Gender"
+      placeholder="F"
       rejectResponderTermination={true}
       style={
         Object {
@@ -479,24 +620,6 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       }
       underlineColorAndroid="transparent"
       value=""
-    />
-    <TextInput
-      allowFontScaling={true}
-      name="COSAR_card"
-      onChangeText={[Function]}
-      placeholder="COSAR card"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value="undefined"
     />
   </ScrollViewMock>
   <TouchableOpacity

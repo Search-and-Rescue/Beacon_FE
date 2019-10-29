@@ -9,14 +9,20 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     }
   }
 >
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+      }
+    }
+  >
     Make
   </Text>
   <TextInput
     allowFontScaling={true}
     name="make"
     onChangeText={[Function]}
-    placeholder="make"
+    placeholder="Toyota"
     rejectResponderTermination={true}
     style={
       Object {
@@ -31,14 +37,20 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="Ford"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+      }
+    }
+  >
     Model
   </Text>
   <TextInput
     allowFontScaling={true}
     name="model"
     onChangeText={[Function]}
-    placeholder="model"
+    placeholder="Tacoma"
     rejectResponderTermination={true}
     style={
       Object {
@@ -53,14 +65,20 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="F150"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+      }
+    }
+  >
     Year
   </Text>
   <TextInput
     allowFontScaling={true}
     name="year"
     onChangeText={[Function]}
-    placeholder="year"
+    placeholder="2010"
     rejectResponderTermination={true}
     style={
       Object {
@@ -75,14 +93,20 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="2010"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+      }
+    }
+  >
     Color
   </Text>
   <TextInput
     allowFontScaling={true}
     name="color"
     onChangeText={[Function]}
-    placeholder="color"
+    placeholder="Silver"
     rejectResponderTermination={true}
     style={
       Object {
@@ -97,14 +121,20 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="silver"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+      }
+    }
+  >
     License Plate
   </Text>
   <TextInput
     allowFontScaling={true}
     name="license_plate"
     onChangeText={[Function]}
-    placeholder="license plate"
+    placeholder="123ABC"
     rejectResponderTermination={true}
     style={
       Object {
@@ -119,14 +149,20 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="CYE 909"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+      }
+    }
+  >
     License State
   </Text>
   <TextInput
     allowFontScaling={true}
     name="state"
     onChangeText={[Function]}
-    placeholder="license state"
+    placeholder="CO"
     rejectResponderTermination={true}
     style={
       Object {
