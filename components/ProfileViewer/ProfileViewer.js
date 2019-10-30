@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import styles from "./styles";
 import { connect } from "react-redux";
 
-const ProfileViewer = props => {
+export const ProfileViewer = props => {
   const {
     address,
     allergies,
