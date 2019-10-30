@@ -119,7 +119,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
         }
       }
     >
-      ADD
+      ADD Emergency Contact
     </Text>
   </TouchableOpacity>
 </View>
