@@ -32,9 +32,11 @@ export class Trip extends Component {
       startDate: new Date(),
       startDate_modal: false,
       startTime: "",
-      endDate: "",
+      endDate: new Date(),
+      endDate_modal: false,
       endTime: "",
-      notificationDate: "",
+      notificationDate: new Date(),
+      notificationDate_modal: false,
       notificationTime: "",
       travelingCompanions:""
     };
@@ -128,26 +130,23 @@ export class Trip extends Component {
   clearInputs = () => {
     this.setState({
       contact: 0,
-      contact_modal: false,
       vehicle: 0,
-      vehicle_modal: false,
       gear: [],
-      gear_modal: false,
       name: "",
       startingPoint: "",
       endingPoint: "",
       startDate: new Date(),
       startTime: "",
-      endDate: "",
+      endDate: new Date(),
       endTime: "",
-      notificationDate: "",
+      notificationDate: new Date(),
       notificationTime: "",
       travelingCompanions: ""
     });
   }
 
   render() {
-    console.log(this.state.startDate);
+    console.log(this.state.endDate);
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
@@ -261,12 +260,6 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
-          {/* <TextInput
-            placeholder="November 20, 2019"
-            style={styles.input}
-            onChangeText={text => this.setState({ startDate: text })}
-            value={this.state.startDate}
-          /> */}
           <Text style={styles.label}>Start time:</Text>
           <TextInput
             placeholder="07:00"
@@ -275,12 +268,12 @@ export class Trip extends Component {
             value={this.state.startTime}
           />
           <Text style={styles.label}>End date:</Text>
-          <TextInput
-            placeholder="November 20, 2019"
-            style={styles.input}
-            onChangeText={text => this.setState({ endDate: text })}
-            value={this.state.endDate}
-          />
+          <TouchableOpacity
+            style={styles.modalToggleButton}
+            onPress={() => this.toggleModal("endDate_modal")}
+          >
+            <Text style={styles.modalToggleText}>Select End Date</Text>
+          </TouchableOpacity>
           <Text style={styles.label}>End time:</Text>
           <TextInput
             placeholder="11:30"
@@ -363,6 +356,23 @@ export class Trip extends Component {
                 onDateChange={(date) => this.setState({ startDate: date })} />
               <TouchableOpacity onPress={() => this.toggleModal("startDate_modal")}>
                 <Text style={styles.updateBtn}>Submit Start Date</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+          <Modal
+            animationType={"slide"}
+            visible={this.state.endDate_modal}
+            transparent={true}
+            onRequestClose={() => console.log("close requested")}
+          >
+            <View style={styles.pickerView}>
+              <Text style={styles.modalHeading}>Select End Date:</Text>
+              <DatePickerIOS
+                mode="date"
+                date={this.state.endDate}
+                onDateChange={(date) => this.setState({ endDate: date })} />
+              <TouchableOpacity onPress={() => this.toggleModal("endDate_modal")}>
+                <Text style={styles.updateBtn}>Submit End Date</Text>
               </TouchableOpacity>
             </View>
           </Modal>
