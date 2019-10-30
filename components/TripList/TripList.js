@@ -26,6 +26,11 @@ export class TripList extends Component {
   } 
 
   removeTrip = async (id) => {
+    if (id === this.props.currentTrip) {
+      await deactivateTrip(id);
+      this.props.removeCurrentTrip();
+    }
+    
     try {
       await deleteTrip(id);
       const userInfoTrips = await getTrips();
