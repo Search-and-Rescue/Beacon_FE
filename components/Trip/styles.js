@@ -97,7 +97,8 @@ const styles = {
     borderColor: "#EFB095",
     borderWidth: 4,
     marginVertical: 10,
-    paddingVertical: 12
+    paddingVertical: 12,
+    width: "100%"
   },
   disableColor: {
     backgroundColor: "maroon",

@@ -296,7 +296,7 @@ class Profile extends Component {
             />
           </ScrollView>
           <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-            <Text style={styles.updateBtnText}>UPDATE Profile</Text>
+            <Text style={styles.updateBtnText}>ADD PROFILE</Text>
           </TouchableOpacity>
           <View style={{ flex: 1 }} />
         </View>
