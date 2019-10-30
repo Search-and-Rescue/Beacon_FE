@@ -6,7 +6,9 @@ import {
   TextInput,
   TouchableHighlight,
   TouchableOpacity,
-  View
+  View,
+  KeyboardAvoidingView,
+  Platform
 } from "react-native";
 import { connect } from "react-redux";
 import styles from "./styles";
@@ -214,6 +216,10 @@ export class Trip extends Component {
     });
 
   return (
+  <KeyboardAvoidingView
+    behavior={"padding"}
+    style={{ flex: 1 }}
+  >
     <View style={styles.tripContainer}>
       <ScrollView style={styles.tripsList}>
         <TouchableOpacity
@@ -350,8 +356,11 @@ export class Trip extends Component {
         >
           <Text style={styles.updateBtnText}>Add Trip</Text>
         </TouchableOpacity>
+        <View style={{ flex: 1 }} />
       </ScrollView>
     </View>
+  </KeyboardAvoidingView>
+
   );
   }
 }
