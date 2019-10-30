@@ -46,7 +46,7 @@ export class Vehicle extends Component {
   render() {
     return (
       <View style={styles.vehicleContainer}>
-        <Text style={styles.label}>Make</Text>
+        <Text style={styles.label}>Make:</Text>
         <TextInput
           placeholder="Toyota"
           style={styles.input}
@@ -54,7 +54,7 @@ export class Vehicle extends Component {
           value={this.state.make}
           name="make"
         />
-        <Text style={styles.label}>Model</Text>
+        <Text style={styles.label}>Model:</Text>
         <TextInput
           placeholder="Tacoma"
           style={styles.input}
@@ -62,7 +62,7 @@ export class Vehicle extends Component {
           value={this.state.model}
           name="model"
         />
-        <Text style={styles.label}>Year</Text>
+        <Text style={styles.label}>Year:</Text>
         <TextInput
           keyboardType={"numeric"}
           placeholder="2010"
@@ -71,7 +71,7 @@ export class Vehicle extends Component {
           value={String(this.state.year)}
           name="year"
         />
-        <Text style={styles.label}>Color</Text>
+        <Text style={styles.label}>Color:</Text>
         <TextInput
           placeholder="Silver"
           style={styles.input}
@@ -79,7 +79,7 @@ export class Vehicle extends Component {
           value={this.state.color}
           name="color"
         />
-        <Text style={styles.label}>License Plate</Text>
+        <Text style={styles.label}>License Plate:</Text>
         <TextInput
           placeholder="123ABC"
           style={styles.input}
@@ -87,7 +87,7 @@ export class Vehicle extends Component {
           value={this.state.licensePlate}
           name="license_plate"
         />
-        <Text style={styles.label}>License State</Text>
+        <Text style={styles.label}>License State:</Text>
         <TextInput
           placeholder="CO"
           style={styles.input}

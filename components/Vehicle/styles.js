@@ -1,10 +1,13 @@
 const styles = {
   vehicleContainer: {
     flex: 1,
+    marginVertical: 40,
     alignItems: "center"
   },
   label: {
-    fontSize: 12
+    fontSize: 12,
+    textAlign: "left",
+    width: "80%"
   },
   input: {
     backgroundColor: "#fff",
