@@ -1,4 +1,9 @@
-import { getUser, getEmergencyContacts, getVehicles } from './apiCalls';
+import { 
+  getUser, 
+  getEmergencyContacts, 
+  getVehicles,
+  getGear
+} from './apiCalls';
 
 describe('getUser', () => {
   let mockUser;
@@ -28,7 +33,7 @@ describe('getUser', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockUsers)
+        json: () => Promise.resolve(mockUser)
       })
     })
   });
@@ -109,7 +114,7 @@ describe('getEmergencyContacts', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockUsers)
+        json: () => Promise.resolve(mockContacts)
       })
     })
   });
@@ -180,7 +185,7 @@ describe('getVehicles', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockUsers)
+        json: () => Promise.resolve(mockVehicles)
       })
     })
   });
@@ -231,6 +236,55 @@ describe('getVehicles', () => {
     })
 
     expect(getVehicles()).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('getGear', () => {
+  let mockGear;
+
+  beforeEach(() => {
+    mockGear = [
+      {
+        id: 1,
+        itemName: "Sleeping bag",
+        description: "Withstands -10 degree Fahrenheit"
+      }
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockGear)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const query = `query {
+  user(id: 1) {
+    gear{
+      id
+      itemName
+      description
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query })
+    };
+
+    getGear();
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return an array of the current user\'s gear', () => {
+    expect(getGear()).resolves.toEqual(mockGear);
   });
 
 });
