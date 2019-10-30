@@ -2,7 +2,8 @@ import {
   getUser, 
   getEmergencyContacts, 
   getVehicles,
-  getGear
+  getGear,
+  getTrips
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -303,6 +304,73 @@ describe('getGear', () => {
     })
 
     expect(getGear()).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('getTrips', () => {
+  let mockTrips;
+
+  beforeEach(() => {
+    mockTrips = [
+      {
+      id: 1,
+      name: "Mt Massive w/soccer club",
+      startingPoint: "Leadville Fish Hatchery",
+      endingPoint: "Leadville Fish Hatchery",
+      startDate: "November 20, 2019",
+      startTime: "07:00",
+      endDate: "November 20, 2019",
+      endTime: "11:30",
+      notificationDate: "November 20, 2019",
+      notificationTime: "14:00",
+      travelingCompanions: 3,
+      active: true
+      }
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockTrips)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const query = `query {
+  user(id: 1) {
+    trips{
+      id
+      name
+      startingPoint
+      endingPoint
+      startDate
+      startTime
+      endDate
+      endTime
+      notificationDate
+      notificationTime
+      travelingCompanions
+      active
+      }
+    } 
+  }`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query })
+    };
+
+    getTrips();
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return an array of the current user\'s trips', () => {
+    expect(getTrips()).resolves.toEqual(mockTrips);
   });
 
 });
