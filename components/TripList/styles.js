@@ -33,13 +33,11 @@ const styles = {
   tripsName: {
     flex: 1,
     fontSize: 18,
-    justifyContent: "flexStart",
     paddingLeft: 5
   },
   tripsDate: {
     flex: 1,
     fontSize: 12,
-    justifyContent: "flexStart",
     paddingLeft: 5
   },
   pickerView: {

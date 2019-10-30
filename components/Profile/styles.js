@@ -1,7 +1,7 @@
 const styles = {
   profileContainer: {
     flex: 1,
-    marginTop: 40,
+    marginVertical: 40,
     alignItems: "center"
   },
   modalToggleButton: {
