@@ -526,6 +526,35 @@ export const deactivateTrip = async (id) => {
   }
 
   const data = await response.json();
-  console.log('data in deactive apicall', data)
+  return data;
+}
+
+export const deleteTrip = async (tripId) => {
+  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const mutation = `mutation{
+  removeTrip(input: {
+    id: ${tripId}
+  }) {
+    trip{
+      id
+      name
+    }
+  }
+}`
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw Error('Error deleting a user\'s trip.')
+  }
+
+  const data = await response.json();
+  console.log('delete', data)
   return data;
 }
