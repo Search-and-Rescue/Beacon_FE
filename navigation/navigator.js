@@ -6,6 +6,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
+import DrawerHeader from '../navigation/DrawerHeader/DrawerHeader';
 
 import TripList from '../components/TripList/TripList';
 import Trip from '../components/Trip/Trip';
@@ -194,6 +195,31 @@ const VehicleStackNavigator = createStackNavigator(
   }
 );
 
+const DrawerConfig = {
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: "#f4511e"
+    },
+    headerTintColor: "#fff",
+    headerTitleStyle: {
+      color: "white"
+    }
+  },
+  contentOptions: {
+    inactiveTintColor: "#001028",
+    activeTintColor: "#F4813F",
+    itemsContainerStyle: {
+      marginVertical: 20
+    },
+    labelStyle: {
+      fontSize: 21
+    },
+    iconContainerStyle: {
+      opacity: 1
+    }
+  }
+};
+
 const AppDrawerNavigator = createDrawerNavigator({
   "My Trips": {
     screen: TripStackNavigator
@@ -210,7 +236,9 @@ const AppDrawerNavigator = createDrawerNavigator({
   "My Vehicles": {
     screen: VehicleStackNavigator
   }
-});
+},
+  DrawerConfig
+);
 
 const AppSwitchNavigator = createSwitchNavigator({
   Login: { screen: LoginScreen },

@@ -5,8 +5,10 @@ const styles = {
     marginTop: 20
   },
   tripsList: {
-    borderWidth: 1,
-    borderColor: "black",
+    backgroundColor: "fff",
+    borderColor: "#001028",
+    borderRadius: 3,
+    borderWidth: 4,
     flex: 1,
     height: 300,
     width: "90%"
@@ -24,11 +26,11 @@ const styles = {
     borderColor: "black",
     height: 30,
     marginVertical: 20,
-    padding: 5,
+    padding: 5
   },
   tripTextContainer: {
     flex: 1,
-    flexDirection: "column",
+    flexDirection: "column"
   },
   tripsName: {
     flex: 1,
