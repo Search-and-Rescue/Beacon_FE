@@ -34,7 +34,6 @@ const styles = {
   },
   modalHeading: {
     fontSize: 21,
-    fontWeight: "bold",
     marginBottom: 5
   },
   modalButton: {
