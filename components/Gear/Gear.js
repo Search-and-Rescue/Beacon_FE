@@ -56,7 +56,7 @@ export class Gear extends Component {
           name="description"
         />
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-          <Text style={styles.updateBtnText}>ADD Gear</Text>
+          <Text style={styles.updateBtnText}>ADD GEAR ITEM</Text>
         </TouchableOpacity>
       </View>
     );
