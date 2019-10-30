@@ -30,9 +30,10 @@ const styles = {
   },
   gearName: {
     flex: 1,
-    fontSize: 21,
-    paddingLeft: 5,
-    paddingVertical: 8
+    fontFamily: "Futura",
+    fontSize: 28,
+    paddingLeft: 7,
+    paddingVertical: 2
   },
   addItemBtn: {
     borderColor: "black",
