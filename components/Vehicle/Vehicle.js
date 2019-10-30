@@ -64,6 +64,7 @@ export class Vehicle extends Component {
         />
         <Text style={styles.label}>Year</Text>
         <TextInput
+          keyboardType={"numeric"}
           placeholder="2010"
           style={styles.input}
           onChangeText={text => this.setState({ year: text })}

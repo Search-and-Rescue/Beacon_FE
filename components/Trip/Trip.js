@@ -303,6 +303,7 @@ export class Trip extends Component {
           />
           <Text style={styles.label}>Number of Companions:</Text>
           <TextInput
+            keyboardType={"numeric"}
             placeholder="3"
             style={styles.input}
             onChangeText={text => this.setState({ travelingCompanions: text })}
