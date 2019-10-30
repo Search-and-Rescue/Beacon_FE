@@ -15,30 +15,33 @@ const styles = {
     backgroundColor: "#efefef",
     flex: 1,
     flexDirection: "row",
-    height: 50,
+    height: 70,
     marginVertical: 5,
     justifyContent: "space-between"
   },
   tripRemoveBtn: {
     borderWidth: 1,
     borderColor: "black",
-    height: 35,
-    margin: 4,
-    padding: 5
+    height: 30,
+    marginVertical: 20,
+    padding: 5,
   },
   tripTextContainer: {
     flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
   },
   tripsName: {
     flex: 1,
-    fontSize: 18,
-    paddingLeft: 5
+    fontFamily: "Futura",
+    fontSize: 28,
+    paddingLeft: 7,
+    paddingVertical: 2
   },
   tripsDate: {
     flex: 1,
-    fontSize: 12,
-    paddingLeft: 5
+    fontFamily: "Avenir",
+    fontSize: 18,
+    paddingLeft: 7
   },
   pickerView: {
     backgroundColor: "#efefef",
