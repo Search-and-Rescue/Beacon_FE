@@ -13,6 +13,7 @@ import Trip from '../components/Trip/Trip';
 import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
 import CategoryList from '../components/CategoryList/CategoryList';
 import ListItem from '../components/ListItem/ListItem';
+import ProfileViewer from '../components/ProfileViewer/ProfileViewer';
 import Profile from '../components/Profile/Profile';
 import ContactList from '../components/ContactList/ContactList';
 import Contact from '../components/Contact/Contact';
@@ -31,6 +32,21 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
         headerTitle: "My Trips"
+      };
+    }
+  }
+);
+
+const ProfileDashboardTabNavigator = createBottomTabNavigator(
+  {
+    ProfileViewer,
+    Profile
+  },
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index];
+      return {
+        headerTitle: "My Profile"
       };
     }
   }
@@ -76,6 +92,26 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
         headerTitle: "My Vehicles"
+      };
+    }
+  }
+);
+
+const ProfileStackNavigator = createStackNavigator(
+  {
+    ProfileDashboardTabNavigator: ProfileDashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={40}
+          />
+        )
       };
     }
   }
@@ -166,7 +202,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     screen: TripStackNavigator
   },
   "My Profile": {
-    screen: Profile
+    screen: ProfileStackNavigator
   },
   "My Emergency Contacts": {
     screen: ContactStackNavigator
