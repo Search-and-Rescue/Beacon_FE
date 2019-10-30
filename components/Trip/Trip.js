@@ -6,7 +6,8 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   View,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  DatePickerIOS
 } from "react-native";
 import { connect } from "react-redux";
 import styles from "./styles";
@@ -28,7 +29,8 @@ export class Trip extends Component {
       name: "",
       startingPoint: "",
       endingPoint: "",
-      startDate: "",
+      startDate: new Date(),
+      startDate_modal: false,
       startTime: "",
       endDate: "",
       endTime: "",
@@ -47,17 +49,13 @@ export class Trip extends Component {
     }
   };
 
-  toggleContactsModal = () => {
-    this.setState({ contacts_modal: !this.state.contacts_modal });
-  };
+  toggleModal = (modalName) => {
+    this.setState({ [modalName]: !this.state[modalName]})
+  }
 
   setVehicle = id => {
     this.setState({ vehicle: id });
-    this.toggleVehicleModal();
-  };
-
-  toggleVehicleModal = () => {
-    this.setState({ vehicle_modal: !this.state.vehicle_modal });
+    this.toggleModal("vehicle_modal");
   };
 
   toggleGear = id => {
@@ -67,10 +65,6 @@ export class Trip extends Component {
     } else {
       this.setState({gear: [...this.state.gear, id]})
     }
-  };
-
-  toggleGearModal = () => {
-    this.setState({ gear_modal: !this.state.gear_modal });
   };
 
   handleSubmit = async () => {
@@ -142,7 +136,7 @@ export class Trip extends Component {
       name: "",
       startingPoint: "",
       endingPoint: "",
-      startDate: "",
+      startDate: new Date(),
       startTime: "",
       endDate: "",
       endTime: "",
@@ -153,6 +147,7 @@ export class Trip extends Component {
   }
 
   render() {
+    console.log(this.state.chosenDate)
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
@@ -222,19 +217,19 @@ export class Trip extends Component {
         <ScrollView style={styles.tripsList}>
           <TouchableOpacity
             style={styles.modalToggleButton}
-            onPress={() => this.toggleContactsModal()}
+            onPress={() => this.toggleModal("contacts_modal")}
           >
             <Text style={styles.modalToggleText}>Select Emergency Contacts</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.modalToggleButton}
-            onPress={() => this.toggleVehicleModal()}
+            onPress={() => this.toggleModal("vehicle_modal")}
           >
             <Text style={styles.modalToggleText}>Select Vehicle</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.modalToggleButton}
-            onPress={() => this.toggleGearModal()}
+            onPress={() => this.toggleModal("gear_modal")}
           >
             <Text style={styles.modalToggleText}>Select Gear Items</Text>
           </TouchableOpacity>
@@ -260,12 +255,20 @@ export class Trip extends Component {
             value={this.state.endingPoint}
           />
           <Text style={styles.label}>Starting date:</Text>
-          <TextInput
+          <TouchableOpacity
+            style={styles.modalToggleButton}
+            onPress={() => this.toggleModal("startDate_modal")}
+          ></TouchableOpacity>
+          <DatePickerIOS
+            mode="date"
+            date={this.state.startDate} 
+            onDateChange={(date) => this.setState({ startDate: date })} />
+          {/* <TextInput
             placeholder="November 20, 2019"
             style={styles.input}
             onChangeText={text => this.setState({ startDate: text })}
             value={this.state.startDate}
-          />
+          /> */}
           <Text style={styles.label}>Start time:</Text>
           <TextInput
             placeholder="07:00"
@@ -318,7 +321,7 @@ export class Trip extends Component {
             <View style={styles.pickerView}>
               <Text style={styles.modalHeading}>Add Contacts Items:</Text>
               <ScrollView>{contactsList}</ScrollView>
-              <TouchableOpacity onPress={() => this.toggleContactsModal()}>
+              <TouchableOpacity onPress={() => this.toggleModal("contacts_modal")}>
                 <Text style={styles.updateBtn}>Submit Contacts List</Text>
               </TouchableOpacity>
             </View>
@@ -343,7 +346,7 @@ export class Trip extends Component {
             <View style={styles.pickerView}>
               <Text style={styles.modalHeading}>Add Gear Items:</Text>
               <ScrollView>{gearList}</ScrollView>
-              <TouchableOpacity onPress={() => this.toggleGearModal()}>
+              <TouchableOpacity onPress={() => this.toggleModal("gear_modal")}>
                 <Text style={styles.updateBtn}>Submit Gear List</Text>
               </TouchableOpacity>
             </View>
