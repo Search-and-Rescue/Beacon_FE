@@ -715,4 +715,22 @@ describe('addContact', () => {
     expect(addContact(mockContactPost)).resolves.toEqual(mockContact);
   });
 
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addContact(mockContactPost)).rejects.toEqual(Error('Error adding a user\'s emergency contact.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(addContact(mockContactPost)).rejects.toEqual(Error('fetch failed'))
+  });
+
 });
