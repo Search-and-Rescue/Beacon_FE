@@ -373,4 +373,22 @@ describe('getTrips', () => {
     expect(getTrips()).resolves.toEqual(mockTrips);
   });
 
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(getTrips()).rejects.toEqual(Error('Error fetching the user\'s trips.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(getTrips()).rejects.toEqual(Error('fetch failed'))
+  });
+
 });
