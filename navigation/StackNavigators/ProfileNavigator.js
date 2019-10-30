@@ -3,9 +3,11 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
 import Profile from "../../components/Profile/Profile";
+import ProfileViewer from "../../components/ProfileViewer/ProfileViewer";
 
-const ContactStackNavigator = createStackNavigator(
+const ProfileStackNavigator = createStackNavigator(
   {
+    ProfileViewer: ProfileViewer,
     Profile: Profile
   },
   {

@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileViewer should match the snapshot with all of the data passed through 1`] = `
+<View
+  style={
+    Object {
+      "borderColor": "black",
+      "borderWidth": 1,
+      "flex": 1,
+      "marginHorizontal": "5%",
+      "marginVertical": 20,
+      "paddingLeft": 5,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#efefef",
+        "fontSize": 21,
+        "marginTop": 7,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    About Me: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Ms. Hunter Dickinson
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    123 Main St.
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Leadville
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    CO
+    , 
+    80202
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    (710)123-4567
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    ohhello@email.com
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#efefef",
+        "fontSize": 21,
+        "marginTop": 7,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    Personal Information: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Birthday: 
+    1985-05-01
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Password: *********
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#efefef",
+        "fontSize": 21,
+        "marginTop": 7,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    Physical Description: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Height: 
+    150
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Weight: 
+    509
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Hair Color: 
+    silver
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Skin Color: 
+    olive
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Gender: 
+    F
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#efefef",
+        "fontSize": 21,
+        "marginTop": 7,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    First Responder FYI: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Allergies: 
+    Juniper Berries
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    Outdoor Experience Level: 
+    3
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 18,
+        "paddingTop": 2,
+      }
+    }
+  >
+    COSAR Card Status: 
+    Current
+  </Text>
+</View>
+`;
