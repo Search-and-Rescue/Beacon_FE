@@ -35,6 +35,7 @@ exports[`TripList should match the snapshot with all of the data passed through 
         }
       >
         <Text
+          onPress={[Function]}
           style={
             Object {
               "borderColor": "black",
