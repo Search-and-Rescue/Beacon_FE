@@ -4,7 +4,8 @@ import {
   getVehicles,
   getGear,
   getTrips,
-  addTrip
+  addTrip,
+  addVehicle
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -477,7 +478,7 @@ describe('addTrip', () => {
     expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
   });
 
-  it('should return an array of the current user\'s gear', () => {
+  it('should return the added Trip for the current user', () => {
     expect(addTrip(mockTripPost)).resolves.toEqual(mockTrip);
   });
 
@@ -497,6 +498,75 @@ describe('addTrip', () => {
     })
 
     expect(addTrip(mockTripPost)).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('addVehicle', () => {
+  let mockVehicle;
+  let mockVehiclePost;
+
+  beforeEach(() => {
+    mockVehicle = {
+      id: 1,
+      make: "Subaru",
+      model: "Impreza",
+      year: 2014,
+      color: "blue",
+      licensePlate: "123ABC"
+    }
+    mockVehiclePost = {
+      make: "Subaru",
+      model: "Impreza",
+      year: 2014,
+      color: "blue",
+      licensePlate: "123ABC",
+      userId: 1
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockVehicle)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation {
+  createVehicle(input: {
+    make: "${mockVehiclePost.make}",
+    model: "${mockVehiclePost.model}",
+    year: ${parseInt(mockVehiclePost.year)},
+    color: "${mockVehiclePost.color}",
+    licensePlate: "${mockVehiclePost.licensePlate}",
+    userId: ${parseInt(mockVehiclePost.userId)}
+  }) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addVehicle(mockVehiclePost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added Vehicle for the current user', () => {
+    expect(addVehicle(mockVehiclePost)).resolves.toEqual(mockVehicle);
   });
 
 });
