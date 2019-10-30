@@ -7,12 +7,9 @@ import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
 
-import Home from '../components/Home/Home';
 import TripList from '../components/TripList/TripList';
 import Trip from '../components/Trip/Trip';
 import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
-import CategoryList from '../components/CategoryList/CategoryList';
-import ListItem from '../components/ListItem/ListItem';
 import ProfileViewer from '../components/ProfileViewer/ProfileViewer';
 import Profile from '../components/Profile/Profile';
 import ContactList from '../components/ContactList/ContactList';
