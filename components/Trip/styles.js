@@ -85,7 +85,7 @@ const styles = {
     paddingBottom: 2
   },
   input: {
-    backgroundColor: "#fff",
+    backgroundColor: "#F0F0F0",
     borderColor: "#001028",
     borderRadius: 2,
     borderWidth: 2,
