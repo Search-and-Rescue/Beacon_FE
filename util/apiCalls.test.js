@@ -138,4 +138,8 @@ describe('getEmergencyContacts', () => {
     expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
   });
 
+  it('should return an array of the current user\'s emergency contacts', () => {
+    expect(getEmergencyContacts()).resolves.toEqual(mockContacts);
+  });
+
 });
