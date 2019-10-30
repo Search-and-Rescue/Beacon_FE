@@ -6,6 +6,7 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginVertical": 40,
     }
   }
 >
@@ -13,10 +14,12 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     style={
       Object {
         "fontSize": 12,
+        "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    Make
+    Make:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -41,10 +44,12 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     style={
       Object {
         "fontSize": 12,
+        "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    Model
+    Model:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -69,10 +74,12 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     style={
       Object {
         "fontSize": 12,
+        "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    Year
+    Year:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -98,10 +105,12 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     style={
       Object {
         "fontSize": 12,
+        "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    Color
+    Color:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -126,10 +135,12 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     style={
       Object {
         "fontSize": 12,
+        "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    License Plate
+    License Plate:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -154,10 +165,12 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     style={
       Object {
         "fontSize": 12,
+        "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    License State
+    License State:
   </Text>
   <TextInput
     allowFontScaling={true}

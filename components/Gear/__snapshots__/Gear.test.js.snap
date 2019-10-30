@@ -6,6 +6,7 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginVertical": 40,
     }
   }
 >
@@ -14,6 +15,7 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
       Object {
         "fontSize": 12,
         "textAlign": "left",
+        "width": "80%",
       }
     }
   >
@@ -43,6 +45,7 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
       Object {
         "fontSize": 12,
         "textAlign": "left",
+        "width": "80%",
       }
     }
   >

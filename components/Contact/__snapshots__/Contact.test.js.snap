@@ -6,6 +6,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginVertical": 40,
     }
   }
 >
@@ -14,10 +15,11 @@ exports[`Contact should match the snapshot with all of the data passed through 1
       Object {
         "fontSize": 12,
         "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    Name
+    Name:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -43,10 +45,11 @@ exports[`Contact should match the snapshot with all of the data passed through 1
       Object {
         "fontSize": 12,
         "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    Phone number
+    Phone number:
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -72,10 +75,11 @@ exports[`Contact should match the snapshot with all of the data passed through 1
       Object {
         "fontSize": 12,
         "textAlign": "left",
+        "width": "80%",
       }
     }
   >
-    Email address
+    Email address:
   </Text>
   <TextInput
     allowFontScaling={true}

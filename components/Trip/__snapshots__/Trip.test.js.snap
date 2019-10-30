@@ -100,6 +100,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -126,6 +127,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -152,6 +154,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -178,6 +181,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -204,6 +208,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -230,6 +235,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -256,6 +262,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -282,6 +289,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -308,6 +316,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
@@ -334,6 +343,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         style={
           Object {
             "fontSize": 12,
+            "textAlign": "left",
           }
         }
       >
