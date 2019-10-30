@@ -33,14 +33,14 @@ export class LoginScreen extends Component {
           title="Login"
           onPress={() => this.props.navigation.navigate("Dashboard")}
         >
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.loginButton}
           title="Login"
           onPress={() => this.props.navigation.navigate("Dashboard")}
         >
-          <Text style={styles.buttonText}>Sign Up</Text>
+          <Text style={styles.buttonText}>SIGN UP</Text>
         </TouchableOpacity>
       </View>
     );
