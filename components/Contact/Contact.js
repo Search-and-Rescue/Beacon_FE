@@ -40,7 +40,7 @@ export class Contact extends Component {
   render() {
     return (
       <View style={styles.contactContainer}>
-        <Text style={styles.label}>Name</Text>
+        <Text style={styles.label}>Name:</Text>
         <TextInput
           placeholder="Jane D. Hiker"
           style={styles.input}
@@ -48,7 +48,7 @@ export class Contact extends Component {
           value={this.state.name}
           name="name"
         />
-        <Text style={styles.label}>Phone number</Text>
+        <Text style={styles.label}>Phone number:</Text>
         <TextInput
           placeholder="(970)123-4567"
           style={styles.input}
@@ -56,7 +56,7 @@ export class Contact extends Component {
           value={this.state.phone}
           name="phone"
         />
-        <Text style={styles.label}>Email address</Text>
+        <Text style={styles.label}>Email address:</Text>
         <TextInput
           placeholder="jane@email.com"
           style={styles.input}

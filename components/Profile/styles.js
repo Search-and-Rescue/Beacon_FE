@@ -35,7 +35,8 @@ const styles = {
     alignItems: "center"
   },
   label: {
-    fontSize: 12
+    fontSize: 12,
+    textAlign: "left"
   },
   input: {
     backgroundColor: "#fff",
