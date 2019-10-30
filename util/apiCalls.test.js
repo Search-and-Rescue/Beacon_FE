@@ -5,7 +5,8 @@ import {
   getGear,
   getTrips,
   addTrip,
-  addVehicle
+  addVehicle,
+  addGearItem
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -585,6 +586,59 @@ describe('addVehicle', () => {
     })
 
     expect(addVehicle(mockVehiclePost)).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('addGearItem', () => {
+  let mockGearItem;
+  let mockGearItemPost;
+
+  beforeEach(() => {
+    mockGearItem = {
+      itemName: "Sleeping bag"
+    }
+    mockGearItemPost = {
+      itemName: "Sleeping bag",
+      description: "Withstands -10 degree Fahrenheit",
+      userId: 1
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockGearItem)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation {
+  createGear(input: {
+    itemName: "${mockGearItemPost.itemName}",
+    description: "${mockGearItemPost.description}",
+    userId: ${parseInt(mockGearItemPost.userId)}
+  }) {
+    gear {
+      itemName
+    }
+  } 
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addGearItem(mockGearItemPost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added gear item\'s name for the current user', () => {
+    expect(addGearItem(mockGearItemPost)).resolves.toEqual(mockGearItem);
   });
 
 });
