@@ -215,4 +215,22 @@ describe('getVehicles', () => {
     expect(getVehicles()).resolves.toEqual(mockVehicles);
   });
 
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(getVehicles()).rejects.toEqual(Error('Error fetching the user\'s vehicles.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(getVehicles()).rejects.toEqual(Error('fetch failed'))
+  });
+
 });
