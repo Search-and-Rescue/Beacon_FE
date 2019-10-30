@@ -80,7 +80,7 @@ const styles = {
   label: {
     color: "#001028",
     fontFamily: "Georgia",
-    fontSize: 21,
+    fontSize: 18,
     textAlign: "left",
     paddingBottom: 2
   },
