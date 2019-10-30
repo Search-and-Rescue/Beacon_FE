@@ -6,7 +6,8 @@ import {
   getTrips,
   addTrip,
   addVehicle,
-  addGearItem
+  addGearItem,
+  addContact
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -657,6 +658,61 @@ describe('addGearItem', () => {
     })
 
     expect(addGearItem(mockGearItemPost)).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('addContact', () => {
+  let mockContact;
+  let mockContactPost;
+
+  beforeEach(() => {
+    mockContact = {
+      name: "Samantha Freeman"
+    }
+    mockContactPost = {
+      name: "Samantha Freeman",
+      phone: "707.123.4567",
+      email: "skiracerchick@earthlink.net",
+      userId: 1
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockContact)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+          createContact(input: {
+            name: "${mockContactPost.name}",
+            phone: "${mockContactPost.phone}",
+            email: "${mockContactPost.email}",
+            userId: ${parseInt(mockContactPost.userId)}
+          }) {
+    emergencyContact {
+      name
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addContact(mockContactPost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added gear item\'s name for the current user', () => {
+    expect(addContact(mockContactPost)).resolves.toEqual(mockContact);
   });
 
 });
