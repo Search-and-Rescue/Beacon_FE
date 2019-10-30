@@ -5,8 +5,10 @@ const styles = {
     marginTop: 20
   },
   gearList: {
-    borderWidth: 1,
-    borderColor: "black",
+    backgroundColor: "fff",
+    borderColor: "#001028",
+    borderRadius: 3,
+    borderWidth: 4,
     flex: 1,
     height: 300,
     width: "90%"
@@ -15,12 +17,13 @@ const styles = {
     backgroundColor: "#efefef",
     flex: 1,
     flexDirection: "row",
-    height: 50,
-    marginVertical: 5
+    height: 70,
+    marginVertical: 5,
+    justifyContent: "space-between"
   },
   itemRemoveBtn: {
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: "#001028",
     height: 35,
     margin: 4,
     padding: 5

@@ -11,6 +11,7 @@ const styles = {
   profileHeading: {
     backgroundColor: "#001028",
     color: '#F0F0F0',
+    fontFamily: "Futura",
     fontSize: 28,
     marginBottom: 7,
     paddingLeft: 5,

@@ -23,7 +23,7 @@ const styles = {
   },
   tripRemoveBtn: {
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: "#001028",
     height: 30,
     marginVertical: 20,
     padding: 5
