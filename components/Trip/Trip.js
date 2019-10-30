@@ -147,7 +147,7 @@ export class Trip extends Component {
   }
 
   render() {
-    console.log(this.state.chosenDate)
+    console.log(this.state.startDate);
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
@@ -258,11 +258,9 @@ export class Trip extends Component {
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("startDate_modal")}
-          ></TouchableOpacity>
-          <DatePickerIOS
-            mode="date"
-            date={this.state.startDate} 
-            onDateChange={(date) => this.setState({ startDate: date })} />
+          >
+            <Text style={styles.modalToggleText}>Select Start Date</Text>
+          </TouchableOpacity>
           {/* <TextInput
             placeholder="November 20, 2019"
             style={styles.input}
@@ -348,6 +346,23 @@ export class Trip extends Component {
               <ScrollView>{gearList}</ScrollView>
               <TouchableOpacity onPress={() => this.toggleModal("gear_modal")}>
                 <Text style={styles.updateBtn}>Submit Gear List</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+          <Modal
+            animationType={"slide"}
+            visible={this.state.startDate_modal}
+            transparent={true}
+            onRequestClose={() => console.log("close requested")}
+          >
+            <View style={styles.pickerView}>
+              <Text style={styles.modalHeading}>Select Start Date:</Text>
+              <DatePickerIOS
+                mode="date"
+                date={this.state.startDate}
+                onDateChange={(date) => this.setState({ startDate: date })} />
+              <TouchableOpacity onPress={() => this.toggleModal("startDate_modal")}>
+                <Text style={styles.updateBtn}>Submit Start Date</Text>
               </TouchableOpacity>
             </View>
           </Modal>
