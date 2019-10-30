@@ -86,6 +86,14 @@ const styles = {
     padding: 10,
     textAlign: "center",
   },
+  disableColor: {
+    borderColor: "red",
+    borderWidth: 1,
+    marginVertical: 3,
+    padding: 10,
+    textAlign: 'center',
+    width: "100%"
+  },
   updateBtnText: {
     textAlign: "center"
   }

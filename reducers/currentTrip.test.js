@@ -31,4 +31,16 @@ describe('currentTrip reducer', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('should return null when REMOVE_CURRENT action is passed through', () => {
+    const expected = null;
+
+    const actionObj = {
+      type: 'REMOVE_CURRENT'
+    };
+
+    const result = currentTrip(undefined, actionObj);
+
+    expect(result).toEqual(expected);
+  });
 });

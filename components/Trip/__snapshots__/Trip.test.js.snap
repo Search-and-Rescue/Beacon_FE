@@ -599,6 +599,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     </Component>
     <TouchableOpacity
       activeOpacity={0.2}
+      disabled={false}
       onPress={[Function]}
       style={
         Object {

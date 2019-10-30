@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 import { addTrip, getTrips, addGearForTrip, addContactsForTrip, addVehiclesForTrip } from '../../util/apiCalls';
-import { setTrips } from '../../actions';
+import { setTrips, setCurrentTrip } from '../../actions';
 import { bindActionCreators } from 'redux';
 
 export class Trip extends Component {
@@ -74,7 +74,7 @@ export class Trip extends Component {
   };
 
   handleSubmit = async () => {
-    const { navigation, user } = this.props;
+    const { navigation, user, setCurrentTrip, setTrips } = this.props;
     const newTrip = {
       name: this.state.name,
       startingPoint: this.state.startingPoint,
@@ -90,8 +90,9 @@ export class Trip extends Component {
     }
     const trip = await addTrip(newTrip);
     const tripId = trip.data.createTrip.trip.id;
+    this.props.setCurrentTrip(tripId);
     const userInfoTrips = await getTrips();
-    await this.props.setTrips(userInfoTrips.user.trips);
+    await setTrips(userInfoTrips.user.trips);
     this.saveTripGear(tripId);
     this.saveTripContact(tripId);
     this.saveTripVehicle(tripId);
@@ -152,6 +153,8 @@ export class Trip extends Component {
   }
 
   render() {
+    const disableBtn = this.props.currentTrip ? true : false;
+    const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
       return (
         <TouchableHighlight
@@ -214,19 +217,19 @@ export class Trip extends Component {
     <View style={styles.tripContainer}>
       <ScrollView style={styles.tripsList}>
         <TouchableOpacity
-        style={styles.modalToggleButton}
+          style={styles.modalToggleButton}
           onPress={() => this.toggleContactsModal()}
-          >
+        >
           <Text style={styles.modalToggleText}>Select Emergency Contacts</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        style={styles.modalToggleButton}
+          style={styles.modalToggleButton}
           onPress={() => this.toggleVehicleModal()}
         >
           <Text style={styles.modalToggleText}>Select Vehicle</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        style={styles.modalToggleButton}
+          style={styles.modalToggleButton}
           onPress={() => this.toggleGearModal()}
         >
           <Text style={styles.modalToggleText}>Select Gear Items</Text>
@@ -340,7 +343,11 @@ export class Trip extends Component {
             </TouchableOpacity>
           </View>
         </Modal>
-        <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
+        <TouchableOpacity
+          style={disableBtnColor}
+          onPress={this.handleSubmit}
+          disabled={disableBtn}
+        >
           <Text style={styles.updateBtnText}>Add Trip</Text>
         </TouchableOpacity>
       </ScrollView>
@@ -349,13 +356,14 @@ export class Trip extends Component {
   }
 }
 
-export const mapStateToProps = ({ contacts, vehicles, gear, user }) => ({
+export const mapStateToProps = ({ contacts, vehicles, gear, user, currentTrip }) => ({
   contacts,
   vehicles,
   gear,
-  user
+  user,
+  currentTrip
 });
 
-export const mapDispatchToProps = dispatch => bindActionCreators({ setTrips }, dispatch);
+export const mapDispatchToProps = dispatch => bindActionCreators({ setTrips, setCurrentTrip }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Trip);

@@ -42,6 +42,33 @@ const styles = {
     justifyContent: "flexStart",
     paddingLeft: 5
   },
+  pickerView: {
+    backgroundColor: "#efefef",
+    margin: 5,
+    padding: 20,
+    position: "absolute",
+    bottom: 30,
+    left: 10,
+    right: 10
+  },
+  modalHeading: {
+    fontWeight: "bold",
+    marginBottom: 5
+  },
+  theButton: {
+    alignItems: "center",
+    backgroundColor: "red",
+    paddingVertical: 100
+  },
+  theButtonText: {
+    fontSize: 68
+  },
+  remainActiveButton: {
+    alignItems: "center",
+    backgroundColor: "darkgrey",
+    marginVertical: 10,
+    paddingVertical: 20
+  },
   addItemBtn: {
     borderColor: "black",
     borderWidth: 1,
