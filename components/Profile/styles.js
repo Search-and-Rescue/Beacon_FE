@@ -5,14 +5,18 @@ const styles = {
     alignItems: "center"
   },
   modalToggleButton: {
-    backgroundColor: "#efefef",
-    marginVertical: 4,
-    width: "80%"
+    backgroundColor: "#EFB095",
+    borderColor: "#001028",
+    borderWidth: 4,
+    marginVertical: 10,
+    paddingVertical: 10,
+    width: '100%'
   },
   modalToggleText: {
+    color: "#001028",
+    fontFamily: "Futura",
     fontSize: 21,
-    paddingVertical: 5,
-    textAlign: "center"
+    textAlign: "center",
   },
   profileFlatList: {
     width: "80%"
@@ -54,7 +58,8 @@ const styles = {
     borderColor: "#EFB095",
     borderWidth: 4,
     marginVertical: 10,
-    paddingVertical: 12
+    paddingVertical: 12,
+    width: '80%'
   },
   updateBtnText: {
     color: "#F0F0F0",
