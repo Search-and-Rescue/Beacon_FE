@@ -353,7 +353,7 @@ export class Trip extends Component {
             onPress={this.handleSubmit}
             disabled={disableBtn}
           >
-            <Text style={styles.updateBtnText}>ADD Trip</Text>
+            <Text style={styles.updateBtnText}>ADD TRIP</Text>
           </TouchableOpacity>
           <View style={{ flex: 1 }} />
         </ScrollView>

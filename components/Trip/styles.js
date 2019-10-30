@@ -2,16 +2,16 @@ const styles = {
   tripContainer: {
     alignItems: "center",
     flex: 1,
-    marginHorizontal: '10%',
+    marginHorizontal: "10%",
     width: "80%"
   },
   tripsList: {
     flex: 1,
-    height: 300, 
-    width: '100%'
+    height: 300,
+    width: "100%"
   },
   pickerView: {
-    backgroundColor: "#efefef",
+    backgroundColor: "#F0F0F)",
     margin: 5,
     padding: 20,
     position: "absolute",
@@ -61,12 +61,17 @@ const styles = {
     paddingVertical: 10
   },
   modalToggleButton: {
-    backgroundColor: "#efefef",
-    marginVertical: 4,
+    marginVertical: 1
   },
   modalToggleText: {
+    backgroundColor: "#EFB095",
+    borderColor: "#001028",
+    borderWidth: 4,
+    color: "#001028",
+    fontFamily: "Futura",
     fontSize: 21,
-    paddingVertical: 5,
+    marginVertical: 10,
+    paddingVertical: 10,
     textAlign: "center"
   },
   label: {
@@ -78,24 +83,27 @@ const styles = {
     borderColor: "black",
     borderWidth: 1,
     marginBottom: 10,
-    padding: 10,
+    padding: 10
   },
   updateBtn: {
-    borderColor: "black",
-    borderWidth: 1,
-    marginVertical: 3,
-    padding: 10,
-    textAlign: "center",
+    backgroundColor: "#001028",
+    borderColor: "#EFB095",
+    borderWidth: 4,
+    marginVertical: 10,
+    paddingVertical: 12
   },
   disableColor: {
+    backgroundColor: "maroon",
     borderColor: "red",
     borderWidth: 1,
-    marginVertical: 3,
-    padding: 10,
-    textAlign: 'center',
+    marginVertical: 10,
+    paddingVertical: 10,
     width: "100%"
   },
   updateBtnText: {
+    color: "#F0F0F0",
+    fontFamily: "Futura",
+    fontSize: 21,
     textAlign: "center"
   }
 };
