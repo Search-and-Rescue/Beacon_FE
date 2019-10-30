@@ -5,7 +5,7 @@ const styles = {
     marginTop: 20
   },
   tripsList: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: "black",
     flex: 1,
     height: 300,
@@ -13,8 +13,6 @@ const styles = {
   },
   tripCard: {
     backgroundColor: "#efefef",
-    borderWidth: 1,
-    borderColor: "black",
     flex: 1,
     flexDirection: "row",
     height: 50,
@@ -28,11 +26,19 @@ const styles = {
     margin: 4,
     padding: 5
   },
-  tripName: {
+  tripTextContainer: {
     flex: 1,
-    fontSize: 21,
-    paddingLeft: 5,
-    paddingVertical: 8
+    flexDirection: "column"
+  },
+  tripsName: {
+    flex: 1,
+    fontSize: 18,
+    paddingLeft: 5
+  },
+  tripsDate: {
+    flex: 1,
+    fontSize: 12,
+    paddingLeft: 5
   },
   pickerView: {
     backgroundColor: "#efefef",

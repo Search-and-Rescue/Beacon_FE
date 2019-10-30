@@ -46,49 +46,49 @@ export class Vehicle extends Component {
   render() {
     return (
       <View style={styles.vehicleContainer}>
-        <Text>Make</Text>
+        <Text style={styles.label}>Make</Text>
         <TextInput
-          placeholder="make"
+          placeholder="Toyota"
           style={styles.input}
           onChangeText={text => this.setState({ make: text })}
           value={this.state.make}
           name="make"
         />
-        <Text>Model</Text>
+        <Text style={styles.label}>Model</Text>
         <TextInput
-          placeholder="model"
+          placeholder="Tacoma"
           style={styles.input}
           onChangeText={text => this.setState({ model: text })}
           value={this.state.model}
           name="model"
         />
-        <Text>Year</Text>
+        <Text style={styles.label}>Year</Text>
         <TextInput
-          placeholder="year"
+          placeholder="2010"
           style={styles.input}
           onChangeText={text => this.setState({ year: text })}
           value={String(this.state.year)}
           name="year"
         />
-        <Text>Color</Text>
+        <Text style={styles.label}>Color</Text>
         <TextInput
-          placeholder="color"
+          placeholder="Silver"
           style={styles.input}
           onChangeText={text => this.setState({ color: text })}
           value={this.state.color}
           name="color"
         />
-        <Text>License Plate</Text>
+        <Text style={styles.label}>License Plate</Text>
         <TextInput
-          placeholder="license plate"
+          placeholder="123ABC"
           style={styles.input}
           onChangeText={text => this.setState({ licensePlate: text })}
           value={this.state.licensePlate}
           name="license_plate"
         />
-        <Text>License State</Text>
+        <Text style={styles.label}>License State</Text>
         <TextInput
-          placeholder="license state"
+          placeholder="CO"
           style={styles.input}
           onChangeText={text => this.setState({ state: text })}
           value={this.state.state}

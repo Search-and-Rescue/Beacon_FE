@@ -34,8 +34,12 @@ export class TripList extends Component {
       return (
         <View key={trip.id} style={styles.tripCard}>
           <Text style={styles.tripRemoveBtn}>REMOVE</Text>
-          <Text style={styles.tripsName}>{trip.name}</Text>
-          <Text style={styles.tripsName}>{trip.startDate}</Text>
+          <View style={styles.tripTextContainer}>
+            <Text style={styles.tripsName}>{trip.name}</Text>
+            <Text style={styles.tripsDate}>
+              {trip.startDate} to {trip.endDate}
+            </Text>
+          </View>
         </View>
       );
     });

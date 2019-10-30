@@ -15,7 +15,7 @@ exports[`ContactList should match the snapshot with all of the data passed throu
       style={
         Object {
           "borderColor": "black",
-          "borderWidth": 2,
+          "borderWidth": 1,
           "flex": 1,
           "height": 300,
           "width": "90%",
@@ -26,8 +26,6 @@ exports[`ContactList should match the snapshot with all of the data passed throu
         style={
           Object {
             "backgroundColor": "#efefef",
-            "borderColor": "black",
-            "borderWidth": 1,
             "flex": 1,
             "flexDirection": "row",
             "height": 50,

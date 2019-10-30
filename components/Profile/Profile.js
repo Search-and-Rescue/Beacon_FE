@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, 
+import {   
   Modal,
   ScrollView, 
   View, 
@@ -108,17 +108,17 @@ class Profile extends Component {
 
     return (
       <View style={styles.profileContainer}>
-        <Text>Profile Page</Text>
-        <Text>State is {this.state.experience_level}</Text>
-        <Button
-          onPress={() => this.toggleExperienceModal()}
-          title={"Choose Experience Level"}
-        ></Button>
-        <Text>State is {`${this.state.cosar_card}`}</Text>
-        <Button
+        <TouchableOpacity 
+          style={styles.modalToggleButton}
+          onPress={() => this.toggleExperienceModal()}>
+          <Text style={styles.modalToggleText}>Select Experience Level</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.modalToggleButton}
           onPress={() => this.toggleCosarModal()}
-          title={"Add COSAR Card Status"}
-        ></Button>
+        >
+          <Text style={styles.modalToggleText}>Select COSAR Card Status</Text>
+        </TouchableOpacity>
         <Modal
           animationType={"slide"}
           visible={this.state.experience_modal}
@@ -164,131 +164,129 @@ class Profile extends Component {
           </View>
         </Modal>
         <ScrollView style={styles.profileFlatList}>
+          <Text style={styles.label}>Name:</Text>
           <TextInput
-            placeholder="Name"
+            placeholder="Jill A. Hiker"
             style={styles.input}
             onChangeText={text => this.setState({ name: text })}
             value={this.state.name}
             name="name"
           />
+          <Text style={styles.label}>Home address:</Text>
           <TextInput
-            placeholder="Home address"
+            placeholder="123 Main St, Apt. 3"
             style={styles.input}
             onChangeText={text => this.setState({ address: text })}
             value={this.state.address}
             name="address"
           />
+          <Text style={styles.label}>City:</Text>
           <TextInput
-            placeholder="City"
+            placeholder="Denver"
             style={styles.input}
             onChangeText={text => this.setState({ city: text })}
             value={this.state.city}
             name="city"
           />
+          <Text style={styles.label}>State:</Text>
           <TextInput
-            placeholder="State"
+            placeholder="Colorado"
             style={styles.input}
             onChangeText={text => this.setState({ state: text })}
             value={this.state.state}
             name="state"
           />
+          <Text style={styles.label}>Zip code:</Text>
           <TextInput
             keyboardType={"numeric"}
-            placeholder="Zip code"
+            placeholder="80202"
             style={styles.input}
             onChangeText={text => this.setState({ zip: text })}
             value={`${this.state.zip}`}
             name="zip"
           />
+          <Text style={styles.label}>Phone number:</Text>
           <TextInput
             keyboardType={"phone-pad"}
-            placeholder="Phone number"
+            placeholder="(970) 123-4567"
             style={styles.input}
             onChangeText={text => this.setState({ phone: text })}
             value={this.state.phone}
             name="phone"
           />
+          <Text style={styles.label}>Email address:</Text>
           <TextInput
             keyboardType={"email-address"}
-            placeholder="Email address"
+            placeholder="jill@email.com"
             style={styles.input}
             onChangeText={text => this.setState({ email: text })}
             value={this.state.email}
             name="email"
           />
+          <Text style={styles.label}>Birthday:</Text>
           <TextInput
-            placeholder="Password"
-            style={styles.input}
-            onChangeText={text => this.setState({ password_digest: text })}
-            value={this.state.password_digest}
-            name="password_digest"
-          />
-          <TextInput
-            placeholder="Allergies"
-            style={styles.input}
-            onChangeText={text => this.setState({ allergies: text })}
-            value={this.state.allergies}
-            name="allergies"
-          />
-          <TextInput
-            keyboardType={"numeric"}
-            placeholder="Experience level: 1, 2, or 3"
-            style={styles.input}
-            onChangeText={text =>
-              this.setState({ experience_level: Number(text) })
-            }
-            value={`${this.state.experience_level}`}
-            name="experience_level"
-          />
-          <TextInput
-            placeholder="Birthdate"
+            placeholder="October 1, 1985"
             style={styles.input}
             onChangeText={text => this.setState({ birthdate: text })}
             value={this.state.birthdate}
             name="birthdate"
           />
+          <Text style={styles.label}>Password:</Text>
           <TextInput
-            keyboardType={"numeric"}
-            placeholder="Weight"
+            placeholder="********"
             style={styles.input}
-            onChangeText={text => this.setState({ weight: Number(text) })}
-            value={`${this.state.weight}`}
-            name="weight"
+            onChangeText={text => this.setState({ password_digest: text })}
+            value={this.state.password_digest}
+            name="password_digest"
           />
+          <Text style={styles.label}>Allergies:</Text>
           <TextInput
-            placeholder="Height"
+            placeholder="Penicillin, peanuts, latex"
+            style={styles.input}
+            onChangeText={text => this.setState({ allergies: text })}
+            value={this.state.allergies}
+            name="allergies"
+          />
+          <Text style={styles.label}>Height:</Text>
+          <TextInput
+            placeholder="5 08"
             style={styles.input}
             onChangeText={text => this.setState({ height: text })}
             value={this.state.height}
             name="height"
           />
+          <Text style={styles.label}>Weight:</Text>
           <TextInput
-            placeholder="Hair color"
+            keyboardType={"numeric"}
+            placeholder="160"
+            style={styles.input}
+            onChangeText={text => this.setState({ weight: Number(text) })}
+            value={`${this.state.weight}`}
+            name="weight"
+          />
+          <Text style={styles.label}>Hair Color:</Text>
+          <TextInput
+            placeholder="Blonde"
             style={styles.input}
             onChangeText={text => this.setState({ hair_color: text })}
             value={this.state.hair_color}
             name="hair_color"
           />
+          <Text style={styles.label}>Skin Color:</Text>
           <TextInput
-            placeholder="Skin color"
+            placeholder="Medium"
             style={styles.input}
             onChangeText={text => this.setState({ skin_color: text })}
             value={this.state.skin_color}
             name="skin_color"
           />
+          <Text style={styles.label}>Gender:</Text>
           <TextInput
-            placeholder="Gender"
+            placeholder="F"
             style={styles.input}
             onChangeText={text => this.setState({ gender: text })}
             value={this.state.gender}
             name="gender"
-          />
-          <TextInput
-            placeholder="COSAR card"
-            style={styles.input}
-            onChangeText={text => this.setState({ COSAR_card: Boolean(text) })}
-            value={`${this.state.COSAR_card}`}
-            name="COSAR_card"
           />
         </ScrollView>
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>

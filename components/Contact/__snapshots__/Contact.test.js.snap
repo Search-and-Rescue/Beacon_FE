@@ -9,14 +9,21 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     }
   }
 >
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+        "textAlign": "left",
+      }
+    }
+  >
     Name
   </Text>
   <TextInput
     allowFontScaling={true}
     name="name"
     onChangeText={[Function]}
-    placeholder="name"
+    placeholder="Jane D. Hiker"
     rejectResponderTermination={true}
     style={
       Object {
@@ -31,14 +38,21 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="Mom"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+        "textAlign": "left",
+      }
+    }
+  >
     Phone number
   </Text>
   <TextInput
     allowFontScaling={true}
     name="phone"
     onChangeText={[Function]}
-    placeholder="phone"
+    placeholder="(970)123-4567"
     rejectResponderTermination={true}
     style={
       Object {
@@ -53,14 +67,21 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     underlineColorAndroid="transparent"
     value="123 456 7890"
   />
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 12,
+        "textAlign": "left",
+      }
+    }
+  >
     Email address
   </Text>
   <TextInput
     allowFontScaling={true}
     name="email"
     onChangeText={[Function]}
-    placeholder="email"
+    placeholder="jane@email.com"
     rejectResponderTermination={true}
     style={
       Object {
@@ -94,7 +115,7 @@ exports[`Contact should match the snapshot with all of the data passed through 1
         }
       }
     >
-      Update
+      ADD
     </Text>
   </TouchableOpacity>
 </View>
