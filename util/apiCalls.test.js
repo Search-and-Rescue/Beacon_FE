@@ -1,4 +1,4 @@
-import { getUser } from './apiCalls';
+import { getUser, getEmergencyContacts } from './apiCalls';
 
 describe('getUser', () => {
   let mockUser;
@@ -89,6 +89,53 @@ describe('getUser', () => {
     })
 
     expect(getUser()).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('getEmergencyContacts', () => {
+  let mockContacts;
+
+  beforeEach(() => {
+    mockContacts = [
+      {
+        id: 1,
+        name: "Samantha Freeman",
+        phone: "707.123.4567",
+        email: "skiracerchick@earthlink.net"
+      }
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockUsers)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const query = `query{
+    user(id: 1) {
+      emergencyContacts {
+        id
+        name
+        phone
+        email
+      }
+    }
+  }`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query })
+    };
+
+    getEmergencyContacts();
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
   });
 
 });
