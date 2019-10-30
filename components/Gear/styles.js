@@ -21,7 +21,7 @@ const styles = {
     borderColor: "black",
     borderWidth: 1,
     padding: 10,
-    width: "80%"
+    paddingHorizontal: "32%"
   },
   updateBtnText: {
     textAlign: "center"
