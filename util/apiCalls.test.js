@@ -3,7 +3,8 @@ import {
   getEmergencyContacts, 
   getVehicles,
   getGear,
-  getTrips
+  getTrips,
+  addTrip
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -389,6 +390,95 @@ describe('getTrips', () => {
     })
 
     expect(getTrips()).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('addTrip', () => {
+  let mockTrip;
+  let mockTripPost;
+
+  beforeEach(() => {
+    mockTrip = {
+      id: 1,
+      name: "Mt Massive w/soccer club",
+      startingPoint: "Leadville Fish Hatchery",
+      endingPoint: "Leadville Fish Hatchery",
+      startDate: "November 20, 2019",
+      startTime: "07:00",
+      endDate: "November 20, 2019",
+      endTime: "11:30",
+      notificationDate: "November 20, 2019",
+      notificationTime: "14:00",
+      travelingCompanions: 3
+    }
+    mockTripPost = {
+      name: "Mt Massive w/soccer club",
+      startingPoint: "Leadville Fish Hatchery",
+      endingPoint: "Leadville Fish Hatchery",
+      startDate: "November 20, 2019",
+      startTime: "07:00",
+      endDate: "November 20, 2019",
+      endTime: "11:30",
+      notificationDate: "November 20, 2019",
+      notificationTime: "14:00",
+      travelingCompanions: 3,
+      userId: 1
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockTrip)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation {
+  createTrip(input: {
+  name: "${mockTripPost.name}",
+  startingPoint: "${mockTripPost.startingPoint}",
+  endingPoint: "${mockTripPost.endingPoint}",
+  startDate: "${mockTripPost.startDate}",
+  startTime: "${mockTripPost.startTime}",
+  endDate: "${mockTripPost.endDate}",
+  endTime: "${mockTripPost.endTime}",
+  notificationDate: "${mockTripPost.notificationDate}",
+  notificationTime: "${mockTripPost.notificationTime}",
+  travelingCompanions: ${parseInt(mockTripPost.travelingCompanions)},
+  userId: ${parseInt(mockTripPost.userId)}
+  }) {
+  trip {
+      id
+      name
+      startingPoint
+      endingPoint
+      startDate
+      startTime
+      endDate
+      endTime
+      notificationDate
+      notificationTime
+      travelingCompanions
+    }
+  }
+} `
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addTrip(mockTripPost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return an array of the current user\'s gear', () => {
+    expect(addTrip(mockTripPost)).resolves.toEqual(mockTrip);
   });
 
 });
