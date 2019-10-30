@@ -60,6 +60,9 @@ const styles = {
   modalToggleContactsHeading: {
     paddingVertical: 10
   },
+  modalButtonContainer: {
+    marginBottom: 10
+  },
   modalToggleButton: {
     marginVertical: 1
   },
@@ -75,14 +78,18 @@ const styles = {
     textAlign: "center"
   },
   label: {
-    fontSize: 12,
-    textAlign: "left"
+    color: "#001028",
+    fontFamily: "Georgia",
+    fontSize: 21,
+    textAlign: "left",
+    paddingBottom: 2
   },
   input: {
     backgroundColor: "#fff",
-    borderColor: "black",
-    borderWidth: 1,
-    marginBottom: 10,
+    borderColor: "#001028",
+    borderRadius: 2,
+    borderWidth: 2,
+    marginBottom: 15,
     padding: 10
   },
   updateBtn: {

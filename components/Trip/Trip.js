@@ -220,6 +220,7 @@ export class Trip extends Component {
     >
       <View style={styles.tripContainer}>
         <ScrollView style={styles.tripsList}>
+          <View style={styles.modalButtonContainer}>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleContactsModal()}
@@ -238,6 +239,7 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Gear Items</Text>
           </TouchableOpacity>
+          </View>
           <Text style={styles.label}>Trip Name: </Text>
           <TextInput
             placeholder="Mt Massive w/soccer club"
