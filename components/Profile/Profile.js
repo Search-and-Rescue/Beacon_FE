@@ -126,7 +126,7 @@ class Profile extends Component {
                     style={styles.modalButton}
                     onPress={() => this.setExperience(level.value)}
                   >
-                    <Text>{level.title}</Text>
+                    <Text style={styles.modalOptionsText}>{level.title}</Text>
                   </TouchableHighlight>
                 );
               })}
@@ -149,7 +149,7 @@ class Profile extends Component {
                     style={styles.modalButton}
                     onPress={() => this.setCosar(cosar.value)}
                   >
-                    <Text>{cosar.title}</Text>
+                    <Text style={styles.modalOptionsText}>{cosar.title}</Text>
                   </TouchableHighlight>
                 );
               })}
