@@ -1,11 +1,10 @@
 import { getUser } from './apiCalls';
 
 describe('getUser', () => {
-  let mockUsers;
+  let mockUser;
 
   beforeEach(() => {
-    mockUsers = [
-      {
+    mockUser = {
       id: 1,
       name: "Katie Williams",
       email: "kdog@gmail.com",
@@ -24,8 +23,7 @@ describe('getUser', () => {
       skinColor: "Pale",
       gender: "F",
       cosarCard: true
-      }
-    ]
+    };
 
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
@@ -69,5 +67,9 @@ describe('getUser', () => {
     getUser();
 
     expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the current user\'s profile information', () => {
+    expect(getUser()).resolves.toEqual(mockUser);
   });
 })
