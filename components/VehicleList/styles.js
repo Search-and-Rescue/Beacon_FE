@@ -1,41 +1,45 @@
 const styles = {
   vehiclesListContainer: {
     alignItems: "center",
-    height: '96%',
+    height: "96%",
     marginTop: 20
   },
   vehiclesList: {
-    borderWidth: 1,
-    borderColor: "black",
+    backgroundColor: "fff",
+    borderColor: "#001028",
+    borderRadius: 3,
+    borderWidth: 4,
     flex: 1,
     height: 300,
     width: "90%"
   },
   vehicleCard: {
-    backgroundColor: '#efefef',
+    backgroundColor: "#efefef",
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 50,
-    marginVertical: 5
+    marginVertical: 5,
+    justifyContent: "space-between"
   },
   vehicleRemoveBtn: {
     borderWidth: 1,
-    borderColor: 'black',
-    height: 35,
-    margin: 4,
+    borderColor: "#001028",
+    height: 30,
+    marginVertical: 10,
     padding: 5
   },
   vehicleName: {
     flex: 1,
-    fontSize: 21,
-    paddingLeft: 5,
-    paddingVertical: 8
+    fontFamily: "Futura",
+    fontSize: 28,
+    paddingLeft: 7,
+    paddingVertical: 2
   },
   addItemBtn: {
     borderColor: "black",
     borderWidth: 1,
     padding: 10,
-    width: '100%'
+    width: "100%"
   },
   addBtnText: {
     fontSize: 21,
