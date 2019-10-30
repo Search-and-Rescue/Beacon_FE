@@ -7,11 +7,11 @@ const styles = {
   },
   label: {
     color: "#001028",
-    fontSize: 21,
     fontFamily: "Georgia",
+    fontSize: 21,
+    paddingBottom: 2,
     textAlign: "left",
-    width: "100%",
-    paddingBottom: 2
+    width: "100%"
   },
   input: {
     backgroundColor: "#F0F0F0",
@@ -34,7 +34,8 @@ const styles = {
     color: "#F0F0F0",
     fontFamily: "Futura",
     fontSize: 21,
-    textAlign: "center"
+    textAlign: "center",
+    width: "100%"
   }
 };
 
