@@ -1,648 +1,666 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Profile should match the snapshot with all of the data passed through 1`] = `
-<View
+<KeyboardAvoidingView
+  behavior="padding"
+  enabled={true}
+  keyboardVerticalOffset={0}
   style={
     Object {
-      "alignItems": "center",
       "flex": 1,
-      "marginVertical": 40,
     }
   }
 >
-  <TouchableOpacity
-    activeOpacity={0.2}
-    onPress={[Function]}
+  <View
     style={
       Object {
-        "backgroundColor": "#efefef",
-        "marginVertical": 4,
-        "width": "80%",
+        "alignItems": "center",
+        "flex": 1,
+        "marginVertical": 40,
       }
     }
   >
-    <Text
-      style={
-        Object {
-          "fontSize": 21,
-          "paddingVertical": 5,
-          "textAlign": "center",
-        }
-      }
-    >
-      Select Experience Level
-    </Text>
-  </TouchableOpacity>
-  <TouchableOpacity
-    activeOpacity={0.2}
-    onPress={[Function]}
-    style={
-      Object {
-        "backgroundColor": "#efefef",
-        "marginVertical": 4,
-        "width": "80%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "fontSize": 21,
-          "paddingVertical": 5,
-          "textAlign": "center",
-        }
-      }
-    >
-      Select COSAR Card Status
-    </Text>
-  </TouchableOpacity>
-  <Component
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
       style={
         Object {
           "backgroundColor": "#efefef",
-          "bottom": 0,
-          "left": 10,
-          "margin": 5,
-          "padding": 20,
-          "position": "absolute",
-          "right": 10,
+          "marginVertical": 4,
+          "width": "80%",
         }
       }
     >
       <Text
         style={
           Object {
-            "fontWeight": "bold",
-            "marginBottom": 5,
+            "fontSize": 21,
+            "paddingVertical": 5,
+            "textAlign": "center",
           }
         }
       >
-        Select Experience Level:
+        Select Experience Level
       </Text>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="0"
-        onPress={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Beginner
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="1"
-        onPress={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Intermediate
-        </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="2"
-        onPress={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
-          }
-        }
-        underlayColor="black"
-      >
-        <Text>
-          Advanced
-        </Text>
-      </TouchableHighlight>
-    </View>
-  </Component>
-  <Component
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
+    </TouchableOpacity>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
       style={
         Object {
           "backgroundColor": "#efefef",
-          "bottom": 0,
-          "left": 10,
-          "margin": 5,
-          "padding": 20,
-          "position": "absolute",
-          "right": 10,
+          "marginVertical": 4,
+          "width": "80%",
         }
       }
     >
       <Text
         style={
           Object {
-            "fontWeight": "bold",
-            "marginBottom": 5,
+            "fontSize": 21,
+            "paddingVertical": 5,
+            "textAlign": "center",
           }
         }
       >
-        Owner of current COSAR Card:
+        Select COSAR Card Status
       </Text>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="0"
-        onPress={[Function]}
+    </TouchableOpacity>
+    <Component
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
         style={
           Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
+            "backgroundColor": "#efefef",
+            "bottom": 0,
+            "left": 10,
+            "margin": 5,
+            "padding": 20,
+            "position": "absolute",
+            "right": 10,
           }
         }
-        underlayColor="black"
       >
-        <Text>
-          Yes
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+              "marginBottom": 5,
+            }
+          }
+        >
+          Select Experience Level:
         </Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        activeOpacity={0.85}
-        delayPressOut={100}
-        key="1"
-        onPress={[Function]}
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          key="0"
+          onPress={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "paddingVertical": 10,
+            }
+          }
+          underlayColor="black"
+        >
+          <Text>
+            Beginner
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          key="1"
+          onPress={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "paddingVertical": 10,
+            }
+          }
+          underlayColor="black"
+        >
+          <Text>
+            Intermediate
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          key="2"
+          onPress={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "paddingVertical": 10,
+            }
+          }
+          underlayColor="black"
+        >
+          <Text>
+            Advanced
+          </Text>
+        </TouchableHighlight>
+      </View>
+    </Component>
+    <Component
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
         style={
           Object {
-            "alignItems": "center",
-            "paddingVertical": 10,
+            "backgroundColor": "#efefef",
+            "bottom": 0,
+            "left": 10,
+            "margin": 5,
+            "padding": 20,
+            "position": "absolute",
+            "right": 10,
           }
         }
-        underlayColor="black"
       >
-        <Text>
-          No
+        <Text
+          style={
+            Object {
+              "fontWeight": "bold",
+              "marginBottom": 5,
+            }
+          }
+        >
+          Owner of current COSAR Card:
         </Text>
-      </TouchableHighlight>
-    </View>
-  </Component>
-  <ScrollViewMock
-    style={
-      Object {
-        "width": "80%",
-      }
-    }
-  >
-    <Text
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          key="0"
+          onPress={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "paddingVertical": 10,
+            }
+          }
+          underlayColor="black"
+        >
+          <Text>
+            Yes
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          key="1"
+          onPress={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "paddingVertical": 10,
+            }
+          }
+          underlayColor="black"
+        >
+          <Text>
+            No
+          </Text>
+        </TouchableHighlight>
+      </View>
+    </Component>
+    <ScrollViewMock
       style={
         Object {
-          "fontSize": 12,
+          "width": "80%",
         }
       }
     >
-      Name:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="name"
-      onChangeText={[Function]}
-      placeholder="Jill A. Hiker"
-      rejectResponderTermination={true}
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Name:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="name"
+        onChangeText={[Function]}
+        placeholder="Jill A. Hiker"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Home address:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="address"
+        onChangeText={[Function]}
+        placeholder="123 Main St, Apt. 3"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        City:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="city"
+        onChangeText={[Function]}
+        placeholder="Denver"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        State:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="state"
+        onChangeText={[Function]}
+        placeholder="Colorado"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Zip code:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        keyboardType="numeric"
+        name="zip"
+        onChangeText={[Function]}
+        placeholder="80202"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Phone number:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        keyboardType="phone-pad"
+        name="phone"
+        onChangeText={[Function]}
+        placeholder="(970) 123-4567"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Email address:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        keyboardType="email-address"
+        name="email"
+        onChangeText={[Function]}
+        placeholder="jill@email.com"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Birthday:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="birthdate"
+        onChangeText={[Function]}
+        placeholder="October 1, 1985"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Password:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="password_digest"
+        onChangeText={[Function]}
+        placeholder="********"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Allergies:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="allergies"
+        onChangeText={[Function]}
+        placeholder="Penicillin, peanuts, latex"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Height:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="height"
+        onChangeText={[Function]}
+        placeholder="5 08"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Weight:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        keyboardType="numeric"
+        name="weight"
+        onChangeText={[Function]}
+        placeholder="160"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Hair Color:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="hair_color"
+        onChangeText={[Function]}
+        placeholder="Blonde"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Skin Color:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="skin_color"
+        onChangeText={[Function]}
+        placeholder="Medium"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Gender:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        name="gender"
+        onChangeText={[Function]}
+        placeholder="F"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </ScrollViewMock>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
       style={
         Object {
-          "backgroundColor": "#fff",
           "borderColor": "black",
           "borderWidth": 1,
-          "marginBottom": 10,
           "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
+          "width": "80%",
         }
       }
     >
-      Home address:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="address"
-      onChangeText={[Function]}
-      placeholder="123 Main St, Apt. 3"
-      rejectResponderTermination={true}
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Update
+      </Text>
+    </TouchableOpacity>
+    <View
       style={
         Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
+          "flex": 1,
         }
       }
-      underlineColorAndroid="transparent"
-      value=""
     />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      City:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="city"
-      onChangeText={[Function]}
-      placeholder="Denver"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      State:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="state"
-      onChangeText={[Function]}
-      placeholder="Colorado"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Zip code:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      keyboardType="numeric"
-      name="zip"
-      onChangeText={[Function]}
-      placeholder="80202"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Phone number:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      keyboardType="phone-pad"
-      name="phone"
-      onChangeText={[Function]}
-      placeholder="(970) 123-4567"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Email address:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      keyboardType="email-address"
-      name="email"
-      onChangeText={[Function]}
-      placeholder="jill@email.com"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Birthday:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="birthdate"
-      onChangeText={[Function]}
-      placeholder="October 1, 1985"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Password:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="password_digest"
-      onChangeText={[Function]}
-      placeholder="********"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Allergies:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="allergies"
-      onChangeText={[Function]}
-      placeholder="Penicillin, peanuts, latex"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Height:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="height"
-      onChangeText={[Function]}
-      placeholder="5 08"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Weight:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      keyboardType="numeric"
-      name="weight"
-      onChangeText={[Function]}
-      placeholder="160"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Hair Color:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="hair_color"
-      onChangeText={[Function]}
-      placeholder="Blonde"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Skin Color:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="skin_color"
-      onChangeText={[Function]}
-      placeholder="Medium"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Gender:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      name="gender"
-      onChangeText={[Function]}
-      placeholder="F"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-  </ScrollViewMock>
-  <TouchableOpacity
-    activeOpacity={0.2}
-    onPress={[Function]}
-    style={
-      Object {
-        "borderColor": "black",
-        "borderWidth": 1,
-        "padding": 10,
-        "width": "80%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
-      Update
-    </Text>
-  </TouchableOpacity>
-</View>
+  </View>
+</KeyboardAvoidingView>
 `;
