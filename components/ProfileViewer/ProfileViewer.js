@@ -1,40 +1,58 @@
-import React, { Component } from "react";
-import {
-  Modal,
-  ScrollView,
-  View,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity
-} from "react-native";
+import React from "react";
+import { View, Text } from "react-native";
 import styles from "./styles";
+import { connect } from "react-redux";
 
-const ProfileViewer = () => {
+const ProfileViewer = props => {
+  const {
+    address,
+    allergies,
+    birthDate,
+    city,
+    cosarCard,
+    email,
+    experienceLevel,
+    gender,
+    hairColor,
+    height,
+    name,
+    passwordDigest,
+    phone,
+    skinColor,
+    state,
+    weight,
+    zip
+  } = props.user;
 
   return (
     <View style={styles.profileContainer}>
-      <Text style={styles.label}>Name:</Text>
-      <Text style={styles.modalToggleText}>Select Experience Level</Text>
-      <Text style={styles.modalToggleText}>Select COSAR Card Status</Text>
-      <Text style={styles.modalHeading}>Select Experience Level:</Text>
-      <Text style={styles.modalHeading}>COSAR Card status: </Text>
-      <Text style={styles.label}>Home address:</Text>
-      <Text style={styles.label}>City:</Text>
-      <Text style={styles.label}>State:</Text>
-      <Text style={styles.label}>Zip code:</Text>
-      <Text style={styles.label}>Phone number:</Text>
-      <Text style={styles.label}>Email address:</Text>
-      <Text style={styles.label}>Birthday:</Text>
-      <Text style={styles.label}>Password:</Text>
-      <Text style={styles.label}>Allergies:</Text>
-      <Text style={styles.label}>Height:</Text>
-      <Text style={styles.label}>Weight:</Text>
-      <Text style={styles.label}>Hair Color:</Text>
-      <Text style={styles.label}>Skin Color:</Text>
-      <Text style={styles.label}>Gender:</Text>
+      <Text style={styles.label}>Name: {name}</Text>
+
+      <Text style={styles.label}>Home address: {address}</Text>
+      <Text style={styles.label}>City: {city}</Text>
+      <Text style={styles.label}>State: {state}</Text>
+      <Text style={styles.label}>Zip code: {zip}</Text>
+      <Text style={styles.label}>Phone number: {phone}</Text>
+      <Text style={styles.label}>Email address: {email}</Text>
+
+      <Text style={styles.label}>Birthday: {birthDate}</Text>
+      <Text style={styles.label}>Password: {passwordDigest}</Text>
+
+      <Text style={styles.label}>Height: {weight}</Text>
+      <Text style={styles.label}>Weight: {height}</Text>
+      <Text style={styles.label}>Hair Color: {hairColor}</Text>
+      <Text style={styles.label}>Skin Color: {skinColor}</Text>
+      <Text style={styles.label}>Gender: {gender}</Text>
+
+      <Text style={styles.label}>Allergies: {allergies}</Text>
+      <Text style={styles.modalToggleText}>Outdoor Experience Level: {experienceLevel}</Text>
+      <Text style={styles.modalToggleText}>COSAR Card Status: {cosarCard}</Text>
     </View>
   );
 };
 
-export default ProfileViewer;
+export const mapStateToProps = ({ user }) => ({
+  user
+});
+
+export default connect(mapStateToProps)(ProfileViewer);
