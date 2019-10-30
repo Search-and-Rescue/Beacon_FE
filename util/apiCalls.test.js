@@ -1,4 +1,4 @@
-import { getUser, getEmergencyContacts } from './apiCalls';
+import { getUser, getEmergencyContacts, getVehicles } from './apiCalls';
 
 describe('getUser', () => {
   let mockUser;
@@ -158,6 +158,61 @@ describe('getEmergencyContacts', () => {
     })
 
     expect(getEmergencyContacts()).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('getVehicles', () => {
+  let mockVehicles;
+
+  beforeEach(() => {
+    mockVehicles = [
+      {
+        id: 1,
+        make: "Subaru",
+        model: "Impreza",
+        year: 2014,
+        color: "blue",
+        licensePlate: "123ABC"
+      }
+    ]
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockUsers)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const query = `query{
+  user(id: 1) {
+    vehicles{
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query })
+    };
+
+    getVehicles();
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return an array of the current user\'s vehicles', () => {
+    expect(getVehicles()).resolves.toEqual(mockVehicles);
   });
 
 });
