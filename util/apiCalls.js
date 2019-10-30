@@ -555,6 +555,5 @@ export const deleteTrip = async (tripId) => {
   }
 
   const data = await response.json();
-  console.log('delete', data)
   return data;
 }
