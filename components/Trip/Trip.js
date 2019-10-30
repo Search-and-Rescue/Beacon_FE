@@ -146,7 +146,9 @@ export class Trip extends Component {
   }
 
   render() {
+    console.log(this.state.startDate);
     console.log(this.state.endDate);
+    console.log(this.state.notificationDate);
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
@@ -282,12 +284,18 @@ export class Trip extends Component {
             value={this.state.endTime}
           />
           <Text style={styles.label}>Notification date:</Text>
-          <TextInput
+          <TouchableOpacity
+            style={styles.modalToggleButton}
+            onPress={() => this.toggleModal("notificationDate_modal")}
+          >
+            <Text style={styles.modalToggleText}>Select Notification Date</Text>
+          </TouchableOpacity>
+          {/* <TextInput
             placeholder="November 20, 2019"
             style={styles.input}
             onChangeText={text => this.setState({ notificationDate: text })}
             value={this.state.notificationDate}
-          />
+          /> */}
           <Text style={styles.label}>Notification time:</Text>
           <TextInput
             placeholder="14:00"
@@ -372,6 +380,23 @@ export class Trip extends Component {
                 date={this.state.endDate}
                 onDateChange={(date) => this.setState({ endDate: date })} />
               <TouchableOpacity onPress={() => this.toggleModal("endDate_modal")}>
+                <Text style={styles.updateBtn}>Submit End Date</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+          <Modal
+            animationType={"slide"}
+            visible={this.state.notificationDate_modal}
+            transparent={true}
+            onRequestClose={() => console.log("close requested")}
+          >
+            <View style={styles.pickerView}>
+              <Text style={styles.modalHeading}>Select Notification Date:</Text>
+              <DatePickerIOS
+                mode="date"
+                date={this.state.notificationDate}
+                onDateChange={(date) => this.setState({ notificationDate: date })} />
+              <TouchableOpacity onPress={() => this.toggleModal("notificationDate_modal")}>
                 <Text style={styles.updateBtn}>Submit End Date</Text>
               </TouchableOpacity>
             </View>
