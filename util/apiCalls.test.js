@@ -641,4 +641,22 @@ describe('addGearItem', () => {
     expect(addGearItem(mockGearItemPost)).resolves.toEqual(mockGearItem);
   });
 
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addGearItem(mockGearItemPost)).rejects.toEqual(Error('Error adding a user\'s gear item.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('fetch failed'))
+    })
+
+    expect(addGearItem(mockGearItemPost)).rejects.toEqual(Error('fetch failed'))
+  });
+
 });

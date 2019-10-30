@@ -269,7 +269,7 @@ export const addGearItem = async (newItem) => {
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s vehicle.')
+    throw Error('Error adding a user\'s gear item.')
   }
 
   const data = await response.json();
