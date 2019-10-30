@@ -10,33 +10,40 @@ const styles = {
     borderWidth: 4,
     marginVertical: 10,
     paddingVertical: 10,
-    width: '100%'
+    width: "100%"
   },
   modalToggleText: {
     color: "#001028",
     fontFamily: "Futura",
     fontSize: 21,
-    textAlign: "center",
+    textAlign: "center"
   },
   profileFlatList: {
     width: "80%"
   },
   pickerView: {
-    backgroundColor: "#efefef",
+    backgroundColor: "#EFB095",
+    borderTopWidth: 10,
+    borderColor: "#001028",
     margin: 5,
     padding: 20,
     position: "absolute",
-    bottom: 0,
+    bottom: -10,
     left: 10,
     right: 10
   },
   modalHeading: {
+    fontSize: 21,
     fontWeight: "bold",
     marginBottom: 5
   },
   modalButton: {
-    paddingVertical: 10,
-    alignItems: "center"
+    alignItems: "center",
+    paddingVertical: 10
+  },
+  modalOptionsText: {
+    color: "#001028",
+    fontSize: 38
   },
   label: {
     color: "#001028",
@@ -59,7 +66,7 @@ const styles = {
     borderWidth: 4,
     marginVertical: 10,
     paddingVertical: 12,
-    width: '80%'
+    width: "80%"
   },
   updateBtnText: {
     color: "#F0F0F0",
