@@ -162,16 +162,12 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleContacts(contact.id)}
         >
-          <View
-            style={styles.modalToggleContactsContainer}
-          >
-            <Text
-              style={styles.modalToggleContactsBtn}>
+          <View style={styles.modalToggleContactsContainer}>
+            <Text style={styles.modalToggleBtn}>
               {!this.state.contacts.includes(contact.id) ? "ADD" : "REMOVE"}
             </Text>
-            <Text
-              style={styles.modalToggleContactsHeading}
-            >{contact.name}</Text>
+            <Text style={styles.modalOptionsText}
+              >{contact.name}</Text>
           </View>
         </TouchableHighlight>
       );
@@ -184,7 +180,7 @@ export class Trip extends Component {
             style={styles.modalButton}
             onPress={() => this.setVehicle(vehicle.id)}
           >
-            <Text>
+            <Text style={styles.modalOptionsText}>
               {vehicle.make} {vehicle.model}
             </Text>
           </TouchableHighlight>
@@ -202,11 +198,11 @@ export class Trip extends Component {
             style={styles.modalToggleGearContainer}
             >
             <Text 
-              style={styles.modalToggleGearBtn}>
+              style={styles.modalToggleBtn}>
               {!this.state.gear.includes(gearItem.id) ? "ADD" : "REMOVE"}
             </Text>
             <Text
-              style={styles.modalToggleGearHeading}
+              style={styles.modalOptionsText}
               >{gearItem.itemName}</Text>
           </View>
         </TouchableHighlight>
@@ -316,11 +312,11 @@ export class Trip extends Component {
             transparent={true}
             onRequestClose={() => console.log("close requested")}
           >
-            <View style={styles.pickerView}>
-              <Text style={styles.modalHeading}>Add Contacts Items:</Text>
+            <View style={styles.modalView}>
+              <Text style={styles.modalHeading}>Select Contacts:</Text>
               <ScrollView>{contactsList}</ScrollView>
               <TouchableOpacity onPress={() => this.toggleContactsModal()}>
-                <Text style={styles.updateBtn}>Submit Contacts List</Text>
+                <Text style={styles.updateBtn}>Submit Contacts</Text>
               </TouchableOpacity>
             </View>
           </Modal>
@@ -330,7 +326,7 @@ export class Trip extends Component {
             transparent={true}
             onRequestClose={() => console.log("close requested")}
           >
-            <View style={styles.pickerView}>
+            <View style={styles.modalView}>
               <Text style={styles.modalHeading}>Select Vehicle:</Text>
               {vehiclesList}
             </View>
@@ -341,8 +337,8 @@ export class Trip extends Component {
             transparent={true}
             onRequestClose={() => console.log("close requested")}
           >
-            <View style={styles.pickerView}>
-              <Text style={styles.modalHeading}>Add Gear Items:</Text>
+            <View style={styles.modalView}>
+              <Text style={styles.modalHeading}>Select Gear Items:</Text>
               <ScrollView>{gearList}</ScrollView>
               <TouchableOpacity onPress={() => this.toggleGearModal()}>
                 <Text style={styles.updateBtn}>Submit Gear List</Text>

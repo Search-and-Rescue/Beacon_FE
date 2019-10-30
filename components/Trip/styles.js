@@ -10,31 +10,37 @@ const styles = {
     height: 300,
     width: "100%"
   },
-  pickerView: {
-    backgroundColor: "#F0F0F)",
+  modalView: {
+    backgroundColor: "#EFB095",
+    borderTopWidth: 10,
+    borderColor: "#001028",
+    bottom: -10,
+    height: 300,
     margin: 5,
     padding: 20,
     position: "absolute",
-    bottom: 30,
     left: 10,
-    right: 10,
-    height: 400
+    right: 10
   },
   modalHeading: {
-    fontWeight: "bold",
+    fontSize: 21,
     marginBottom: 5
   },
   modalButton: {
     paddingVertical: 10,
     marginVertical: 3
   },
+  modalOptionsText: {
+    color: "#001028",
+    fontSize: 28
+  },
   modalToggleGearContainer: {
     flex: 1,
     flexDirection: "row"
   },
-  modalToggleGearBtn: {
+  modalToggleBtn: {
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: "#001028",
     marginRight: 10,
     marginVertical: 5,
     paddingVertical: 3,
@@ -47,15 +53,6 @@ const styles = {
   modalToggleContactsContainer: {
     flex: 1,
     flexDirection: "row"
-  },
-  modalToggleContactsBtn: {
-    borderWidth: 1,
-    borderColor: "black",
-    marginRight: 10,
-    marginVertical: 5,
-    paddingVertical: 3,
-    textAlign: "center",
-    width: 75
   },
   modalToggleContactsHeading: {
     paddingVertical: 10
@@ -72,7 +69,7 @@ const styles = {
     borderWidth: 4,
     color: "#001028",
     fontFamily: "Futura",
-    fontSize: 21,
+    fontSize: 18,
     marginVertical: 10,
     paddingVertical: 10,
     textAlign: "center"
@@ -94,11 +91,14 @@ const styles = {
   },
   updateBtn: {
     backgroundColor: "#001028",
-    borderColor: "#EFB095",
-    borderWidth: 4,
+    borderRadius: 3,
+    color: "#F0F0F0",
+    fontFamily: "Futura",
+    fontSize: 28,
     marginVertical: 10,
     paddingVertical: 12,
-    width: "100%"
+    textAlign: "center",
+    width: "100%",
   },
   disableColor: {
     backgroundColor: "maroon",
