@@ -96,7 +96,7 @@ export class Vehicle extends Component {
           name="state"
         />
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-          <Text style={styles.updateBtnText}>ADD Vehicle</Text>
+          <Text style={styles.updateBtnText}>ADD VEHICLE</Text>
         </TouchableOpacity>
       </View>
     );
