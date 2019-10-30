@@ -72,4 +72,15 @@ describe('getUser', () => {
   it('should return the current user\'s profile information', () => {
     expect(getUser()).resolves.toEqual(mockUser);
   });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(getUser()).rejects.toEqual(Error('Error fetching the user\'s emergency contacts.'))
+  });
+
 })
