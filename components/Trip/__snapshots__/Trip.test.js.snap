@@ -1,386 +1,496 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Trip should match the snapshot with all of the data passed through 1`] = `
-<View
+<KeyboardAvoidingView
+  behavior="padding"
+  enabled={true}
+  keyboardVerticalOffset={0}
   style={
     Object {
-      "alignItems": "center",
       "flex": 1,
-      "marginHorizontal": "10%",
-      "width": "80%",
     }
   }
 >
-  <Component
+  <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "height": 300,
-        "width": "100%",
+        "marginHorizontal": "10%",
+        "width": "80%",
       }
     }
   >
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#efefef",
-          "marginVertical": 4,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 21,
-            "paddingVertical": 5,
-            "textAlign": "center",
-          }
-        }
-      >
-        Select Emergency Contacts
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#efefef",
-          "marginVertical": 4,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 21,
-            "paddingVertical": 5,
-            "textAlign": "center",
-          }
-        }
-      >
-        Select Vehicle
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#efefef",
-          "marginVertical": 4,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 21,
-            "paddingVertical": 5,
-            "textAlign": "center",
-          }
-        }
-      >
-        Select Gear Items
-      </Text>
-    </TouchableOpacity>
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Trip Name: 
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="Mt Massive w/soccer club"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Starting Point:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="Leadville Fish Hatchery"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Ending Point:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="Leadville Fish Hatchery"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Starting date:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="November 20, 2019"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Start time:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="07:00"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      End date:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="November 20, 2019"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      End time:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="11:30"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Notification date:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="November 20, 2019"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Notification time:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="14:00"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
-    <Text
-      style={
-        Object {
-          "fontSize": 12,
-        }
-      }
-    >
-      Number of Companions:
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      onChangeText={[Function]}
-      placeholder="3"
-      rejectResponderTermination={true}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginBottom": 10,
-          "padding": 10,
-        }
-      }
-      underlineColorAndroid="transparent"
-      value=""
-    />
     <Component
-      animationType="slide"
-      hardwareAccelerated={false}
-      onRequestClose={[Function]}
-      transparent={true}
-      visible={false}
+      style={
+        Object {
+          "flex": 1,
+          "height": 300,
+          "width": "100%",
+        }
+      }
     >
-      <View
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
             "backgroundColor": "#efefef",
-            "bottom": 30,
-            "height": 400,
-            "left": 10,
-            "margin": 5,
-            "padding": 20,
-            "position": "absolute",
-            "right": 10,
+            "marginVertical": 4,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontWeight": "bold",
-              "marginBottom": 5,
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
             }
           }
         >
-          Add Contacts Items:
+          Select Emergency Contacts
         </Text>
-        <Component>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
+          }
+        >
+          Select Vehicle
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
+          }
+        >
+          Select Gear Items
+        </Text>
+      </TouchableOpacity>
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Trip Name: 
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="Mt Massive w/soccer club"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Starting Point:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="Leadville Fish Hatchery"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Ending Point:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="Leadville Fish Hatchery"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Starting date:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="November 20, 2019"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Start time:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="07:00"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        End date:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="November 20, 2019"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        End time:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="11:30"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Notification date:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="November 20, 2019"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Notification time:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="14:00"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Number of Companions:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        keyboardType="numeric"
+        onChangeText={[Function]}
+        placeholder="3"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginBottom": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Add Contacts Items:
+          </Text>
+          <Component>
+            <TouchableHighlight
+              activeOpacity={0.85}
+              delayPressOut={100}
+              onPress={[Function]}
+              style={
+                Object {
+                  "marginVertical": 3,
+                  "paddingVertical": 10,
+                }
+              }
+              underlayColor="black"
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "borderColor": "black",
+                      "borderWidth": 1,
+                      "marginRight": 10,
+                      "marginVertical": 5,
+                      "paddingVertical": 3,
+                      "textAlign": "center",
+                      "width": 75,
+                    }
+                  }
+                >
+                  ADD
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "paddingVertical": 10,
+                    }
+                  }
+                >
+                  Beans
+                </Text>
+              </View>
+            </TouchableHighlight>
+          </Component>
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+          >
+            <Text
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Submit Contacts List
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Select Vehicle:
+          </Text>
           <TouchableHighlight
             activeOpacity={0.85}
             delayPressOut={100}
+            key="1"
             onPress={[Function]}
             style={
               Object {
@@ -390,237 +500,146 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             }
             underlayColor="black"
           >
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "borderColor": "black",
-                    "borderWidth": 1,
-                    "marginRight": 10,
-                    "marginVertical": 5,
-                    "paddingVertical": 3,
-                    "textAlign": "center",
-                    "width": 75,
-                  }
-                }
-              >
-                ADD
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "paddingVertical": 10,
-                  }
-                }
-              >
-                Beans
-              </Text>
-            </View>
+            <Text>
+              Ford
+               
+              F150
+            </Text>
           </TouchableHighlight>
-        </Component>
-        <TouchableOpacity
-          activeOpacity={0.2}
-          onPress={[Function]}
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
         >
           <Text
             style={
               Object {
-                "borderColor": "black",
-                "borderWidth": 1,
-                "marginVertical": 3,
-                "padding": 10,
-                "textAlign": "center",
+                "fontWeight": "bold",
+                "marginBottom": 5,
               }
             }
           >
-            Submit Contacts List
+            Add Gear Items:
           </Text>
-        </TouchableOpacity>
-      </View>
-    </Component>
-    <Component
-      animationType="slide"
-      hardwareAccelerated={false}
-      onRequestClose={[Function]}
-      transparent={true}
-      visible={false}
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "bottom": 30,
-            "height": 400,
-            "left": 10,
-            "margin": 5,
-            "padding": 20,
-            "position": "absolute",
-            "right": 10,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontWeight": "bold",
-              "marginBottom": 5,
-            }
-          }
-        >
-          Select Vehicle:
-        </Text>
-        <TouchableHighlight
-          activeOpacity={0.85}
-          delayPressOut={100}
-          key="1"
-          onPress={[Function]}
-          style={
-            Object {
-              "marginVertical": 3,
-              "paddingVertical": 10,
-            }
-          }
-          underlayColor="black"
-        >
-          <Text>
-            Ford
-             
-            F150
-          </Text>
-        </TouchableHighlight>
-      </View>
-    </Component>
-    <Component
-      animationType="slide"
-      hardwareAccelerated={false}
-      onRequestClose={[Function]}
-      transparent={true}
-      visible={false}
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "bottom": 30,
-            "height": 400,
-            "left": 10,
-            "margin": 5,
-            "padding": 20,
-            "position": "absolute",
-            "right": 10,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontWeight": "bold",
-              "marginBottom": 5,
-            }
-          }
-        >
-          Add Gear Items:
-        </Text>
-        <Component>
-          <TouchableHighlight
-            activeOpacity={0.85}
-            delayPressOut={100}
-            key="89"
+          <Component>
+            <TouchableHighlight
+              activeOpacity={0.85}
+              delayPressOut={100}
+              key="89"
+              onPress={[Function]}
+              style={
+                Object {
+                  "marginVertical": 3,
+                  "paddingVertical": 10,
+                }
+              }
+              underlayColor="black"
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "borderColor": "black",
+                      "borderWidth": 1,
+                      "marginRight": 10,
+                      "marginVertical": 5,
+                      "paddingVertical": 3,
+                      "textAlign": "center",
+                      "width": 75,
+                    }
+                  }
+                >
+                  ADD
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "paddingVertical": 10,
+                    }
+                  }
+                >
+                  Rustic Iron Bottle
+                </Text>
+              </View>
+            </TouchableHighlight>
+          </Component>
+          <TouchableOpacity
+            activeOpacity={0.2}
             onPress={[Function]}
-            style={
-              Object {
-                "marginVertical": 3,
-                "paddingVertical": 10,
-              }
-            }
-            underlayColor="black"
           >
-            <View
+            <Text
               style={
                 Object {
-                  "flex": 1,
-                  "flexDirection": "row",
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
                 }
               }
             >
-              <Text
-                style={
-                  Object {
-                    "borderColor": "black",
-                    "borderWidth": 1,
-                    "marginRight": 10,
-                    "marginVertical": 5,
-                    "paddingVertical": 3,
-                    "textAlign": "center",
-                    "width": 75,
-                  }
-                }
-              >
-                ADD
-              </Text>
-              <Text
-                style={
-                  Object {
-                    "paddingVertical": 10,
-                  }
-                }
-              >
-                Rustic Iron Bottle
-              </Text>
-            </View>
-          </TouchableHighlight>
-        </Component>
-        <TouchableOpacity
-          activeOpacity={0.2}
-          onPress={[Function]}
-        >
-          <Text
-            style={
-              Object {
-                "borderColor": "black",
-                "borderWidth": 1,
-                "marginVertical": 3,
-                "padding": 10,
-                "textAlign": "center",
-              }
-            }
-          >
-            Submit Gear List
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </Component>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      disabled={false}
-      onPress={[Function]}
-      style={
-        Object {
-          "borderColor": "black",
-          "borderWidth": 1,
-          "marginVertical": 3,
-          "padding": 10,
-          "textAlign": "center",
-        }
-      }
-    >
-      <Text
+              Submit Gear List
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        disabled={false}
+        onPress={[Function]}
         style={
           Object {
+            "borderColor": "black",
+            "borderWidth": 1,
+            "marginVertical": 3,
+            "padding": 10,
             "textAlign": "center",
           }
         }
       >
-        Add Trip
-      </Text>
-    </TouchableOpacity>
-  </Component>
-</View>
+        <Text
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          Add Trip
+        </Text>
+      </TouchableOpacity>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      />
+    </Component>
+  </View>
+</KeyboardAvoidingView>
 `;

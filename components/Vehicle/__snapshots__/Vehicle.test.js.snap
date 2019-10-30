@@ -76,6 +76,7 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
   </Text>
   <TextInput
     allowFontScaling={true}
+    keyboardType="numeric"
     name="year"
     onChangeText={[Function]}
     placeholder="2010"
