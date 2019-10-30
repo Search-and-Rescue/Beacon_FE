@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Modal, ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { getTrips, deactivateTrip } from "../../util/apiCalls";
+import { deleteTrip, deactivateTrip, getTrips } from "../../util/apiCalls";
 import { setTrips, removeCurrentTrip } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -21,9 +21,24 @@ export class TripList extends Component {
       this.props.removeCurrentTrip();
       this.toggleButtonModal();
     } catch ({ message }) {
-      console.log(message)
+      console.log(message);
     }
   } 
+
+  removeTrip = async (id) => {
+    if (id === this.props.currentTrip) {
+      await deactivateTrip(id);
+      this.props.removeCurrentTrip();
+    }
+    
+    try {
+      await deleteTrip(id);
+      const userInfoTrips = await getTrips();
+      this.props.setTrips(userInfoTrips.user.trips);
+    } catch ({ message }) {
+      console.log(message)
+    }
+  }
 
   toggleButtonModal = () => {
     this.setState({ button_modal: !this.state.button_modal });
@@ -33,7 +48,9 @@ export class TripList extends Component {
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
-          <Text style={styles.tripRemoveBtn}>REMOVE</Text>
+          <Text 
+            style={styles.tripRemoveBtn}
+            onPress={() => this.removeTrip(trip.id)}>REMOVE</Text>
           <View style={styles.tripTextContainer}>
             <Text style={styles.tripsName}>{trip.name}</Text>
             <Text style={styles.tripsDate}>
