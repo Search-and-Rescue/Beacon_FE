@@ -177,168 +177,138 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         underlineColorAndroid="transparent"
         value=""
       />
-      <Text
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
-            "fontSize": 12,
-            "textAlign": "left",
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
           }
         }
       >
-        Starting date:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="November 20, 2019"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
-            "padding": 10,
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
           }
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
-      <Text
+        >
+          Select Start Date
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
-            "fontSize": 12,
-            "textAlign": "left",
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
           }
         }
       >
-        Start time:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="07:00"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
-            "padding": 10,
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
           }
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
-      <Text
+        >
+          Select Start Time
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
-            "fontSize": 12,
-            "textAlign": "left",
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
           }
         }
       >
-        End date:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="November 20, 2019"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
-            "padding": 10,
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
           }
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
-      <Text
+        >
+          Select End Date
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
-            "fontSize": 12,
-            "textAlign": "left",
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
           }
         }
       >
-        End time:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="11:30"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
-            "padding": 10,
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
           }
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
-      <Text
+        >
+          Select End Time
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
-            "fontSize": 12,
-            "textAlign": "left",
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
           }
         }
       >
-        Notification date:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="November 20, 2019"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
-            "padding": 10,
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
           }
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
-      <Text
+        >
+          Select Notification Date
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
         style={
           Object {
-            "fontSize": 12,
-            "textAlign": "left",
+            "backgroundColor": "#efefef",
+            "marginVertical": 4,
           }
         }
       >
-        Notification time:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="14:00"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
-            "padding": 10,
+        <Text
+          style={
+            Object {
+              "fontSize": 21,
+              "paddingVertical": 5,
+              "textAlign": "center",
+            }
           }
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
+        >
+          Select Notification Time
+        </Text>
+      </TouchableOpacity>
       <Text
         style={
           Object {
@@ -614,6 +584,342 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
               }
             >
               Submit Gear List
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Select Start Date:
+          </Text>
+          <DatePickerIOS
+            date={2019-10-31T01:10:58.463Z}
+            mode="date"
+            onDateChange={[Function]}
+          />
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+          >
+            <Text
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Submit Start Date
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Select End Date:
+          </Text>
+          <DatePickerIOS
+            date={2019-10-31T01:10:58.463Z}
+            mode="date"
+            onDateChange={[Function]}
+          />
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+          >
+            <Text
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Submit End Date
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Select Notification Date:
+          </Text>
+          <DatePickerIOS
+            date={2019-10-31T01:10:58.463Z}
+            mode="date"
+            onDateChange={[Function]}
+          />
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+          >
+            <Text
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Submit Notification Date
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Select Start Time:
+          </Text>
+          <DatePickerIOS
+            date={2019-10-31T01:10:58.463Z}
+            mode="time"
+            onDateChange={[Function]}
+          />
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+          >
+            <Text
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Submit Start Time
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Select End Time:
+          </Text>
+          <DatePickerIOS
+            date={2019-10-31T01:10:58.463Z}
+            mode="time"
+            onDateChange={[Function]}
+          />
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+          >
+            <Text
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Submit End Time
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Component>
+      <Component
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={true}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#efefef",
+              "bottom": 30,
+              "height": 400,
+              "left": 10,
+              "margin": 5,
+              "padding": 20,
+              "position": "absolute",
+              "right": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          >
+            Select Notification Time:
+          </Text>
+          <DatePickerIOS
+            date={2019-10-31T01:10:58.463Z}
+            mode="time"
+            onDateChange={[Function]}
+          />
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
+          >
+            <Text
+              style={
+                Object {
+                  "borderColor": "black",
+                  "borderWidth": 1,
+                  "marginVertical": 3,
+                  "padding": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Submit Notification Time
             </Text>
           </TouchableOpacity>
         </View>
