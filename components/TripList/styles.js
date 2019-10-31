@@ -41,9 +41,12 @@ const styles = {
     justifyContent: "space-between"
   },
   tripRemoveBtn: {
+    backgroundColor: "#001028",
+    color: "#efefef",
     borderWidth: 1,
     borderColor: "#001028",
     height: 30,
+    marginLeft: 7,
     marginVertical: 20,
     padding: 5
   },

@@ -27,9 +27,12 @@ const styles = {
     justifyContent: "space-between"
   },
   contactRemoveBtn: {
+    backgroundColor: "#001028",
+    color: "#efefef",
     borderWidth: 1,
     borderColor: "black",
     height: 30,
+    marginLeft: 7,
     marginVertical: 10,
     padding: 5
   },

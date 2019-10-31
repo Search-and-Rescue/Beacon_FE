@@ -11,7 +11,7 @@ const styles = {
     borderWidth: 4,
     flex: 1,
     height: 300,
-    marginHorizontal: '5%',
+    marginHorizontal: "5%",
     width: "90%"
   },
   backgroundImage: {
@@ -27,9 +27,12 @@ const styles = {
     justifyContent: "space-between"
   },
   vehicleRemoveBtn: {
+    backgroundColor: "#001028",
+    color: "#efefef",
     borderWidth: 1,
     borderColor: "#001028",
     height: 30,
+    marginLeft: 7,
     marginVertical: 10,
     padding: 5
   },

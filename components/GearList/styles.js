@@ -12,7 +12,7 @@ const styles = {
     flex: 1,
     height: 300,
     marginHorizontal: "5%",
-    width: "90%",
+    width: "90%"
   },
   backgroundImage: {
     flex: 1,
@@ -27,10 +27,13 @@ const styles = {
     justifyContent: "space-between"
   },
   itemRemoveBtn: {
+    backgroundColor: "#001028",
+    color: '#efefef',
     borderWidth: 1,
     borderColor: "#001028",
-    height: 35,
-    margin: 4,
+    height: 30,
+    marginLeft: 7,
+    marginVertical: 10,
     padding: 5
   },
   gearName: {
