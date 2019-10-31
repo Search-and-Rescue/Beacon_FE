@@ -2,44 +2,53 @@ const styles = {
   tripContainer: {
     alignItems: "center",
     flex: 1,
-    marginHorizontal: '10%',
+    marginHorizontal: "10%",
     width: "80%"
   },
   tripsList: {
     flex: 1,
-    height: 300, 
-    width: '100%'
+    height: 300,
+    width: "100%"
   },
-  pickerView: {
-    backgroundColor: "#efefef",
+  modalView: {
+    backgroundColor: "#EFB095",
+    borderTopWidth: 10,
+    borderColor: "#001028",
+    bottom: -10,
+    height: 300,
     margin: 5,
     padding: 20,
     position: "absolute",
-    bottom: 30,
     left: 10,
-    right: 10,
-    height: 400
+    right: 10
+  },
+  modalTimeDateView: {
+    backgroundColor: "#EFB095",
+    borderTopWidth: 10,
+    borderColor: "#001028",
+    bottom: -10,
+    height: 400,
+    margin: 5,
+    padding: 20,
+    position: "absolute",
+    left: 10,
+    right: 10
   },
   modalHeading: {
-    fontWeight: "bold",
+    fontSize: 21,
     marginBottom: 5
   },
   modalButton: {
     paddingVertical: 10,
     marginVertical: 3
   },
+  modalOptionsText: {
+    color: "#001028",
+    fontSize: 28
+  },
   modalToggleGearContainer: {
     flex: 1,
     flexDirection: "row"
-  },
-  modalToggleGearBtn: {
-    borderWidth: 1,
-    borderColor: "black",
-    marginRight: 10,
-    marginVertical: 5,
-    paddingVertical: 3,
-    textAlign: "center",
-    width: 75
   },
   modalToggleGearHeading: {
     paddingVertical: 10
@@ -48,54 +57,64 @@ const styles = {
     flex: 1,
     flexDirection: "row"
   },
-  modalToggleContactsBtn: {
-    borderWidth: 1,
-    borderColor: "black",
-    marginRight: 10,
-    marginVertical: 5,
-    paddingVertical: 3,
-    textAlign: "center",
-    width: 75
-  },
   modalToggleContactsHeading: {
     paddingVertical: 10
   },
+  modalButtonContainer: {
+    marginBottom: 10
+  },
   modalToggleButton: {
-    backgroundColor: "#efefef",
-    marginVertical: 4,
+    marginVertical: 1
   },
   modalToggleText: {
-    fontSize: 21,
-    paddingVertical: 5,
+    backgroundColor: "#EFB095",
+    borderColor: "#001028",
+    borderWidth: 4,
+    color: "#001028",
+    fontFamily: "Futura",
+    fontSize: 18,
+    marginVertical: 10,
+    paddingVertical: 10,
     textAlign: "center"
   },
   label: {
-    fontSize: 12,
-    textAlign: "left"
+    color: "#001028",
+    fontFamily: "Georgia",
+    fontSize: 18,
+    textAlign: "left",
+    paddingBottom: 2
   },
   input: {
-    backgroundColor: "#fff",
-    borderColor: "black",
-    borderWidth: 1,
-    marginBottom: 10,
-    padding: 10,
+    backgroundColor: "#F0F0F0",
+    borderColor: "#001028",
+    borderRadius: 2,
+    borderWidth: 2,
+    marginBottom: 15,
+    padding: 10
   },
   updateBtn: {
-    borderColor: "black",
-    borderWidth: 1,
-    marginVertical: 3,
-    padding: 10,
+    backgroundColor: "#001028",
+    borderRadius: 3,
+    color: "#F0F0F0",
+    fontFamily: "Futura",
+    fontSize: 28,
+    marginVertical: 10,
+    paddingVertical: 12,
     textAlign: "center",
+    width: "100%"
   },
   disableColor: {
+    backgroundColor: "maroon",
     borderColor: "red",
     borderWidth: 1,
-    marginVertical: 3,
-    padding: 10,
-    textAlign: 'center',
+    marginVertical: 10,
+    paddingVertical: 10,
     width: "100%"
   },
   updateBtnText: {
+    color: "#F0F0F0",
+    fontFamily: "Futura",
+    fontSize: 21,
     textAlign: "center"
   }
 };

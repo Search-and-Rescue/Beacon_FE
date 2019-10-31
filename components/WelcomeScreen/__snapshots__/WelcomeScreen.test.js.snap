@@ -5,7 +5,7 @@ exports[`LoginScreen should match the snapshot with all of the data passed throu
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFB98B",
+      "backgroundColor": "#F0F0F0",
       "flex": 1,
       "justifyContent": "center",
       "marginTop": 20,
@@ -18,12 +18,12 @@ exports[`LoginScreen should match the snapshot with all of the data passed throu
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "white",
-        "borderColor": "#FF6700",
-        "borderRadius": 3,
-        "borderWidth": 2,
+        "backgroundColor": "#001028",
+        "borderColor": "#EFB095",
+        "borderRadius": 7,
+        "borderWidth": 4,
         "height": 65,
-        "marginVertical": 5,
+        "marginVertical": 10,
         "width": 350,
       }
     }
@@ -32,13 +32,14 @@ exports[`LoginScreen should match the snapshot with all of the data passed throu
     <Text
       style={
         Object {
-          "color": "black",
+          "color": "#F0F0F0",
+          "fontFamily": "Futura",
           "fontSize": 38,
-          "padding": 10,
+          "paddingVertical": 5,
         }
       }
     >
-      Login
+      LOGIN
     </Text>
   </TouchableOpacity>
   <TouchableOpacity
@@ -47,12 +48,12 @@ exports[`LoginScreen should match the snapshot with all of the data passed throu
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "white",
-        "borderColor": "#FF6700",
-        "borderRadius": 3,
-        "borderWidth": 2,
+        "backgroundColor": "#001028",
+        "borderColor": "#EFB095",
+        "borderRadius": 7,
+        "borderWidth": 4,
         "height": 65,
-        "marginVertical": 5,
+        "marginVertical": 10,
         "width": 350,
       }
     }
@@ -61,13 +62,14 @@ exports[`LoginScreen should match the snapshot with all of the data passed throu
     <Text
       style={
         Object {
-          "color": "black",
+          "color": "#F0F0F0",
+          "fontFamily": "Futura",
           "fontSize": 38,
-          "padding": 10,
+          "paddingVertical": 5,
         }
       }
     >
-      Sign Up
+      SIGN UP
     </Text>
   </TouchableOpacity>
 </View>

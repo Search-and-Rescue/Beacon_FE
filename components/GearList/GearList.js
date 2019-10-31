@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ImageBackground, ScrollView, Text, View } from "react-native";
 import { getGear, deleteGearItem } from "../../util/apiCalls";
 import { connect } from "react-redux";
 import styles from "./styles";
 import { setGear } from "../../actions";
 import { bindActionCreators } from "redux";
+import background from "../../assets/background.png";
 
 export class GearList extends Component {
   constructor(props) {
@@ -38,9 +39,11 @@ export class GearList extends Component {
     return (
       <View>
         <View style={styles.gearListContainer}>
+          <ImageBackground source={background} style={styles.backgroundImage} imageStyle={{opacity: 0.2}}>
           <ScrollView style={styles.gearList}>
           {itemCards}
           </ScrollView>
+          </ImageBackground>
         </View>
       </View>
     );

@@ -3,25 +3,26 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   loginContainer: {
     alignItems: "center",
-    backgroundColor: "#FFB98B",
-    flex: 1, 
+    backgroundColor: "#F0F0F0",
+    flex: 1,
     justifyContent: "center",
     marginTop: 20
-  }, 
+  },
   loginButton: {
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderColor: '#FF6700',
-    borderRadius: 3,
-    borderWidth: 2,
+    alignItems: "center",
+    backgroundColor: "#001028",
+    borderColor: "#EFB095",
+    borderRadius: 7,
+    borderWidth: 4,
     height: 65,
-    marginVertical: 5,
+    marginVertical: 10,
     width: 350
   },
   buttonText: {
-    color: 'black',
+    color: "#F0F0F0",
+    fontFamily: "Futura",
     fontSize: 38,
-    padding: 10
+    paddingVertical: 5
   }
 });
 

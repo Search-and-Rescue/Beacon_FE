@@ -109,22 +109,8 @@ class Profile extends Component {
     ];
 
     return (
-      <KeyboardAvoidingView
-        behavior={"padding"}
-        style={{ flex: 1 }}
-      >
+      <KeyboardAvoidingView behavior={"padding"} style={{ flex: 1 }}>
         <View style={styles.profileContainer}>
-          <TouchableOpacity 
-            style={styles.modalToggleButton}
-            onPress={() => this.toggleExperienceModal()}>
-            <Text style={styles.modalToggleText}>Select Experience Level</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.modalToggleButton}
-            onPress={() => this.toggleCosarModal()}
-          >
-            <Text style={styles.modalToggleText}>Select COSAR Card Status</Text>
-          </TouchableOpacity>
           <Modal
             animationType={"slide"}
             visible={this.state.experience_modal}
@@ -140,7 +126,7 @@ class Profile extends Component {
                     style={styles.modalButton}
                     onPress={() => this.setExperience(level.value)}
                   >
-                    <Text>{level.title}</Text>
+                    <Text style={styles.modalOptionsText}>{level.title}</Text>
                   </TouchableHighlight>
                 );
               })}
@@ -163,13 +149,29 @@ class Profile extends Component {
                     style={styles.modalButton}
                     onPress={() => this.setCosar(cosar.value)}
                   >
-                    <Text>{cosar.title}</Text>
+                    <Text style={styles.modalOptionsText}>{cosar.title}</Text>
                   </TouchableHighlight>
                 );
               })}
             </View>
           </Modal>
           <ScrollView style={styles.profileFlatList}>
+            <TouchableOpacity
+              style={styles.modalToggleButton}
+              onPress={() => this.toggleExperienceModal()}
+            >
+              <Text style={styles.modalToggleText}>
+                Select Experience Level
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.modalToggleButton}
+              onPress={() => this.toggleCosarModal()}
+            >
+              <Text style={styles.modalToggleText}>
+                Select COSAR Card Status
+              </Text>
+            </TouchableOpacity>
             <Text style={styles.label}>Name:</Text>
             <TextInput
               placeholder="Jill A. Hiker"
@@ -295,8 +297,11 @@ class Profile extends Component {
               name="gender"
             />
           </ScrollView>
-          <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-            <Text style={styles.updateBtnText}>UPDATE Profile</Text>
+          <TouchableOpacity
+            style={styles.updateBtn}
+            onPress={this.handleSubmit}
+          >
+            <Text style={styles.updateBtnText}>ADD PROFILE</Text>
           </TouchableOpacity>
           <View style={{ flex: 1 }} />
         </View>

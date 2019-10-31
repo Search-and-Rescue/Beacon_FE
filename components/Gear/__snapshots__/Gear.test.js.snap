@@ -6,16 +6,20 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     Object {
       "alignItems": "center",
       "flex": 1,
-      "marginVertical": 40,
+      "marginHorizontal": "10%",
+      "marginVertical": 20,
     }
   }
 >
   <Text
     style={
       Object {
-        "fontSize": 12,
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
         "textAlign": "left",
-        "width": "80%",
+        "width": "100%",
       }
     }
   >
@@ -29,12 +33,13 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
@@ -43,9 +48,12 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
   <Text
     style={
       Object {
-        "fontSize": 12,
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
         "textAlign": "left",
-        "width": "80%",
+        "width": "100%",
       }
     }
   >
@@ -59,12 +67,13 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
@@ -74,21 +83,28 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     onPress={[Function]}
     style={
       Object {
-        "borderColor": "black",
-        "borderWidth": 1,
-        "padding": 10,
-        "paddingHorizontal": "32%",
+        "backgroundColor": "#001028",
+        "borderColor": "#EFB095",
+        "borderWidth": 4,
+        "marginVertical": 10,
+        "paddingVertical": 12,
+        "width": "100%",
       }
     }
   >
     <Text
       style={
         Object {
+          "color": "#F0F0F0",
+          "fontFamily": "Futura",
+          "fontSize": 21,
+          "paddingHorizontal": "24%",
           "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      ADD Gear
+      ADD GEAR ITEM
     </Text>
   </Component>
 </View>

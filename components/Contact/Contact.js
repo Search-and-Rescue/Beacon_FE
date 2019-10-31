@@ -65,7 +65,7 @@ export class Contact extends Component {
           name="email"
         />
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-          <Text style={styles.updateBtnText}>ADD Emergency Contact</Text>
+          <Text style={styles.updateBtnText}>ADD CONTACT</Text>
         </TouchableOpacity>
       </View>
     );
