@@ -34,7 +34,7 @@ const styles = {
     color: "#F0F0F0",
     fontFamily: "Futura",
     fontSize: 21,
-    paddingHorizontal: '24%',
+    paddingHorizontal: '21%',
     textAlign: "center",
     width: "100%"
   }
