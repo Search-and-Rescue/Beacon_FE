@@ -11,7 +11,12 @@ const styles = {
     borderWidth: 4,
     flex: 1,
     height: 300,
+    marginHorizontal: '5%',
     width: "90%"
+  },
+  backgroundImage: {
+    flex: 1,
+    width: "100%"
   },
   vehicleCard: {
     backgroundColor: "#efefef",
