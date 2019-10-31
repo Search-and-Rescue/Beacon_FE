@@ -31,21 +31,15 @@ export class Trip extends Component {
       endingPoint: "",
       startDate: new Date(),
       startDate_modal: false,
-      startTime: "",
+      startTime: new Date(),
       endDate: new Date(),
       endDate_modal: false,
-      endTime: "",
+      endTime: new Date(),
       notificationDate: new Date(),
       notificationDate_modal: false,
-      notificationTime: "",
+      notificationTime: new Date(),
       travelingCompanions:""
     };
-    this.formatDate = this.formatDate.bind(this);
-  }
-
-  changeDumbDate = () => {
-    const date = new Date();
-    console.log(date)
   }
 
   toggleContacts = id => {
@@ -67,6 +61,12 @@ export class Trip extends Component {
     return updateDate;
   }
 
+  formatTime = (time) => {
+    const splitTime = time.toString().split(' ');
+    const updateTime = `${splitTime[4]}`;
+    return updateTime;
+  }
+
   setVehicle = id => {
     this.setState({ vehicle: id });
     this.toggleModal("vehicle_modal");
@@ -83,17 +83,16 @@ export class Trip extends Component {
 
   handleSubmit = async () => {
     const { navigation, user, setCurrentTrip, setTrips } = this.props;
-    this.formatDate
     const newTrip = {
       name: this.state.name,
       startingPoint: this.state.startingPoint,
       endingPoint: this.state.endingPoint,
       startDate: this.formatDate(this.state.startDate),
-      startTime: this.state.startTime,
+      startTime: this.formatTime(this.state.startTime),
       endDate: this.formatDate(this.state.endDate),
-      endTime: this.state.endTime,
+      endTime: this.formatTime(this.state.endTime),
       notificationDate: this.formatDate(this.state.notificationDate),
-      notificationTime: this.state.notificationTime,
+      notificationTime: this.formatTime(this.state.notificationTime),
       travelingCompanions: this.state.travelingCompanions,
       userId: user.id
     }
@@ -149,19 +148,16 @@ export class Trip extends Component {
       startingPoint: "",
       endingPoint: "",
       startDate: new Date(),
-      startTime: "",
+      startTime: new Date(),
       endDate: new Date(),
-      endTime: "",
+      endTime: new Date(),
       notificationDate: new Date(),
-      notificationTime: "",
+      notificationTime: new Date(),
       travelingCompanions: ""
     });
   }
 
   render() {
-    console.log(this.state.startDate);
-    console.log(this.state.endDate);
-    console.log(this.state.notificationDate);
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
@@ -276,12 +272,19 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
           <Text style={styles.label}>Start time:</Text>
-          <TextInput
+          <DatePickerIOS
+            mode="time"
+            date={this.state.startTime}
+            onDateChange={(time) => {
+              this.setState({ startTime: time })
+            }}
+          />
+          {/* <TextInput
             placeholder="07:00"
             style={styles.input}
             onChangeText={text => this.setState({ startTime: text })}
             value={this.state.startTime}
-          />
+          /> */}
           <Text style={styles.label}>End date:</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
@@ -290,12 +293,19 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select End Date</Text>
           </TouchableOpacity>
           <Text style={styles.label}>End time:</Text>
-          <TextInput
+          <DatePickerIOS
+            mode="time"
+            date={this.state.endTime}
+            onDateChange={(time) => {
+              this.setState({ endTime: time })
+            }}
+          />
+          {/* <TextInput
             placeholder="11:30"
             style={styles.input}
             onChangeText={text => this.setState({ endTime: text })}
             value={this.state.endTime}
-          />
+          /> */}
           <Text style={styles.label}>Notification date:</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
@@ -304,12 +314,19 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select Notification Date</Text>
           </TouchableOpacity>
           <Text style={styles.label}>Notification time:</Text>
-          <TextInput
+          <DatePickerIOS
+            mode="time"
+            date={this.state.notificationTime}
+            onDateChange={(time) => {
+              this.setState({ notificationTime: time })
+            }}
+          />
+          {/* <TextInput
             placeholder="14:00"
             style={styles.input}
             onChangeText={text => this.setState({ notificationTime: text })}
             value={this.state.notificationTime}
-          />
+          /> */}
           <Text style={styles.label}>Number of Companions:</Text>
           <TextInput
             keyboardType={"numeric"}
