@@ -32,12 +32,15 @@ export class Trip extends Component {
       startDate: new Date(),
       startDate_modal: false,
       startTime: new Date(),
+      startTime_modal: false,
       endDate: new Date(),
       endDate_modal: false,
       endTime: new Date(),
+      endTime_modal: false,
       notificationDate: new Date(),
       notificationDate_modal: false,
       notificationTime: new Date(),
+      notificationTime_modal: false,
       travelingCompanions:""
     };
   }
@@ -264,69 +267,42 @@ export class Trip extends Component {
             onChangeText={text => this.setState({ endingPoint: text })}
             value={this.state.endingPoint}
           />
-          <Text style={styles.label}>Starting date:</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("startDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>Start time:</Text>
-          <DatePickerIOS
-            mode="time"
-            date={this.state.startTime}
-            onDateChange={(time) => {
-              this.setState({ startTime: time })
-            }}
-          />
-          {/* <TextInput
-            placeholder="07:00"
-            style={styles.input}
-            onChangeText={text => this.setState({ startTime: text })}
-            value={this.state.startTime}
-          /> */}
-          <Text style={styles.label}>End date:</Text>
+          <TouchableOpacity
+            style={styles.modalToggleButton}
+            onPress={() => this.toggleModal("startTime_modal")}
+          >
+            <Text style={styles.modalToggleText}>Select Start Time</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select End Date</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>End time:</Text>
-          <DatePickerIOS
-            mode="time"
-            date={this.state.endTime}
-            onDateChange={(time) => {
-              this.setState({ endTime: time })
-            }}
-          />
-          {/* <TextInput
-            placeholder="11:30"
-            style={styles.input}
-            onChangeText={text => this.setState({ endTime: text })}
-            value={this.state.endTime}
-          /> */}
-          <Text style={styles.label}>Notification date:</Text>
+          <TouchableOpacity
+            style={styles.modalToggleButton}
+            onPress={() => this.toggleModal("endTime_modal")}
+          >
+            <Text style={styles.modalToggleText}>Select End Time</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select Notification Date</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>Notification time:</Text>
-          <DatePickerIOS
-            mode="time"
-            date={this.state.notificationTime}
-            onDateChange={(time) => {
-              this.setState({ notificationTime: time })
-            }}
-          />
-          {/* <TextInput
-            placeholder="14:00"
-            style={styles.input}
-            onChangeText={text => this.setState({ notificationTime: text })}
-            value={this.state.notificationTime}
-          /> */}
+          <TouchableOpacity
+            style={styles.modalToggleButton}
+            onPress={() => this.toggleModal("notificationTime_modal")}
+          >
+            <Text style={styles.modalToggleText}>Select Notification Time</Text>
+          </TouchableOpacity>
           <Text style={styles.label}>Number of Companions:</Text>
           <TextInput
             keyboardType={"numeric"}
@@ -424,7 +400,65 @@ export class Trip extends Component {
                 onDateChange={(date) => this.setState({ notificationDate: date })}
                 />
               <TouchableOpacity onPress={() => this.toggleModal("notificationDate_modal")}>
-                <Text style={styles.updateBtn}>Submit End Date</Text>
+                <Text style={styles.updateBtn}>Submit Notification Date</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+          <Modal
+            animationType={"slide"}
+            visible={this.state.startTime_modal}
+            transparent={true}
+            onRequestClose={() => console.log("close requested")}
+          >
+            <View style={styles.pickerView}>
+              <Text style={styles.modalHeading}>Select Start Time:</Text>
+              <DatePickerIOS
+                mode="time"
+                date={this.state.startTime}
+                onDateChange={(time) => this.setState({ startTime: time })}
+              />
+              <TouchableOpacity onPress={() => this.toggleModal("startTime_modal")}>
+                <Text style={styles.updateBtn}>Submit Start Time</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+          <Modal
+            animationType={"slide"}
+            visible={this.state.endTime_modal}
+            transparent={true}
+            onRequestClose={() => console.log("close requested")}
+          >
+            <View style={styles.pickerView}>
+              <Text style={styles.modalHeading}>Select End Time:</Text>
+              <DatePickerIOS
+                mode="time"
+                date={this.state.endTime}
+                onDateChange={(time) => {
+                  this.setState({ endTime: time })
+                }}
+              />
+              <TouchableOpacity onPress={() => this.toggleModal("endTime_modal")}>
+                <Text style={styles.updateBtn}>Submit End Time</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+          <Modal
+            animationType={"slide"}
+            visible={this.state.notificationTime_modal}
+            transparent={true}
+            onRequestClose={() => console.log("close requested")}
+          >
+            <View style={styles.pickerView}>
+              <Text style={styles.modalHeading}>Select Notification Time:</Text>
+              <DatePickerIOS
+                mode="time"
+                date={this.state.notificationTime}
+                onDateChange={(time) => {
+                  this.setState({ notificationTime: time })
+                }}
+              />
+              <TouchableOpacity onPress={() => this.toggleModal("notificationTime_modal")}>
+                <Text style={styles.updateBtn}>Submit Notification Time</Text>
               </TouchableOpacity>
             </View>
           </Modal>
@@ -442,6 +476,7 @@ export class Trip extends Component {
   );
   }
 }
+
 
 export const mapStateToProps = ({ contacts, vehicles, gear, user, currentTrip }) => ({
   contacts,
