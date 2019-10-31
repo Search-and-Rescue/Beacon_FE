@@ -54,7 +54,7 @@ const styles = {
   tripsName: {
     flex: 1,
     fontFamily: "Futura",
-    fontSize: 28,
+    fontSize: 21,
     paddingLeft: 7,
     paddingVertical: 2
   },

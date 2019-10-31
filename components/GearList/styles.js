@@ -22,7 +22,7 @@ const styles = {
     backgroundColor: "#efefef",
     flex: 1,
     flexDirection: "row",
-    height: 70,
+    height: 50,
     marginVertical: 5,
     justifyContent: "space-between"
   },
@@ -36,9 +36,9 @@ const styles = {
   gearName: {
     flex: 1,
     fontFamily: "Futura",
-    fontSize: 28,
+    fontSize: 21,
     paddingLeft: 7,
-    paddingVertical: 2
+    paddingVertical: 10
   },
   addItemBtn: {
     borderColor: "black",

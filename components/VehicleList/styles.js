@@ -36,9 +36,9 @@ const styles = {
   vehicleName: {
     flex: 1,
     fontFamily: "Futura",
-    fontSize: 28,
+    fontSize: 21,
     paddingLeft: 7,
-    paddingVertical: 2
+    paddingVertical: 10
   },
   addItemBtn: {
     borderColor: "black",
