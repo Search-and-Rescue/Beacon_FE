@@ -5,22 +5,22 @@ const styles = {
     borderColor: "#001028",
     flex: 1,
     marginHorizontal: "5%",
-    marginVertical: 20,
+    marginTop: 20,
     width: "90%"
   },
   profileHeading: {
     backgroundColor: "#001028",
     color: '#F0F0F0',
     fontFamily: "Futura",
-    fontSize: 28,
+    fontSize: 21,
     marginBottom: 7,
     paddingLeft: 5,
     paddingVertical: 2
   },
   profile: {
-    fontSize: 21,
+    fontSize: 16,
     paddingLeft: 5,
-    paddingBottom: 3
+    paddingBottom: 2
   }
 };
 
