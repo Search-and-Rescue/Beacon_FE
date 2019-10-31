@@ -217,44 +217,23 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         onPress={[Function]}
         style={
           Object {
-<<<<<<< HEAD
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
+            "marginVertical": 1,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderWidth": 4,
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 18,
+              "marginVertical": 10,
+              "paddingVertical": 10,
               "textAlign": "center",
             }
-=======
-            "color": "#001028",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "paddingBottom": 2,
-            "textAlign": "left",
-          }
-        }
-      >
-        Starting date:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="November 20, 2019"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#F0F0F0",
-            "borderColor": "#001028",
-            "borderRadius": 2,
-            "borderWidth": 2,
-            "marginBottom": 15,
-            "padding": 10,
->>>>>>> master
           }
         >
           Select Start Date
@@ -265,44 +244,23 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         onPress={[Function]}
         style={
           Object {
-<<<<<<< HEAD
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
+            "marginVertical": 1,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderWidth": 4,
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 18,
+              "marginVertical": 10,
+              "paddingVertical": 10,
               "textAlign": "center",
             }
-=======
-            "color": "#001028",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "paddingBottom": 2,
-            "textAlign": "left",
-          }
-        }
-      >
-        Start time:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="07:00"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#F0F0F0",
-            "borderColor": "#001028",
-            "borderRadius": 2,
-            "borderWidth": 2,
-            "marginBottom": 15,
-            "padding": 10,
->>>>>>> master
           }
         >
           Select Start Time
@@ -313,44 +271,23 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         onPress={[Function]}
         style={
           Object {
-<<<<<<< HEAD
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
+            "marginVertical": 1,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderWidth": 4,
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 18,
+              "marginVertical": 10,
+              "paddingVertical": 10,
               "textAlign": "center",
             }
-=======
-            "color": "#001028",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "paddingBottom": 2,
-            "textAlign": "left",
-          }
-        }
-      >
-        End date:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="November 20, 2019"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#F0F0F0",
-            "borderColor": "#001028",
-            "borderRadius": 2,
-            "borderWidth": 2,
-            "marginBottom": 15,
-            "padding": 10,
->>>>>>> master
           }
         >
           Select End Date
@@ -361,44 +298,23 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         onPress={[Function]}
         style={
           Object {
-<<<<<<< HEAD
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
+            "marginVertical": 1,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderWidth": 4,
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 18,
+              "marginVertical": 10,
+              "paddingVertical": 10,
               "textAlign": "center",
             }
-=======
-            "color": "#001028",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "paddingBottom": 2,
-            "textAlign": "left",
-          }
-        }
-      >
-        End time:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="11:30"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#F0F0F0",
-            "borderColor": "#001028",
-            "borderRadius": 2,
-            "borderWidth": 2,
-            "marginBottom": 15,
-            "padding": 10,
->>>>>>> master
           }
         >
           Select End Time
@@ -409,44 +325,23 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         onPress={[Function]}
         style={
           Object {
-<<<<<<< HEAD
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
+            "marginVertical": 1,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderWidth": 4,
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 18,
+              "marginVertical": 10,
+              "paddingVertical": 10,
               "textAlign": "center",
             }
-=======
-            "color": "#001028",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "paddingBottom": 2,
-            "textAlign": "left",
-          }
-        }
-      >
-        Notification date:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="November 20, 2019"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#F0F0F0",
-            "borderColor": "#001028",
-            "borderRadius": 2,
-            "borderWidth": 2,
-            "marginBottom": 15,
-            "padding": 10,
->>>>>>> master
           }
         >
           Select Notification Date
@@ -457,44 +352,23 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         onPress={[Function]}
         style={
           Object {
-<<<<<<< HEAD
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
+            "marginVertical": 1,
           }
         }
       >
         <Text
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderWidth": 4,
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 18,
+              "marginVertical": 10,
+              "paddingVertical": 10,
               "textAlign": "center",
             }
-=======
-            "color": "#001028",
-            "fontFamily": "Georgia",
-            "fontSize": 18,
-            "paddingBottom": 2,
-            "textAlign": "left",
-          }
-        }
-      >
-        Notification time:
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="14:00"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "backgroundColor": "#F0F0F0",
-            "borderColor": "#001028",
-            "borderRadius": 2,
-            "borderWidth": 2,
-            "marginBottom": 15,
-            "padding": 10,
->>>>>>> master
           }
         >
           Select Notification Time
@@ -621,7 +495,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
                 }
               }
             >
-              Submit Contacts
+              Submit Contacts List
             </Text>
           </TouchableOpacity>
         </View>
@@ -782,7 +656,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           </TouchableOpacity>
         </View>
       </Component>
-<<<<<<< HEAD
       <Component
         animationType="slide"
         hardwareAccelerated={false}
@@ -793,8 +666,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
               "height": 400,
               "left": 10,
               "margin": 5,
@@ -807,7 +682,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
@@ -815,7 +690,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Start Date:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:10:58.463Z}
+            date={2019-10-31T01:38:58.084Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -826,11 +701,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
@@ -849,8 +728,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
               "height": 400,
               "left": 10,
               "margin": 5,
@@ -863,7 +744,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
@@ -871,7 +752,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select End Date:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:10:58.463Z}
+            date={2019-10-31T01:38:58.084Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -882,11 +763,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
@@ -905,8 +790,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
               "height": 400,
               "left": 10,
               "margin": 5,
@@ -919,7 +806,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
@@ -927,7 +814,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Notification Date:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:10:58.463Z}
+            date={2019-10-31T01:38:58.084Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -938,11 +825,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
@@ -961,8 +852,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
               "height": 400,
               "left": 10,
               "margin": 5,
@@ -975,7 +868,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
@@ -983,7 +876,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Start Time:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:10:58.463Z}
+            date={2019-10-31T01:38:58.084Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -994,11 +887,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
@@ -1017,8 +914,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
               "height": 400,
               "left": 10,
               "margin": 5,
@@ -1031,7 +930,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
@@ -1039,7 +938,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select End Time:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:10:58.463Z}
+            date={2019-10-31T01:38:58.084Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -1050,11 +949,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
@@ -1073,8 +976,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
               "height": 400,
               "left": 10,
               "margin": 5,
@@ -1087,7 +992,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
@@ -1095,7 +1000,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Notification Time:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:10:58.463Z}
+            date={2019-10-31T01:38:58.084Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -1106,11 +1011,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
@@ -1119,32 +1028,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           </TouchableOpacity>
         </View>
       </Component>
-      <TouchableOpacity
-        activeOpacity={0.2}
-        disabled={false}
-        onPress={[Function]}
-        style={
-          Object {
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginVertical": 3,
-            "padding": 10,
-            "textAlign": "center",
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
-        >
-          ADD Trip
-        </Text>
-      </TouchableOpacity>
-=======
->>>>>>> master
       <View
         style={
           Object {
