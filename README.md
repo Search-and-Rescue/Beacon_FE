@@ -56,7 +56,7 @@ A custom Search and Rescue API for the state of Colorado was built for this app.
 
 ### Wireframes
 
-- sketches and inspiration images
+![Wireframing Navigation and Components](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/wireframe.jpeg)
 
 ### Tech Stack
 
