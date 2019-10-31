@@ -161,13 +161,12 @@ export class Trip extends Component {
   }
 
   render() {
-    console.log(this.state.vehicle)
     const displayContacts = this.state.contacts.map(contact => {
-      return <Text key={contact.id}>{contact.name}</Text>
+      return <Text style={styles.displayList} key={contact.id}>&#8226; {contact.name}</Text>
     })
-    const displayVehicle = <Text>{this.state.vehicle.make} {this.state.vehicle.model}</Text>
+    const displayVehicle = <Text style={styles.displayList}>&#8226; {this.state.vehicle.make} {this.state.vehicle.model}</Text>
     const displayGear = this.state.gear.map(gearItem => {
-      return <Text key={gearItem.id}>{gearItem.itemName}</Text>
+      return <Text style={styles.displayList} key={gearItem.id}>&#8226; {gearItem.itemName}</Text>
     })
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
@@ -245,7 +244,7 @@ export class Trip extends Component {
             >
               <Text style={styles.modalToggleText}>Select Vehicle</Text>
             </TouchableOpacity>
-            {this.state.vehicle && displayVehicle}
+            {this.state.vehicle.make && displayVehicle}
             <TouchableOpacity
               style={styles.modalToggleButton}
               onPress={() => this.toggleModal("gear_modal")}
