@@ -8,7 +8,7 @@ const styles = {
     backgroundColor: "#EFB095",
     borderColor: "#001028",
     borderWidth: 4,
-    marginHorizontal: '5%',
+    marginHorizontal: "5%",
     marginTop: 10,
     paddingVertical: 10,
     width: "90%"
@@ -64,32 +64,46 @@ const styles = {
     fontSize: 18,
     paddingLeft: 7
   },
-  pickerView: {
-    backgroundColor: "#efefef",
+  modalView: {
+    backgroundColor: "lightgrey",
+    borderTopWidth: 10,
+    borderColor: "#001028",
     margin: 5,
     padding: 20,
     position: "absolute",
-    bottom: 30,
+    bottom: -5,
     left: 10,
     right: 10
   },
-  modalHeading: {
-    fontWeight: "bold",
-    marginBottom: 5
-  },
   theButton: {
     alignItems: "center",
-    backgroundColor: "red",
+    backgroundColor: "#EFB095",
+    borderWidth: 10,
+    borderColor: "#001028",
+    color: "#EFB095",
+    borderRadius: 60,
     paddingVertical: 100
   },
   theButtonText: {
-    fontSize: 68
+    color: "#001028",
+    fontFamily: "Futura",
+    fontSize: 46
+  },
+  theButtonSubtext: {
+    color: "#001028",
+    fontSize: 28
   },
   remainActiveButton: {
     alignItems: "center",
-    backgroundColor: "darkgrey",
+    backgroundColor: "#001028",
+    borderRadius: 3,
     marginVertical: 10,
     paddingVertical: 20
+  },
+  remainActiveButtonText: {
+    color: "#F0F0F0",
+    fontFamily: "Futura",
+    fontSize: 28
   },
   addItemBtn: {
     borderColor: "black",

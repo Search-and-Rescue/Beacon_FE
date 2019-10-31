@@ -78,14 +78,15 @@ export class TripList extends Component {
           transparent={true}
           onRequestClose={() => console.log("close requested")}
         >
-          <View style={styles.pickerView}>
-            <Text style={styles.modalHeading}>Update trip status:</Text>
+          <View style={styles.modalView}>
             <TouchableOpacity
               onPress={() => this.deactivateTripStatus(this.props.currentTrip)}
             >
               <View style={styles.theButton}>
-                <Text style={styles.theButtonText}>I'M BACK</Text>
-                <Text>Stop all emergency notifications</Text>
+                <Text style={styles.theButtonText}>DEACTIVATE</Text>
+                <Text style={styles.theButtonText}>CURRENT TRIP</Text>
+                <Text style={styles.theButtonSubtext}>Emergency notifications</Text>
+                <Text style={styles.theButtonSubtext}>will not be sent.</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => this.toggleButtonModal()}>
