@@ -36,6 +36,9 @@ A custom Search and Rescue API for the state of Colorado was built for this app.
 #### User Login Form
 ![Login Form](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/LoginPage.png)
 
+#### App Navigation
+![Drawer Navigation](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/Navigation.png)
+
 #### Adding Profile Information, Emergency Contacts, Gear Items, and Vehicles
 ![Add a User Profile](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/AddProfile.png)
 ![Add an Emergency Contact](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/AddContact.png)
