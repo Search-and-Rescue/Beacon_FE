@@ -22,7 +22,7 @@ export class Trip extends Component {
     this.state = {
       contacts: [],
       contacts_modal: false,
-      vehicle: 0,
+      vehicle: {},
       vehicle_modal: false,
       gear: [],
       gear_modal: false,
@@ -70,8 +70,8 @@ export class Trip extends Component {
     return updateTime;
   }
 
-  setVehicle = id => {
-    this.setState({ vehicle: id });
+  setVehicle = vehicle => {
+    this.setState({ vehicle });
     this.toggleModal("vehicle_modal");
   };
 
@@ -144,8 +144,8 @@ export class Trip extends Component {
 
   clearInputs = () => {
     this.setState({
-      contact: 0,
-      vehicle: 0,
+      contact: [],
+      vehicle: {},
       gear: [],
       name: "",
       startingPoint: "",
@@ -161,10 +161,11 @@ export class Trip extends Component {
   }
 
   render() {
-    console.log(this.state.gear)
+    console.log(this.state.vehicle)
     const displayContacts = this.state.contacts.map(contact => {
       return <Text key={contact.id}>{contact.name}</Text>
     })
+    const displayVehicle = <Text>{this.state.vehicle.make} {this.state.vehicle.model}</Text>
     const displayGear = this.state.gear.map(gearItem => {
       return <Text key={gearItem.id}>{gearItem.itemName}</Text>
     })
@@ -193,7 +194,7 @@ export class Trip extends Component {
           <TouchableHighlight
             key={vehicle.id}
             style={styles.modalButton}
-            onPress={() => this.setVehicle(vehicle.id)}
+            onPress={() => this.setVehicle(vehicle)}
           >
             <Text style={styles.modalOptionsText}>
               {vehicle.make} {vehicle.model}
@@ -244,6 +245,7 @@ export class Trip extends Component {
             >
               <Text style={styles.modalToggleText}>Select Vehicle</Text>
             </TouchableOpacity>
+            {this.state.vehicle && displayVehicle}
             <TouchableOpacity
               style={styles.modalToggleButton}
               onPress={() => this.toggleModal("gear_modal")}
