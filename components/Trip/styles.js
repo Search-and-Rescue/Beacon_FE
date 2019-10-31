@@ -66,6 +66,13 @@ const styles = {
   modalToggleButton: {
     marginVertical: 1
   },
+  modalToggleBtnText: {
+    borderWidth: 1,
+    borderColor: "#001028",
+    height: 30,
+    marginRight: 7,
+    paddingHorizontal: 6
+  },
   modalToggleText: {
     backgroundColor: "#EFB095",
     borderColor: "#001028",

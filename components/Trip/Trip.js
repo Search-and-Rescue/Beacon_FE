@@ -171,7 +171,7 @@ export class Trip extends Component {
           onPress={() => this.toggleContacts(contact.id)}
         >
           <View style={styles.modalToggleContactsContainer}>
-            <Text style={styles.modalToggleBtn}>
+            <Text style={styles.modalToggleBtnText}>
               {!this.state.contacts.includes(contact.id) ? "ADD" : "REMOVE"}
             </Text>
             <Text style={styles.modalOptionsText}
@@ -206,7 +206,7 @@ export class Trip extends Component {
             style={styles.modalToggleGearContainer}
             >
             <Text 
-              style={styles.modalToggleBtn}>
+              style={styles.modalToggleBtnText}>
               {!this.state.gear.includes(gearItem.id) ? "ADD" : "REMOVE"}
             </Text>
             <Text
