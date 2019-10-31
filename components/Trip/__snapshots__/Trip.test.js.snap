@@ -30,76 +30,102 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       }
     >
-      <TouchableOpacity
-        activeOpacity={0.2}
-        onPress={[Function]}
+      <View
         style={
           Object {
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
+            "marginBottom": 10,
           }
         }
       >
-        <Text
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
-              "textAlign": "center",
+              "marginVertical": 1,
             }
           }
         >
-          Select Emergency Contacts
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={0.2}
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
-          }
-        }
-      >
-        <Text
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#EFB095",
+                "borderColor": "#001028",
+                "borderWidth": 4,
+                "color": "#001028",
+                "fontFamily": "Futura",
+                "fontSize": 18,
+                "marginVertical": 10,
+                "paddingVertical": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select Emergency Contacts
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
-              "textAlign": "center",
+              "marginVertical": 1,
             }
           }
         >
-          Select Vehicle
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={0.2}
-        onPress={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#efefef",
-            "marginVertical": 4,
-          }
-        }
-      >
-        <Text
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#EFB095",
+                "borderColor": "#001028",
+                "borderWidth": 4,
+                "color": "#001028",
+                "fontFamily": "Futura",
+                "fontSize": 18,
+                "marginVertical": 10,
+                "paddingVertical": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select Vehicle
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
           style={
             Object {
-              "fontSize": 21,
-              "paddingVertical": 5,
-              "textAlign": "center",
+              "marginVertical": 1,
             }
           }
         >
-          Select Gear Items
-        </Text>
-      </TouchableOpacity>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#EFB095",
+                "borderColor": "#001028",
+                "borderWidth": 4,
+                "color": "#001028",
+                "fontFamily": "Futura",
+                "fontSize": 18,
+                "marginVertical": 10,
+                "paddingVertical": 10,
+                "textAlign": "center",
+              }
+            }
+          >
+            Select Gear Items
+          </Text>
+        </TouchableOpacity>
+      </View>
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -113,10 +139,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -126,7 +153,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -140,10 +170,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -153,7 +184,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -167,10 +201,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -180,7 +215,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -194,10 +232,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -207,7 +246,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -221,10 +263,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -234,7 +277,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -248,10 +294,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -261,7 +308,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -275,10 +325,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -288,7 +339,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -302,10 +356,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -315,7 +370,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -329,10 +387,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -342,7 +401,10 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -357,10 +419,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -377,9 +440,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
-              "height": 400,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
+              "height": 300,
               "left": 10,
               "margin": 5,
               "padding": 20,
@@ -391,12 +456,12 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
           >
-            Add Contacts Items:
+            Select Contacts:
           </Text>
           <Component>
             <TouchableHighlight
@@ -419,25 +484,14 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "borderColor": "black",
-                      "borderWidth": 1,
-                      "marginRight": 10,
-                      "marginVertical": 5,
-                      "paddingVertical": 3,
-                      "textAlign": "center",
-                      "width": 75,
-                    }
-                  }
-                >
+                <Text>
                   ADD
                 </Text>
                 <Text
                   style={
                     Object {
-                      "paddingVertical": 10,
+                      "color": "#001028",
+                      "fontSize": 28,
                     }
                   }
                 >
@@ -453,15 +507,19 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
-              Submit Contacts List
+              Submit Contacts
             </Text>
           </TouchableOpacity>
         </View>
@@ -476,9 +534,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
-              "height": 400,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
+              "height": 300,
               "left": 10,
               "margin": 5,
               "padding": 20,
@@ -490,7 +550,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
@@ -510,7 +570,14 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             }
             underlayColor="black"
           >
-            <Text>
+            <Text
+              style={
+                Object {
+                  "color": "#001028",
+                  "fontSize": 28,
+                }
+              }
+            >
               Ford
                
               F150
@@ -528,9 +595,11 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         <View
           style={
             Object {
-              "backgroundColor": "#efefef",
-              "bottom": 30,
-              "height": 400,
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderTopWidth": 10,
+              "bottom": -10,
+              "height": 300,
               "left": 10,
               "margin": 5,
               "padding": 20,
@@ -542,12 +611,12 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           <Text
             style={
               Object {
-                "fontWeight": "bold",
+                "fontSize": 21,
                 "marginBottom": 5,
               }
             }
           >
-            Add Gear Items:
+            Select Gear Items:
           </Text>
           <Component>
             <TouchableHighlight
@@ -571,25 +640,14 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "borderColor": "black",
-                      "borderWidth": 1,
-                      "marginRight": 10,
-                      "marginVertical": 5,
-                      "paddingVertical": 3,
-                      "textAlign": "center",
-                      "width": 75,
-                    }
-                  }
-                >
+                <Text>
                   ADD
                 </Text>
                 <Text
                   style={
                     Object {
-                      "paddingVertical": 10,
+                      "color": "#001028",
+                      "fontSize": 28,
                     }
                   }
                 >
@@ -605,11 +663,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             <Text
               style={
                 Object {
-                  "borderColor": "black",
-                  "borderWidth": 1,
-                  "marginVertical": 3,
-                  "padding": 10,
+                  "backgroundColor": "#001028",
+                  "borderRadius": 3,
+                  "color": "#F0F0F0",
+                  "fontFamily": "Futura",
+                  "fontSize": 28,
+                  "marginVertical": 10,
+                  "paddingVertical": 12,
                   "textAlign": "center",
+                  "width": "100%",
                 }
               }
             >
@@ -618,30 +680,6 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           </TouchableOpacity>
         </View>
       </Component>
-      <TouchableOpacity
-        activeOpacity={0.2}
-        disabled={false}
-        onPress={[Function]}
-        style={
-          Object {
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginVertical": 3,
-            "padding": 10,
-            "textAlign": "center",
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
-        >
-          ADD Trip
-        </Text>
-      </TouchableOpacity>
       <View
         style={
           Object {
@@ -650,6 +688,37 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
         }
       />
     </Component>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      disabled={false}
+      onPress={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#001028",
+          "borderRadius": 3,
+          "color": "#F0F0F0",
+          "fontFamily": "Futura",
+          "fontSize": 28,
+          "marginVertical": 10,
+          "paddingVertical": 12,
+          "textAlign": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#F0F0F0",
+            "fontFamily": "Futura",
+            "fontSize": 21,
+            "textAlign": "center",
+          }
+        }
+      >
+        ADD TRIP
+      </Text>
+    </TouchableOpacity>
   </View>
 </KeyboardAvoidingView>
 `;

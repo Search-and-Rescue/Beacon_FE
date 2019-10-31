@@ -11,56 +11,80 @@ exports[`ContactList should match the snapshot with all of the data passed throu
       }
     }
   >
-    <ScrollViewMock
+    <ImageBackground
+      imageStyle={
+        Object {
+          "opacity": 0.2,
+        }
+      }
+      source={
+        Object {
+          "testUri": "../../../assets/background.png",
+        }
+      }
       style={
         Object {
-          "borderColor": "black",
-          "borderWidth": 1,
           "flex": 1,
-          "height": 300,
-          "width": "90%",
+          "width": "100%",
         }
       }
     >
-      <View
+      <ScrollViewMock
         style={
           Object {
-            "backgroundColor": "#efefef",
+            "backgroundColor": "fff",
+            "borderColor": "#001028",
+            "borderRadius": 3,
+            "borderWidth": 4,
             "flex": 1,
-            "flexDirection": "row",
-            "height": 50,
-            "marginVertical": 5,
+            "height": 300,
+            "marginHorizontal": "5%",
+            "width": "90%",
           }
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
           style={
             Object {
-              "borderColor": "black",
-              "borderWidth": 1,
-              "height": 35,
-              "margin": 4,
-              "padding": 5,
-            }
-          }
-        >
-          REMOVE
-        </Text>
-        <Text
-          style={
-            Object {
+              "backgroundColor": "#efefef",
               "flex": 1,
-              "fontSize": 21,
-              "paddingLeft": 5,
-              "paddingVertical": 8,
+              "flexDirection": "row",
+              "height": 50,
+              "justifyContent": "space-between",
+              "marginVertical": 5,
             }
           }
         >
-          Beans
-        </Text>
-      </View>
-    </ScrollViewMock>
+          <Text
+            onPress={[Function]}
+            style={
+              Object {
+                "borderColor": "black",
+                "borderWidth": 1,
+                "height": 30,
+                "marginVertical": 10,
+                "padding": 5,
+              }
+            }
+          >
+            REMOVE
+          </Text>
+          <Text
+            style={
+              Object {
+                "flex": 1,
+                "fontFamily": "Futura",
+                "fontSize": 28,
+                "paddingLeft": 7,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            Beans
+          </Text>
+        </View>
+      </ScrollViewMock>
+    </ImageBackground>
   </View>
 </View>
 `;
