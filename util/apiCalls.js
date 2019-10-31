@@ -205,7 +205,6 @@ export const addTrip = async (newTrip) => {
   }
 
   const data = await response.json();
-  console.log('data', data);
   return data;
 }
 
