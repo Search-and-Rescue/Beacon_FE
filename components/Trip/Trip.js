@@ -144,7 +144,7 @@ export class Trip extends Component {
 
   clearInputs = () => {
     this.setState({
-      contact: [],
+      contacts: [],
       vehicle: {},
       gear: [],
       name: "",
