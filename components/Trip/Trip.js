@@ -45,12 +45,12 @@ export class Trip extends Component {
     };
   }
 
-  toggleContacts = id => {
-    if(this.state.contacts.includes(id)) {
-      let remainingContacts = this.state.contacts.filter(item => item !== id)
+  toggleContacts = contact => {
+    if(this.state.contacts.includes(contact)) {
+      let remainingContacts = this.state.contacts.filter(item => item.id !== contact.id)
       this.setState({ contacts: remainingContacts })
     } else {
-      this.setState({ contacts: [...this.state.contacts, id] })
+      this.setState({ contacts: [...this.state.contacts, contact] })
     }
   };
 
@@ -161,6 +161,9 @@ export class Trip extends Component {
   }
 
   render() {
+    const displayContacts = this.state.contacts.map(contact => {
+      return <Text key={contact.id}>{contact.name}</Text>
+    })
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
@@ -168,11 +171,11 @@ export class Trip extends Component {
         <TouchableHighlight
           key={contact.id}
           style={styles.modalButton}
-          onPress={() => this.toggleContacts(contact.id)}
+          onPress={() => this.toggleContacts(contact)}
         >
           <View style={styles.modalToggleContactsContainer}>
             <Text style={styles.modalToggleBtnText}>
-              {!this.state.contacts.includes(contact.id) ? "ADD" : "REMOVE"}
+              {!this.state.contacts.includes(contact) ? "ADD" : "REMOVE"}
             </Text>
             <Text style={styles.modalOptionsText}
               >{contact.name}</Text>
@@ -230,6 +233,7 @@ export class Trip extends Component {
                 Select Emergency Contacts
               </Text>
             </TouchableOpacity>
+            {this.state.contacts && displayContacts}
             <TouchableOpacity
               style={styles.modalToggleButton}
               onPress={() => this.toggleModal("vehicle_modal")}
@@ -459,13 +463,6 @@ export class Trip extends Component {
               </TouchableOpacity>
             </View>
           </Modal>
-          {/* <TouchableOpacity
-            style={disableBtnColor}
-            onPress={this.handleSubmit}
-            disabled={disableBtn}
-          >
-            <Text style={styles.updateBtnText}>ADD Trip</Text>
-          </TouchableOpacity> */}
           <View style={{ flex: 1 }} />
         </ScrollView>
         <TouchableOpacity
