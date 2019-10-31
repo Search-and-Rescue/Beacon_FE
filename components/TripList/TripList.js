@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Button, ImageBackground, Modal, ScrollView, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Button, ImageBackground, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+// import { TouchableOpacity } from "react-native-gesture-handler";
 import { deleteTrip, deactivateTrip, getTrips } from "../../util/apiCalls";
 import { setTrips, removeCurrentTrip } from "../../actions";
 import { connect } from "react-redux";
@@ -63,42 +63,46 @@ export class TripList extends Component {
     });
     return (
       <View>
-        {this.props.currentTrip && (
-          <Button
-            onPress={() => this.toggleButtonModal()}
-            title={"Update trip status"}
-          ></Button>
-        )}
-        {this.props.currentTrip && (
-          <Modal
-            animationType={"slide"}
-            visible={this.state.button_modal}
-            transparent={true}
-            onRequestClose={() => console.log("close requested")}
-          >
-            <View style={styles.pickerView}>
-              <Text style={styles.modalHeading}>Update trip status:</Text>
-              <TouchableOpacity
-                onPress={() => this.deactivateTripStatus(this.props.currentTrip)}
-              >
-                <View style={styles.theButton}>
-                  <Text style={styles.theButtonText}>I'M BACK</Text>
-                  <Text>Stop all emergency notifications</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.toggleButtonModal()}
-              >
-                <View style={styles.remainActiveButton}>
-                  <Text style={styles.remainActiveButtonText}>Remain Active</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </Modal>
-        )}
+        {/* {this.props.currentTrip && ( */}
+        <TouchableOpacity
+          style={styles.modalToggleButton}
+          onPress={() => this.toggleButtonModal()}
+        >
+          <Text style={styles.modalToggleText}>UPDATE TRIP STATUS</Text>
+        </TouchableOpacity>
+        {/* )} */}
+        {/* {this.props.currentTrip && ( */}
+        <Modal
+          animationType={"slide"}
+          visible={this.state.button_modal}
+          transparent={true}
+          onRequestClose={() => console.log("close requested")}
+        >
+          <View style={styles.pickerView}>
+            <Text style={styles.modalHeading}>Update trip status:</Text>
+            <TouchableOpacity
+              onPress={() => this.deactivateTripStatus(this.props.currentTrip)}
+            >
+              <View style={styles.theButton}>
+                <Text style={styles.theButtonText}>I'M BACK</Text>
+                <Text>Stop all emergency notifications</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.toggleButtonModal()}>
+              <View style={styles.remainActiveButton}>
+                <Text style={styles.remainActiveButtonText}>Remain Active</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </Modal>
+        {/* )} */}
         <View style={styles.tripsListContainer}>
-          <ImageBackground source={background} style={styles.backgroundImage} imageStyle={{opacity: 0.2}}>
-          <ScrollView style={styles.tripsList}>{tripCards}</ScrollView>
+          <ImageBackground
+            source={background}
+            style={styles.backgroundImage}
+            imageStyle={{ opacity: 0.2 }}
+          >
+            <ScrollView style={styles.tripsList}>{tripCards}</ScrollView>
           </ImageBackground>
         </View>
       </View>

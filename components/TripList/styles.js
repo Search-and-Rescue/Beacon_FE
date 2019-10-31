@@ -1,8 +1,23 @@
 const styles = {
   tripsListContainer: {
     alignItems: "center",
-    height: "96%",
+    height: "86%",
     marginTop: 20
+  },
+  modalToggleButton: {
+    backgroundColor: "#EFB095",
+    borderColor: "#001028",
+    borderWidth: 4,
+    marginHorizontal: '5%',
+    marginTop: 10,
+    paddingVertical: 10,
+    width: "90%"
+  },
+  modalToggleText: {
+    color: "#001028",
+    fontFamily: "Futura",
+    fontSize: 28,
+    textAlign: "center"
   },
   tripsList: {
     backgroundColor: "fff",
@@ -10,7 +25,6 @@ const styles = {
     borderRadius: 3,
     borderWidth: 4,
     flex: 1,
-    height: 300,
     marginHorizontal: "5%",
     width: "90%"
   },

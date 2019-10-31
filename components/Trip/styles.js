@@ -38,15 +38,6 @@ const styles = {
     flex: 1,
     flexDirection: "row"
   },
-  modalToggleBtn: {
-    borderWidth: 1,
-    borderColor: "#001028",
-    marginRight: 10,
-    marginVertical: 5,
-    paddingVertical: 3,
-    textAlign: "center",
-    width: 75
-  },
   modalToggleGearHeading: {
     paddingVertical: 10
   },
@@ -98,7 +89,7 @@ const styles = {
     marginVertical: 10,
     paddingVertical: 12,
     textAlign: "center",
-    width: "100%",
+    width: "100%"
   },
   disableColor: {
     backgroundColor: "maroon",
