@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, ScrollView } from "react-native";
+import { ImageBackground, View, Text, ScrollView } from "react-native";
 import { deleteVehicle, getVehicles } from "../../util/apiCalls";
 import { connect } from "react-redux";
 import styles from "./styles";
 import { setVehicles } from "../../actions";
 import { bindActionCreators } from "redux";
+import background from '../../assets/background.png';
 
 export class VehicleList extends Component {
   constructor(props) {
@@ -39,9 +40,11 @@ export class VehicleList extends Component {
     return (
       <View>
         <View style={styles.vehiclesListContainer}>
+          <ImageBackground source={background} style={styles.backgroundImage} imageStyle={{opacity: 0.2}}>
           <ScrollView style={styles.vehiclesList}>
             {vehicleCards}
           </ScrollView>
+          </ImageBackground>
         </View>
       </View>
     );

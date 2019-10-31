@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Button, Modal, ScrollView, Text, View } from "react-native";
+import { Button, ImageBackground, Modal, ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { deleteTrip, deactivateTrip, getTrips } from "../../util/apiCalls";
 import { setTrips, removeCurrentTrip } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import styles from "./styles";
+import background from "../../assets/background.png";
 
 export class TripList extends Component {
   constructor(props) {
@@ -96,7 +97,9 @@ export class TripList extends Component {
           </Modal>
         )}
         <View style={styles.tripsListContainer}>
+          <ImageBackground source={background} style={styles.backgroundImage} imageStyle={{opacity: 0.2}}>
           <ScrollView style={styles.tripsList}>{tripCards}</ScrollView>
+          </ImageBackground>
         </View>
       </View>
     );
