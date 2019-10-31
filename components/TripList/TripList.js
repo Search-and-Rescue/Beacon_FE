@@ -63,15 +63,15 @@ export class TripList extends Component {
     });
     return (
       <View>
-        {/* {this.props.currentTrip && ( */}
+        {this.props.currentTrip && (
         <TouchableOpacity
           style={styles.modalToggleButton}
           onPress={() => this.toggleButtonModal()}
         >
           <Text style={styles.modalToggleText}>UPDATE TRIP STATUS</Text>
         </TouchableOpacity>
-        {/* )} */}
-        {/* {this.props.currentTrip && ( */}
+        )}
+        {this.props.currentTrip && (
         <Modal
           animationType={"slide"}
           visible={this.state.button_modal}
@@ -96,7 +96,7 @@ export class TripList extends Component {
             </TouchableOpacity>
           </View>
         </Modal>
-        {/* )} */}
+       )}
         <View style={styles.tripsListContainer}>
           <ImageBackground
             source={background}

@@ -22,6 +22,18 @@ const styles = {
     left: 10,
     right: 10
   },
+  modalTimeDateView: {
+    backgroundColor: "#EFB095",
+    borderTopWidth: 10,
+    borderColor: "#001028",
+    bottom: -10,
+    height: 400,
+    margin: 5,
+    padding: 20,
+    position: "absolute",
+    left: 10,
+    right: 10
+  },
   modalHeading: {
     fontSize: 21,
     marginBottom: 5
