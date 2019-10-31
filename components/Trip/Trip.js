@@ -75,12 +75,12 @@ export class Trip extends Component {
     this.toggleModal("vehicle_modal");
   };
 
-  toggleGear = id => {
-    if (this.state.gear.includes(id)) {
-      let remainingItems = this.state.gear.filter(item => item !== id)
+  toggleGear = gearItem => {
+    if (this.state.gear.includes(gearItem)) {
+      let remainingItems = this.state.gear.filter(item => item.id !== gearItem.id)
       this.setState({gear: remainingItems})
     } else {
-      this.setState({gear: [...this.state.gear, id]})
+      this.setState({gear: [...this.state.gear, gearItem]})
     }
   };
 
@@ -161,8 +161,12 @@ export class Trip extends Component {
   }
 
   render() {
+    console.log(this.state.gear)
     const displayContacts = this.state.contacts.map(contact => {
       return <Text key={contact.id}>{contact.name}</Text>
+    })
+    const displayGear = this.state.gear.map(gearItem => {
+      return <Text key={gearItem.id}>{gearItem.itemName}</Text>
     })
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
@@ -203,14 +207,14 @@ export class Trip extends Component {
         <TouchableHighlight
           key={gearItem.id}
           style={styles.modalButton}
-          onPress={() => this.toggleGear(gearItem.id)}
+          onPress={() => this.toggleGear(gearItem)}
         >
           <View
             style={styles.modalToggleGearContainer}
             >
             <Text 
               style={styles.modalToggleBtnText}>
-              {!this.state.gear.includes(gearItem.id) ? "ADD" : "REMOVE"}
+              {!this.state.gear.includes(gearItem) ? "ADD" : "REMOVE"}
             </Text>
             <Text
               style={styles.modalOptionsText}
@@ -246,6 +250,7 @@ export class Trip extends Component {
             >
               <Text style={styles.modalToggleText}>Select Gear Items</Text>
             </TouchableOpacity>
+            {this.state.gear && displayGear}
           </View>
           <Text style={styles.label}>Trip Name: </Text>
           <TextInput
