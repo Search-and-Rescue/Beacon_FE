@@ -20,52 +20,6 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       }
     }
   >
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#efefef",
-          "marginVertical": 4,
-          "width": "80%",
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 21,
-            "paddingVertical": 5,
-            "textAlign": "center",
-          }
-        }
-      >
-        Select Experience Level
-      </Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#efefef",
-          "marginVertical": 4,
-          "width": "80%",
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "fontSize": 21,
-            "paddingVertical": 5,
-            "textAlign": "center",
-          }
-        }
-      >
-        Select COSAR Card Status
-      </Text>
-    </TouchableOpacity>
     <Component
       animationType="slide"
       hardwareAccelerated={false}
@@ -76,8 +30,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <View
         style={
           Object {
-            "backgroundColor": "#efefef",
-            "bottom": 0,
+            "backgroundColor": "#EFB095",
+            "borderColor": "#001028",
+            "borderTopWidth": 10,
+            "bottom": -10,
             "left": 10,
             "margin": 5,
             "padding": 20,
@@ -89,7 +45,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         <Text
           style={
             Object {
-              "fontWeight": "bold",
+              "fontSize": 21,
               "marginBottom": 5,
             }
           }
@@ -109,7 +65,14 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           }
           underlayColor="black"
         >
-          <Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontSize": 38,
+              }
+            }
+          >
             Beginner
           </Text>
         </TouchableHighlight>
@@ -126,7 +89,14 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           }
           underlayColor="black"
         >
-          <Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontSize": 38,
+              }
+            }
+          >
             Intermediate
           </Text>
         </TouchableHighlight>
@@ -143,7 +113,14 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           }
           underlayColor="black"
         >
-          <Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontSize": 38,
+              }
+            }
+          >
             Advanced
           </Text>
         </TouchableHighlight>
@@ -159,8 +136,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <View
         style={
           Object {
-            "backgroundColor": "#efefef",
-            "bottom": 0,
+            "backgroundColor": "#EFB095",
+            "borderColor": "#001028",
+            "borderTopWidth": 10,
+            "bottom": -10,
             "left": 10,
             "margin": 5,
             "padding": 20,
@@ -172,7 +151,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         <Text
           style={
             Object {
-              "fontWeight": "bold",
+              "fontSize": 21,
               "marginBottom": 5,
             }
           }
@@ -192,7 +171,14 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           }
           underlayColor="black"
         >
-          <Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontSize": 38,
+              }
+            }
+          >
             Yes
           </Text>
         </TouchableHighlight>
@@ -209,7 +195,14 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           }
           underlayColor="black"
         >
-          <Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontSize": 38,
+              }
+            }
+          >
             No
           </Text>
         </TouchableHighlight>
@@ -222,10 +215,67 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         }
       }
     >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#EFB095",
+            "borderColor": "#001028",
+            "borderWidth": 4,
+            "marginVertical": 10,
+            "paddingVertical": 10,
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 21,
+              "textAlign": "center",
+            }
+          }
+        >
+          Select Experience Level
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#EFB095",
+            "borderColor": "#001028",
+            "borderWidth": 4,
+            "marginVertical": 10,
+            "paddingVertical": 10,
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Futura",
+              "fontSize": 21,
+              "textAlign": "center",
+            }
+          }
+        >
+          Select COSAR Card Status
+        </Text>
+      </TouchableOpacity>
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -240,10 +290,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -253,7 +304,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -268,10 +322,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -281,7 +336,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -296,10 +354,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -309,7 +368,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -324,10 +386,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -337,7 +400,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -353,10 +419,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -366,7 +433,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -382,10 +452,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -395,7 +466,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -411,10 +485,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -424,7 +499,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -439,10 +517,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -452,7 +531,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -467,10 +549,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -480,7 +563,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -495,10 +581,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -508,7 +595,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -523,10 +613,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -536,7 +627,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -552,10 +646,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -565,7 +660,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -580,10 +678,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -593,7 +692,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -608,10 +710,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -621,7 +724,10 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
-            "fontSize": 12,
+            "color": "#001028",
+            "fontFamily": "Georgia",
+            "fontSize": 18,
+            "paddingBottom": 2,
             "textAlign": "left",
           }
         }
@@ -636,10 +742,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
         rejectResponderTermination={true}
         style={
           Object {
-            "backgroundColor": "#fff",
-            "borderColor": "black",
-            "borderWidth": 1,
-            "marginBottom": 10,
+            "backgroundColor": "#F0F0F0",
+            "borderColor": "#001028",
+            "borderRadius": 2,
+            "borderWidth": 2,
+            "marginBottom": 15,
             "padding": 10,
           }
         }
@@ -652,9 +759,11 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       onPress={[Function]}
       style={
         Object {
-          "borderColor": "black",
-          "borderWidth": 1,
-          "padding": 10,
+          "backgroundColor": "#001028",
+          "borderColor": "#EFB095",
+          "borderWidth": 4,
+          "marginVertical": 10,
+          "paddingVertical": 12,
           "width": "80%",
         }
       }
@@ -662,11 +771,14 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       <Text
         style={
           Object {
+            "color": "#F0F0F0",
+            "fontFamily": "Futura",
+            "fontSize": 21,
             "textAlign": "center",
           }
         }
       >
-        UPDATE Profile
+        ADD PROFILE
       </Text>
     </TouchableOpacity>
     <View
