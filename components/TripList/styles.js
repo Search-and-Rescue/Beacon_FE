@@ -36,7 +36,7 @@ const styles = {
     backgroundColor: "#efefef",
     flex: 1,
     flexDirection: "row",
-    height: 70,
+    height: 75,
     marginVertical: 5,
     justifyContent: "space-between"
   },
