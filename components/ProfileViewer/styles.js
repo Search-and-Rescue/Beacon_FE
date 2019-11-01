@@ -12,7 +12,7 @@ const styles = {
     backgroundColor: "#001028",
     color: '#F0F0F0',
     fontFamily: "Futura",
-    fontSize: 21,
+    fontSize: 18,
     marginBottom: 7,
     paddingLeft: 5,
     paddingVertical: 2

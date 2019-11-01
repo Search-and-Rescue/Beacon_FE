@@ -72,6 +72,13 @@ const styles = {
     fontFamily: "Futura",
     fontSize: 21,
     textAlign: "center"
+  },
+  displayList: {
+    color: "#001028",
+    fontFamily: "Georgia",
+    fontSize: 18,
+    paddingHorizontal: 20,
+    paddingBottom: 5
   }
 };
 

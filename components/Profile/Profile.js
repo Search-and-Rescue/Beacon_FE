@@ -32,7 +32,7 @@ class Profile extends Component {
       gender: "",
       experience_level: 0,
       experience_modal: false,
-      cosar_card: false,
+      cosar_card: "",
       cosar_modal: false
     };
   }
@@ -58,7 +58,7 @@ class Profile extends Component {
       gender: "",
       experience_level: 0,
       experience_modal: false,
-      cosar_card: false,
+      cosar_card: "",
       cosar_modal: false
     });
   };
@@ -107,6 +107,24 @@ class Profile extends Component {
         value: false
       }
     ];
+
+    const displayExperience = () => {
+      const foundLevel = experienceLevels.find(level => level.value === this.state.experience_level)
+      return (
+          <Text style={styles.displayList} key={"exp" + Date.now()}>
+            &#8226; {foundLevel.title}
+          </Text>
+        );
+    };
+
+    const displayCosar = () => {
+      const foundCosar = cosars.find(status => status.value === this.state.cosar_card);
+      return (
+        <Text style={styles.displayList} key={"cosar" + Date.now()}>
+          &#8226; {foundCosar.title}
+        </Text>
+      );
+    }
 
     return (
       <KeyboardAvoidingView behavior={"padding"} style={{ flex: 1 }}>
@@ -164,6 +182,7 @@ class Profile extends Component {
                 Select Experience Level
               </Text>
             </TouchableOpacity>
+            {this.state.experience_level > 0 && displayExperience()}
             <TouchableOpacity
               style={styles.modalToggleButton}
               onPress={() => this.toggleCosarModal()}
@@ -172,6 +191,7 @@ class Profile extends Component {
                 Select COSAR Card Status
               </Text>
             </TouchableOpacity>
+            {(this.state.cosar_card !== "") && displayCosar()}
             <Text style={styles.label}>Name:</Text>
             <TextInput
               placeholder="Jill A. Hiker"
