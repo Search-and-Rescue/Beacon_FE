@@ -47,7 +47,6 @@ export class TripList extends Component {
 
   render() {
     const tripCards = this.props.trips.map(trip => {
-      console.log('trip', trip)
       return (
         <View key={trip.id} style={styles.tripCard}>
           <Text
