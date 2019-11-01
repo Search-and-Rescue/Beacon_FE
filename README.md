@@ -1,6 +1,6 @@
 # Beacon
 
-[![Build Status](https://travis-ci.org/Search-and-Rescue/SearchAndRescue-FE.svg?branch=master)](https://travis-ci.org/Search-and-Rescue/SearchAndRescue-FE)
+[![Build Status](https://travis-ci.org/Search-and-Rescue/Beacon_FE.svg?branch=master)](https://travis-ci.org/Search-and-Rescue/Beacon_FE)
 
 ## Table of Contents
 
