@@ -22,7 +22,7 @@ export class Trip extends Component {
     this.state = {
       contacts: [],
       contacts_modal: false,
-      vehicle: 0,
+      vehicle: {},
       vehicle_modal: false,
       gear: [],
       gear_modal: false,
@@ -45,12 +45,12 @@ export class Trip extends Component {
     };
   }
 
-  toggleContacts = id => {
-    if(this.state.contacts.includes(id)) {
-      let remainingContacts = this.state.contacts.filter(item => item !== id)
+  toggleContacts = contact => {
+    if(this.state.contacts.includes(contact)) {
+      let remainingContacts = this.state.contacts.filter(item => item.id !== contact.id)
       this.setState({ contacts: remainingContacts })
     } else {
-      this.setState({ contacts: [...this.state.contacts, id] })
+      this.setState({ contacts: [...this.state.contacts, contact] })
     }
   };
 
@@ -70,17 +70,17 @@ export class Trip extends Component {
     return updateTime;
   }
 
-  setVehicle = id => {
-    this.setState({ vehicle: id });
+  setVehicle = vehicle => {
+    this.setState({ vehicle });
     this.toggleModal("vehicle_modal");
   };
 
-  toggleGear = id => {
-    if (this.state.gear.includes(id)) {
-      let remainingItems = this.state.gear.filter(item => item !== id)
+  toggleGear = gearItem => {
+    if (this.state.gear.includes(gearItem)) {
+      let remainingItems = this.state.gear.filter(item => item.id !== gearItem.id)
       this.setState({gear: remainingItems})
     } else {
-      this.setState({gear: [...this.state.gear, id]})
+      this.setState({gear: [...this.state.gear, gearItem]})
     }
   };
 
@@ -144,8 +144,8 @@ export class Trip extends Component {
 
   clearInputs = () => {
     this.setState({
-      contact: 0,
-      vehicle: 0,
+      contacts: [],
+      vehicle: {},
       gear: [],
       name: "",
       startingPoint: "",
@@ -161,6 +161,13 @@ export class Trip extends Component {
   }
 
   render() {
+    const displayContacts = this.state.contacts.map(contact => {
+      return <Text style={styles.displayList} key={contact.id}>&#8226; {contact.name}</Text>
+    })
+    const displayVehicle = <Text style={styles.displayList}>&#8226; {this.state.vehicle.make} {this.state.vehicle.model}</Text>
+    const displayGear = this.state.gear.map(gearItem => {
+      return <Text style={styles.displayList} key={gearItem.id}>&#8226; {gearItem.itemName}</Text>
+    })
     const disableBtn = this.props.currentTrip ? true : false;
     const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
@@ -168,11 +175,11 @@ export class Trip extends Component {
         <TouchableHighlight
           key={contact.id}
           style={styles.modalButton}
-          onPress={() => this.toggleContacts(contact.id)}
+          onPress={() => this.toggleContacts(contact)}
         >
           <View style={styles.modalToggleContactsContainer}>
             <Text style={styles.modalToggleBtnText}>
-              {!this.state.contacts.includes(contact.id) ? "ADD" : "REMOVE"}
+              {!this.state.contacts.includes(contact) ? "ADD" : "REMOVE"}
             </Text>
             <Text style={styles.modalOptionsText}
               >{contact.name}</Text>
@@ -186,7 +193,7 @@ export class Trip extends Component {
           <TouchableHighlight
             key={vehicle.id}
             style={styles.modalButton}
-            onPress={() => this.setVehicle(vehicle.id)}
+            onPress={() => this.setVehicle(vehicle)}
           >
             <Text style={styles.modalOptionsText}>
               {vehicle.make} {vehicle.model}
@@ -200,14 +207,14 @@ export class Trip extends Component {
         <TouchableHighlight
           key={gearItem.id}
           style={styles.modalButton}
-          onPress={() => this.toggleGear(gearItem.id)}
+          onPress={() => this.toggleGear(gearItem)}
         >
           <View
             style={styles.modalToggleGearContainer}
             >
             <Text 
               style={styles.modalToggleBtnText}>
-              {!this.state.gear.includes(gearItem.id) ? "ADD" : "REMOVE"}
+              {!this.state.gear.includes(gearItem) ? "ADD" : "REMOVE"}
             </Text>
             <Text
               style={styles.modalOptionsText}
@@ -230,18 +237,21 @@ export class Trip extends Component {
                 Select Emergency Contacts
               </Text>
             </TouchableOpacity>
+            {this.state.contacts && displayContacts}
             <TouchableOpacity
               style={styles.modalToggleButton}
               onPress={() => this.toggleModal("vehicle_modal")}
             >
               <Text style={styles.modalToggleText}>Select Vehicle</Text>
             </TouchableOpacity>
+            {this.state.vehicle.make && displayVehicle}
             <TouchableOpacity
               style={styles.modalToggleButton}
               onPress={() => this.toggleModal("gear_modal")}
             >
               <Text style={styles.modalToggleText}>Select Gear Items</Text>
             </TouchableOpacity>
+            {this.state.gear && displayGear}
           </View>
           <Text style={styles.label}>Trip Name: </Text>
           <TextInput
@@ -459,13 +469,6 @@ export class Trip extends Component {
               </TouchableOpacity>
             </View>
           </Modal>
-          {/* <TouchableOpacity
-            style={disableBtnColor}
-            onPress={this.handleSubmit}
-            disabled={disableBtn}
-          >
-            <Text style={styles.updateBtnText}>ADD Trip</Text>
-          </TouchableOpacity> */}
           <View style={{ flex: 1 }} />
         </ScrollView>
         <TouchableOpacity
