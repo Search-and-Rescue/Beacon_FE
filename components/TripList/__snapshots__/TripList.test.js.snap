@@ -48,7 +48,7 @@ exports[`TripList should match the snapshot with all of the data passed through 
               "backgroundColor": "#efefef",
               "flex": 1,
               "flexDirection": "row",
-              "height": 70,
+              "height": 75,
               "justifyContent": "space-between",
               "marginVertical": 5,
             }
@@ -105,6 +105,21 @@ exports[`TripList should match the snapshot with all of the data passed through 
               2020-05-01
                to 
               2020-05-03
+            </Text>
+            <Text
+              style={
+                Object {
+                  "flex": 1,
+                  "fontFamily": "Avenir",
+                  "fontSize": 18,
+                  "paddingLeft": 7,
+                }
+              }
+            >
+              Notices: 
+              15:00
+               on 
+              2020-05-04
             </Text>
           </View>
         </View>
