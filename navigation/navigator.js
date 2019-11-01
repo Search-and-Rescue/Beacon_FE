@@ -35,11 +35,10 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: "#EFB095",
       inactiveTintColor: "#F0F0F0",
-      label: 'hi',
       labelStyle: {
         fontFamily: "Futura",
-        fontSize: 28,
-        paddingBottom: 5
+        fontSize: 21,
+        paddingBottom: 7
       },
       tabStyle: {
         width: 100
@@ -68,8 +67,8 @@ const ProfileDashboardTabNavigator = createBottomTabNavigator(
       inactiveTintColor: "#F0F0F0",
       labelStyle: {
         fontFamily: "Futura",
-        fontSize: 28,
-        paddingBottom: 5
+        fontSize: 21,
+        paddingBottom: 7
       },
       tabStyle: {
         width: 100
@@ -98,8 +97,8 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
       inactiveTintColor: "#F0F0F0",
       labelStyle: {
         fontFamily: "Futura",
-        fontSize: 28,
-        paddingBottom: 5
+        fontSize: 21,
+        paddingBottom: 7
       },
       tabStyle: {
         width: 100
@@ -128,8 +127,8 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
       inactiveTintColor: "#F0F0F0",
       labelStyle: {
         fontFamily: "Futura",
-        fontSize: 28,
-        paddingBottom: 5
+        fontSize: 21,
+        paddingBottom: 7
       },
       tabStyle: {
         width: 100
@@ -158,8 +157,8 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
       inactiveTintColor: "#F0F0F0",
       labelStyle: {
         fontFamily: "Futura",
-        fontSize: 28,
-        paddingBottom: 5
+        fontSize: 21,
+        paddingBottom: 7
       },
       tabStyle: {
         width: 100

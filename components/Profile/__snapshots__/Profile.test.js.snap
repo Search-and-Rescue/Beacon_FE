@@ -16,7 +16,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
       Object {
         "alignItems": "center",
         "flex": 1,
-        "marginVertical": 40,
+        "marginVertical": 10,
       }
     }
   >
@@ -60,7 +60,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           style={
             Object {
               "alignItems": "center",
-              "paddingVertical": 10,
+              "paddingTop": 10,
             }
           }
           underlayColor="black"
@@ -84,7 +84,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           style={
             Object {
               "alignItems": "center",
-              "paddingVertical": 10,
+              "paddingTop": 10,
             }
           }
           underlayColor="black"
@@ -108,7 +108,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           style={
             Object {
               "alignItems": "center",
-              "paddingVertical": 10,
+              "paddingTop": 10,
             }
           }
           underlayColor="black"
@@ -166,7 +166,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           style={
             Object {
               "alignItems": "center",
-              "paddingVertical": 10,
+              "paddingTop": 10,
             }
           }
           underlayColor="black"
@@ -190,7 +190,7 @@ exports[`Profile should match the snapshot with all of the data passed through 1
           style={
             Object {
               "alignItems": "center",
-              "paddingVertical": 10,
+              "paddingTop": 10,
             }
           }
           underlayColor="black"
