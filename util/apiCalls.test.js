@@ -7,7 +7,8 @@ import {
   addTrip,
   addVehicle,
   addGearItem,
-  addContact
+  addContact,
+  deleteContact
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -731,6 +732,56 @@ describe('addContact', () => {
     })
 
     expect(addContact(mockContactPost)).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('deleteContact', () => {
+  let mockId;
+  let mockContactDelete;
+
+  beforeEach(() => {
+    mockId = 1
+    mockContactDelete = {
+      name: "Samantha Freeman",
+      phone: "707.123.4567",
+      email: "skiracerchick@earthlink.net"
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockContactDelete)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    removeContact(input: {
+      id: ${mockId} }) {
+      emergencyContact {
+        name
+        phone
+        email
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteContact(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the removed emergency contact', () => {
+    expect(deleteContact(mockId)).resolves.toEqual(mockContactDelete);
   });
 
 });
