@@ -1094,4 +1094,22 @@ describe('addVehiclesForTrip', () => {
     expect(addVehiclesForTrip(mockVehiclePost)).resolves.toEqual(mockVehicle);
   });
 
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addVehiclesForTrip(mockVehiclePost)).rejects.toEqual(Error('Error adding a user\'s vehicle to a trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('add failed'))
+    })
+
+    expect(addVehiclesForTrip(mockVehiclePost)).rejects.toEqual(Error('add failed'))
+  });
+
 });
