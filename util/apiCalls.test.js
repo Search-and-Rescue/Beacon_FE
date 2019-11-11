@@ -14,7 +14,8 @@ import {
   addContactsForTrip,
   addVehiclesForTrip,
   deleteVehicle,
-  deactivateTrip
+  deactivateTrip,
+  deleteTrip
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -1253,6 +1254,55 @@ describe('deactivateTrip', () => {
     })
 
     expect(deactivateTrip(mockId)).rejects.toEqual(Error('deactivation failed'))
+  });
+
+});
+
+describe('deleteTrip', () => {
+  let mockTrip;
+  let mockId;
+
+  beforeEach(() => {
+    mockTrip = {
+      id: 1,
+      name: "Trip name"
+    }
+    mockId = 1
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockTrip)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+  removeTrip(input: {
+    id: ${mockId}
+  }) {
+    trip{
+      id
+      name
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteTrip(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the removed trip', () => {
+    expect(deleteTrip(mockId)).resolves.toEqual(mockTrip);
   });
 
 });
