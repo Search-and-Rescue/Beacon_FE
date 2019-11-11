@@ -1305,4 +1305,22 @@ describe('deleteTrip', () => {
     expect(deleteTrip(mockId)).resolves.toEqual(mockTrip);
   });
 
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(deleteTrip(mockId)).rejects.toEqual(Error('Error deleting a user\'s trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('delete failed'))
+    })
+
+    expect(deleteTrip(mockId)).rejects.toEqual(Error('delete failed'))
+  });
+
 });
