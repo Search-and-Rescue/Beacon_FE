@@ -12,7 +12,8 @@ import {
   deleteGearItem,
   addGearForTrip,
   addContactsForTrip,
-  addVehiclesForTrip
+  addVehiclesForTrip,
+  deleteVehicle
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -1110,6 +1111,64 @@ describe('addVehiclesForTrip', () => {
     })
 
     expect(addVehiclesForTrip(mockVehiclePost)).rejects.toEqual(Error('add failed'))
+  });
+
+});
+
+describe('deleteVehicle', () => {
+  let mockVehicle;
+  let mockId;
+
+  beforeEach(() => {
+    mockVehicle = {
+      id: 1,
+      make: "Subaru",
+      model: "Impreza",
+      year: 2014,
+      color: "blue",
+      licensePlate: "123ABC",
+      state: "CO"
+    }
+    mockId = 1
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockVehicle)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation {
+  removeVehicle(input: {
+    id: ${mockId} }) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+      state
+    }
+  } 
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteVehicle(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added vehicle for the trip', () => {
+    expect(deleteVehicle(mockId)).resolves.toEqual(mockVehicle);
   });
 
 });
