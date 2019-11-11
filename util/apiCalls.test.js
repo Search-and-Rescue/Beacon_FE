@@ -784,4 +784,22 @@ describe('deleteContact', () => {
     expect(deleteContact(mockId)).resolves.toEqual(mockContactDelete);
   });
 
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(deleteContact(mockId)).rejects.toEqual(Error('Error removing a user\'s emergency contact.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('delete failed'))
+    })
+
+    expect(deleteContact(mockId)).rejects.toEqual(Error('delete failed'))
+  });
+
 });
