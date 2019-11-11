@@ -8,7 +8,8 @@ import {
   addVehicle,
   addGearItem,
   addContact,
-  deleteContact
+  deleteContact,
+  deleteGearItem
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -800,6 +801,54 @@ describe('deleteContact', () => {
     })
 
     expect(deleteContact(mockId)).rejects.toEqual(Error('delete failed'))
+  });
+
+});
+
+describe('deleteGearItem', () => {
+  let mockId;
+  let mockRemovedGearItem;
+
+  beforeEach(() => {
+    mockId = 1
+    mockRemovedGearItem = {
+      itemName: "Sleeping bag",
+      description: "Withstands -10 degree Fahrenheit"
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockRemovedGearItem)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    removeGear(input: {
+    id: ${mockId} }) {
+    gear {
+      itemName
+      description
+    }
+  }  
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteGearItem(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the removed emergency contact', () => {
+    expect(deleteGearItem(mockId)).resolves.toEqual(mockRemovedGearItem);
   });
 
 });
