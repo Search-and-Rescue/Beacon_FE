@@ -10,7 +10,8 @@ import {
   addContact,
   deleteContact,
   deleteGearItem,
-  addGearForTrip
+  addGearForTrip,
+  addContactsForTrip
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -952,6 +953,67 @@ describe('addGearForTrip', () => {
     })
 
     expect(addGearForTrip(mockGearPost)).rejects.toEqual(Error('delete failed'))
+  });
+
+});
+
+describe('addContactsForTrip', () => {
+  let mockContact;
+  let mockContactPost;
+
+  beforeEach(() => {
+    mockContact = {
+      trip: {
+        name: "trip name"
+      },
+      emergencyContact: {
+        name: "Mom",
+        phone: "303-1234"
+      }
+    }
+    mockContactPost = {
+      tripId: 1,
+      emergencyContactId: 1
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockContact)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    addContactToTrip(input: {
+      tripId: ${parseInt(mockContactPost.tripId)},
+      emergencyContactId: ${parseInt(mockContactPost.emergencyContactId)}
+    }) {
+      trip{
+        name
+      }
+      emergencyContact{
+        name
+        phone
+      }
+    }
+  }`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addContactsForTrip(mockContactPost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added contact for the trip', () => {
+    expect(addContactsForTrip(mockContactPost)).resolves.toEqual(mockContact);
   });
 
 });
