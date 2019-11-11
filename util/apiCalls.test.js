@@ -848,7 +848,7 @@ describe('deleteGearItem', () => {
     expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
   });
 
-  it('should return the removed emergency contact', () => {
+  it('should return the removed gear item', () => {
     expect(deleteGearItem(mockId)).resolves.toEqual(mockRemovedGearItem);
   });
 
@@ -932,8 +932,26 @@ describe('addGearForTrip', () => {
     expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
   });
 
-  it('should return the added gear item\'s name for the current user', () => {
+  it('should return the added gear item\'s name for the trip', () => {
     expect(addGearForTrip(mockGearPost)).resolves.toEqual(mockGear);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addGearForTrip(mockGearPost)).rejects.toEqual(Error('Error adding a user\'s gear to a trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('delete failed'))
+    })
+
+    expect(addGearForTrip(mockGearPost)).rejects.toEqual(Error('delete failed'))
   });
 
 });
