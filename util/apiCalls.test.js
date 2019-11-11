@@ -949,10 +949,10 @@ describe('addGearForTrip', () => {
 
   it('should return an error if the promise rejects', () => {
     window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.reject(Error('delete failed'))
+      return Promise.reject(Error('add failed'))
     })
 
-    expect(addGearForTrip(mockGearPost)).rejects.toEqual(Error('delete failed'))
+    expect(addGearForTrip(mockGearPost)).rejects.toEqual(Error('add failed'))
   });
 
 });
@@ -1014,6 +1014,24 @@ describe('addContactsForTrip', () => {
 
   it('should return the added contact for the trip', () => {
     expect(addContactsForTrip(mockContactPost)).resolves.toEqual(mockContact);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addContactsForTrip(mockContactPost)).rejects.toEqual(Error('Error adding a user\'s emergency contact to a trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('add failed'))
+    })
+
+    expect(addContactsForTrip(mockContactPost)).rejects.toEqual(Error('add failed'))
   });
 
 });
