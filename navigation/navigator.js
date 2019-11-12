@@ -29,8 +29,23 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: "My Trips"
-      };
+        headerTitle: routeName
+      }
+    },
+    tabBarOptions: {
+      activeTintColor: "#EFB095",
+      inactiveTintColor: "#F0F0F0",
+      labelStyle: {
+        fontFamily: "Futura",
+        fontSize: 21,
+        paddingBottom: 7
+      },
+      tabStyle: {
+        width: 100
+      },
+      style: {
+        backgroundColor: "#001028"
+      }
     }
   }
 );
@@ -44,8 +59,23 @@ const ProfileDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: "My Profile"
+        headerTitle: routeName
       };
+    },
+    tabBarOptions: {
+      activeTintColor: "#EFB095",
+      inactiveTintColor: "#F0F0F0",
+      labelStyle: {
+        fontFamily: "Futura",
+        fontSize: 21,
+        paddingBottom: 7
+      },
+      tabStyle: {
+        width: 100
+      },
+      style: {
+        backgroundColor: "#001028"
+      }
     }
   }
 );
@@ -59,8 +89,23 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: "My Contacts"
+        headerTitle: routeName
       };
+    },
+    tabBarOptions: {
+      activeTintColor: "#EFB095",
+      inactiveTintColor: "#F0F0F0",
+      labelStyle: {
+        fontFamily: "Futura",
+        fontSize: 21,
+        paddingBottom: 7
+      },
+      tabStyle: {
+        width: 100
+      },
+      style: {
+        backgroundColor: "#001028"
+      }
     }
   }
 );
@@ -74,8 +119,23 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: "My Gear"
+        headerTitle: routeName
       };
+    },
+    tabBarOptions: {
+      activeTintColor: "#EFB095",
+      inactiveTintColor: "#F0F0F0",
+      labelStyle: {
+        fontFamily: "Futura",
+        fontSize: 21,
+        paddingBottom: 7
+      },
+      tabStyle: {
+        width: 100
+      },
+      style: {
+        backgroundColor: "#001028"
+      }
     }
   }
 );
@@ -89,8 +149,23 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
-        headerTitle: "My Vehicles"
+        headerTitle: routeName
       };
+    },
+    tabBarOptions: {
+      activeTintColor: "#EFB095",
+      inactiveTintColor: "#F0F0F0",
+      labelStyle: {
+        fontFamily: "Futura",
+        fontSize: 21,
+        paddingBottom: 7
+      },
+      tabStyle: {
+        width: 100
+      },
+      style: {
+        backgroundColor: "#001028"
+      }
     }
   }
 );

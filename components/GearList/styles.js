@@ -12,7 +12,7 @@ const styles = {
     flex: 1,
     height: 300,
     marginHorizontal: "5%",
-    width: "90%",
+    width: "90%"
   },
   backgroundImage: {
     flex: 1,
@@ -22,23 +22,26 @@ const styles = {
     backgroundColor: "#efefef",
     flex: 1,
     flexDirection: "row",
-    height: 70,
+    height: 50,
     marginVertical: 5,
     justifyContent: "space-between"
   },
   itemRemoveBtn: {
+    backgroundColor: "#001028",
+    color: '#efefef',
     borderWidth: 1,
     borderColor: "#001028",
-    height: 35,
-    margin: 4,
+    height: 30,
+    marginLeft: 7,
+    marginVertical: 10,
     padding: 5
   },
   gearName: {
     flex: 1,
     fontFamily: "Futura",
-    fontSize: 28,
+    fontSize: 21,
     paddingLeft: 7,
-    paddingVertical: 2
+    paddingVertical: 10
   },
   addItemBtn: {
     borderColor: "black",

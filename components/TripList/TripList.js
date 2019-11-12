@@ -49,13 +49,19 @@ export class TripList extends Component {
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
-          <Text 
+          <Text
             style={styles.tripRemoveBtn}
-            onPress={() => this.removeTrip(trip.id)}>REMOVE</Text>
+            onPress={() => this.removeTrip(trip.id)}
+          >
+            REMOVE
+          </Text>
           <View style={styles.tripTextContainer}>
             <Text style={styles.tripsName}>{trip.name}</Text>
             <Text style={styles.tripsDate}>
               {trip.startDate} to {trip.endDate}
+            </Text>
+            <Text style={styles.tripsDate}>
+              Notices: {trip.notificationTime.substring(11, 16)} on {trip.notificationDate}
             </Text>
           </View>
         </View>

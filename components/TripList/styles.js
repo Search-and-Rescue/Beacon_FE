@@ -36,14 +36,17 @@ const styles = {
     backgroundColor: "#efefef",
     flex: 1,
     flexDirection: "row",
-    height: 70,
+    height: 75,
     marginVertical: 5,
     justifyContent: "space-between"
   },
   tripRemoveBtn: {
+    backgroundColor: "#001028",
+    color: "#efefef",
     borderWidth: 1,
     borderColor: "#001028",
     height: 30,
+    marginLeft: 7,
     marginVertical: 20,
     padding: 5
   },
@@ -54,7 +57,7 @@ const styles = {
   tripsName: {
     flex: 1,
     fontFamily: "Futura",
-    fontSize: 28,
+    fontSize: 21,
     paddingLeft: 7,
     paddingVertical: 2
   },

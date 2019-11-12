@@ -44,7 +44,9 @@ const styles = {
   },
   modalOptionsText: {
     color: "#001028",
-    fontSize: 28
+    fontSize: 21,
+    paddingLeft: 7,
+    paddingVertical: 10
   },
   modalToggleGearContainer: {
     flex: 1,
@@ -67,11 +69,14 @@ const styles = {
     marginVertical: 1
   },
   modalToggleBtnText: {
+    backgroundColor: "#001028",
+    color: "#efefef",
     borderWidth: 1,
     borderColor: "#001028",
     height: 30,
-    marginRight: 7,
-    paddingHorizontal: 6
+    marginLeft: 7,
+    marginVertical: 10,
+    padding: 5
   },
   modalToggleText: {
     backgroundColor: "#EFB095",
@@ -130,7 +135,7 @@ const styles = {
     fontSize: 18,
     paddingHorizontal: 20,
     paddingBottom: 5
- }
+  }
 };
 
 export default styles;

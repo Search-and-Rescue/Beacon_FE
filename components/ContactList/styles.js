@@ -27,18 +27,21 @@ const styles = {
     justifyContent: "space-between"
   },
   contactRemoveBtn: {
+    backgroundColor: "#001028",
+    color: "#efefef",
     borderWidth: 1,
     borderColor: "black",
     height: 30,
+    marginLeft: 7,
     marginVertical: 10,
     padding: 5
   },
   contactsName: {
     flex: 1,
     fontFamily: "Futura",
-    fontSize: 28,
+    fontSize: 21,
     paddingLeft: 7,
-    paddingVertical: 2
+    paddingVertical: 10
   },
   addItemBtn: {
     borderColor: "black",
