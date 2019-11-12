@@ -7,7 +7,15 @@ import {
   addTrip,
   addVehicle,
   addGearItem,
-  addContact
+  addContact,
+  deleteContact,
+  deleteGearItem,
+  addGearForTrip,
+  addContactsForTrip,
+  addVehiclesForTrip,
+  deleteVehicle,
+  deactivateTrip,
+  deleteTrip
 } from './apiCalls';
 
 describe('getUser', () => {
@@ -731,6 +739,588 @@ describe('addContact', () => {
     })
 
     expect(addContact(mockContactPost)).rejects.toEqual(Error('fetch failed'))
+  });
+
+});
+
+describe('deleteContact', () => {
+  let mockId;
+  let mockContactDelete;
+
+  beforeEach(() => {
+    mockId = 1
+    mockContactDelete = {
+      name: "Samantha Freeman",
+      phone: "707.123.4567",
+      email: "skiracerchick@earthlink.net"
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockContactDelete)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    removeContact(input: {
+      id: ${mockId} }) {
+      emergencyContact {
+        name
+        phone
+        email
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteContact(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the removed emergency contact', () => {
+    expect(deleteContact(mockId)).resolves.toEqual(mockContactDelete);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(deleteContact(mockId)).rejects.toEqual(Error('Error removing a user\'s emergency contact.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('delete failed'))
+    })
+
+    expect(deleteContact(mockId)).rejects.toEqual(Error('delete failed'))
+  });
+
+});
+
+describe('deleteGearItem', () => {
+  let mockId;
+  let mockRemovedGearItem;
+
+  beforeEach(() => {
+    mockId = 1
+    mockRemovedGearItem = {
+      itemName: "Sleeping bag",
+      description: "Withstands -10 degree Fahrenheit"
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockRemovedGearItem)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    removeGear(input: {
+    id: ${mockId} }) {
+    gear {
+      itemName
+      description
+    }
+  }  
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteGearItem(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the removed gear item', () => {
+    expect(deleteGearItem(mockId)).resolves.toEqual(mockRemovedGearItem);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(deleteGearItem(mockId)).rejects.toEqual(Error('Error deleting a user\'s gear item.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('delete failed'))
+    })
+
+    expect(deleteGearItem(mockId)).rejects.toEqual(Error('delete failed'))
+  });
+
+});
+
+
+describe('addGearForTrip', () => {
+  let mockGear;
+  let mockGearPost;
+
+  beforeEach(() => {
+    mockGear = {
+      comments: "Brought 2000 mgs",
+      gear: {
+        itemName: "Antibiotics"
+      },
+      trip: {
+        name: "trip name"
+      }
+    }
+    mockGearPost = {
+      tripId: 1,
+      gearId: 1,
+      comments: "Brought 2000 mgs"
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockGear)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+          addGearToTrip(input: {
+            tripId: ${parseInt(mockGearPost.tripId)},
+            gearId: ${parseInt(mockGearPost.gearId)},
+            comments: "${mockGearPost.comment}"
+          }) {
+            tripGear{
+              comments
+              gear{
+                itemName
+              }
+              trip{
+                name
+              }
+            }
+          }
+        }`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addGearForTrip(mockGearPost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added gear item\'s name for the trip', () => {
+    expect(addGearForTrip(mockGearPost)).resolves.toEqual(mockGear);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addGearForTrip(mockGearPost)).rejects.toEqual(Error('Error adding a user\'s gear to a trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('add failed'))
+    })
+
+    expect(addGearForTrip(mockGearPost)).rejects.toEqual(Error('add failed'))
+  });
+
+});
+
+describe('addContactsForTrip', () => {
+  let mockContact;
+  let mockContactPost;
+
+  beforeEach(() => {
+    mockContact = {
+      trip: {
+        name: "trip name"
+      },
+      emergencyContact: {
+        name: "Mom",
+        phone: "303-1234"
+      }
+    }
+    mockContactPost = {
+      tripId: 1,
+      emergencyContactId: 1
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockContact)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    addContactToTrip(input: {
+      tripId: ${parseInt(mockContactPost.tripId)},
+      emergencyContactId: ${parseInt(mockContactPost.emergencyContactId)}
+    }) {
+      trip{
+        name
+      }
+      emergencyContact{
+        name
+        phone
+      }
+    }
+  }`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addContactsForTrip(mockContactPost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added contact for the trip', () => {
+    expect(addContactsForTrip(mockContactPost)).resolves.toEqual(mockContact);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addContactsForTrip(mockContactPost)).rejects.toEqual(Error('Error adding a user\'s emergency contact to a trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('add failed'))
+    })
+
+    expect(addContactsForTrip(mockContactPost)).rejects.toEqual(Error('add failed'))
+  });
+
+});
+
+describe('addVehiclesForTrip', () => {
+  let mockVehicle;
+  let mockVehiclePost;
+
+  beforeEach(() => {
+    mockVehicle = {
+      trip: {
+        name: "trip name"
+      },
+      vehicle: {
+        make: "Subaru"
+      }
+    }
+    mockVehiclePost = {
+      tripId: 1,
+      vehcileId: 1
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockVehicle)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    addVehicleToTrip(input: {
+      tripId: ${parseInt(mockVehiclePost.tripId)},
+      vehicleId: ${parseInt(mockVehiclePost.vehicleId)}
+    }) {
+      trip{
+        name
+      }
+      vehicle{
+        make
+      }
+    }
+  }`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    addVehiclesForTrip(mockVehiclePost);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the added vehicle for the trip', () => {
+    expect(addVehiclesForTrip(mockVehiclePost)).resolves.toEqual(mockVehicle);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(addVehiclesForTrip(mockVehiclePost)).rejects.toEqual(Error('Error adding a user\'s vehicle to a trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('add failed'))
+    })
+
+    expect(addVehiclesForTrip(mockVehiclePost)).rejects.toEqual(Error('add failed'))
+  });
+
+});
+
+describe('deleteVehicle', () => {
+  let mockVehicle;
+  let mockId;
+
+  beforeEach(() => {
+    mockVehicle = {
+      id: 1,
+      make: "Subaru",
+      model: "Impreza",
+      year: 2014,
+      color: "blue",
+      licensePlate: "123ABC",
+      state: "CO"
+    }
+    mockId = 1
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockVehicle)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation {
+  removeVehicle(input: {
+    id: ${mockId} }) {
+    vehicle {
+      id
+      make
+      model
+      year
+      color
+      licensePlate
+      state
+    }
+  } 
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteVehicle(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the removed vehicle', () => {
+    expect(deleteVehicle(mockId)).resolves.toEqual(mockVehicle);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(deleteVehicle(mockId)).rejects.toEqual(Error('Error deleting a user\'s vehicle.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('delete failed'))
+    })
+
+    expect(deleteVehicle(mockId)).rejects.toEqual(Error('delete failed'))
+  });
+
+});
+
+describe('deactivateTrip', () => {
+  let mockTrip;
+  let mockId;
+
+  beforeEach(() => {
+    mockTrip = {
+      name: "Trip name"
+    }
+    mockId = 1
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockTrip)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+    endTrip(input: {
+      id: ${mockId} 
+      }) {
+        trip{
+        name
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deactivateTrip(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the no longer active trip', () => {
+    expect(deactivateTrip(mockId)).resolves.toEqual(mockTrip);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(deactivateTrip(mockId)).rejects.toEqual(Error('Error deactivating the user\'s trip status.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('deactivation failed'))
+    })
+
+    expect(deactivateTrip(mockId)).rejects.toEqual(Error('deactivation failed'))
+  });
+
+});
+
+describe('deleteTrip', () => {
+  let mockTrip;
+  let mockId;
+
+  beforeEach(() => {
+    mockTrip = {
+      id: 1,
+      name: "Trip name"
+    }
+    mockId = 1
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockTrip)
+      })
+    })
+  });
+
+  it('should call fetch with the correct url including the query for GraphQL', () => {
+    const mutation = `mutation{
+  removeTrip(input: {
+    id: ${mockId}
+  }) {
+    trip{
+      id
+      name
+    }
+  }
+}`
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    deleteTrip(mockId);
+
+    expect(window.fetch).toHaveBeenCalledWith('https://search-and-rescue-api.herokuapp.com/graphql', options)
+  });
+
+  it('should return the removed trip', () => {
+    expect(deleteTrip(mockId)).resolves.toEqual(mockTrip);
+  });
+
+  it('should return an error if the promise resolves but the property ok isn\'t true', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+
+    expect(deleteTrip(mockId)).rejects.toEqual(Error('Error deleting a user\'s trip.'))
+  });
+
+  it('should return an error if the promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('delete failed'))
+    })
+
+    expect(deleteTrip(mockId)).rejects.toEqual(Error('delete failed'))
   });
 
 });
