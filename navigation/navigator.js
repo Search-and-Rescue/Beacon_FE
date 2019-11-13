@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -6,7 +7,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
-import { Ionicons } from "@expo/vector-icons";
+import tent from '../assets/tent.png';
 import DrawerHeader from '../navigation/DrawerHeader/DrawerHeader';
 
 import TripList from '../components/TripList/TripList';
@@ -36,15 +37,20 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         } else if (routeName === 'Trip') {
           iconName = "tent";
         }
-        return <Ionicons name={iconName} size={24} color={tintColor} />;
+        return (
+          <Image
+            source={tent}
+            style={{ width: 25, height: 25, margin: 5 }}
+            color={tintColor}
+          />
+        );
       },
       tabBarOptions: {
       activeTintColor: "#EFB095",
       inactiveTintColor: "#F0F0F0",
       labelStyle: {
         fontFamily: "Futura",
-        fontSize: 12,
-        paddingBottom: 7
+        fontSize: 20
       },
       tabStyle: {
         width: 100
