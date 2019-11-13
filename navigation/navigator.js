@@ -32,9 +32,9 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
-        if (routeName === 'TripList') {
+        if (routeName === "TripList") {
           iconName = "car";
-        } else if (routeName === 'Trip') {
+        } else if (routeName === "Trip") {
           iconName = "tent";
         }
         return (
@@ -46,21 +46,22 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         );
       },
       tabBarOptions: {
-      activeTintColor: "#EFB095",
-      inactiveTintColor: "#F0F0F0",
-      labelStyle: {
-        fontFamily: "Futura",
-        fontSize: 20
-      },
-      tabStyle: {
-        width: 100
-      },
-      style: {
-        backgroundColor: "#001028"
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        labelPosition: "beside-icon",
+        labelStyle: {
+          fontFamily: "Futura",
+          fontSize: 20
+        },
+        tabStyle: {
+          width: 100
+        },
+        style: {
+          backgroundColor: "#001028"
+        }
       }
-    }
     })
-  },
+  }
   // {
   //   navigationOptions: ({ navigation }) => {
   //     const { routeName } = navigation.state.routes[navigation.state.index];
