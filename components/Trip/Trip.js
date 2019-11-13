@@ -168,8 +168,8 @@ export class Trip extends Component {
     const displayGear = this.state.gear.map(gearItem => {
       return <Text style={styles.displayList} key={gearItem.id}>&#8226; {gearItem.itemName}</Text>
     })
-    const disableBtn = this.props.currentTrip ? true : false;
-    const disableBtnColor = this.props.currentTrip ? styles.disableColor : styles.updateBtn;
+    const disableBtn = this.props.currentTrip.id ? true : false;
+    const disableBtnColor = this.props.currentTrip.id ? styles.disableColor : styles.updateBtn;
     const contactsList = this.props.contacts.map(contact => {
       return (
         <TouchableHighlight
