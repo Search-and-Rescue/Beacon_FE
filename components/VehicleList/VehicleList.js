@@ -6,17 +6,11 @@ import styles from "./styles";
 import { setVehicles } from "../../actions";
 import { bindActionCreators } from "redux";
 import background from "../../assets/background.png";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 export class VehicleList extends Component {
   constructor(props) {
     super(props);
   }
-
-  static navigationOptions = {
-    drawerLabel: "VehicleList",
-    drawerIcon: () => <Ionicons name="md-home" size={24} />
-  };
 
   deleteVehicle = async id => {
     try {

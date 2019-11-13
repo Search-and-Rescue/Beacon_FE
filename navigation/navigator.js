@@ -19,7 +19,6 @@ import GearList from '../components/GearList/GearList';
 import Gear from '../components/Gear/Gear';
 import VehicleList from '../components/VehicleList/VehicleList';
 import Vehicle from '../components/Vehicle/Vehicle';
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 const TripDashboardTabNavigator = createBottomTabNavigator(
   {
@@ -27,18 +26,23 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
     Trip
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      }
-    },
-    tabBarOptions: {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'TripList') {
+          iconName = "car";
+        } else if (routeName === 'Trip') {
+          iconName = "tent";
+        }
+        return <Icon name={iconName} size={24} color={tintColor} />;
+      },
+      tabBarOptions: {
       activeTintColor: "#EFB095",
       inactiveTintColor: "#F0F0F0",
       labelStyle: {
         fontFamily: "Futura",
-        fontSize: 21,
+        fontSize: 12,
         paddingBottom: 7
       },
       tabStyle: {
@@ -48,7 +52,31 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         backgroundColor: "#001028"
       }
     }
-  }
+    })
+  },
+  // {
+  //   navigationOptions: ({ navigation }) => {
+  //     const { routeName } = navigation.state.routes[navigation.state.index];
+  //     return {
+  //       headerTitle: routeName
+  //     }
+  //   },
+  //   tabBarOptions: {
+  //     activeTintColor: "#EFB095",
+  //     inactiveTintColor: "#F0F0F0",
+  //     labelStyle: {
+  //       fontFamily: "Futura",
+  //       fontSize: 21,
+  //       paddingBottom: 7
+  //     },
+  //     tabStyle: {
+  //       width: 100
+  //     },
+  //     style: {
+  //       backgroundColor: "#001028"
+  //     }
+  //   }
+  // }
 );
 
 const ProfileDashboardTabNavigator = createBottomTabNavigator(
@@ -296,23 +324,24 @@ const DrawerConfig = {
   }
 };
 
-const AppDrawerNavigator = createDrawerNavigator({
-  "My Trips": {
-    screen: TripStackNavigator
+const AppDrawerNavigator = createDrawerNavigator(
+  {
+    "My Trips": {
+      screen: TripStackNavigator,
+    },
+    "My Profile": {
+      screen: ProfileStackNavigator
+    },
+    "My Emergency Contacts": {
+      screen: ContactStackNavigator
+    },
+    "My Gear": {
+      screen: GearStackNavigator
+    },
+    "My Vehicles": {
+      screen: VehicleStackNavigator
+    }
   },
-  "My Profile": {
-    screen: ProfileStackNavigator
-  },
-  "My Emergency Contacts": {
-    screen: ContactStackNavigator
-  },
-  "My Gear": {
-    screen: GearStackNavigator
-  },
-  "My Vehicles": {
-    screen: VehicleStackNavigator
-  }
-},
   DrawerConfig
 );
 
