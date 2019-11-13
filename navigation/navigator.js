@@ -19,6 +19,7 @@ import GearList from '../components/GearList/GearList';
 import Gear from '../components/Gear/Gear';
 import VehicleList from '../components/VehicleList/VehicleList';
 import Vehicle from '../components/Vehicle/Vehicle';
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const TripDashboardTabNavigator = createBottomTabNavigator(
   {
