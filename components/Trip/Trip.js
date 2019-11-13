@@ -101,7 +101,7 @@ export class Trip extends Component {
     }
     const trip = await addTrip(newTrip);
     const tripId = trip.data.createTrip.trip.id;
-    this.props.setCurrentTrip(tripId);
+    this.props.setCurrentTrip(tripId, this.state.name);
     const userInfoTrips = await getTrips();
     await setTrips(userInfoTrips.user.trips);
     this.saveTripGear(tripId);
