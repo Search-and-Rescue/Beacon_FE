@@ -6,6 +6,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
+import { Ionicons } from "@expo/vector-icons";
 import DrawerHeader from '../navigation/DrawerHeader/DrawerHeader';
 
 import TripList from '../components/TripList/TripList';
@@ -35,7 +36,7 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         } else if (routeName === 'Trip') {
           iconName = "tent";
         }
-        return <Icon name={iconName} size={24} color={tintColor} />;
+        return <Ionicons name={iconName} size={24} color={tintColor} />;
       },
       tabBarOptions: {
       activeTintColor: "#EFB095",
