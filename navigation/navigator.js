@@ -8,6 +8,8 @@ import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
 import tent from '../assets/tent.png';
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import DrawerHeader from '../navigation/DrawerHeader/DrawerHeader';
 
 import TripList from '../components/TripList/TripList';
@@ -44,7 +46,7 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
               style={{ width: 25, height: 25, margin: 5 }}
               color={tintColor}
             />
-            <Text style={{ color: tintColor, fontFamily: 'fontAwesome'}}>"fa-car"</Text>
+            <FontAwesomeIcon icon={faCoffee} />
           </>
         );
       },
