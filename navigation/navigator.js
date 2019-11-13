@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "react-native";
+import { Image, Text } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -38,11 +38,14 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
           iconName = "tent";
         }
         return (
-          <Image
-            source={tent}
-            style={{ width: 25, height: 25, margin: 5 }}
-            color={tintColor}
-          />
+          <>
+            <Image
+              source={tent}
+              style={{ width: 25, height: 25, margin: 5 }}
+              color={tintColor}
+            />
+            <Text style={{ color: tintColor, fontFamily: 'fontAwesome'}}>"fa-car"</Text>
+          </>
         );
       },
       tabBarOptions: {
