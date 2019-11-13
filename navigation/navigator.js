@@ -35,6 +35,7 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
@@ -46,27 +47,17 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={32}
-            style={{ color: tintColor, marginTop: 10 }}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
           />
         );
       },
       tabBarOptions: {
         activeTintColor: "#EFB095",
         inactiveTintColor: "#F0F0F0",
-        labelPosition: "beside-icon",
-        labelStyle: {
-          fontFamily: "Futura",
-          fontSize: 21,
-          lineHeight: 32,
-          paddingLeft: 5
-        },
         style: {
           backgroundColor: "#001028"
-        },
-        tabStyle: {
-          width: 100
-        },
+        }
       }
     })
   }
@@ -79,6 +70,7 @@ const ProfileDashboardTabNavigator = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
@@ -90,26 +82,16 @@ const ProfileDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={32}
-            style={{ color: tintColor, marginTop: 10 }}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
           />
         );
       },
       tabBarOptions: {
         activeTintColor: "#EFB095",
         inactiveTintColor: "#F0F0F0",
-        labelPosition: "beside-icon",
-        labelStyle: {
-          fontFamily: "Futura",
-          fontSize: 21,
-          lineHeight: 32,
-          paddingLeft: 5
-        },
         style: {
           backgroundColor: "#001028"
-        },
-        tabStyle: {
-          width: 100
         }
       }
     })
@@ -123,6 +105,7 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
@@ -134,26 +117,16 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={32}
-            style={{ color: tintColor, marginTop: 10 }}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
           />
         );
       },
       tabBarOptions: {
         activeTintColor: "#EFB095",
         inactiveTintColor: "#F0F0F0",
-        labelPosition: "beside-icon",
-        labelStyle: {
-          fontFamily: "Futura",
-          fontSize: 21,
-          lineHeight: 32,
-          paddingLeft: 5
-        },
         style: {
           backgroundColor: "#001028"
-        },
-        tabStyle: {
-          width: 100
         }
       }
     })
@@ -167,6 +140,7 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
@@ -178,26 +152,16 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={32}
-            style={{ color: tintColor, marginTop: 10 }}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
           />
         );
       },
       tabBarOptions: {
         activeTintColor: "#EFB095",
         inactiveTintColor: "#F0F0F0",
-        labelPosition: "beside-icon",
-        labelStyle: {
-          fontFamily: "Futura",
-          fontSize: 21,
-          lineHeight: 32,
-          paddingLeft: 5
-        },
         style: {
           backgroundColor: "#001028"
-        },
-        tabStyle: {
-          width: 100
         }
       }
     })
@@ -211,6 +175,7 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
@@ -222,26 +187,16 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={32}
-            style={{ color: tintColor, marginTop: 10 }}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
           />
         );
       },
       tabBarOptions: {
         activeTintColor: "#EFB095",
         inactiveTintColor: "#F0F0F0",
-        labelPosition: "beside-icon",
-        labelStyle: {
-          fontFamily: "Futura",
-          fontSize: 21,
-          lineHeight: 32,
-          paddingLeft: 5
-        },
         style: {
           backgroundColor: "#001028"
-        },
-        tabStyle: {
-          width: 100
         }
       }
     })
