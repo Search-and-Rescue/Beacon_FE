@@ -23,10 +23,15 @@ describe("TripList", () => {
     startingPoint: "Coyote Trail Head",
     travelingCompanions: 0,
   }]
+  const currentTripMock = {
+    id: 1,
+    name: "My trip"
+  }
 
   beforeEach(() => {
     wrapper = shallow(<TripList
-      trips={tripsMock} />)
+      trips={tripsMock}
+      currentTrip={currentTripMock} />)
   });
 
   it("should match the snapshot with all of the data passed through", () => {

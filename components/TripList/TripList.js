@@ -27,7 +27,7 @@ export class TripList extends Component {
   } 
 
   removeTrip = async (id) => {
-    if (id === this.props.currentTrip) {
+    if (id === this.props.currentTrip.id) {
       await deactivateTrip(id);
       this.props.removeCurrentTrip();
     }
@@ -69,7 +69,7 @@ export class TripList extends Component {
     });
     return (
       <View>
-        {this.props.currentTrip && (
+        {this.props.currentTrip.id && (
         <TouchableOpacity
           style={styles.modalToggleButton}
           onPress={() => this.toggleButtonModal()}
@@ -77,7 +77,7 @@ export class TripList extends Component {
           <Text style={styles.modalToggleText}>UPDATE TRIP STATUS</Text>
         </TouchableOpacity>
         )}
-        {this.props.currentTrip && (
+        {this.props.currentTrip.id && (
         <Modal
           animationType={"slide"}
           visible={this.state.button_modal}
@@ -86,11 +86,11 @@ export class TripList extends Component {
         >
           <View style={styles.modalView}>
             <TouchableOpacity
-              onPress={() => this.deactivateTripStatus(this.props.currentTrip)}
+              onPress={() => this.deactivateTripStatus(this.props.currentTrip.id)}
             >
               <View style={styles.theButton}>
                 <Text style={styles.theButtonText}>DEACTIVATE</Text>
-                <Text style={styles.theButtonText}>CURRENT TRIP</Text>
+                <Text style={styles.theButtonText}>{this.props.currentTrip.name}</Text>
                 <Text style={styles.theButtonSubtext}>Emergency notifications</Text>
                 <Text style={styles.theButtonSubtext}>will not be sent.</Text>
               </View>

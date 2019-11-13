@@ -23,9 +23,10 @@ export const setTrips = trips => ({
   trips
 })
 
-export const setCurrentTrip = currentTrip => ({
+export const setCurrentTrip = (currentId, currentName) => ({
   type: 'SET_CURRENT',
-  currentTrip
+  currentId,
+  currentName
 })
 
 export const removeCurrentTrip = () => ({

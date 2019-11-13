@@ -2,6 +2,147 @@
 
 exports[`TripList should match the snapshot with all of the data passed through 1`] = `
 <View>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#EFB095",
+        "borderColor": "#001028",
+        "borderWidth": 4,
+        "marginHorizontal": "5%",
+        "marginTop": 10,
+        "paddingVertical": 10,
+        "width": "90%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#001028",
+          "fontFamily": "Futura",
+          "fontSize": 28,
+          "textAlign": "center",
+        }
+      }
+    >
+      UPDATE TRIP STATUS
+    </Text>
+  </TouchableOpacity>
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "lightgrey",
+          "borderColor": "#001028",
+          "borderTopWidth": 10,
+          "bottom": -5,
+          "left": 10,
+          "margin": 5,
+          "padding": 20,
+          "position": "absolute",
+          "right": 10,
+        }
+      }
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#EFB095",
+              "borderColor": "#001028",
+              "borderRadius": 60,
+              "borderWidth": 10,
+              "color": "#EFB095",
+              "paddingVertical": 100,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontFamily": "Futura",
+                "fontSize": 46,
+              }
+            }
+          >
+            DEACTIVATE
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontFamily": "Futura",
+                "fontSize": 46,
+              }
+            }
+          >
+            My trip
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontSize": 28,
+              }
+            }
+          >
+            Emergency notifications
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#001028",
+                "fontSize": 28,
+              }
+            }
+          >
+            will not be sent.
+          </Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#001028",
+              "borderRadius": 3,
+              "marginVertical": 10,
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#F0F0F0",
+                "fontFamily": "Futura",
+                "fontSize": 28,
+              }
+            }
+          >
+            Remain Active
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  </Component>
   <View
     style={
       Object {
