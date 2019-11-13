@@ -46,7 +46,6 @@ export class TripList extends Component {
   };
 
   render() {
-    console.log(this.props.currentTrip)
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
@@ -91,7 +90,7 @@ export class TripList extends Component {
             >
               <View style={styles.theButton}>
                 <Text style={styles.theButtonText}>DEACTIVATE</Text>
-                <Text style={styles.theButtonText}>CURRENT TRIP</Text>
+                <Text style={styles.theButtonText}>{this.props.currentTrip.name}</Text>
                 <Text style={styles.theButtonSubtext}>Emergency notifications</Text>
                 <Text style={styles.theButtonSubtext}>will not be sent.</Text>
               </View>
