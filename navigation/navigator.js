@@ -7,19 +7,26 @@ import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faListUl, faHiking } from "@fortawesome/free-solid-svg-icons";
+import {
+  faListUl,
+  faCampground,
+  faCar,
+  faHiking,
+  faUserCog,
+  faUsers
+} from "@fortawesome/free-solid-svg-icons";
 
-import TripList from '../components/TripList/TripList';
-import Trip from '../components/Trip/Trip';
-import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
-import ProfileViewer from '../components/ProfileViewer/ProfileViewer';
-import Profile from '../components/Profile/Profile';
-import ContactList from '../components/ContactList/ContactList';
-import Contact from '../components/Contact/Contact';
-import GearList from '../components/GearList/GearList';
-import Gear from '../components/Gear/Gear';
-import VehicleList from '../components/VehicleList/VehicleList';
-import Vehicle from '../components/Vehicle/Vehicle';
+import TripList from "../components/TripList/TripList";
+import Trip from "../components/Trip/Trip";
+import LoginScreen from "../components/WelcomeScreen/WelcomeScreen";
+import ProfileViewer from "../components/ProfileViewer/ProfileViewer";
+import Profile from "../components/Profile/Profile";
+import ContactList from "../components/ContactList/ContactList";
+import Contact from "../components/Contact/Contact";
+import GearList from "../components/GearList/GearList";
+import Gear from "../components/Gear/Gear";
+import VehicleList from "../components/VehicleList/VehicleList";
+import Vehicle from "../components/Vehicle/Vehicle";
 
 const TripDashboardTabNavigator = createBottomTabNavigator(
   {
@@ -37,11 +44,11 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
           iconName = faHiking;
         }
         return (
-            <FontAwesomeIcon
-              icon={iconName}
-              size = { 32 }
-              style={{ color: tintColor, marginTop: 10 }}
-            />
+          <FontAwesomeIcon
+            icon={iconName}
+            size={32}
+            style={{ color: tintColor, marginTop: 10 }}
+          />
         );
       },
       tabBarOptions: {
@@ -54,38 +61,15 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
           lineHeight: 32,
           paddingLeft: 5
         },
+        style: {
+          backgroundColor: "#001028"
+        },
         tabStyle: {
           width: 100
         },
-        style: {
-          backgroundColor: "#001028"
-        }
       }
     })
   }
-  // {
-  //   navigationOptions: ({ navigation }) => {
-  //     const { routeName } = navigation.state.routes[navigation.state.index];
-  //     return {
-  //       headerTitle: routeName
-  //     }
-  //   },
-  //   tabBarOptions: {
-  //     activeTintColor: "#EFB095",
-  //     inactiveTintColor: "#F0F0F0",
-  //     labelStyle: {
-  //       fontFamily: "Futura",
-  //       fontSize: 21,
-  //       paddingBottom: 7
-  //     },
-  //     tabStyle: {
-  //       width: 100
-  //     },
-  //     style: {
-  //       backgroundColor: "#001028"
-  //     }
-  //   }
-  // }
 );
 
 const ProfileDashboardTabNavigator = createBottomTabNavigator(
@@ -94,27 +78,41 @@ const ProfileDashboardTabNavigator = createBottomTabNavigator(
     Profile
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    },
-    tabBarOptions: {
-      activeTintColor: "#EFB095",
-      inactiveTintColor: "#F0F0F0",
-      labelStyle: {
-        fontFamily: "Futura",
-        fontSize: 21,
-        paddingBottom: 7
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "ProfileViewer") {
+          iconName = faListUl;
+        } else if (routeName === "Profile") {
+          iconName = faUserCog;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={32}
+            style={{ color: tintColor, marginTop: 10 }}
+          />
+        );
       },
-      tabStyle: {
-        width: 100
-      },
-      style: {
-        backgroundColor: "#001028"
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        labelPosition: "beside-icon",
+        labelStyle: {
+          fontFamily: "Futura",
+          fontSize: 21,
+          lineHeight: 32,
+          paddingLeft: 5
+        },
+        style: {
+          backgroundColor: "#001028"
+        },
+        tabStyle: {
+          width: 100
+        }
       }
-    }
+    })
   }
 );
 
@@ -124,27 +122,41 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
     Contact
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    },
-    tabBarOptions: {
-      activeTintColor: "#EFB095",
-      inactiveTintColor: "#F0F0F0",
-      labelStyle: {
-        fontFamily: "Futura",
-        fontSize: 21,
-        paddingBottom: 7
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "ContactList") {
+          iconName = faListUl;
+        } else if (routeName === "Contact") {
+          iconName = faUsers;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={32}
+            style={{ color: tintColor, marginTop: 10 }}
+          />
+        );
       },
-      tabStyle: {
-        width: 100
-      },
-      style: {
-        backgroundColor: "#001028"
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        labelPosition: "beside-icon",
+        labelStyle: {
+          fontFamily: "Futura",
+          fontSize: 21,
+          lineHeight: 32,
+          paddingLeft: 5
+        },
+        style: {
+          backgroundColor: "#001028"
+        },
+        tabStyle: {
+          width: 100
+        }
       }
-    }
+    })
   }
 );
 
@@ -154,27 +166,41 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
     Gear
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    },
-    tabBarOptions: {
-      activeTintColor: "#EFB095",
-      inactiveTintColor: "#F0F0F0",
-      labelStyle: {
-        fontFamily: "Futura",
-        fontSize: 21,
-        paddingBottom: 7
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "GearList") {
+          iconName = faListUl;
+        } else if (routeName === "Gear") {
+          iconName = faCampground;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={32}
+            style={{ color: tintColor, marginTop: 10 }}
+          />
+        );
       },
-      tabStyle: {
-        width: 100
-      },
-      style: {
-        backgroundColor: "#001028"
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        labelPosition: "beside-icon",
+        labelStyle: {
+          fontFamily: "Futura",
+          fontSize: 21,
+          lineHeight: 32,
+          paddingLeft: 5
+        },
+        style: {
+          backgroundColor: "#001028"
+        },
+        tabStyle: {
+          width: 100
+        }
       }
-    }
+    })
   }
 );
 
@@ -184,27 +210,41 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
     Vehicle
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    },
-    tabBarOptions: {
-      activeTintColor: "#EFB095",
-      inactiveTintColor: "#F0F0F0",
-      labelStyle: {
-        fontFamily: "Futura",
-        fontSize: 21,
-        paddingBottom: 7
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "VehicleList") {
+          iconName = faListUl;
+        } else if (routeName === "Vehicle") {
+          iconName = faCar;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={32}
+            style={{ color: tintColor, marginTop: 10 }}
+          />
+        );
       },
-      tabStyle: {
-        width: 100
-      },
-      style: {
-        backgroundColor: "#001028"
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        labelPosition: "beside-icon",
+        labelStyle: {
+          fontFamily: "Futura",
+          fontSize: 21,
+          lineHeight: 32,
+          paddingLeft: 5
+        },
+        style: {
+          backgroundColor: "#001028"
+        },
+        tabStyle: {
+          width: 100
+        }
       }
-    }
+    })
   }
 );
 
@@ -336,7 +376,7 @@ const DrawerConfig = {
 const AppDrawerNavigator = createDrawerNavigator(
   {
     "My Trips": {
-      screen: TripStackNavigator,
+      screen: TripStackNavigator
     },
     "My Profile": {
       screen: ProfileStackNavigator
