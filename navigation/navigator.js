@@ -1,5 +1,4 @@
 import React from "react";
-import { Image, Text } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
@@ -7,10 +6,8 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
 import Icon from "@expo/vector-icons/Ionicons";
-import tent from '../assets/tent.png';
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import DrawerHeader from '../navigation/DrawerHeader/DrawerHeader';
+import { faListUl, faHiking } from "@fortawesome/free-solid-svg-icons";
 
 import TripList from '../components/TripList/TripList';
 import Trip from '../components/Trip/Trip';
@@ -35,19 +32,16 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === "TripList") {
-          iconName = "car";
+          iconName = faListUl;
         } else if (routeName === "Trip") {
-          iconName = "tent";
+          iconName = faHiking;
         }
         return (
-          <>
-            <Image
-              source={tent}
-              style={{ width: 25, height: 25, margin: 5 }}
-              color={tintColor}
+            <FontAwesomeIcon
+              icon={iconName}
+              size = { 32 }
+              style={{ color: tintColor, marginTop: 10 }}
             />
-            <FontAwesomeIcon icon={faCoffee} />
-          </>
         );
       },
       tabBarOptions: {
@@ -56,7 +50,9 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         labelPosition: "beside-icon",
         labelStyle: {
           fontFamily: "Futura",
-          fontSize: 20
+          fontSize: 21,
+          lineHeight: 32,
+          paddingLeft: 5
         },
         tabStyle: {
           width: 100
