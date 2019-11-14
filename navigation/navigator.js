@@ -13,6 +13,7 @@ import {
   faCampground,
   faCar,
   faHiking,
+  faArrowAltCircleRight,
   faUserCog,
   faUsers
 } from "@fortawesome/free-solid-svg-icons";
@@ -307,15 +308,20 @@ const VehicleStackNavigator = createStackNavigator(
 const DrawerConfig = {
   contentComponent: props => (
     <View style={{ flex: 1 }}>
-      <SafeAreaView forceInset={{ top: "always", horizontal: "never" }}>
+      <SafeAreaView 
+        forceInset={{ top: "always", horizontal: "never" }}
+        >
         <DrawerItems {...props} />
         <TouchableOpacity
           style={{
             backgroundColor: "#001028",
-            borderColor: "#F4813F",
-            borderTopWidth: 5,
+            borderColor: "#EFB095",
+            borderTopWidth: 3,
+            display: "flex",
+            flexDirection: 'row',
+            bottom: 0,
             height: 55,
-            marginTop: -20
+            marginTop: 296
           }}
           onPress={() =>
             Alert.alert(
@@ -339,12 +345,17 @@ const DrawerConfig = {
             )
           }
         >
+          <FontAwesomeIcon
+            icon={faArrowAltCircleRight}
+            size={36}
+            style={{ color: "#EFEFEF", margin: 7 }}
+          />
           <Text
             style={{
               color: "#efefef",
               fontFamily: "Futura-Medium",
               fontSize: 21,
-              paddingLeft: 16,
+              paddingLeft: 7,
               paddingVertical: 10
             }}
           >
@@ -358,6 +369,15 @@ const DrawerConfig = {
   drawerCloseRoute: "DrawerClose",
   drawerToggleRoute: "DrawerToggle",
   navigationOptions: {
+    drawerIcon: ({ tintColor }) => {
+      return (
+        <FontAwesomeIcon
+          icon={faHiking}
+          size={36}
+          style={{ color: tintColor }}
+        />
+      );
+    },
     headerStyle: {
       backgroundColor: "#f4511e"
     },
