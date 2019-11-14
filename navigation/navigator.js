@@ -310,7 +310,13 @@ const DrawerConfig = {
       <SafeAreaView forceInset={{ top: "always", horizontal: "never" }}>
         <DrawerItems {...props} />
         <TouchableOpacity
-          style={{ backgroundColor: "#001028", height: 55 }}
+          style={{
+            backgroundColor: "#001028",
+            borderColor: "#F4813F",
+            borderTopWidth: 5,
+            height: 55,
+            marginTop: -20
+          }}
           onPress={() =>
             Alert.alert(
               "Log out",
@@ -334,7 +340,13 @@ const DrawerConfig = {
           }
         >
           <Text
-            style={{ color: "#efefef", fontFamily: "Futura-Medium", fontSize: 21, paddingLeft: 16, paddingVertical: 10 }}
+            style={{
+              color: "#efefef",
+              fontFamily: "Futura-Medium",
+              fontSize: 21,
+              paddingLeft: 16,
+              paddingVertical: 10
+            }}
           >
             Logout
           </Text>
@@ -354,7 +366,7 @@ const DrawerConfig = {
       color: "white"
     }
   },
-  drawerType: 'slide',
+  drawerType: "slide",
   contentOptions: {
     inactiveTintColor: "#001028",
     activeTintColor: "#F4813F",
@@ -373,7 +385,7 @@ const DrawerConfig = {
 
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    "My Trips": {
+    Trips: {
       screen: TripStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -387,7 +399,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Profile": {
+    Profile: {
       screen: ProfileStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -401,7 +413,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Emergency Contacts": {
+    "Emergency Contacts": {
       screen: ContactStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -415,7 +427,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Gear": {
+    Gear: {
       screen: GearStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -429,7 +441,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Vehicles": {
+    Vehicles: {
       screen: VehicleStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
