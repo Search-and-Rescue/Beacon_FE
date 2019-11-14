@@ -1,11 +1,12 @@
 import React from "react";
-import { Alert, SafeAreaView, Text, TouchableOpacity, View, } from "react-native";
+import { Alert, Image, SafeAreaView, Text, TouchableOpacity, View, } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
 import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
+import icon from '../assets/icon.png';
 import Icon from "@expo/vector-icons/Ionicons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -308,20 +309,36 @@ const VehicleStackNavigator = createStackNavigator(
 const DrawerConfig = {
   contentComponent: props => (
     <View style={{ flex: 1 }}>
-      <SafeAreaView 
-        forceInset={{ top: "always", horizontal: "never" }}
+      <SafeAreaView forceInset={{ top: "always", horizontal: "never" }}>
+        <View
+          style={{
+            backgroundColor: "#001028",
+            borderColor: "#EFB095",
+            borderTopWidth: 3,
+            height: 55
+          }}
         >
-        <DrawerItems {...props} />
+          <Image
+            source={icon}
+            style={{
+              width: 44,
+              height: 44,
+              marginLeft: 6,
+              marginTop: 4
+            }}
+          />
+        </View>
+        <DrawerItems {...props}/>
         <TouchableOpacity
           style={{
             backgroundColor: "#001028",
             borderColor: "#EFB095",
             borderTopWidth: 3,
             display: "flex",
-            flexDirection: 'row',
+            flexDirection: "row",
             bottom: 0,
             height: 55,
-            marginTop: 296
+            marginTop: 241
           }}
           onPress={() =>
             Alert.alert(
