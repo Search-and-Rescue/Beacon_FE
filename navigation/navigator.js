@@ -332,19 +332,74 @@ const DrawerConfig = {
 const AppDrawerNavigator = createDrawerNavigator(
   {
     "My Trips": {
-      screen: TripStackNavigator
+      screen: TripStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faHiking}
+              size={36}
+              style={{ color: tintColor, padding: -20 }}
+            />
+          );
+        }
+      }
     },
     "My Profile": {
-      screen: ProfileStackNavigator
+      screen: ProfileStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faHiking}
+              size={36}
+              style={{ color: tintColor, padding: -20 }}
+            />
+          );
+        }
+      }
     },
     "My Emergency Contacts": {
-      screen: ContactStackNavigator
+      screen: ContactStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faHiking}
+              size={36}
+              style={{ color: tintColor, padding: -20 }}
+            />
+          );
+        }
+      }
     },
     "My Gear": {
-      screen: GearStackNavigator
+      screen: GearStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faHiking}
+              size={36}
+              style={{ color: tintColor, padding: -20 }}
+            />
+          );
+        }
+      }
     },
     "My Vehicles": {
-      screen: VehicleStackNavigator
+      screen: VehicleStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faHiking}
+              size={36}
+              style={{ color: tintColor, padding: -20 }}
+            />
+          );
+        }
+      }
     }
   },
   DrawerConfig
