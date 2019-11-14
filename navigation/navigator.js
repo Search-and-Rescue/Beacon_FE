@@ -339,7 +339,7 @@ const AppDrawerNavigator = createDrawerNavigator(
             <FontAwesomeIcon
               icon={faHiking}
               size={36}
-              style={{ color: tintColor, padding: -20 }}
+              style={{ color: tintColor }}
             />
           );
         }
@@ -351,9 +351,9 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => {
           return (
             <FontAwesomeIcon
-              icon={faHiking}
+              icon={faUserCog}
               size={36}
-              style={{ color: tintColor, padding: -20 }}
+              style={{ color: tintColor }}
             />
           );
         }
@@ -365,9 +365,9 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => {
           return (
             <FontAwesomeIcon
-              icon={faHiking}
+              icon={faUsers}
               size={36}
-              style={{ color: tintColor, padding: -20 }}
+              style={{ color: tintColor }}
             />
           );
         }
@@ -379,9 +379,9 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => {
           return (
             <FontAwesomeIcon
-              icon={faHiking}
+              icon={faCampground}
               size={36}
-              style={{ color: tintColor, padding: -20 }}
+              style={{ color: tintColor }}
             />
           );
         }
@@ -393,9 +393,9 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => {
           return (
             <FontAwesomeIcon
-              icon={faHiking}
+              icon={faCar}
               size={36}
-              style={{ color: tintColor, padding: -20 }}
+              style={{ color: tintColor }}
             />
           );
         }
