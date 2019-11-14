@@ -1,6 +1,7 @@
 import React from "react";
+import { Alert, SafeAreaView, Text, TouchableOpacity, View, } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
@@ -304,6 +305,46 @@ const VehicleStackNavigator = createStackNavigator(
 );
 
 const DrawerConfig = {
+  contentComponent: props => (
+    <View style={{ flex: 1 }}>
+      <SafeAreaView forceInset={{ top: "always", horizontal: "never" }}>
+        <DrawerItems {...props} />
+        <TouchableOpacity
+          style={{ backgroundColor: "#001028", height: 55 }}
+          onPress={() =>
+            Alert.alert(
+              "Log out",
+              "Do you want to logout?",
+              [
+                {
+                  text: "Cancel",
+                  onPress: () => {
+                    return null;
+                  }
+                },
+                {
+                  text: "Confirm",
+                  onPress: () => {
+                    props.navigation.navigate("LoginScreen");
+                  }
+                }
+              ],
+              { cancelable: false }
+            )
+          }
+        >
+          <Text
+            style={{ color: "#efefef", fontFamily: "Futura-Medium", fontSize: 21, paddingLeft: 16, paddingVertical: 10 }}
+          >
+            Logout
+          </Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    </View>
+  ),
+  drawerOpenRoute: "DrawerOpen",
+  drawerCloseRoute: "DrawerClose",
+  drawerToggleRoute: "DrawerToggle",
   navigationOptions: {
     headerStyle: {
       backgroundColor: "#f4511e"
