@@ -1,11 +1,12 @@
 import React from "react";
-import { Alert, SafeAreaView, Text, TouchableOpacity, View, } from "react-native";
+import { Alert, Image, SafeAreaView, Text, TouchableOpacity, View, } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
 import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
+import icon from '../assets/icon.png';
 import Icon from "@expo/vector-icons/Ionicons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -13,6 +14,7 @@ import {
   faCampground,
   faCar,
   faHiking,
+  faArrowAltCircleRight,
   faUserCog,
   faUsers
 } from "@fortawesome/free-solid-svg-icons";
@@ -308,9 +310,36 @@ const DrawerConfig = {
   contentComponent: props => (
     <View style={{ flex: 1 }}>
       <SafeAreaView forceInset={{ top: "always", horizontal: "never" }}>
-        <DrawerItems {...props} />
+        <View
+          style={{
+            backgroundColor: "#001028",
+            borderColor: "#EFB095",
+            borderTopWidth: 3,
+            height: 55
+          }}
+        >
+          <Image
+            source={icon}
+            style={{
+              width: 44,
+              height: 44,
+              marginLeft: 6,
+              marginTop: 4
+            }}
+          />
+        </View>
+        <DrawerItems {...props}/>
         <TouchableOpacity
-          style={{ backgroundColor: "#001028", height: 55 }}
+          style={{
+            backgroundColor: "#001028",
+            borderColor: "#EFB095",
+            borderTopWidth: 3,
+            display: "flex",
+            flexDirection: "row",
+            bottom: 0,
+            height: 55,
+            marginTop: 241
+          }}
           onPress={() =>
             Alert.alert(
               "Log out",
@@ -333,8 +362,19 @@ const DrawerConfig = {
             )
           }
         >
+          <FontAwesomeIcon
+            icon={faArrowAltCircleRight}
+            size={36}
+            style={{ color: "#EFEFEF", margin: 7 }}
+          />
           <Text
-            style={{ color: "#efefef", fontFamily: "Futura-Medium", fontSize: 21, paddingLeft: 16, paddingVertical: 10 }}
+            style={{
+              color: "#efefef",
+              fontFamily: "Futura-Medium",
+              fontSize: 21,
+              paddingLeft: 7,
+              paddingVertical: 10
+            }}
           >
             Logout
           </Text>
@@ -346,6 +386,15 @@ const DrawerConfig = {
   drawerCloseRoute: "DrawerClose",
   drawerToggleRoute: "DrawerToggle",
   navigationOptions: {
+    drawerIcon: ({ tintColor }) => {
+      return (
+        <FontAwesomeIcon
+          icon={faHiking}
+          size={36}
+          style={{ color: tintColor }}
+        />
+      );
+    },
     headerStyle: {
       backgroundColor: "#f4511e"
     },
@@ -354,7 +403,7 @@ const DrawerConfig = {
       color: "white"
     }
   },
-  drawerType: 'slide',
+  drawerType: "slide",
   contentOptions: {
     inactiveTintColor: "#001028",
     activeTintColor: "#F4813F",
@@ -373,7 +422,7 @@ const DrawerConfig = {
 
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    "My Trips": {
+    Trips: {
       screen: TripStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -387,7 +436,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Profile": {
+    Profile: {
       screen: ProfileStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -401,7 +450,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Emergency Contacts": {
+    "Emergency Contacts": {
       screen: ContactStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -415,7 +464,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Gear": {
+    Gear: {
       screen: GearStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
@@ -429,7 +478,7 @@ const AppDrawerNavigator = createDrawerNavigator(
         }
       }
     },
-    "My Vehicles": {
+    Vehicles: {
       screen: VehicleStackNavigator,
       navigationOptions: {
         drawerIcon: ({ tintColor }) => {
