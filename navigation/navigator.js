@@ -313,6 +313,7 @@ const DrawerConfig = {
       color: "white"
     }
   },
+  drawerType: 'slide',
   contentOptions: {
     inactiveTintColor: "#001028",
     activeTintColor: "#F4813F",
@@ -320,7 +321,8 @@ const DrawerConfig = {
       marginVertical: 20
     },
     labelStyle: {
-      fontSize: 21
+      fontSize: 21,
+      marginLeft: 0
     },
     iconContainerStyle: {
       opacity: 1
@@ -331,19 +333,74 @@ const DrawerConfig = {
 const AppDrawerNavigator = createDrawerNavigator(
   {
     "My Trips": {
-      screen: TripStackNavigator
+      screen: TripStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faHiking}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
     },
     "My Profile": {
-      screen: ProfileStackNavigator
+      screen: ProfileStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faUserCog}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
     },
     "My Emergency Contacts": {
-      screen: ContactStackNavigator
+      screen: ContactStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faUsers}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
     },
     "My Gear": {
-      screen: GearStackNavigator
+      screen: GearStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faCampground}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
     },
     "My Vehicles": {
-      screen: VehicleStackNavigator
+      screen: VehicleStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faCar}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
     }
   },
   DrawerConfig
