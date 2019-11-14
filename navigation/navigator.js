@@ -313,6 +313,7 @@ const DrawerConfig = {
       color: "white"
     }
   },
+  drawerType: 'slide',
   contentOptions: {
     inactiveTintColor: "#001028",
     activeTintColor: "#F4813F",
