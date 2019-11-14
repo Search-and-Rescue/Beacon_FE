@@ -321,7 +321,8 @@ const DrawerConfig = {
       marginVertical: 20
     },
     labelStyle: {
-      fontSize: 21
+      fontSize: 21,
+      marginLeft: 0
     },
     iconContainerStyle: {
       opacity: 1
