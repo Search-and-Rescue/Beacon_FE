@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Button, ImageBackground, Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
-// import { TouchableOpacity } from "react-native-gesture-handler";
 import { deleteTrip, deactivateTrip, getTrips } from "../../util/apiCalls";
 import { setTrips, removeCurrentTrip } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import styles from "./styles";
 import background from "../../assets/background.png";
+
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 
 export class TripList extends Component {
   constructor(props) {
@@ -49,19 +51,20 @@ export class TripList extends Component {
     const tripCards = this.props.trips.map(trip => {
       return (
         <View key={trip.id} style={styles.tripCard}>
-          <Text
-            style={styles.tripRemoveBtn}
+          <FontAwesomeIcon
+            icon={faMinusSquare}
             onPress={() => this.removeTrip(trip.id)}
-          >
-            REMOVE
-          </Text>
+            size={36}
+            style={styles.tripRemoveBtn}
+          />
           <View style={styles.tripTextContainer}>
             <Text style={styles.tripsName}>{trip.name}</Text>
             <Text style={styles.tripsDate}>
               {trip.startDate} to {trip.endDate}
             </Text>
             <Text style={styles.tripsDate}>
-              Notices: {trip.notificationTime.substring(11, 16)} on {trip.notificationDate}
+              Notifications: {trip.notificationTime.substring(11, 16)} on{" "}
+              {trip.notificationDate}
             </Text>
           </View>
         </View>
@@ -102,7 +105,7 @@ export class TripList extends Component {
             </TouchableOpacity>
           </View>
         </Modal>
-       )}
+      )}
         <View style={styles.tripsListContainer}>
           <ImageBackground
             source={background}
