@@ -287,6 +287,7 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Start Time</Text>
           </TouchableOpacity>
+          <Text style={styles.label}>{this.formatTime(this.state.startTime)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endDate_modal")}
@@ -300,6 +301,7 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select End Time</Text>
           </TouchableOpacity>
+          <Text style={styles.label}>{this.formatTime(this.state.endTime)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationDate_modal")}
@@ -313,6 +315,7 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Notification Time</Text>
           </TouchableOpacity>
+          <Text style={styles.label}>{this.formatTime(this.state.notificationTime)}</Text>
           <Text style={styles.label}>Number of Companions:</Text>
           <TextInput
             keyboardType={"numeric"}
