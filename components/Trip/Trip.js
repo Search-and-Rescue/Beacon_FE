@@ -65,9 +65,11 @@ export class Trip extends Component {
   }
 
   formatTime = (time) => {
-    const splitTime = time.toString().split(' ');
+    const splitTime = time.toString().split(' ')
     const updateTime = `${splitTime[4]}`;
-    return updateTime;
+    const removeMilli = updateTime.split(':');
+    const finalTime = `${removeMilli[0]}:${removeMilli[1]}`;
+    return finalTime;
   }
 
   setVehicle = vehicle => {
