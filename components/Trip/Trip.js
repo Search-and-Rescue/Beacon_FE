@@ -280,6 +280,7 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
+          <Text style={styles.label}>{this.formatDate(this.state.startDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("startTime_modal")}
@@ -292,6 +293,7 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select End Date</Text>
           </TouchableOpacity>
+          <Text style={styles.label}>{this.formatDate(this.state.endDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endTime_modal")}
@@ -304,6 +306,7 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Notification Date</Text>
           </TouchableOpacity>
+          <Text style={styles.label}>{this.formatDate(this.state.notificationDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationTime_modal")}
