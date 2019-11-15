@@ -4,9 +4,9 @@ import { deleteTrip, deactivateTrip, getTrips } from "../../util/apiCalls";
 import { setTrips, removeCurrentTrip } from "../../actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import styles from "./styles";
 import background from "../../assets/background.png";
-
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 

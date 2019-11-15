@@ -5,7 +5,10 @@ import { connect } from "react-redux";
 import styles from "./styles";
 import { setVehicles } from "../../actions";
 import { bindActionCreators } from "redux";
+
 import background from "../../assets/background.png";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 
 export class VehicleList extends Component {
   constructor(props) {
@@ -26,12 +29,12 @@ export class VehicleList extends Component {
     const vehicleCards = this.props.vehicles.map(vehicle => {
       return (
         <View key={vehicle.id} style={styles.vehicleCard}>
-          <Text
-            style={styles.vehicleRemoveBtn}
+          <FontAwesomeIcon
+            icon={faMinusSquare}
             onPress={() => this.deleteVehicle(vehicle.id)}
-          >
-            REMOVE
-          </Text>
+            size={36}
+            style={styles.vehicleRemoveBtn}
+          />
           <Text style={styles.vehicleName}>
             {vehicle.year} {vehicle.make} {vehicle.model}
           </Text>
