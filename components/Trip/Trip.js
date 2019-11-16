@@ -282,42 +282,42 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>{this.formatDate(this.state.startDate)}</Text>
+          <Text style={styles.dateTime}>{this.formatDate(this.state.startDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("startTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select Start Time</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>{this.formatTime(this.state.startTime)}</Text>
+          <Text style={styles.dateTime}>{this.formatTime(this.state.startTime)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select End Date</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>{this.formatDate(this.state.endDate)}</Text>
+          <Text style={styles.dateTime}>{this.formatDate(this.state.endDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select End Time</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>{this.formatTime(this.state.endTime)}</Text>
+          <Text style={styles.dateTime}>{this.formatTime(this.state.endTime)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select Notification Date</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>{this.formatDate(this.state.notificationDate)}</Text>
+          <Text style={styles.dateTime}>{this.formatDate(this.state.notificationDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select Notification Time</Text>
           </TouchableOpacity>
-          <Text style={styles.label}>{this.formatTime(this.state.notificationTime)}</Text>
+          <Text style={styles.dateTime}>{this.formatTime(this.state.notificationTime)}</Text>
           <Text style={styles.label}>Number of Companions:</Text>
           <TextInput
             keyboardType={"numeric"}
