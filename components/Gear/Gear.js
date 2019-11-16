@@ -1,47 +1,72 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { addGearItem, getGear } from '../../util/apiCalls';
+import { connect } from "react-redux";
 import styles from "./styles";
+import { setGear } from '../../actions';
+import { bindActionCreators } from 'redux';
 
-export default class Gear extends Component {
+export class Gear extends Component {
   constructor(props) {
     super(props);
+    if (this.props.navigation.state.params === undefined) {
+      this.props.navigation.state.params = { gear: {} }
+    }
+    const { gear } = this.props.navigation.state.params;
     this.state = {
-      item_name: "",
-      comments: ""
+      itemName: gear.itemName || "",
+      description: gear.description || ""
     };
   }
 
-  handleSubmit = () => {
-    const { navigation } = this.props;
+  handleSubmit = async () => {
+    const { navigation, user } = this.props;
+    const newGearItem = {
+      ...this.state,
+      userId: parseInt(user.id)
+    }
+    await addGearItem(newGearItem);
+    const userInfoGear = await getGear();
+    this.props.setGear(userInfoGear.user.gear);
     navigation.navigate("GearList");
     this.setState({
-      item_name: "",
-      comments: ""
+      itemName: "",
+      description: ""
     });
   };
 
   render() {
     return (
       <View style={styles.gearContainer}>
-        <Text>Gear Page</Text>
+        <Text style={styles.label}>Item name:</Text>
         <TextInput
-          placeholder="item name"
+          placeholder="Red down sleeping bag"
           style={styles.input}
-          onChangeText={text => this.setState({ item_name: text })}
-          value={this.state.item_name}
-          name="item_name"
+          onChangeText={text => this.setState({ itemName: text })}
+          value={this.state.itemName}
+          name="itemName"
         />
+        <Text style={styles.label}>Item description:</Text>
         <TextInput
-          placeholder="comments"
+          placeholder="Mummy bag, 0 degree"
           style={styles.input}
-          onChangeText={text => this.setState({ comments: text })}
-          value={this.state.comments}
-          name="comments"
+          onChangeText={text => this.setState({ description: text })}
+          value={this.state.description}
+          name="description"
         />
         <TouchableOpacity style={styles.updateBtn} onPress={this.handleSubmit}>
-          <Text style={styles.updateBtnText}>Update</Text>
+          <Text style={styles.updateBtnText}>ADD GEAR ITEM</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
+
+export const mapStateToProps = ({ user }) => ({
+  user
+});
+
+export const mapDispatchToProps = dispatch => bindActionCreators({ setGear }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Gear);

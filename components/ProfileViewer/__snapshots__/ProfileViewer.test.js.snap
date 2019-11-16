@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileViewer should match the snapshot with all of the data passed through 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F0F0",
+      "borderColor": "#001028",
+      "borderWidth": 4,
+      "flex": 1,
+      "marginHorizontal": "5%",
+      "marginTop": 20,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#001028",
+        "color": "#F0F0F0",
+        "fontFamily": "Futura",
+        "fontSize": 18,
+        "marginBottom": 7,
+        "paddingLeft": 5,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    About Me: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Ms. Hunter Dickinson
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    123 Main St.
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Leadville
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    CO
+    , 
+    80202
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    (710)123-4567
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    ohhello@email.com
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#001028",
+        "color": "#F0F0F0",
+        "fontFamily": "Futura",
+        "fontSize": 18,
+        "marginBottom": 7,
+        "paddingLeft": 5,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    Personal Information: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Birthday: 
+    1985-05-01
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Password: *********
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#001028",
+        "color": "#F0F0F0",
+        "fontFamily": "Futura",
+        "fontSize": 18,
+        "marginBottom": 7,
+        "paddingLeft": 5,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    Physical Description: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Height: 
+    150
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Weight: 
+    509
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Hair Color: 
+    silver
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Skin Color: 
+    olive
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Gender: 
+    F
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#001028",
+        "color": "#F0F0F0",
+        "fontFamily": "Futura",
+        "fontSize": 18,
+        "marginBottom": 7,
+        "paddingLeft": 5,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    First Responder FYI: 
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Allergies: 
+    Juniper Berries
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    Outdoor Experience Level: 
+    3
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "paddingBottom": 2,
+        "paddingLeft": 5,
+      }
+    }
+  >
+    COSAR Card Status: 
+    Current
+  </Text>
+</View>
+`;

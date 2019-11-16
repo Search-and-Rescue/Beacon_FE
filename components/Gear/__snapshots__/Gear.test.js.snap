@@ -6,71 +6,106 @@ exports[`Gear should match the snapshot with all of the data passed through 1`] 
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginHorizontal": "10%",
+      "marginVertical": 20,
     }
   }
 >
-  <Text>
-    Gear Page
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Item name:
   </Text>
   <TextInput
     allowFontScaling={true}
-    name="item_name"
+    name="itemName"
     onChangeText={[Function]}
-    placeholder="item name"
+    placeholder="Red down sleeping bag"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
     value=""
   />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Item description:
+  </Text>
   <TextInput
     allowFontScaling={true}
-    name="comments"
+    name="description"
     onChangeText={[Function]}
-    placeholder="comments"
+    placeholder="Mummy bag, 0 degree"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="REI red 2 person"
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
+  <Component
     onPress={[Function]}
     style={
       Object {
-        "borderColor": "black",
-        "borderWidth": 1,
-        "padding": 10,
-        "width": "80%",
+        "backgroundColor": "#001028",
+        "borderColor": "#EFB095",
+        "borderWidth": 4,
+        "marginVertical": 10,
+        "paddingVertical": 12,
+        "width": "100%",
       }
     }
   >
     <Text
       style={
         Object {
+          "color": "#F0F0F0",
+          "fontFamily": "Futura",
+          "fontSize": 21,
+          "paddingHorizontal": "21%",
           "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      Update
+      ADD GEAR ITEM
     </Text>
-  </TouchableOpacity>
+  </Component>
 </View>
 `;

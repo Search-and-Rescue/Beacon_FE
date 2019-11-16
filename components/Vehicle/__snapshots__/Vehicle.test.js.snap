@@ -6,102 +6,212 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginHorizontal": "10%",
+      "marginVertical": 5,
+      "width": "80%",
     }
   }
 >
-  <Text>
-    Vehicle Page
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Make:
   </Text>
   <TextInput
     allowFontScaling={true}
     name="make"
     onChangeText={[Function]}
-    placeholder="make"
+    placeholder="Toyota"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="Ford"
   />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Model:
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="model"
     onChangeText={[Function]}
-    placeholder="model"
+    placeholder="Tacoma"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="F150"
   />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Year:
+  </Text>
   <TextInput
     allowFontScaling={true}
+    keyboardType="numeric"
     name="year"
     onChangeText={[Function]}
-    placeholder="year"
+    placeholder="2010"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="2010"
   />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Color:
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="color"
     onChangeText={[Function]}
-    placeholder="color"
+    placeholder="Silver"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="silver"
   />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    License Plate:
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="license_plate"
     onChangeText={[Function]}
-    placeholder="license plate"
+    placeholder="123ABC"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
+      }
+    }
+    underlineColorAndroid="transparent"
+    value="CYE 909"
+  />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 18,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    License State:
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    name="state"
+    onChangeText={[Function]}
+    placeholder="CO"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
+        "padding": 10,
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
@@ -112,21 +222,26 @@ exports[`Vehicle should match the snapshot with all of the data passed through 1
     onPress={[Function]}
     style={
       Object {
-        "borderColor": "black",
-        "borderWidth": 1,
-        "padding": 10,
-        "width": "80%",
+        "backgroundColor": "#001028",
+        "borderColor": "#EFB095",
+        "borderWidth": 4,
+        "marginVertical": 10,
+        "paddingVertical": 12,
+        "width": "100%",
       }
     }
   >
     <Text
       style={
         Object {
+          "color": "#F0F0F0",
+          "fontFamily": "Futura",
+          "fontSize": 21,
           "textAlign": "center",
         }
       }
     >
-      Update
+      ADD VEHICLE
     </Text>
   </TouchableOpacity>
 </View>

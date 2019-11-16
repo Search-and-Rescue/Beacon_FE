@@ -1,25 +1,35 @@
 import React from "react";
+import { Alert, Image, SafeAreaView, Text, TouchableOpacity, View, } from "react-native";
 import { createSwitchNavigator } from "react-navigation";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
+import icon from '../assets/icon.png';
 import Icon from "@expo/vector-icons/Ionicons";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import {
+  faListUl,
+  faCampground,
+  faCar,
+  faHiking,
+  faArrowAltCircleRight,
+  faUserCog,
+  faUsers
+} from "@fortawesome/free-solid-svg-icons";
 
-import Home from '../components/Home/Home';
-import TripList from '../components/TripList/TripList';
-import Trip from '../components/Trip/Trip';
-import LoginScreen from '../components/WelcomeScreen/WelcomeScreen';
-import CategoryList from '../components/CategoryList/CategoryList';
-import ListItem from '../components/ListItem/ListItem';
-import Profile from '../components/Profile/Profile';
-import ContactList from '../components/ContactList/ContactList';
-import Contact from '../components/Contact/Contact';
-import GearList from '../components/GearList/GearList';
-import Gear from '../components/Gear/Gear';
-import VehicleList from '../components/VehicleList/VehicleList';
-import Vehicle from '../components/Vehicle/Vehicle';
+import TripList from "../components/TripList/TripList";
+import Trip from "../components/Trip/Trip";
+import LoginScreen from "../components/WelcomeScreen/WelcomeScreen";
+import ProfileViewer from "../components/ProfileViewer/ProfileViewer";
+import Profile from "../components/Profile/Profile";
+import ContactList from "../components/ContactList/ContactList";
+import Contact from "../components/Contact/Contact";
+import GearList from "../components/GearList/GearList";
+import Gear from "../components/Gear/Gear";
+import VehicleList from "../components/VehicleList/VehicleList";
+import Vehicle from "../components/Vehicle/Vehicle";
 
 const TripDashboardTabNavigator = createBottomTabNavigator(
   {
@@ -27,12 +37,67 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
     Trip
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    }
+    defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "TripList") {
+          iconName = faListUl;
+        } else if (routeName === "Trip") {
+          iconName = faHiking;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
+          />
+        );
+      },
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        style: {
+          backgroundColor: "#001028"
+        }
+      }
+    })
+  }
+);
+
+const ProfileDashboardTabNavigator = createBottomTabNavigator(
+  {
+    ProfileViewer,
+    Profile
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "ProfileViewer") {
+          iconName = faListUl;
+        } else if (routeName === "Profile") {
+          iconName = faUserCog;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
+          />
+        );
+      },
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        style: {
+          backgroundColor: "#001028"
+        }
+      }
+    })
   }
 );
 
@@ -42,12 +107,32 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
     Contact
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    }
+    defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "ContactList") {
+          iconName = faListUl;
+        } else if (routeName === "Contact") {
+          iconName = faUsers;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
+          />
+        );
+      },
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        style: {
+          backgroundColor: "#001028"
+        }
+      }
+    })
   }
 );
 
@@ -57,12 +142,32 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
     Gear
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    }
+    defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "GearList") {
+          iconName = faListUl;
+        } else if (routeName === "Gear") {
+          iconName = faCampground;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
+          />
+        );
+      },
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        style: {
+          backgroundColor: "#001028"
+        }
+      }
+    })
   }
 );
 
@@ -72,10 +177,50 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
     Vehicle
   },
   {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
+    defaultNavigationOptions: ({ navigation }) => ({
+      title: "",
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "VehicleList") {
+          iconName = faListUl;
+        } else if (routeName === "Vehicle") {
+          iconName = faCar;
+        }
+        return (
+          <FontAwesomeIcon
+            icon={iconName}
+            size={26}
+            style={{ color: tintColor, marginTop: 20 }}
+          />
+        );
+      },
+      tabBarOptions: {
+        activeTintColor: "#EFB095",
+        inactiveTintColor: "#F0F0F0",
+        style: {
+          backgroundColor: "#001028"
+        }
+      }
+    })
+  }
+);
+
+const ProfileStackNavigator = createStackNavigator(
+  {
+    ProfileDashboardTabNavigator: ProfileDashboardTabNavigator
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
       return {
-        headerTitle: routeName
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={40}
+          />
+        )
       };
     }
   }
@@ -161,26 +306,195 @@ const VehicleStackNavigator = createStackNavigator(
   }
 );
 
-const AppDrawerNavigator = createDrawerNavigator({
-  Trips: {
-    screen: TripStackNavigator
+const DrawerConfig = {
+  contentComponent: props => (
+    <View style={{ flex: 1 }}>
+      <SafeAreaView forceInset={{ top: "always", horizontal: "never" }}>
+        <View
+          style={{
+            backgroundColor: "#001028",
+            borderColor: "#EFB095",
+            borderTopWidth: 3,
+            height: 55
+          }}
+        >
+          <Image
+            source={icon}
+            style={{
+              width: 44,
+              height: 44,
+              marginLeft: 6,
+              marginTop: 4
+            }}
+          />
+        </View>
+        <DrawerItems {...props}/>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#001028",
+            borderColor: "#EFB095",
+            borderTopWidth: 3,
+            display: "flex",
+            flexDirection: "row",
+            bottom: 0,
+            height: 55,
+            marginTop: 241
+          }}
+          onPress={() =>
+            Alert.alert(
+              "Log out",
+              "Do you want to logout?",
+              [
+                {
+                  text: "Cancel",
+                  onPress: () => {
+                    return null;
+                  }
+                },
+                {
+                  text: "Confirm",
+                  onPress: () => {
+                    props.navigation.navigate("LoginScreen");
+                  }
+                }
+              ],
+              { cancelable: false }
+            )
+          }
+        >
+          <FontAwesomeIcon
+            icon={faArrowAltCircleRight}
+            size={36}
+            style={{ color: "#EFEFEF", margin: 7 }}
+          />
+          <Text
+            style={{
+              color: "#efefef",
+              fontFamily: "Futura-Medium",
+              fontSize: 21,
+              paddingLeft: 7,
+              paddingVertical: 10
+            }}
+          >
+            Logout
+          </Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    </View>
+  ),
+  drawerOpenRoute: "DrawerOpen",
+  drawerCloseRoute: "DrawerClose",
+  drawerToggleRoute: "DrawerToggle",
+  navigationOptions: {
+    drawerIcon: ({ tintColor }) => {
+      return (
+        <FontAwesomeIcon
+          icon={faHiking}
+          size={36}
+          style={{ color: tintColor }}
+        />
+      );
+    },
+    headerStyle: {
+      backgroundColor: "#f4511e"
+    },
+    headerTintColor: "#fff",
+    headerTitleStyle: {
+      color: "white"
+    }
   },
-  Profile: {
-    screen: Profile
-  },
-  Profile: {
-    screen: Profile
-  },
-  Contacts: {
-    screen: ContactStackNavigator
-  },
-  Gear: {
-    screen: GearStackNavigator
-  },
-  Vehicles: {
-    screen: VehicleStackNavigator
+  drawerType: "slide",
+  contentOptions: {
+    inactiveTintColor: "#001028",
+    activeTintColor: "#F4813F",
+    itemsContainerStyle: {
+      marginVertical: 20
+    },
+    labelStyle: {
+      fontSize: 21,
+      marginLeft: 0
+    },
+    iconContainerStyle: {
+      opacity: 1
+    }
   }
-});
+};
+
+const AppDrawerNavigator = createDrawerNavigator(
+  {
+    Trips: {
+      screen: TripStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faHiking}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
+    },
+    Profile: {
+      screen: ProfileStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faUserCog}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
+    },
+    "Emergency Contacts": {
+      screen: ContactStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faUsers}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
+    },
+    Gear: {
+      screen: GearStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faCampground}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
+    },
+    Vehicles: {
+      screen: VehicleStackNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => {
+          return (
+            <FontAwesomeIcon
+              icon={faCar}
+              size={36}
+              style={{ color: tintColor }}
+            />
+          );
+        }
+      }
+    }
+  },
+  DrawerConfig
+);
 
 const AppSwitchNavigator = createSwitchNavigator({
   Login: { screen: LoginScreen },

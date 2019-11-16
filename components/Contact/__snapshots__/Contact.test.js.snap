@@ -6,89 +6,139 @@ exports[`Contact should match the snapshot with all of the data passed through 1
     Object {
       "alignItems": "center",
       "flex": 1,
+      "marginHorizontal": "10%",
+      "marginVertical": 20,
     }
   }
 >
-  <Text>
-    Contact Page
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 21,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Name:
   </Text>
   <TextInput
     allowFontScaling={true}
     name="name"
     onChangeText={[Function]}
-    placeholder="name"
+    placeholder="Jane D. Hiker"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="Mom"
   />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 21,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Phone number:
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="phone"
     onChangeText={[Function]}
-    placeholder="phone"
+    placeholder="(970)123-4567"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="123 456 7890"
   />
+  <Text
+    style={
+      Object {
+        "color": "#001028",
+        "fontFamily": "Georgia",
+        "fontSize": 21,
+        "paddingBottom": 2,
+        "textAlign": "left",
+        "width": "100%",
+      }
+    }
+  >
+    Email address:
+  </Text>
   <TextInput
     allowFontScaling={true}
     name="email"
     onChangeText={[Function]}
-    placeholder="email"
+    placeholder="jane@email.com"
     rejectResponderTermination={true}
     style={
       Object {
-        "backgroundColor": "#fff",
-        "borderColor": "black",
-        "borderWidth": 1,
-        "marginBottom": 10,
+        "backgroundColor": "#F0F0F0",
+        "borderColor": "#001028",
+        "borderRadius": 2,
+        "borderWidth": 2,
+        "marginBottom": 15,
         "padding": 10,
-        "width": "80%",
+        "width": "100%",
       }
     }
     underlineColorAndroid="transparent"
-    value=""
+    value="mom@email.com"
   />
   <TouchableOpacity
     activeOpacity={0.2}
     onPress={[Function]}
     style={
       Object {
-        "borderColor": "black",
-        "borderWidth": 1,
-        "padding": 10,
-        "width": "80%",
+        "backgroundColor": "#001028",
+        "borderColor": "#EFB095",
+        "borderWidth": 4,
+        "marginVertical": 10,
+        "paddingVertical": 12,
+        "width": "100%",
       }
     }
   >
     <Text
       style={
         Object {
+          "color": "#F0F0F0",
+          "fontFamily": "Futura",
+          "fontSize": 21,
           "textAlign": "center",
+          "width": "100%",
         }
       }
     >
-      Update
+      ADD CONTACT
     </Text>
   </TouchableOpacity>
 </View>
