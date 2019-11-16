@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import { ImageBackground, ScrollView, Text, View } from "react-native";
 import { getGear, deleteGearItem } from "../../util/apiCalls";
 import { connect } from "react-redux";
-import styles from "./styles";
 import { setGear } from "../../actions";
 import { bindActionCreators } from "redux";
+
+import styles from "./styles";
 import background from "../../assets/background.png";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 
 export class GearList extends Component {
   constructor(props) {
@@ -26,12 +29,13 @@ export class GearList extends Component {
     const itemCards = this.props.gear.map(item => {
       return (
         <View key={item.id} style={styles.gearCard}>
-          <Text
-            style={styles.itemRemoveBtn}
+          <FontAwesomeIcon
+            icon={faMinusSquare}
             onPress={() => this.deleteItem(item.id)}
-          >REMOVE</Text>
-          <Text style={styles.gearName}>{item.itemName}
-          </Text>
+            size={36}
+            style={styles.itemRemoveBtn}
+          />
+          <Text style={styles.gearName}>{item.itemName}</Text>
         </View>
       );
     });

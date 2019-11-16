@@ -41,12 +41,9 @@ const styles = {
     justifyContent: "space-between"
   },
   tripRemoveBtn: {
-    backgroundColor: "#001028",
-    color: "#efefef",
-    borderWidth: 1,
-    borderColor: "#001028",
+    color: "#001028",
     height: 30,
-    marginLeft: 7,
+    marginHorizontal: 12,
     marginVertical: 20,
     padding: 5
   },
@@ -58,14 +55,12 @@ const styles = {
     flex: 1,
     fontFamily: "Futura",
     fontSize: 21,
-    paddingLeft: 7,
     paddingVertical: 2
   },
   tripsDate: {
     flex: 1,
     fontFamily: "Avenir",
     fontSize: 18,
-    paddingLeft: 7
   },
   modalView: {
     backgroundColor: "lightgrey",
