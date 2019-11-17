@@ -7,6 +7,10 @@ import Adapter from 'enzyme-adapter-react-16';
 
 jest.mock('react-native-gesture-handler', () => 'TouchableOpacity');
 
+jest.mock("@fortawesome/react-native-fontawesome", () => ({
+  FontAwesomeIcon: ""
+}));
+
 configure({ adapter: new Adapter() });
 
 describe('VehicleList', () => {

@@ -9,6 +9,10 @@ configure({ adapter: new Adapter() });
 
 jest.mock('react-native-gesture-handler', () => 'TouchableOpacity');
 
+jest.mock("@fortawesome/react-native-fontawesome", () => ({
+  FontAwesomeIcon: ""
+}));
+
 describe('ContactList', () => {
   let wrapper;
 

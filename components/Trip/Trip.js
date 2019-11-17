@@ -10,11 +10,14 @@ import {
   DatePickerIOS
 } from "react-native";
 import { connect } from "react-redux";
-import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 import { addTrip, getTrips, addGearForTrip, addContactsForTrip, addVehiclesForTrip } from '../../util/apiCalls';
 import { setTrips, setCurrentTrip } from '../../actions';
 import { bindActionCreators } from 'redux';
+
+import styles from "./styles";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faMinusSquare, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 
 export class Trip extends Component {
   constructor(props) {
@@ -65,9 +68,11 @@ export class Trip extends Component {
   }
 
   formatTime = (time) => {
-    const splitTime = time.toString().split(' ');
+    const splitTime = time.toString().split(' ')
     const updateTime = `${splitTime[4]}`;
-    return updateTime;
+    const removeMilli = updateTime.split(':');
+    const finalTime = `${removeMilli[0]}:${removeMilli[1]}`;
+    return finalTime;
   }
 
   setVehicle = vehicle => {
@@ -177,12 +182,17 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleContacts(contact)}
         >
-          <View style={styles.modalToggleContactsContainer}>
-            <Text style={styles.modalToggleBtnText}>
-              {!this.state.contacts.includes(contact) ? "ADD" : "REMOVE"}
-            </Text>
-            <Text style={styles.modalOptionsText}
-              >{contact.name}</Text>
+          <View style={styles.modalToggleContainer}>
+            <FontAwesomeIcon
+              icon={
+                !this.state.contacts.includes(contact)
+                  ? faPlusSquare
+                  : faMinusSquare
+              }
+              size={36}
+              style={{ color: "#001028", marginVertical: 5 }}
+            />
+            <Text style={styles.modalOptionsText}>{contact.name}</Text>
           </View>
         </TouchableHighlight>
       );
@@ -195,9 +205,16 @@ export class Trip extends Component {
             style={styles.modalButton}
             onPress={() => this.setVehicle(vehicle)}
           >
-            <Text style={styles.modalOptionsText}>
-              {vehicle.make} {vehicle.model}
-            </Text>
+            <View style={styles.modalToggleContainer}>
+              <FontAwesomeIcon
+                icon={faPlusSquare}
+                size={36}
+                style={{ color: "#001028", marginVertical: 5 }}
+              />
+              <Text style={styles.modalOptionsText}>
+                {vehicle.make} {vehicle.model}
+              </Text>
+            </View>
           </TouchableHighlight>
         );
       });
@@ -209,16 +226,17 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleGear(gearItem)}
         >
-          <View
-            style={styles.modalToggleGearContainer}
-            >
-            <Text 
-              style={styles.modalToggleBtnText}>
-              {!this.state.gear.includes(gearItem) ? "ADD" : "REMOVE"}
-            </Text>
-            <Text
-              style={styles.modalOptionsText}
-              >{gearItem.itemName}</Text>
+          <View style={styles.modalToggleContainer}>
+            <FontAwesomeIcon
+              icon={
+                !this.state.gear.includes(gearItem)
+                  ? faPlusSquare
+                  : faMinusSquare
+              }
+              size={36}
+              style={{ color: "#001028", marginVertical: 5 }}
+            />
+            <Text style={styles.modalOptionsText}>{gearItem.itemName}</Text>
           </View>
         </TouchableHighlight>
       );
@@ -280,36 +298,42 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
+          <Text style={styles.dateTime}>{this.formatDate(this.state.startDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("startTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select Start Time</Text>
           </TouchableOpacity>
+          <Text style={styles.dateTime}>{this.formatTime(this.state.startTime)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select End Date</Text>
           </TouchableOpacity>
+          <Text style={styles.dateTime}>{this.formatDate(this.state.endDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select End Time</Text>
           </TouchableOpacity>
+          <Text style={styles.dateTime}>{this.formatTime(this.state.endTime)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select Notification Date</Text>
           </TouchableOpacity>
+          <Text style={styles.dateTime}>{this.formatDate(this.state.notificationDate)}</Text>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select Notification Time</Text>
           </TouchableOpacity>
+          <Text style={styles.dateTime}>{this.formatTime(this.state.notificationTime)}</Text>
           <Text style={styles.label}>Number of Companions:</Text>
           <TextInput
             keyboardType={"numeric"}
