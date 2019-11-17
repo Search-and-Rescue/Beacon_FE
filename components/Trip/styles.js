@@ -135,6 +135,13 @@ const styles = {
     fontSize: 18,
     paddingHorizontal: 20,
     paddingBottom: 5
+  },
+  dateTime: {
+    color: "#001028",
+    fontFamily: "Georgia",
+    fontSize: 18,
+    textAlign: "center",
+    paddingBottom: 4
   }
 };
 
