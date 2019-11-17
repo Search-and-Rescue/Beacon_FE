@@ -50,7 +50,7 @@ const TripDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={26}
+            size={36}
             style={{ color: tintColor, marginTop: 20 }}
           />
         );
@@ -85,7 +85,7 @@ const ProfileDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={26}
+            size={36}
             style={{ color: tintColor, marginTop: 20 }}
           />
         );
@@ -120,7 +120,7 @@ const ContactDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={26}
+            size={36}
             style={{ color: tintColor, marginTop: 20 }}
           />
         );
@@ -155,7 +155,7 @@ const GearDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={26}
+            size={36}
             style={{ color: tintColor, marginTop: 20 }}
           />
         );
@@ -190,7 +190,7 @@ const VehicleDashboardTabNavigator = createBottomTabNavigator(
         return (
           <FontAwesomeIcon
             icon={iconName}
-            size={26}
+            size={36}
             style={{ color: tintColor, marginTop: 20 }}
           />
         );

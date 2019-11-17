@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import { ImageBackground, View, Text, ScrollView } from "react-native";
 import { deleteContact, getEmergencyContacts } from "../../util/apiCalls";
 import { connect } from "react-redux";
-import styles from "./styles";
 import { setEmergencyContacts } from "../../actions";
 import { bindActionCreators } from "redux";
+
+import styles from "./styles";
 import background from "../../assets/background.png";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 
 export class ContactList extends Component {
   constructor(props) {
@@ -26,12 +29,13 @@ export class ContactList extends Component {
     const contactCards = this.props.contacts.map(contact => {
       return (
         <View key={contact.id} style={styles.contactCard}>
-          <Text
-            style={styles.contactRemoveBtn}
+          <FontAwesomeIcon
+            icon={faMinusSquare}
             onPress={() => this.deleteContact(contact.id)}
-          >REMOVE</Text>
-          <Text style={styles.contactsName}>{contact.name}
-          </Text>
+            size={36}
+            style={styles.contactRemoveBtn}
+          />
+          <Text style={styles.contactsName}>{contact.name}</Text>
         </View>
       );
     });
