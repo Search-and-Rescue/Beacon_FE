@@ -182,7 +182,7 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleContacts(contact)}
         >
-          <View style={styles.modalToggleContactsContainer}>
+          <View style={styles.modalToggleContainer}>
             <FontAwesomeIcon
               icon={
                 !this.state.contacts.includes(contact)
@@ -205,9 +205,16 @@ export class Trip extends Component {
             style={styles.modalButton}
             onPress={() => this.setVehicle(vehicle)}
           >
-            <Text style={styles.modalOptionsText}>
-              {vehicle.make} {vehicle.model}
-            </Text>
+            <View style={styles.modalToggleContainer}>
+              <FontAwesomeIcon
+                icon={faPlusSquare}
+                size={36}
+                style={{ color: "#001028", marginVertical: 5 }}
+              />
+              <Text style={styles.modalOptionsText}>
+                {vehicle.make} {vehicle.model}
+              </Text>
+            </View>
           </TouchableHighlight>
         );
       });
@@ -219,11 +226,7 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleGear(gearItem)}
         >
-          <View style={styles.modalToggleGearContainer}>
-            {/* <Text 
-              style={styles.modalToggleBtnText}>
-              {!this.state.gear.includes(gearItem) ? "ADD" : "REMOVE"}
-            </Text> */}
+          <View style={styles.modalToggleContainer}>
             <FontAwesomeIcon
               icon={
                 !this.state.gear.includes(gearItem)
