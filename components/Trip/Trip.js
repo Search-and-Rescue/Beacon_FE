@@ -10,11 +10,14 @@ import {
   DatePickerIOS
 } from "react-native";
 import { connect } from "react-redux";
-import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 import { addTrip, getTrips, addGearForTrip, addContactsForTrip, addVehiclesForTrip } from '../../util/apiCalls';
 import { setTrips, setCurrentTrip } from '../../actions';
 import { bindActionCreators } from 'redux';
+
+import styles from "./styles";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faMinusSquare, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 
 export class Trip extends Component {
   constructor(props) {
@@ -180,11 +183,16 @@ export class Trip extends Component {
           onPress={() => this.toggleContacts(contact)}
         >
           <View style={styles.modalToggleContactsContainer}>
-            <Text style={styles.modalToggleBtnText}>
-              {!this.state.contacts.includes(contact) ? "ADD" : "REMOVE"}
-            </Text>
-            <Text style={styles.modalOptionsText}
-              >{contact.name}</Text>
+            <FontAwesomeIcon
+              icon={
+                !this.state.contacts.includes(contact)
+                  ? faPlusSquare
+                  : faMinusSquare
+              }
+              size={36}
+              style={{ color: "#001028", marginVertical: 5 }}
+            />
+            <Text style={styles.modalOptionsText}>{contact.name}</Text>
           </View>
         </TouchableHighlight>
       );
