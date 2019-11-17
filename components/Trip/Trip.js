@@ -219,16 +219,21 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleGear(gearItem)}
         >
-          <View
-            style={styles.modalToggleGearContainer}
-            >
-            <Text 
+          <View style={styles.modalToggleGearContainer}>
+            {/* <Text 
               style={styles.modalToggleBtnText}>
               {!this.state.gear.includes(gearItem) ? "ADD" : "REMOVE"}
-            </Text>
-            <Text
-              style={styles.modalOptionsText}
-              >{gearItem.itemName}</Text>
+            </Text> */}
+            <FontAwesomeIcon
+              icon={
+                !this.state.gear.includes(gearItem)
+                  ? faPlusSquare
+                  : faMinusSquare
+              }
+              size={36}
+              style={{ color: "#001028", marginVertical: 5 }}
+            />
+            <Text style={styles.modalOptionsText}>{gearItem.itemName}</Text>
           </View>
         </TouchableHighlight>
       );

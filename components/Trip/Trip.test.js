@@ -5,6 +5,10 @@ import { Trip } from './Trip';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+jest.mock("@fortawesome/react-native-fontawesome", () => ({
+  FontAwesomeIcon: ""
+}));
+
 configure({ adapter: new Adapter() });
 
 jest.mock("react-native-gesture-handler", () => "TouchableOpacity");
