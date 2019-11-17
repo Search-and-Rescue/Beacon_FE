@@ -39,6 +39,7 @@ const styles = {
     marginBottom: 5
   },
   modalButton: {
+    height: 60,
     paddingVertical: 10,
     marginVertical: 3
   },
@@ -48,19 +49,9 @@ const styles = {
     paddingLeft: 7,
     paddingVertical: 10
   },
-  modalToggleGearContainer: {
+  modalToggleContainer: {
     flex: 1,
     flexDirection: "row"
-  },
-  modalToggleGearHeading: {
-    paddingVertical: 10
-  },
-  modalToggleContactsContainer: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  modalToggleContactsHeading: {
-    paddingVertical: 10
   },
   modalButtonContainer: {
     marginBottom: 10

@@ -10,11 +10,14 @@ import {
   DatePickerIOS
 } from "react-native";
 import { connect } from "react-redux";
-import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 import { addTrip, getTrips, addGearForTrip, addContactsForTrip, addVehiclesForTrip } from '../../util/apiCalls';
 import { setTrips, setCurrentTrip } from '../../actions';
 import { bindActionCreators } from 'redux';
+
+import styles from "./styles";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faMinusSquare, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 
 export class Trip extends Component {
   constructor(props) {
@@ -179,12 +182,17 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleContacts(contact)}
         >
-          <View style={styles.modalToggleContactsContainer}>
-            <Text style={styles.modalToggleBtnText}>
-              {!this.state.contacts.includes(contact) ? "ADD" : "REMOVE"}
-            </Text>
-            <Text style={styles.modalOptionsText}
-              >{contact.name}</Text>
+          <View style={styles.modalToggleContainer}>
+            <FontAwesomeIcon
+              icon={
+                !this.state.contacts.includes(contact)
+                  ? faPlusSquare
+                  : faMinusSquare
+              }
+              size={36}
+              style={{ color: "#001028", marginVertical: 5 }}
+            />
+            <Text style={styles.modalOptionsText}>{contact.name}</Text>
           </View>
         </TouchableHighlight>
       );
@@ -197,9 +205,16 @@ export class Trip extends Component {
             style={styles.modalButton}
             onPress={() => this.setVehicle(vehicle)}
           >
-            <Text style={styles.modalOptionsText}>
-              {vehicle.make} {vehicle.model}
-            </Text>
+            <View style={styles.modalToggleContainer}>
+              <FontAwesomeIcon
+                icon={faPlusSquare}
+                size={36}
+                style={{ color: "#001028", marginVertical: 5 }}
+              />
+              <Text style={styles.modalOptionsText}>
+                {vehicle.make} {vehicle.model}
+              </Text>
+            </View>
           </TouchableHighlight>
         );
       });
@@ -211,16 +226,17 @@ export class Trip extends Component {
           style={styles.modalButton}
           onPress={() => this.toggleGear(gearItem)}
         >
-          <View
-            style={styles.modalToggleGearContainer}
-            >
-            <Text 
-              style={styles.modalToggleBtnText}>
-              {!this.state.gear.includes(gearItem) ? "ADD" : "REMOVE"}
-            </Text>
-            <Text
-              style={styles.modalOptionsText}
-              >{gearItem.itemName}</Text>
+          <View style={styles.modalToggleContainer}>
+            <FontAwesomeIcon
+              icon={
+                !this.state.gear.includes(gearItem)
+                  ? faPlusSquare
+                  : faMinusSquare
+              }
+              size={36}
+              style={{ color: "#001028", marginVertical: 5 }}
+            />
+            <Text style={styles.modalOptionsText}>{gearItem.itemName}</Text>
           </View>
         </TouchableHighlight>
       );
