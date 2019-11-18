@@ -12,7 +12,6 @@
 - [Project Board](#Project-Board)
 - [Beacon Development Team](#Beacon-Development-Team)
 - [Back-End Repo](#Back-End-Repo)
-- [Color Palette](#Color-Palette)
 
 ### Introduction
 
