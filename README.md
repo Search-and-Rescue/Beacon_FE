@@ -84,13 +84,3 @@ To setup locally, run the following commands:
 ### Back-End Repo
 
 [View Beacon's Back-End Repo Here to see more about the API built with Ruby on Rails and GraphQL](https://github.com/Search-and-Rescue/beacon_api)
-
-### Color Palette
-
-- Darkest Purple #001028
-- Medium Dark Purple #003878
-- Medium Light Purple #225C8C
-- Lightest Purple #BAD5F8
-- Darker Orange #F4813F
-- Lighter Orange #EFB095
-- Light Cream #F0F0F0
