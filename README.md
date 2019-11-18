@@ -31,31 +31,16 @@ A custom Search and Rescue API for the state of Colorado was built for this app.
 ### Final Presentation
 
 #### Custom Loading Screen
-![Splashscreen](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/Splashscreen.png)
 
 #### User Login Form
-![Login Form](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/LoginPage.png)
 
 #### App Navigation
-![Drawer Navigation](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/Navigation.png)
 
 #### Adding Profile Information, Emergency Contacts, Gear Items, and Vehicles
-![Add a User Profile](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/AddProfile.png)
-![Add an Emergency Contact](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/AddContact.png)
-![Add a Gear Item](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/AddGear.png)
-![Add a Vehicle](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/AddVehicle.png)
 
 #### Viewing a user's existing Trips, Profile Information, Emergency Contacts, Gear Items, and Vehicles
-![User Trip List](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/TripList.png)
-![User Profile Viewer](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/ProfileViewer.png)
-![User Contacts List](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/ContactsList.png)
-![User Gear List](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/GearList.png)
-![User Vehicle List](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/VehiclesList.png)
 
 #### Deactivating a Current Trip, the disabled Add Trip button, and the Experience Level Modal
-![Deactivate a Current Trip](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/DeactivateCurrentTrip.png)
-![Disabled Add Trip Button](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/DisabledAddTripButton.png)
-![Pop Up Modal for Experience](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/SelectExperienceModal.png)
 
 ### Wireframes
 
