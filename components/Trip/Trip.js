@@ -33,16 +33,22 @@ export class Trip extends Component {
       startingPoint: "",
       endingPoint: "",
       startDate: new Date(),
+      selectedStartDate: false,
       startDate_modal: false,
       startTime: new Date(),
+      selectedStartTime: false,
       startTime_modal: false,
       endDate: new Date(),
+      selectedEndDate: false,
       endDate_modal: false,
       endTime: new Date(),
+      selectedEndTime: false,
       endTime_modal: false,
       notificationDate: new Date(),
+      selectedNotification: false,
       notificationDate_modal: false,
       notificationTime: new Date(),
+      selectedNotificationTime: false,
       notificationTime_modal: false,
       travelingCompanions:""
     };
@@ -299,7 +305,8 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
           <View style={styles.dateTimeContainer}>
-            <Text style={styles.dateTime}>{this.formatDate(this.state.startDate)}</Text>
+            {!this.state.selectedStartDate && <Text style={styles.dateTime}>Start Date</Text>}
+            {this.state.selectedStartDate && <Text style={styles.dateTime}>{this.formatDate(this.state.startDate)}</Text>}
           </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
@@ -406,7 +413,10 @@ export class Trip extends Component {
                 date={this.state.startDate}
                 onDateChange={(date) => this.setState({ startDate: date })}
                 />
-              <TouchableOpacity onPress={() => this.toggleModal("startDate_modal")}>
+              <TouchableOpacity onPress={() => {
+                this.setState({ selectedStartDate: true })
+                this.toggleModal("startDate_modal")
+                }}>
                 <Text style={styles.updateBtn}>Submit Start Date</Text>
               </TouchableOpacity>
             </View>
