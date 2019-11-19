@@ -167,7 +167,13 @@ export class Trip extends Component {
       endTime: new Date(),
       notificationDate: new Date(),
       notificationTime: new Date(),
-      travelingCompanions: ""
+      travelingCompanions: "",
+      selectedStartDate: false,
+      selectedStartTime: false,
+      selectedEndDate: false,
+      selectedEndTime: false,
+      selectedNotificationDate: false,
+      selectedNotificationTime: false
     });
   }
 
