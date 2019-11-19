@@ -364,7 +364,7 @@ export class Trip extends Component {
             {!this.state.selectedNotificationTime && <Text style={styles.dateTime}>Notification Time</Text>}
             {this.state.selectedNotificationTime && <Text style={styles.dateTime}>{this.formatTime(this.state.notificationTime)}</Text>}
           </View>
-          <Text style={styles.label}>Number of Companions:</Text>
+          <Text style={styles.companionsLabel}>Number of Companions:</Text>
           <TextInput
             keyboardType={"numeric"}
             placeholder="3"

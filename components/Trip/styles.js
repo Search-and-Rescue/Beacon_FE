@@ -87,6 +87,14 @@ const styles = {
     textAlign: "left",
     paddingBottom: 2
   },
+  companionsLabel: {
+    color: "#001028",
+    fontFamily: "Georgia",
+    fontSize: 18,
+    textAlign: "left",
+    marginTop: 10,
+    paddingBottom: 2
+  },
   input: {
     backgroundColor: "#F0F0F0",
     borderColor: "#001028",
