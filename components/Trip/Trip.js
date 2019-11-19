@@ -315,7 +315,8 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select Start Time</Text>
           </TouchableOpacity>
           <View style={styles.dateTimeContainer}>
-            <Text style={styles.dateTime}>{this.formatTime(this.state.startTime)}</Text>
+            {!this.state.selectedStartTime && <Text style={styles.dateTime}>Start Time</Text>}
+            {this.state.selectedStartTime && <Text style={styles.dateTime}>{this.formatTime(this.state.startTime)}</Text>}
           </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
@@ -324,7 +325,8 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select End Date</Text>
           </TouchableOpacity>
           <View style={styles.dateTimeContainer}>
-            <Text style={styles.dateTime}>{this.formatDate(this.state.endDate)}</Text>
+            {!this.state.selectedEndDate && <Text style={styles.dateTime}>End Date</Text>}
+            {this.state.selectedEndDate && <Text style={styles.dateTime}>{this.formatDate(this.state.endDate)}</Text>}
           </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
@@ -333,7 +335,8 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select End Time</Text>
           </TouchableOpacity>
           <View style={styles.dateTimeContainer}>
-            <Text style={styles.dateTime}>{this.formatTime(this.state.endTime)}</Text>
+            {!this.state.selectedEndTime && <Text style={styles.dateTime}>End Time</Text>}
+            {this.state.selectedEndTime && <Text style={styles.dateTime}>{this.formatTime(this.state.endTime)}</Text>}
           </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
@@ -342,7 +345,8 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select Notification Date</Text>
           </TouchableOpacity>
           <View style={styles.dateTimeContainer}>
-            <Text style={styles.dateTime}>{this.formatDate(this.state.notificationDate)}</Text>
+            {!this.state.selectedNotificationDate && <Text style={styles.dateTime}>Notification Date</Text>}
+            {this.state.selectedNotificationDate && <Text style={styles.dateTime}>{this.formatDate(this.state.notificationDate)}</Text>}
           </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
@@ -351,7 +355,8 @@ export class Trip extends Component {
             <Text style={styles.modalToggleText}>Select Notification Time</Text>
           </TouchableOpacity>
           <View style={styles.dateTimeContainer}>
-            <Text style={styles.dateTime}>{this.formatTime(this.state.notificationTime)}</Text>
+            {!this.state.selectedNotificationTime && <Text style={styles.dateTime}>Notification Time</Text>}
+            {this.state.selectedNotificationTime && <Text style={styles.dateTime}>{this.formatTime(this.state.notificationTime)}</Text>}
           </View>
           <Text style={styles.label}>Number of Companions:</Text>
           <TextInput
