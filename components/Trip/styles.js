@@ -132,7 +132,14 @@ const styles = {
     fontFamily: "Georgia",
     fontSize: 18,
     textAlign: "center",
-    paddingBottom: 4
+    paddingBottom: 4,
+  },
+  dateTimeContainer: {
+    borderBottomWidth: 2,
+    borderColor: "#001028",
+    marginBottom: 10,
+    marginTop: 5,
+    paddingBottom: 5
   }
 };
 
