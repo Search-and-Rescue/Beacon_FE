@@ -31,17 +31,24 @@ export class LoginScreen extends Component {
   retrieveToken = async (key) => {
     try {
       const value = await AsyncStorage.getItem(key);
-      if (value !== null) {
-        console.log('value', value);
-      }
     } catch (error) {
-      console.log('retrieveData', error)
+      console.log('retrieveData error', error)
     }
   };
 
+  clearToken = async (key) => {
+    try {
+      await AsyncStorage.removeItem(key);
+    } catch (error) {
+      console.log("clearToken error", error);
+    }
+  }; 
+
   componentDidMount = async () => {
-    this.storeToken('key here', 'value goes here');
-    this.retrieveToken('key here');
+    await this.storeToken('token', 'token object goes here');
+    await this.retrieveToken('token');
+    await this.clearToken('token');
+    await this.retrieveToken('token');
     const {
       setEmergencyContacts,
       setVehicles,
