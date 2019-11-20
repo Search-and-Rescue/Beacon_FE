@@ -87,6 +87,14 @@ const styles = {
     textAlign: "left",
     paddingBottom: 2
   },
+  companionsLabel: {
+    color: "#001028",
+    fontFamily: "Georgia",
+    fontSize: 18,
+    textAlign: "left",
+    marginTop: 10,
+    paddingBottom: 2
+  },
   input: {
     backgroundColor: "#F0F0F0",
     borderColor: "#001028",
@@ -132,7 +140,14 @@ const styles = {
     fontFamily: "Georgia",
     fontSize: 18,
     textAlign: "center",
-    paddingBottom: 4
+    paddingBottom: 4,
+  },
+  dateTimeContainer: {
+    borderBottomWidth: 2,
+    borderColor: "#001028",
+    marginBottom: 10,
+    marginTop: 5,
+    paddingBottom: 5
   }
 };
 

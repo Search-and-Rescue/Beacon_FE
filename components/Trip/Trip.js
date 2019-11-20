@@ -33,16 +33,22 @@ export class Trip extends Component {
       startingPoint: "",
       endingPoint: "",
       startDate: new Date(),
+      selectedStartDate: false,
       startDate_modal: false,
       startTime: new Date(),
+      selectedStartTime: false,
       startTime_modal: false,
       endDate: new Date(),
+      selectedEndDate: false,
       endDate_modal: false,
       endTime: new Date(),
+      selectedEndTime: false,
       endTime_modal: false,
       notificationDate: new Date(),
+      selectedNotification: false,
       notificationDate_modal: false,
       notificationTime: new Date(),
+      selectedNotificationTime: false,
       notificationTime_modal: false,
       travelingCompanions:""
     };
@@ -161,7 +167,13 @@ export class Trip extends Component {
       endTime: new Date(),
       notificationDate: new Date(),
       notificationTime: new Date(),
-      travelingCompanions: ""
+      travelingCompanions: "",
+      selectedStartDate: false,
+      selectedStartTime: false,
+      selectedEndDate: false,
+      selectedEndTime: false,
+      selectedNotificationDate: false,
+      selectedNotificationTime: false
     });
   }
 
@@ -298,43 +310,61 @@ export class Trip extends Component {
           >
             <Text style={styles.modalToggleText}>Select Start Date</Text>
           </TouchableOpacity>
-          <Text style={styles.dateTime}>{this.formatDate(this.state.startDate)}</Text>
+          <View style={styles.dateTimeContainer}>
+            {!this.state.selectedStartDate && <Text style={styles.dateTime}>Start Date</Text>}
+            {this.state.selectedStartDate && <Text style={styles.dateTime}>{this.formatDate(this.state.startDate)}</Text>}
+          </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("startTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select Start Time</Text>
           </TouchableOpacity>
-          <Text style={styles.dateTime}>{this.formatTime(this.state.startTime)}</Text>
+          <View style={styles.dateTimeContainer}>
+            {!this.state.selectedStartTime && <Text style={styles.dateTime}>Start Time</Text>}
+            {this.state.selectedStartTime && <Text style={styles.dateTime}>{this.formatTime(this.state.startTime)}</Text>}
+          </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select End Date</Text>
           </TouchableOpacity>
-          <Text style={styles.dateTime}>{this.formatDate(this.state.endDate)}</Text>
+          <View style={styles.dateTimeContainer}>
+            {!this.state.selectedEndDate && <Text style={styles.dateTime}>End Date</Text>}
+            {this.state.selectedEndDate && <Text style={styles.dateTime}>{this.formatDate(this.state.endDate)}</Text>}
+          </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("endTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select End Time</Text>
           </TouchableOpacity>
-          <Text style={styles.dateTime}>{this.formatTime(this.state.endTime)}</Text>
+          <View style={styles.dateTimeContainer}>
+            {!this.state.selectedEndTime && <Text style={styles.dateTime}>End Time</Text>}
+            {this.state.selectedEndTime && <Text style={styles.dateTime}>{this.formatTime(this.state.endTime)}</Text>}
+          </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationDate_modal")}
           >
             <Text style={styles.modalToggleText}>Select Notification Date</Text>
           </TouchableOpacity>
-          <Text style={styles.dateTime}>{this.formatDate(this.state.notificationDate)}</Text>
+          <View style={styles.dateTimeContainer}>
+            {!this.state.selectedNotificationDate && <Text style={styles.dateTime}>Notification Date</Text>}
+            {this.state.selectedNotificationDate && <Text style={styles.dateTime}>{this.formatDate(this.state.notificationDate)}</Text>}
+          </View>
           <TouchableOpacity
             style={styles.modalToggleButton}
             onPress={() => this.toggleModal("notificationTime_modal")}
           >
             <Text style={styles.modalToggleText}>Select Notification Time</Text>
           </TouchableOpacity>
-          <Text style={styles.dateTime}>{this.formatTime(this.state.notificationTime)}</Text>
-          <Text style={styles.label}>Number of Companions:</Text>
+          <View style={styles.dateTimeContainer}>
+            {!this.state.selectedNotificationTime && <Text style={styles.dateTime}>Notification Time</Text>}
+            {this.state.selectedNotificationTime && <Text style={styles.dateTime}>{this.formatTime(this.state.notificationTime)}</Text>}
+          </View>
+          <Text style={styles.companionsLabel}>Number of Companions:</Text>
           <TextInput
             keyboardType={"numeric"}
             placeholder="3"
@@ -394,7 +424,10 @@ export class Trip extends Component {
                 date={this.state.startDate}
                 onDateChange={(date) => this.setState({ startDate: date })}
                 />
-              <TouchableOpacity onPress={() => this.toggleModal("startDate_modal")}>
+              <TouchableOpacity onPress={() => {
+                this.setState({ selectedStartDate: true })
+                this.toggleModal("startDate_modal")
+                }}>
                 <Text style={styles.updateBtn}>Submit Start Date</Text>
               </TouchableOpacity>
             </View>
@@ -412,7 +445,10 @@ export class Trip extends Component {
                 date={this.state.endDate}
                 onDateChange={(date) => this.setState({ endDate: date })}
                 />
-              <TouchableOpacity onPress={() => this.toggleModal("endDate_modal")}>
+              <TouchableOpacity onPress={() => {
+                this.setState({ selectedEndDate: true })
+                this.toggleModal("endDate_modal")
+                }}>
                 <Text style={styles.updateBtn}>Submit End Date</Text>
               </TouchableOpacity>
             </View>
@@ -430,7 +466,10 @@ export class Trip extends Component {
                 date={this.state.notificationDate}
                 onDateChange={(date) => this.setState({ notificationDate: date })}
                 />
-              <TouchableOpacity onPress={() => this.toggleModal("notificationDate_modal")}>
+              <TouchableOpacity onPress={() => {
+                this.setState({ selectedNotificationDate: true })
+                this.toggleModal("notificationDate_modal")
+              }}>
                 <Text style={styles.updateBtn}>Submit Notification Date</Text>
               </TouchableOpacity>
             </View>
@@ -448,7 +487,10 @@ export class Trip extends Component {
                 date={this.state.startTime}
                 onDateChange={(time) => this.setState({ startTime: time })}
               />
-              <TouchableOpacity onPress={() => this.toggleModal("startTime_modal")}>
+              <TouchableOpacity onPress={() => {
+                this.setState({ selectedStartTime: true })
+                this.toggleModal("startTime_modal")
+              }}>
                 <Text style={styles.updateBtn}>Submit Start Time</Text>
               </TouchableOpacity>
             </View>
@@ -468,7 +510,10 @@ export class Trip extends Component {
                   this.setState({ endTime: time })
                 }}
               />
-              <TouchableOpacity onPress={() => this.toggleModal("endTime_modal")}>
+              <TouchableOpacity onPress={() => {
+                this.setState({ selectedEndTime: true })
+                this.toggleModal("endTime_modal")
+              }}>
                 <Text style={styles.updateBtn}>Submit End Time</Text>
               </TouchableOpacity>
             </View>
@@ -488,7 +533,10 @@ export class Trip extends Component {
                   this.setState({ notificationTime: time })
                 }}
               />
-              <TouchableOpacity onPress={() => this.toggleModal("notificationTime_modal")}>
+              <TouchableOpacity onPress={() => {
+                this.setState({ selectedNotificationTime: true })
+                this.toggleModal("notificationTime_modal")
+              }}>
                 <Text style={styles.updateBtn}>Submit Notification Time</Text>
               </TouchableOpacity>
             </View>
