@@ -919,7 +919,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Start Date:
           </Text>
           <DatePickerIOS
-            date={2019-12-21T01:30:00.000Z}
+            date={2019-12-21T01:30:30.000Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -981,7 +981,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select End Date:
           </Text>
           <DatePickerIOS
-            date={2019-12-21T01:30:00.000Z}
+            date={2019-12-21T01:30:30.000Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -1043,7 +1043,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Notification Date:
           </Text>
           <DatePickerIOS
-            date={2019-12-21T01:30:00.000Z}
+            date={2019-12-21T01:30:30.000Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -1105,7 +1105,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Start Time:
           </Text>
           <DatePickerIOS
-            date={2019-12-21T01:30:00.000Z}
+            date={2019-12-21T01:30:30.000Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -1167,7 +1167,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select End Time:
           </Text>
           <DatePickerIOS
-            date={2019-12-21T01:30:00.000Z}
+            date={2019-12-21T01:30:30.000Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -1229,7 +1229,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Notification Time:
           </Text>
           <DatePickerIOS
-            date={2019-12-21T01:30:00.000Z}
+            date={2019-12-21T01:30:30.000Z}
             mode="time"
             onDateChange={[Function]}
           />
