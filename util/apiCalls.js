@@ -1,5 +1,5 @@
 export const getUser = async () => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const query = `query{
     user(id: 1){
       id
@@ -21,25 +21,25 @@ export const getUser = async () => {
       gender
       cosarCard
     }
-  }`
+  }`;
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error fetching the user\'s emergency contacts.')
+    throw Error("Error fetching the user's emergency contacts.");
   }
 
   const data = await response.json();
   return data.data;
-}
+};
 
-export const getEmergencyContacts = async() => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const getEmergencyContacts = async () => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const query = `query{
     user(id: 1) {
       emergencyContacts {
@@ -49,25 +49,25 @@ export const getEmergencyContacts = async() => {
         email
       }
     }
-  }`
+  }`;
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error fetching the user\'s emergency contacts.')
+    throw Error("Error fetching the user's emergency contacts.");
   }
 
   const data = await response.json();
   return data.data;
-}
+};
 
 export const getVehicles = async () => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const query = `query{
   user(id: 1) {
     vehicles{
@@ -79,25 +79,25 @@ export const getVehicles = async () => {
       licensePlate
     }
   }
-}`
+}`;
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error fetching the user\'s vehicles.')
+    throw Error("Error fetching the user's vehicles.");
   }
 
   const data = await response.json();
   return data.data;
-}
+};
 
 export const getGear = async () => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const query = `query {
   user(id: 1) {
     gear{
@@ -106,25 +106,25 @@ export const getGear = async () => {
       description
     }
   }
-}`
+}`;
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error fetching the user\'s gear.')
+    throw Error("Error fetching the user's gear.");
   }
 
   const data = await response.json();
   return data.data;
-}
+};
 
 export const getTrips = async () => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const query = `query {
   user(id: 1) {
     trips{
@@ -142,26 +142,26 @@ export const getTrips = async () => {
       active
       }
     } 
-  }`
+  }`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error fetching the user\'s trips.')
+    throw Error("Error fetching the user's trips.");
   }
 
   const data = await response.json();
   return data.data;
-}
+};
 
-export const addTrip = async (newTrip) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const addTrip = async newTrip => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation {
   createTrip(input: {
   name: "${newTrip.name}",
@@ -190,26 +190,26 @@ export const addTrip = async (newTrip) => {
       travelingCompanions
     }
   }
-} `
+} `;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s trip.')
+    throw Error("Error adding a user's trip.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const addVehicle = async (newVehicle) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const addVehicle = async newVehicle => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation {
   createVehicle(input: {
     make: "${newVehicle.make}",
@@ -228,27 +228,27 @@ export const addVehicle = async (newVehicle) => {
       licensePlate
     }
   }
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s vehicle.')
+    throw Error("Error adding a user's vehicle.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const addGearItem = async (newItem) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
-  const mutation =  `mutation {
+export const addGearItem = async newItem => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
+  const mutation = `mutation {
   createGear(input: {
     itemName: "${newItem.itemName}",
     description: "${newItem.description}",
@@ -258,26 +258,26 @@ export const addGearItem = async (newItem) => {
       itemName
     }
   } 
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s gear item.')
+    throw Error("Error adding a user's gear item.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const addContact = async (newContact) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const addContact = async newContact => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation{
           createContact(input: {
             name: "${newContact.name}",
@@ -289,27 +289,27 @@ export const addContact = async (newContact) => {
       name
     }
   }
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
-  
+
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s emergency contact.')
+    throw Error("Error adding a user's emergency contact.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const deleteContact = async (id) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const deleteContact = async id => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation{
     removeContact(input: {
       id: ${id} }) {
@@ -319,28 +319,28 @@ export const deleteContact = async (id) => {
         email
     }
   }
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
 
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error removing a user\'s emergency contact.')
+    throw Error("Error removing a user's emergency contact.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const deleteGearItem = async (id) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
-  const mutation =  `mutation{
+export const deleteGearItem = async id => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
+  const mutation = `mutation{
     removeGear(input: {
     id: ${id} }) {
     gear {
@@ -348,27 +348,27 @@ export const deleteGearItem = async (id) => {
       description
     }
   }  
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
 
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error deleting a user\'s gear item.')
+    throw Error("Error deleting a user's gear item.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const addGearForTrip = async (newGear) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const addGearForTrip = async newGear => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation{
           addGearToTrip(input: {
             tripId: ${parseInt(newGear.tripId)},
@@ -385,26 +385,26 @@ export const addGearForTrip = async (newGear) => {
               }
             }
           }
-        }`
+        }`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s gear to a trip.')
+    throw Error("Error adding a user's gear to a trip.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const addContactsForTrip = async (newContact) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const addContactsForTrip = async newContact => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation{
     addContactToTrip(input: {
       tripId: ${parseInt(newContact.tripId)},
@@ -418,26 +418,26 @@ export const addContactsForTrip = async (newContact) => {
         phone
       }
     }
-  }`
+  }`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s emergency contact to a trip.')
+    throw Error("Error adding a user's emergency contact to a trip.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const addVehiclesForTrip = async (newVehicle) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const addVehiclesForTrip = async newVehicle => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation{
     addVehicleToTrip(input: {
       tripId: ${parseInt(newVehicle.tripId)},
@@ -450,26 +450,26 @@ export const addVehiclesForTrip = async (newVehicle) => {
         make
       }
     }
-  }`
+  }`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error adding a user\'s vehicle to a trip.')
+    throw Error("Error adding a user's vehicle to a trip.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const deleteVehicle = async (id) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const deleteVehicle = async id => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation {
   removeVehicle(input: {
     id: ${id} }) {
@@ -483,26 +483,26 @@ export const deleteVehicle = async (id) => {
       state
     }
   } 
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error deleting a user\'s vehicle.')
+    throw Error("Error deleting a user's vehicle.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const deactivateTrip = async (id) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const deactivateTrip = async id => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation{
     endTrip(input: {
       id: ${id} 
@@ -511,26 +511,26 @@ export const deactivateTrip = async (id) => {
         name
     }
   }
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error deactivating the user\'s trip status.')
+    throw Error("Error deactivating the user's trip status.");
   }
 
   const data = await response.json();
   return data;
-}
+};
 
-export const deleteTrip = async (tripId) => {
-  const url = 'https://search-and-rescue-api.herokuapp.com/graphql';
+export const deleteTrip = async tripId => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
   const mutation = `mutation{
   removeTrip(input: {
     id: ${tripId}
@@ -540,20 +540,50 @@ export const deleteTrip = async (tripId) => {
       name
     }
   }
-}`
+}`;
 
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({ query: mutation })
   };
   const response = await fetch(url, options);
   if (!response.ok) {
-    throw Error('Error deleting a user\'s trip.')
+    throw Error("Error deleting a user's trip.");
   }
 
   const data = await response.json();
   return data;
-}
+};
+
+export const getToken = async (email, password) => {
+  const url = "https://search-and-rescue-api.herokuapp.com/graphql";
+  const mutation = `mutation {
+    signInUser(input: {
+      email: ${email},
+      password: ${password}
+    }) {
+      user{
+        id
+      }
+      token
+    }
+  }`;
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ query: mutation })
+  };
+  const response = await fetch(url, options);
+  // console.log("getToken response", response);
+  if (!response.ok) {
+    throw Error("Error fetching the user's login token.");
+  }
+
+  const data = await response.json();
+  return data.data;
+};
