@@ -20,29 +20,28 @@ import { bindActionCreators } from "redux";
 import styles from "./styles";
 
 export class LoginScreen extends Component {
-  storeToken = async () => {  
+  storeToken = async (key, value) => {  
     try {
-      await AsyncStorage.setItem("TASKS", "this is a task");
+      await AsyncStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-      // Error saving data
+      console.log('storeToken error', error)
     }
   };
 
-  retrieveData = async () => {
+  retrieveData = async (key) => {
     try {
-      const value = await AsyncStorage.getItem("TASKS");
+      const value = await AsyncStorage.getItem(key);
       if (value !== null) {
         console.log('value', value);
       }
     } catch (error) {
-      // Error retrieving data
+      console.log('retrieveData', error)
     }
   };
 
   componentDidMount = async () => {
-    this.storeToken();
-    this.retrieveData();
-    console.log(AsyncStorage)
+    this.storeToken('key here', 'value goes here');
+    this.retrieveData('key here');
     const {
       setEmergencyContacts,
       setVehicles,
