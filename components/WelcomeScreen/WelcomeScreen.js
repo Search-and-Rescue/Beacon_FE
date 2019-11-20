@@ -28,7 +28,7 @@ export class LoginScreen extends Component {
     }
   };
 
-  retrieveData = async (key) => {
+  retrieveToken = async (key) => {
     try {
       const value = await AsyncStorage.getItem(key);
       if (value !== null) {
@@ -41,7 +41,7 @@ export class LoginScreen extends Component {
 
   componentDidMount = async () => {
     this.storeToken('key here', 'value goes here');
-    this.retrieveData('key here');
+    this.retrieveToken('key here');
     const {
       setEmergencyContacts,
       setVehicles,
