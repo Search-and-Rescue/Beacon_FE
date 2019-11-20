@@ -20,20 +20,19 @@ import { bindActionCreators } from "redux";
 import styles from "./styles";
 
 export class LoginScreen extends Component {
-  _storeData = async () => {
+  storeToken = async () => {  
     try {
-      await AsyncStorage.setItem("@MySuperStore:key", "I like to save it.");
+      await AsyncStorage.setItem("TASKS", "this is a task");
     } catch (error) {
       // Error saving data
     }
   };
 
-  _retrieveData = async () => {
+  retrieveData = async () => {
     try {
       const value = await AsyncStorage.getItem("TASKS");
       if (value !== null) {
-        // We have data!!
-        console.log(value);
+        console.log('value', value);
       }
     } catch (error) {
       // Error retrieving data
@@ -41,6 +40,9 @@ export class LoginScreen extends Component {
   };
 
   componentDidMount = async () => {
+    this.storeToken();
+    this.retrieveData();
+    console.log(AsyncStorage)
     const {
       setEmergencyContacts,
       setVehicles,
