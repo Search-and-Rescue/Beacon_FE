@@ -30,18 +30,18 @@ A custom Search and Rescue API for the state of Colorado was built for this app.
 ### Final Presentation
 
 #### Custom Loading Screen
+![Splashscreen](https://github.com/Search-and-Rescue/Beacon_FE/blob/master/assets/screenshots/Splashscreen.png)
 
 #### User Login Form
+![Login Form](https://github.com/Search-and-Rescue/Beacon_FE/blob/master/assets/screenshots/LoginPage.png)
 
 #### App Navigation
+![App Navigation](https://github.com/Search-and-Rescue/Beacon_FE/blob/master/assets/screenshots/Navigation.gif)
 
-#### Adding Profile Information, Emergency Contacts, Gear Items, and Vehicles
+#### Deactivating a Current Trip
+![Deactivate Trip](https://github.com/Search-and-Rescue/Beacon_FE/blob/master/assets/screenshots/DeactivateTrip.gif)
 
-#### Viewing a user's existing Trips, Profile Information, Emergency Contacts, Gear Items, and Vehicles
-
-#### Deactivating a Current Trip, the disabled Add Trip button, and the Experience Level Modal
-
-### Wireframes
+### Wireframe
 
 ![Wireframing Navigation and Components](https://github.com/Search-and-Rescue/SearchAndRescue-FE/blob/master/assets/screenshots/wireframe.jpeg)
 
