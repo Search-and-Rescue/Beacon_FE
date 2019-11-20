@@ -239,6 +239,31 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           Select Start Date
         </Text>
       </TouchableOpacity>
+      <View
+        style={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#001028",
+            "marginBottom": 10,
+            "marginTop": 5,
+            "paddingBottom": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "paddingBottom": 4,
+              "textAlign": "center",
+            }
+          }
+        >
+          Start Date
+        </Text>
+      </View>
       <TouchableOpacity
         activeOpacity={0.2}
         onPress={[Function]}
@@ -266,6 +291,31 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           Select Start Time
         </Text>
       </TouchableOpacity>
+      <View
+        style={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#001028",
+            "marginBottom": 10,
+            "marginTop": 5,
+            "paddingBottom": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "paddingBottom": 4,
+              "textAlign": "center",
+            }
+          }
+        >
+          Start Time
+        </Text>
+      </View>
       <TouchableOpacity
         activeOpacity={0.2}
         onPress={[Function]}
@@ -293,6 +343,31 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           Select End Date
         </Text>
       </TouchableOpacity>
+      <View
+        style={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#001028",
+            "marginBottom": 10,
+            "marginTop": 5,
+            "paddingBottom": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "paddingBottom": 4,
+              "textAlign": "center",
+            }
+          }
+        >
+          End Date
+        </Text>
+      </View>
       <TouchableOpacity
         activeOpacity={0.2}
         onPress={[Function]}
@@ -320,6 +395,31 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           Select End Time
         </Text>
       </TouchableOpacity>
+      <View
+        style={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#001028",
+            "marginBottom": 10,
+            "marginTop": 5,
+            "paddingBottom": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "paddingBottom": 4,
+              "textAlign": "center",
+            }
+          }
+        >
+          End Time
+        </Text>
+      </View>
       <TouchableOpacity
         activeOpacity={0.2}
         onPress={[Function]}
@@ -347,6 +447,31 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           Select Notification Date
         </Text>
       </TouchableOpacity>
+      <View
+        style={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#001028",
+            "marginBottom": 10,
+            "marginTop": 5,
+            "paddingBottom": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "paddingBottom": 4,
+              "textAlign": "center",
+            }
+          }
+        >
+          Notification Date
+        </Text>
+      </View>
       <TouchableOpacity
         activeOpacity={0.2}
         onPress={[Function]}
@@ -374,12 +499,38 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
           Select Notification Time
         </Text>
       </TouchableOpacity>
+      <View
+        style={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#001028",
+            "marginBottom": 10,
+            "marginTop": 5,
+            "paddingBottom": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#001028",
+              "fontFamily": "Georgia",
+              "fontSize": 18,
+              "paddingBottom": 4,
+              "textAlign": "center",
+            }
+          }
+        >
+          Notification Time
+        </Text>
+      </View>
       <Text
         style={
           Object {
             "color": "#001028",
             "fontFamily": "Georgia",
             "fontSize": 18,
+            "marginTop": 10,
             "paddingBottom": 2,
             "textAlign": "left",
           }
@@ -446,6 +597,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
               onPress={[Function]}
               style={
                 Object {
+                  "height": 60,
                   "marginVertical": 3,
                   "paddingVertical": 10,
                 }
@@ -460,14 +612,35 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
                   }
                 }
               >
-                <Text>
-                  ADD
-                </Text>
+                <Component
+                  icon={
+                    Object {
+                      "icon": Array [
+                        448,
+                        512,
+                        Array [],
+                        "f0fe",
+                        "M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-32 252c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92H92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z",
+                      ],
+                      "iconName": "plus-square",
+                      "prefix": "fas",
+                    }
+                  }
+                  size={36}
+                  style={
+                    Object {
+                      "color": "#001028",
+                      "marginVertical": 5,
+                    }
+                  }
+                />
                 <Text
                   style={
                     Object {
                       "color": "#001028",
-                      "fontSize": 28,
+                      "fontSize": 21,
+                      "paddingLeft": 7,
+                      "paddingVertical": 10,
                     }
                   }
                 >
@@ -540,24 +713,58 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             onPress={[Function]}
             style={
               Object {
+                "height": 60,
                 "marginVertical": 3,
                 "paddingVertical": 10,
               }
             }
             underlayColor="black"
           >
-            <Text
+            <View
               style={
                 Object {
-                  "color": "#001028",
-                  "fontSize": 28,
+                  "flex": 1,
+                  "flexDirection": "row",
                 }
               }
             >
-              Ford
-               
-              F150
-            </Text>
+              <Component
+                icon={
+                  Object {
+                    "icon": Array [
+                      448,
+                      512,
+                      Array [],
+                      "f0fe",
+                      "M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-32 252c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92H92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z",
+                    ],
+                    "iconName": "plus-square",
+                    "prefix": "fas",
+                  }
+                }
+                size={36}
+                style={
+                  Object {
+                    "color": "#001028",
+                    "marginVertical": 5,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#001028",
+                    "fontSize": 21,
+                    "paddingLeft": 7,
+                    "paddingVertical": 10,
+                  }
+                }
+              >
+                Ford
+                 
+                F150
+              </Text>
+            </View>
           </TouchableHighlight>
         </View>
       </Component>
@@ -602,6 +809,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
               onPress={[Function]}
               style={
                 Object {
+                  "height": 60,
                   "marginVertical": 3,
                   "paddingVertical": 10,
                 }
@@ -616,14 +824,35 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
                   }
                 }
               >
-                <Text>
-                  ADD
-                </Text>
+                <Component
+                  icon={
+                    Object {
+                      "icon": Array [
+                        448,
+                        512,
+                        Array [],
+                        "f0fe",
+                        "M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-32 252c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92H92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z",
+                      ],
+                      "iconName": "plus-square",
+                      "prefix": "fas",
+                    }
+                  }
+                  size={36}
+                  style={
+                    Object {
+                      "color": "#001028",
+                      "marginVertical": 5,
+                    }
+                  }
+                />
                 <Text
                   style={
                     Object {
                       "color": "#001028",
-                      "fontSize": 28,
+                      "fontSize": 21,
+                      "paddingLeft": 7,
+                      "paddingVertical": 10,
                     }
                   }
                 >
@@ -690,7 +919,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Start Date:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:44:58.934Z}
+            date={2019-12-20T07:00:00.000Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -752,7 +981,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select End Date:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:44:58.934Z}
+            date={2019-12-20T07:00:00.000Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -814,7 +1043,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Notification Date:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:44:58.934Z}
+            date={2019-12-20T07:00:00.000Z}
             mode="date"
             onDateChange={[Function]}
           />
@@ -876,7 +1105,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Start Time:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:44:58.934Z}
+            date={2019-12-20T07:00:00.000Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -938,7 +1167,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select End Time:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:44:58.934Z}
+            date={2019-12-20T07:00:00.000Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -1000,7 +1229,7 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
             Select Notification Time:
           </Text>
           <DatePickerIOS
-            date={2019-10-31T01:44:58.934Z}
+            date={2019-12-20T07:00:00.000Z}
             mode="time"
             onDateChange={[Function]}
           />
@@ -1038,18 +1267,15 @@ exports[`Trip should match the snapshot with all of the data passed through 1`] 
     </Component>
     <TouchableOpacity
       activeOpacity={0.2}
-      disabled={false}
+      disabled={true}
       onPress={[Function]}
       style={
         Object {
-          "backgroundColor": "#001028",
-          "borderRadius": 3,
-          "color": "#F0F0F0",
-          "fontFamily": "Futura",
-          "fontSize": 28,
+          "backgroundColor": "maroon",
+          "borderColor": "red",
+          "borderWidth": 1,
           "marginVertical": 10,
-          "paddingVertical": 12,
-          "textAlign": "center",
+          "paddingVertical": 10,
           "width": "100%",
         }
       }

@@ -33,6 +33,10 @@ describe('Trip', () => {
     itemName: 'Rustic Iron Bottle',
     description: 'Chuck Norris can binary search unsorted data.'
   }];
+  const currentTripMock = {
+    id: 1,
+    name: "Trip name"
+  }
 
   beforeEach(() => {
     mockProps = {
@@ -53,10 +57,20 @@ describe('Trip', () => {
       contacts={contactsMock}
       vehicles={vehiclesMock}
       gear={gearMock}
+      currentTrip={currentTripMock}
       {...mockProps} />)
   });
 
-  it.skip('should match the snapshot with all of the data passed through', () => {
+  it('should match the snapshot with all of the data passed through', () => {
+    const mockDateTime = new Date(2019, 11, 20)
+    wrapper.setState({ 
+      startDate: mockDateTime, 
+      startTime: mockDateTime,
+      endDate: mockDateTime,
+      endTime: mockDateTime,
+      notificationDate: mockDateTime,
+      notificationTime: mockDateTime
+    })
     expect(wrapper).toMatchSnapshot();
   });
 });
