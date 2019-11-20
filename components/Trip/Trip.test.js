@@ -62,7 +62,7 @@ describe('Trip', () => {
   });
 
   it('should match the snapshot with all of the data passed through', () => {
-    const mockDateTime = new Date(2019, 11, 20)
+    const mockDateTime = new Date(2019, 11, 20, 18, 30, 00)
     wrapper.setState({ 
       startDate: mockDateTime, 
       startTime: mockDateTime,
