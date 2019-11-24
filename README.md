@@ -38,6 +38,9 @@ A custom Search and Rescue API for the state of Colorado was built for this app.
 #### App Navigation
 ![App Navigation](https://github.com/Search-and-Rescue/Beacon_FE/blob/master/assets/screenshots/Navigation.gif)
 
+#### Adding a New Trip
+![Add Trip](https://github.com/Search-and-Rescue/Beacon_FE/blob/master/assets/screenshots/AddTrip.gif)
+
 #### Deactivating a Current Trip
 ![Deactivate Trip](https://github.com/Search-and-Rescue/Beacon_FE/blob/master/assets/screenshots/DeactivateTrip.gif)
 
