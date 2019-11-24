@@ -73,4 +73,24 @@ describe('Trip', () => {
     })
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should update name state onChangeText of input', () => {
+    wrapper.find('TextInput').at(0).simulate('changeText', 'Trip name')
+    expect(wrapper.state('name')).toEqual('Trip name');
+  });
+
+  it('should update startingPoint state onChangeText of input', () => {
+    wrapper.find('TextInput').at(1).simulate('changeText', 'Start point')
+    expect(wrapper.state('startingPoint')).toEqual('Start point');
+  });
+
+  it('should update endingPoint state onChangeText of input', () => {
+    wrapper.find('TextInput').at(2).simulate('changeText', 'End point')
+    expect(wrapper.state('endingPoint')).toEqual('End point');
+  });
+
+  it('should update travelingCompanions state onChangeText of input', () => {
+    wrapper.find('TextInput').at(3).simulate('changeText', 0)
+    expect(wrapper.state('travelingCompanions')).toEqual(0);
+  });
 });
