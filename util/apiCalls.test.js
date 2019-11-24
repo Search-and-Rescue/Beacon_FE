@@ -3,6 +3,7 @@ import {
   getEmergencyContacts, 
   getVehicles,
   getGear,
+  getToken,
   getTrips,
   addTrip,
   addVehicle,
@@ -1323,4 +1324,89 @@ describe('deleteTrip', () => {
     expect(deleteTrip(mockId)).rejects.toEqual(Error('delete failed'))
   });
 
+});
+
+
+
+
+
+
+
+
+describe("getToken", () => {
+  let mockLogin, mockToken;
+
+  beforeEach(() => {
+    mockLogin = {
+      email: "samantha@skier4lyfe.gov",
+      password: "mybestpassword"
+    };
+
+    mockToken = {
+      token: "ummmmm"
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockToken)
+      });
+    });
+  });
+
+  it("should call fetch with the correct url including the query for GraphQL", () => {
+    const mutation = `mutation {
+    signInUser(input: {
+      email: ${mockLogin.email},
+      password: ${mockLogin.password}
+    }) {
+      user{
+        id
+      }
+      token
+    }
+  }`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ query: mutation })
+    };
+
+    getToken(mockLogin.email, mockLogin.password);
+
+    expect(window.fetch).toHaveBeenCalledWith(
+      "https://search-and-rescue-api.herokuapp.com/graphql",
+      options
+    );
+  });
+
+  it("should return a token for the user who is logging in", () => {
+    expect(getToken(mockLogin.email, mockLogin.password)).resolves.toEqual(
+      mockToken
+    );
+  });
+
+  it("should return an error if the promise resolves but the property ok isn't true", () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      });
+    });
+
+    expect(getToken(mockLogin.email, mockLogin.password)).rejects.toEqual(
+      Error("Error fetching the user's login token.")
+    );
+  });
+
+  it("should return an error if the promise rejects", () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error("fetch failed"));
+    });
+
+    expect(getToken(mockLogin.email, mockLogin.password)).rejects.toEqual(
+      Error("fetch failed")
+    );
+  });
 });

@@ -5,6 +5,7 @@ import {
   getEmergencyContacts,
   getVehicles,
   getGear,
+  getToken,
   getTrips,
   getUser
 } from "../../util/apiCalls";
@@ -45,6 +46,7 @@ export class LoginScreen extends Component {
   }; 
 
   componentDidMount = async () => {
+    getToken('kawilliams8@gmail.com', 'mypassword');
     await this.storeToken('token', 'token object goes here');
     await this.retrieveToken('token');
     await this.clearToken('token');
