@@ -11,6 +11,13 @@ configure({ adapter: new Adapter() });
 describe('Contact', () => {
   let wrapper
 
+  const emergencyContactsMock = [
+    {
+      name: 'Katie Williams',
+      phone: '(303)123-4567',
+      email: 'test@gmail.com'
+    }
+  ]
   const userMock = {
     id: 1,
     name: 'Sam Freeman'
@@ -65,5 +72,14 @@ describe('Contact', () => {
     const mappedProps = mapStateToProps(mockState);
 
     expect(mappedProps).toEqual(expected);
+  });
+
+  it('it calls dispatch with the setEmergencyContacts action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = setEmergencyContacts(emergencyContactsMock);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.setEmergencyContacts(emergencyContactsMock);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
