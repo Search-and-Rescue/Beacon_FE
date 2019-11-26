@@ -1,8 +1,9 @@
 import 'react-native';
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Vehicle } from './Vehicle';
+import { Vehicle, mapStateToProps, mapDispatchToProps } from './Vehicle';
 import { configure } from 'enzyme';
+import { setVehicles } from '../../actions';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
@@ -10,6 +11,21 @@ configure({ adapter: new Adapter() });
 describe('Vehicle', () => {
   let wrapper
 
+  const vehiclesMock = [{
+    id: 1,
+    make: 'Ford',
+    model: 'F150',
+    year: 2010,
+    color: 'silver',
+    licensePlate: 'CYE 909'
+  }]
+  const userMock = {
+    id: 1,
+    name: 'Sam Freeman'
+  }
+  const mockState = {
+    user: userMock
+  }
   beforeEach(() => {
     mockVehicle = {
       navigation: {
@@ -63,5 +79,24 @@ describe('Vehicle', () => {
   it('should update state\'s state onChangeText of input', () => {
     wrapper.find('TextInput').at(5).simulate('changeText', 'CO')
     expect(wrapper.state('state')).toEqual('CO');
+  });
+
+  it('mapStateToProps should grab the props it needs', () => {
+    const expected = {
+      user: userMock
+    }
+
+    const mappedProps = mapStateToProps(mockState);
+
+    expect(mappedProps).toEqual(expected);
+  });
+
+  it('it calls dispatch with the setVehicles action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = setVehicles(vehiclesMock);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.setVehicles(vehiclesMock);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
