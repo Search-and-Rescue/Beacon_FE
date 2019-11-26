@@ -1,8 +1,9 @@
 import 'react-native';
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Trip } from './Trip';
+import { Trip, mapStateToProps, mapDispatchToProps } from './Trip';
 import { configure } from 'enzyme';
+import { setTrips, setCurrentTrip } from '../../actions';
 import Adapter from 'enzyme-adapter-react-16';
 
 jest.mock("@fortawesome/react-native-fontawesome", () => ({
@@ -36,6 +37,30 @@ describe('Trip', () => {
   const currentTripMock = {
     id: 1,
     name: "Trip name"
+  }
+  const userMock = {
+    id: 1,
+    name: 'Sam Freeman'
+  }
+  const tripMock = {
+    name: "Trip name",
+    startingPoint: "Starting point",
+    endingPoint: "Ending point",
+    startDate: "December 1, 2019",
+    startTime: "09:00",
+    endDate: "December 2, 2019",
+    endTime: "09:00",
+    notificationDate: "December 3, 2019",
+    notificationTime: "09:00",
+    travelingCompanions: 0,
+    userId: 1
+  }
+  const mockState = {
+    contacts: contactsMock,
+    vehicles: vehiclesMock,
+    gear: gearMock,
+    user: userMock,
+    currentTrip: currentTripMock
   }
 
   beforeEach(() => {
@@ -72,5 +97,57 @@ describe('Trip', () => {
       notificationTime: mockDateTime
     })
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should update name state onChangeText of input', () => {
+    wrapper.find('TextInput').at(0).simulate('changeText', 'Trip name')
+    expect(wrapper.state('name')).toEqual('Trip name');
+  });
+
+  it('should update startingPoint state onChangeText of input', () => {
+    wrapper.find('TextInput').at(1).simulate('changeText', 'Start point')
+    expect(wrapper.state('startingPoint')).toEqual('Start point');
+  });
+
+  it('should update endingPoint state onChangeText of input', () => {
+    wrapper.find('TextInput').at(2).simulate('changeText', 'End point')
+    expect(wrapper.state('endingPoint')).toEqual('End point');
+  });
+
+  it('should update travelingCompanions state onChangeText of input', () => {
+    wrapper.find('TextInput').at(3).simulate('changeText', 0)
+    expect(wrapper.state('travelingCompanions')).toEqual(0);
+  });
+
+  it('mapStateToProps should grab the props it needs', () => {
+    const expected = {
+      contacts: contactsMock,
+      vehicles: vehiclesMock,
+      gear: gearMock,
+      user: userMock,
+      currentTrip: currentTripMock
+    }
+
+    const mappedProps = mapStateToProps(mockState);
+
+    expect(mappedProps).toEqual(expected);
+  });
+
+  it('it calls dispatch with the setTrips action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = setTrips(tripMock);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.setTrips(tripMock);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('it calls dispatch with the setCurrentTrip action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = setCurrentTrip(1, "Trip Name");
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.setCurrentTrip(1, "Trip Name");
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
