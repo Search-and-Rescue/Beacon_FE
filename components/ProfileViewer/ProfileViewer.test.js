@@ -1,13 +1,20 @@
 import "react-native";
 import React from "react";
 import { shallow } from "enzyme";
-import { ProfileViewer } from "./ProfileViewer";
+import { ProfileViewer, mapStateToProps } from "./ProfileViewer";
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
 
 let mockUser, wrapper;
+const userMock = {
+  id: 1,
+  name: 'Sam Freeman'
+}
+const mockState = {
+  user: userMock
+}
 
 beforeEach(() => {
   mockUser = {
@@ -35,5 +42,15 @@ beforeEach(() => {
 describe("ProfileViewer", () => {
   it("should match the snapshot with all of the data passed through", () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('mapStateToProps should grab the props it needs', () => {
+    const expected = {
+      user: userMock
+    }
+
+    const mappedProps = mapStateToProps(mockState);
+
+    expect(mappedProps).toEqual(expected);
   });
 });
