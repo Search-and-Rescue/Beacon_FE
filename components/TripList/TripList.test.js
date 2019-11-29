@@ -1,8 +1,9 @@
 import "react-native";
 import React from "react";
 import { shallow } from "enzyme";
-import { TripList } from "./TripList";
+import { TripList, mapStateToProps, mapDispatchToProps } from "./TripList";
 import { configure } from "enzyme";
+import { setTrips, removeCurrentTrip } from "../../actions";
 import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
@@ -31,6 +32,10 @@ describe("TripList", () => {
     id: 1,
     name: "My trip"
   }
+  const mockState = {
+    trips: tripsMock,
+    currentTrip: currentTripMock
+  }
 
   beforeEach(() => {
     wrapper = shallow(<TripList
@@ -40,5 +45,34 @@ describe("TripList", () => {
 
   it("should match the snapshot with all of the data passed through", () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('mapStateToProps should grab the props it needs', () => {
+    const expected = {
+      trips: tripsMock,
+      currentTrip: currentTripMock
+    }
+
+    const mappedProps = mapStateToProps(mockState);
+
+    expect(mappedProps).toEqual(expected);
+  });
+
+  it('it calls dispatch with the setTrips action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = setTrips(tripsMock);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.setTrips(tripsMock);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('it calls dispatch with the removeCurrentTrip action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = removeCurrentTrip();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.removeCurrentTrip();
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
